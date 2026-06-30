@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'DM Serif Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-editorial: 'Cormorant Garamond', serif;
+}
+
+@layer base {
+  body {
+    @apply font-body antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ═════════════════════════════════════════
+   Theme variables per proposal
+   ═════════════════════════════════════════ */
+
+.theme-a {
+  --bg: #FFFBEF;
+  --surface: #FFFFFF;
+  --primary: #00698D;
+  --primary-dark: #005573;
+  --text: #1A1A1A;
+  --text-muted: #6B7280;
+  --border: #F0E8D5;
+  --accent: #C9A84C;
+}
+
+.theme-b {
+  --bg: #F5F5F7;
+  --surface: #FFFFFF;
+  --primary: #163667;
+  --primary-dark: #0F2548;
+  --text: #111827;
+  --text-muted: #6B7280;
+  --border: #E5E7EB;
+  --accent: #C9A84C;
+}
+
+.theme-c {
+  --bg: #FFFFFF;
+  --surface: #F8F6F2;
+  --primary: #00698D;
+  --primary-dark: #005573;
+  --text: #1A1A1A;
+  --text-muted: #6B7280;
+  --border: #EBE7DF;
+  --accent: #C9A84C;
+}
+
+/* ═════════════════════════════════════════
+   Stagger animation system (taste-skill motion 6)
+   ═════════════════════════════════════════ */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes line-extend {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.stagger-inner {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--i) * 120ms + 200ms);
+}
+
+.accent-line {
+  animation: line-extend 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 900ms;
+  transform-origin: left;
+}
+
+/* ═════════════════════════════════════════
+   Focus & interaction (web-interface-guidelines)
+   ═════════════════════════════════════════ */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.btn-cta {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease,
+              box-shadow 0.3s ease;
+  touch-action: manipulation;
+}
+
+.btn-cta:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn-cta:hover {
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  touch-action: manipulation;
+}
+
+.btn-ghost:hover {
+  transform: translateY(-1px);
+  background: rgba(0,0,0,0.03);
+}
+
+.btn-ghost:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Safe area for header */
+header {
+  padding-top: env(safe-area-inset-top);
+}
+
+main section:first-of-type {
+  padding-top: calc(72px + env(safe-area-inset-top));
+}
