@@ -8,180 +8,254 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 >
 
   <!-- ═════════════════════════════════════════
-       B — SANS BOLD
+       A — EL BRIEF DEL CLIENTE
+       DM Sans, aqua, beige, H1 del brief.
+       Esto es lo que el cliente pidió.
        ═════════════════════════════════════════ -->
-  <section class="min-h-[100dvh] flex flex-col justify-center px-4 md:px-8 lg:px-12 relative overflow-hidden" style="background: #FFFFFF">
-    <div class="stagger-inner absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at left center, rgba(0,105,141,0.03) 0%, transparent 70%); --i: 2"></div>
+  <section class="min-h-[100dvh] flex flex-col justify-center px-4 md:px-8 lg:px-12 relative overflow-hidden" style="background: #FAFAFA">
+    <div class="stagger-inner absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at left center, rgba(22,54,103,0.03) 0%, transparent 70%); --i: 2"></div>
     <div class="stagger-inner absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at right center, rgba(22,54,103,0.03) 0%, transparent 70%); --i: 2"></div>
-    <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-      <circle cx="150" cy="85" r="4.5" fill="#C9A84C" opacity="0.4"/>
-      <circle cx="180" cy="80" r="5" fill="#C9A84C" opacity="0.4"/>
-      <path d="M240 118 Q240 130 252 130 Q240 130 240 142 Q240 130 228 130 Q240 130 240 118Z" fill="#C9A84C" opacity="0.4"/>
-      <circle cx="150" cy="190" r="4" fill="#C9A84C" opacity="0.35"/>
-      <path d="M750 123 Q750 140 767 140 Q750 140 750 157 Q750 140 733 140 Q750 140 750 123Z" fill="#C9A84C" opacity="0.55"/>
-      <circle cx="800" cy="200" r="5" fill="#C9A84C" opacity="0.35"/>
-      <path d="M700 285 Q700 300 715 300 Q700 300 700 315 Q700 300 685 300 Q700 300 700 285Z" fill="#C9A84C" opacity="0.45"/>
-      <circle cx="860" cy="410" r="4" fill="#C9A84C" opacity="0.35"/>
-      <path d="M200 632 Q200 650 218 650 Q200 650 200 668 Q200 650 182 650 Q200 650 200 632Z" fill="#C9A84C" opacity="0.4"/>
-      <circle cx="280" cy="700" r="4.5" fill="#C9A84C" opacity="0.35"/>
-      <path d="M650 704 Q650 720 666 720 Q650 720 650 736 Q650 720 634 720 Q650 720 650 704Z" fill="#C9A84C" opacity="0.35"/>
-      <circle cx="910" cy="680" r="3.5" fill="#C9A84C" opacity="0.3"/>
-      <circle cx="500" cy="100" r="3" fill="#C9A84C" opacity="0.25"/>
-      <circle cx="1050" cy="250" r="4" fill="#C9A84C" opacity="0.35"/>
-    </svg>
 
     <div class="max-w-[1300px] mx-auto w-full relative z-10 flex items-center">
-      <!-- Left: text block -->
       <div class="flex-1">
-        <span class="stagger-inner inline-block text-[9px] tracking-[0.4em] uppercase font-semibold mb-12 opacity-50" style="color: #6B7280; --i: 0">Propuesta B — Sans Bold</span>
+        <div class="stagger-inner mb-12" style="--i: 0">
+          <span class="inline-block text-[9px] tracking-[0.4em] uppercase font-semibold opacity-50" style="color: #163667">Propuesta A — El Brief · Lo proporcionado</span>
+        </div>
+
         <div class="space-y-0">
           <p class="stagger-inner font-bold leading-none tracking-tight" style="color: #1A1A1A; font-family: 'DM Sans', sans-serif; font-size: clamp(1.75rem, 3.5vw, 2.75rem); --i: 2">Soluciones reales</p>
-          <p class="stagger-inner font-bold leading-none tracking-tight" style="color: #00698D; font-family: 'DM Sans', sans-serif; font-size: clamp(1.75rem, 3.5vw, 2.75rem); --i: 3">para ideas</p>
-          <p class="stagger-inner font-bold leading-[0.85] tracking-tighter" style="color: #163667; font-family: 'DM Sans', sans-serif; font-size: clamp(3rem, 7vw, 7rem); --i: 4">extraordinarias</p>
+          <p class="stagger-inner font-bold leading-none tracking-tight" style="color: #163667; font-family: 'DM Sans', sans-serif; font-size: clamp(1.75rem, 3.5vw, 2.75rem); --i: 3">para ideas</p>
+          <p class="stagger-inner font-bold leading-[0.85] tracking-tighter" style="color: #111827; font-family: 'DM Sans', sans-serif; font-size: clamp(3rem, 7vw, 7rem); --i: 4">extraordinarias</p>
         </div>
-        <div class="stagger-inner h-px mt-8 md:mt-10 w-24" style="background: linear-gradient(90deg, #00698D, #163667); --i: 5"></div>
-        <div class="stagger-inner mt-8 flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-10" style="--i: 6">
-          <p class="text-sm max-w-[40ch] leading-relaxed" style="color: #9CA3AF">Desarrollo de marcas propias, producto, compras internacionales y canales digitales.</p>
-          <div class="flex flex-wrap gap-3">
-            <a href="#contacto" class="btn-cta inline-block px-6 py-2.5 rounded-full text-sm font-semibold text-white whitespace-nowrap" style="background: #00698D; --primary: #00698D">Cuentanos tu proyecto</a>
-            <a href="#que-hacemos" class="btn-ghost inline-block px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap border transition-colors" style="color: #163667; border-color: #D1D5DB">Que hacemos</a>
-          </div>
+
+        <p class="stagger-inner mt-3 md:mt-4 text-sm md:text-base max-w-[45ch] leading-relaxed opacity-50" style="color: #4B5563; font-family: 'DM Sans', sans-serif; --i: 4">Desarrollo de marcas propias, producto, compras internacionales y canales digitales.</p>
+
+        <div class="stagger-inner h-px mt-6 md:mt-8 w-24" style="background: #163667; --i: 5"></div>
+
+        <div class="stagger-inner mt-6 md:mt-8 flex flex-wrap gap-3" style="--i: 6">
+          <a href="#contacto" class="inline-block px-6 py-3 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0.5 active:scale-[0.98]" style="background: #163667; font-family: 'DM Sans', sans-serif;">Cuéntanos tu proyecto</a>
+          <a href="#que-hacemos" class="inline-block px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-black/5 active:translate-y-0.5 active:scale-[0.98]" style="color: #163667; border: 1.5px solid #163667; font-family: 'DM Sans', sans-serif;">Qué hacemos</a>
         </div>
       </div>
-      <!-- Right: logo -->
-      <div class="hidden md:flex items-center justify-center w-48 lg:w-56 xl:w-64 ml-12 lg:ml-20">
-        <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="stagger-inner h-20 lg:h-24 w-auto" style="--i: 1" />
+      <div class="hidden md:flex items-center justify-center w-64 lg:w-80 xl:w-96 ml-12 lg:ml-20">
+        <img src="/images/logo-marino.png" alt="Unicornio Azul" class="stagger-inner h-32 lg:h-40 w-auto" style="--i: 1" />
       </div>
-      <!-- Mobile logo -->
-      <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="stagger-inner absolute top-6 right-6 z-20 h-12 w-auto md:hidden" style="--i: 1" />
+      <img src="/images/logo-marino.png" alt="Unicornio Azul" class="stagger-inner absolute top-6 right-6 z-20 h-16 w-auto md:hidden" style="--i: 1" />
     </div>
 
-    <div class="stagger-inner absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20 flex items-center gap-2 md:gap-3 rounded-lg px-3.5 py-2 md:px-4 md:py-2.5" style="--i: 8; background: rgba(255,255,255,0.85); box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-      <div class="flex items-center gap-1.5">
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#FFFFFF; box-shadow: 0 0 0 1px rgba(0,0,0,0.12);"></span>
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#00698D"></span>
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#163667"></span>
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#C9A84C"></span>
-      </div>
-      <div class="flex flex-col leading-none">
-        <span class="text-[10px] md:text-xs font-bold" style="color:#163667; font-family:'DM Sans',sans-serif">DM Sans Bold</span>
-        <span class="text-[10px] md:text-xs" style="color:#6B7280; font-family:'DM Serif Display',serif">DM Serif Display</span>
+    <div class="stagger-inner absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20 rounded-lg px-3.5 py-2.5 md:px-4 md:py-3" style="--i: 8; background: rgba(255,255,255,0.9); box-shadow: 0 1px 6px rgba(0,0,0,0.08);">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#FAFAFA; box-shadow: 0 0 0 1px rgba(0,0,0,0.15);"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#FAFAFA Fondo</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#163667;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#163667 Primario</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#111827;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#111827 Texto</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#C9A84C;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#C9A84C Acento</span>
+        </div>
+        <div class="h-px bg-black/8 my-0.5"></div>
+        <div class="text-[10px] md:text-[11px] font-semibold" style="color:#1A1A1A; font-family:'DM Sans',sans-serif;">DM Sans</div>
       </div>
     </div>
   </section>
 
   <!-- ═════════════════════════════════════════
-       C — DUAL BLUE + SERIF
+       B — CORPORATIVO / CABINET GROTESK
+       ═════════════════════════════════════════ -->
+  <section class="min-h-[100dvh] flex flex-col justify-center px-4 md:px-8 lg:px-12 relative overflow-hidden" style="background: #F5F5F7">
+    <div class="stagger-inner absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at left center, rgba(22,54,103,0.04) 0%, transparent 70%); --i: 2"></div>
+    <div class="stagger-inner absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at right center, rgba(0,105,141,0.03) 0%, transparent 70%); --i: 2"></div>
+    <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <circle cx="150" cy="85" r="4.5" fill="#C9A84C" opacity="0.3"/>
+      <circle cx="180" cy="80" r="5" fill="#C9A84C" opacity="0.3"/>
+      <path d="M240 118 Q240 130 252 130 Q240 130 240 142 Q240 130 228 130 Q240 130 240 118Z" fill="#C9A84C" opacity="0.3"/>
+      <circle cx="150" cy="190" r="4" fill="#C9A84C" opacity="0.25"/>
+      <path d="M750 123 Q750 140 767 140 Q750 140 750 157 Q750 140 733 140 Q750 140 750 123Z" fill="#C9A84C" opacity="0.4"/>
+      <circle cx="800" cy="200" r="5" fill="#C9A84C" opacity="0.25"/>
+      <circle cx="860" cy="410" r="4" fill="#C9A84C" opacity="0.25"/>
+      <circle cx="500" cy="100" r="3" fill="#C9A84C" opacity="0.2"/>
+      <circle cx="1050" cy="250" r="4" fill="#C9A84C" opacity="0.25"/>
+    </svg>
+
+    <div class="max-w-[1300px] mx-auto w-full relative z-10 flex items-center">
+      <div class="flex-1">
+        <div class="stagger-inner mb-12" style="--i: 0">
+          <span class="inline-block text-[9px] tracking-[0.4em] uppercase font-semibold opacity-50" style="color: #163667">Propuesta B — Corporativo · Solidez y confianza</span>
+        </div>
+
+        <div class="space-y-0">
+          <p class="stagger-inner font-extrabold leading-none tracking-tight" style="color: #111827; font-family: 'Cabinet Grotesk', sans-serif; font-size: clamp(1.75rem, 3.5vw, 2.75rem); --i: 2">Soluciones reales</p>
+          <p class="stagger-inner font-extrabold leading-none tracking-tight" style="color: #00698D; font-family: 'Cabinet Grotesk', sans-serif; font-size: clamp(1.75rem, 3.5vw, 2.75rem); --i: 3">para ideas</p>
+          <p class="stagger-inner font-extrabold leading-[0.85] tracking-tighter" style="color: #163667; font-family: 'Cabinet Grotesk', sans-serif; font-size: clamp(3rem, 7vw, 7rem); --i: 4">extraordinarias</p>
+        </div>
+
+        <p class="stagger-inner mt-3 md:mt-4 text-sm md:text-base max-w-[45ch] leading-relaxed opacity-50" style="color: #4B5563; font-family: 'Satoshi', sans-serif; --i: 4">Desarrollo de marcas propias, producto, compras internacionales y canales digitales.</p>
+
+        <div class="stagger-inner h-px mt-8 md:mt-10 w-24" style="background: #163667; --i: 5"></div>
+
+        <div class="stagger-inner mt-8 flex flex-wrap gap-3" style="--i: 6">
+          <a href="#contacto" class="inline-block px-7 py-3.5 rounded-sm text-sm font-extrabold text-white tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:scale-[0.98]" style="background: #163667; font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: 0.04em;">Cuéntanos tu proyecto</a>
+          <a href="#que-hacemos" class="inline-block px-7 py-3.5 rounded-sm text-sm font-extrabold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-black/[0.04] active:translate-y-0 active:scale-[0.98]" style="color: #163667; border: 2px solid #163667; font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: 0.04em;">Qué hacemos</a>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center justify-center w-64 lg:w-80 xl:w-96 ml-12 lg:ml-20">
+        <img src="/images/logo-marino.png" alt="Unicornio Azul" class="stagger-inner h-32 lg:h-40 w-auto" style="--i: 1" />
+      </div>
+      <img src="/images/logo-marino.png" alt="Unicornio Azul" class="stagger-inner absolute top-6 right-6 z-20 h-16 w-auto md:hidden" style="--i: 1" />
+    </div>
+
+    <div class="stagger-inner absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20 rounded-lg px-3.5 py-2.5 md:px-4 md:py-3" style="--i: 8; background: rgba(255,255,255,0.9); box-shadow: 0 1px 6px rgba(0,0,0,0.08);">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#F5F5F7; box-shadow: 0 0 0 1px rgba(0,0,0,0.15);"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#F5F5F7 Fondo</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#163667;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#163667 Primario</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#00698D;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#00698D Secundario</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#111827;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#111827 Texto</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#C9A84C;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#C9A84C Acento</span>
+        </div>
+        <div class="h-px bg-black/8 my-0.5"></div>
+        <div class="text-[10px] md:text-[11px] font-extrabold" style="color:#163667; font-family:'Cabinet Grotesk',sans-serif;">Cabinet Grotesk</div>
+        <div class="text-[10px] md:text-[11px]" style="color:#6B7280; font-family:'Satoshi',sans-serif;">Satoshi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════
+       C — ELEGANTE / SERIF + SWITZER
        ═════════════════════════════════════════ -->
   <section class="min-h-[100dvh] flex flex-col justify-center px-4 md:px-8 lg:px-12 relative overflow-hidden" style="background: #FFFFFF">
-    <div class="stagger-inner absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at left center, rgba(0,105,141,0.03) 0%, transparent 70%); --i: 2"></div>
-    <div class="stagger-inner absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at right center, rgba(22,54,103,0.03) 0%, transparent 70%); --i: 2"></div>
+    <div class="stagger-inner absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at left center, rgba(0,105,141,0.02) 0%, transparent 70%); --i: 2"></div>
+    <div class="stagger-inner absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at right center, rgba(22,54,103,0.02) 0%, transparent 70%); --i: 2"></div>
     <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-      <path d="M780 146 Q780 160 794 160 Q780 160 780 174 Q780 160 766 160 Q780 160 780 146Z" fill="#C9A84C" opacity="0.45"/>
-      <path d="M800 260 Q800 280 820 280 Q800 280 800 300 Q800 280 780 280 Q800 280 800 260Z" fill="#C9A84C" opacity="0.4"/>
-      <circle cx="760" cy="330" r="4" fill="#C9A84C" opacity="0.35"/>
-      <path d="M830 406 Q830 420 844 420 Q830 420 830 434 Q830 420 816 420 Q830 420 830 406Z" fill="#C9A84C" opacity="0.35"/>
-      <path d="M790 540 Q790 560 810 560 Q790 560 790 580 Q790 560 770 560 Q790 560 790 540Z" fill="#C9A84C" opacity="0.4"/>
-      <circle cx="850" cy="610" r="4.5" fill="#C9A84C" opacity="0.35"/>
-      <circle cx="110" cy="200" r="3.5" fill="#C9A84C" opacity="0.25"/>
-      <path d="M140 437 Q140 450 153 450 Q140 450 140 463 Q140 450 127 450 Q140 450 140 437Z" fill="#C9A84C" opacity="0.3"/>
-      <circle cx="190" cy="700" r="4" fill="#C9A84C" opacity="0.25"/>
-      <circle cx="1030" cy="595" r="4" fill="#C9A84C" opacity="0.35"/>
-      <circle cx="1080" cy="650" r="3.5" fill="#C9A84C" opacity="0.3"/>
+      <path d="M780 146 Q780 160 794 160 Q780 160 780 174 Q780 160 766 160 Q780 160 780 146Z" fill="#C9A84C" opacity="0.3"/>
+      <path d="M800 260 Q800 280 820 280 Q800 280 800 300 Q800 280 780 280 Q800 280 800 260Z" fill="#C9A84C" opacity="0.25"/>
+      <circle cx="760" cy="330" r="4" fill="#C9A84C" opacity="0.25"/>
+      <circle cx="850" cy="610" r="4.5" fill="#C9A84C" opacity="0.25"/>
     </svg>
 
     <div class="max-w-[1300px] mx-auto w-full relative z-10 flex items-center">
-      <!-- Left: text block -->
       <div class="flex-1">
-        <span class="stagger-inner inline-block text-[9px] tracking-[0.4em] uppercase font-semibold mb-12 opacity-40" style="color: #6B7280; --i: 0">Propuesta C — Serif Dual</span>
+        <div class="stagger-inner mb-12" style="--i: 0">
+          <span class="inline-block text-[9px] tracking-[0.4em] uppercase font-semibold opacity-40" style="color: #6B7280">Propuesta C — Elegante · Sofisticado y clásico</span>
+        </div>
+
         <div class="space-y-0">
-          <p class="stagger-inner font-heading leading-none tracking-tight" style="color: #1A1A1A; font-size: clamp(1.75rem, 4vw, 3.5rem); --i: 2">Soluciones reales</p>
-          <p class="stagger-inner font-heading leading-none tracking-tight" style="color: #00698D; font-size: clamp(1.75rem, 4vw, 3.5rem); --i: 3">para ideas</p>
-          <p class="stagger-inner font-heading leading-[0.85] tracking-tighter" style="color: #163667; font-size: clamp(3rem, 8vw, 7rem); --i: 4">extraordinarias</p>
+          <p class="stagger-inner leading-none tracking-tight" style="color: #1A1A1A; font-family: 'DM Serif Display', serif; font-size: clamp(1.75rem, 4vw, 3.5rem); --i: 2">Soluciones reales</p>
+          <p class="stagger-inner leading-none tracking-tight" style="color: #00698D; font-family: 'DM Serif Display', serif; font-size: clamp(1.75rem, 4vw, 3.5rem); --i: 3">para ideas</p>
+          <p class="stagger-inner leading-[0.85] tracking-tighter" style="color: #163667; font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 8vw, 7rem); --i: 4">extraordinarias</p>
         </div>
-        <div class="stagger-inner h-px mt-8 md:mt-10 w-24" style="background: linear-gradient(90deg, #00698D, #163667); --i: 5"></div>
-        <div class="stagger-inner mt-8 flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-10" style="--i: 6">
-          <p class="text-sm max-w-[40ch] leading-relaxed" style="color: #9CA3AF">Construimos oportunidades de negocio desde cero.</p>
-          <div class="flex flex-wrap gap-3">
-            <a href="#contacto" class="btn-cta inline-block px-6 py-2.5 rounded-full text-sm font-semibold text-white whitespace-nowrap" style="background: #00698D; --primary: #00698D">Cuentanos tu proyecto</a>
-            <a href="#que-hacemos" class="btn-ghost inline-block px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap border transition-colors" style="color: #163667; border-color: #D1D5DB">Que hacemos</a>
-          </div>
+
+        <p class="stagger-inner mt-3 md:mt-4 text-sm md:text-base max-w-[45ch] leading-relaxed opacity-45" style="color: #6B7280; font-family: 'Switzer', sans-serif; --i: 4">Desarrollo de marcas propias, producto, compras internacionales y canales digitales.</p>
+
+        <div class="stagger-inner h-px mt-8 md:mt-10 w-24" style="background: linear-gradient(90deg, #00698D, #C9A84C); --i: 5"></div>
+
+        <div class="stagger-inner mt-8 flex flex-wrap gap-4" style="--i: 6">
+          <a href="#contacto" class="inline-block px-8 py-3 rounded-full text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0.5 active:scale-[0.98]" style="background: #00698D; color: white; font-family: 'Switzer', sans-serif; font-weight: 500;">Cuéntanos tu proyecto</a>
+          <a href="#que-hacemos" class="inline-block px-8 py-3 rounded-full text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:text-[#00698D] active:translate-y-0.5 active:scale-[0.98]" style="color: #8B7E74; font-family: 'Switzer', sans-serif; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #C9A84C; text-decoration-thickness: 1.5px;">Qué hacemos</a>
         </div>
       </div>
-      <!-- Right: logo -->
-      <div class="hidden md:flex items-center justify-center w-48 lg:w-56 xl:w-64 ml-12 lg:ml-20">
-        <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="stagger-inner h-20 lg:h-24 w-auto" style="--i: 1" />
+      <div class="hidden md:flex items-center justify-center w-64 lg:w-80 xl:w-96 ml-12 lg:ml-20">
+        <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="stagger-inner h-32 lg:h-40 w-auto" style="--i: 1" />
       </div>
-      <!-- Mobile logo -->
-      <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="stagger-inner absolute top-6 right-6 z-20 h-12 w-auto md:hidden" style="--i: 1" />
+      <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="stagger-inner absolute top-6 right-6 z-20 h-16 w-auto md:hidden" style="--i: 1" />
     </div>
 
-    <div class="stagger-inner absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20 flex items-center gap-2 md:gap-3 rounded-lg px-3.5 py-2 md:px-4 md:py-2.5" style="--i: 8; background: rgba(255,255,255,0.85); box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-      <div class="flex items-center gap-1.5">
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#FFFFFF; box-shadow: 0 0 0 1px rgba(0,0,0,0.12);"></span>
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#00698D"></span>
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#163667"></span>
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#C9A84C"></span>
-      </div>
-      <div class="flex flex-col leading-none">
-        <span class="text-[10px] md:text-xs font-semibold" style="color:#1A1A1A; font-family:'DM Serif Display',serif">DM Serif Display</span>
-        <span class="text-[10px] md:text-xs" style="color:#6B7280; font-family:'DM Sans',sans-serif">DM Sans</span>
+    <div class="stagger-inner absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20 rounded-lg px-3.5 py-2.5 md:px-4 md:py-3" style="--i: 8; background: rgba(255,255,255,0.9); box-shadow: 0 1px 6px rgba(0,0,0,0.08);">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#FFFFFF; box-shadow: 0 0 0 1px rgba(0,0,0,0.15);"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#FFFFFF Fondo</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#00698D;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#00698D Primario</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#163667;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#163667 Secundario</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#1A1A1A;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#1A1A1A Texto</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#C9A84C;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#C9A84C Acento</span>
+        </div>
+        <div class="h-px bg-black/8 my-0.5"></div>
+        <div class="text-[10px] md:text-[11px] font-semibold" style="color:#1A1A1A; font-family:'DM Serif Display',serif;">DM Serif Display</div>
+        <div class="text-[10px] md:text-[11px]" style="color:#6B7280; font-family:'Switzer',sans-serif;">Switzer</div>
       </div>
     </div>
   </section>
 
   <!-- ═════════════════════════════════════════
-       A — CORMORANT EDITORIAL
+       D — EDITORIAL / CORMORANT + SATOSHI
        ═════════════════════════════════════════ -->
   <section class="min-h-[100dvh] flex flex-col justify-center px-4 md:px-8 lg:px-12 relative overflow-hidden" style="background: #FCFAF5">
-    <div class="stagger-inner absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at left center, rgba(0,105,141,0.03) 0%, transparent 70%); --i: 2"></div>
-    <div class="stagger-inner absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at right center, rgba(22,54,103,0.03) 0%, transparent 70%); --i: 2"></div>
+    <div class="stagger-inner absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at left center, rgba(0,105,141,0.02) 0%, transparent 70%); --i: 2"></div>
+    <div class="stagger-inner absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none" style="background: radial-gradient(ellipse at right center, rgba(22,54,103,0.02) 0%, transparent 70%); --i: 2"></div>
     <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-      <path d="M880 106 Q880 120 894 120 Q880 120 880 134 Q880 120 866 120 Q880 120 880 106Z" fill="#C9A84C" opacity="0.5"/>
-      <circle cx="820" cy="280" r="4" fill="#C9A84C" opacity="0.35"/>
-      <path d="M940 340 Q940 350 950 350 Q940 350 940 360 Q940 350 930 350 Q940 350 940 340Z" fill="#C9A84C" opacity="0.45"/>
-      <circle cx="860" cy="520" r="3.5" fill="#C9A84C" opacity="0.3"/>
-      <path d="M920 608 Q920 620 932 620 Q920 620 920 632 Q920 620 908 620 Q920 620 920 608Z" fill="#C9A84C" opacity="0.45"/>
-      <circle cx="120" cy="680" r="4" fill="#C9A84C" opacity="0.3"/>
-      <path d="M180 150 Q180 160 190 160 Q180 160 180 170 Q180 160 170 160 Q180 160 180 150Z" fill="#C9A84C" opacity="0.35"/>
+      <path d="M880 106 Q880 120 894 120 Q880 120 880 134 Q880 120 866 120 Q880 120 880 106Z" fill="#C9A84C" opacity="0.4"/>
+      <circle cx="820" cy="280" r="4" fill="#C9A84C" opacity="0.3"/>
+      <path d="M940 340 Q940 350 950 350 Q940 350 940 360 Q940 350 930 350 Q940 350 940 340Z" fill="#C9A84C" opacity="0.35"/>
+      <circle cx="860" cy="520" r="3.5" fill="#C9A84C" opacity="0.25"/>
+      <path d="M920 608 Q920 620 932 620 Q920 620 920 632 Q920 620 908 620 Q920 620 920 608Z" fill="#C9A84C" opacity="0.35"/>
+      <circle cx="120" cy="680" r="4" fill="#C9A84C" opacity="0.25"/>
+      <path d="M180 150 Q180 160 190 160 Q180 160 180 170 Q180 160 170 160 Q180 160 180 150Z" fill="#C9A84C" opacity="0.3"/>
     </svg>
 
     <div class="max-w-[1300px] mx-auto w-full relative z-10 flex items-center">
-      <!-- Left: text block -->
       <div class="flex-1">
-        <span class="stagger-inner inline-block text-[9px] tracking-[0.4em] uppercase font-semibold mb-10 opacity-50" style="color: #00698D; --i: 0">Propuesta A — Editorial</span>
+        <div class="stagger-inner mb-10" style="--i: 0">
+          <span class="inline-block text-[9px] tracking-[0.4em] uppercase font-semibold opacity-50" style="color: #00698D">Propuesta D — Editorial · Editorial y cálido</span>
+        </div>
+
         <div class="space-y-0">
           <p class="stagger-inner italic leading-none tracking-tight" style="color: #8B7E74; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.75rem, 3.5vw, 2.75rem); --i: 2">Soluciones reales</p>
           <p class="stagger-inner leading-none tracking-tight" style="color: #1A1A1A; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 600; --i: 3">para ideas</p>
           <p class="stagger-inner leading-[0.85] tracking-tight" style="color: #00698D; font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 7rem); font-weight: 700; --i: 4">extraordinarias</p>
         </div>
-        <div class="stagger-inner h-px mt-8 md:mt-10 w-24" style="background: linear-gradient(90deg, #00698D, #163667); --i: 5"></div>
-        <div class="stagger-inner mt-8 flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-10" style="--i: 6">
-          <p class="text-sm max-w-[40ch] leading-relaxed" style="color: #8B7E74">Desarrollo de marcas propias, producto, compras internacionales y canales digitales.</p>
-          <div class="flex flex-wrap gap-3">
-            <a href="#contacto" class="btn-cta inline-block px-6 py-2.5 rounded-full text-sm font-semibold text-white whitespace-nowrap" style="background: #00698D; --primary: #00698D">Cuentanos tu proyecto</a>
-            <a href="#como-trabajamos" class="btn-ghost inline-block px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap border transition-colors" style="color: #8B7E74; border-color: #E8DDD2">Como trabajamos</a>
-          </div>
+
+        <p class="stagger-inner mt-3 md:mt-4 text-sm md:text-base max-w-[45ch] leading-relaxed opacity-45" style="color: #8B7E74; font-family: 'Cabinet Grotesk', sans-serif; --i: 4">Desarrollo de marcas propias, producto, compras internacionales y canales digitales.</p>
+
+        <div class="stagger-inner h-px mt-8 md:mt-10 w-24" style="background: linear-gradient(90deg, #00698D, #C9A84C); --i: 5"></div>
+
+        <div class="stagger-inner mt-8 flex flex-wrap gap-3" style="--i: 6">
+          <a href="#contacto" class="inline-block px-6 py-2.5 rounded-full text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0.5 active:scale-[0.98]" style="background: #00698D; font-family: 'Satoshi', sans-serif;">Cuéntanos tu proyecto</a>
+          <a href="#como-trabajamos" class="inline-block px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-black/5 active:translate-y-0.5 active:scale-[0.98]" style="color: #8B7E74; border: 1px solid #E8DDD2; font-family: 'Satoshi', sans-serif;">Cómo trabajamos</a>
         </div>
       </div>
-      <!-- Right: logo -->
-      <div class="hidden md:flex items-center justify-center w-48 lg:w-56 xl:w-64 ml-12 lg:ml-20">
-        <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="stagger-inner h-20 lg:h-24 w-auto" style="--i: 1" />
+      <div class="hidden md:flex items-center justify-center w-64 lg:w-80 xl:w-96 ml-12 lg:ml-20">
+        <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="stagger-inner h-32 lg:h-40 w-auto" style="--i: 1" />
       </div>
-      <!-- Mobile logo -->
-      <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="stagger-inner absolute top-6 right-6 z-20 h-12 w-auto md:hidden" style="--i: 1" />
+      <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="stagger-inner absolute top-6 right-6 z-20 h-16 w-auto md:hidden" style="--i: 1" />
     </div>
 
-    <div class="stagger-inner absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20 flex items-center gap-2 md:gap-3 rounded-lg px-3.5 py-2 md:px-4 md:py-2.5" style="--i: 8; background: rgba(255,255,255,0.85); box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-      <div class="flex items-center gap-1.5">
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#FCFAF5; box-shadow: 0 0 0 1px rgba(0,0,0,0.12);"></span>
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#00698D"></span>
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#C9A84C"></span>
-        <span class="w-4 h-4 md:w-5 md:h-5 rounded-full" style="background:#1A1A1A"></span>
-      </div>
-      <div class="flex flex-col leading-none">
-        <span class="text-[10px] md:text-xs font-semibold" style="color:#1A1A1A; font-family:'Cormorant Garamond',serif">Cormorant Garamond</span>
-        <span class="text-[10px] md:text-xs" style="color:#6B7280; font-family:'DM Sans',sans-serif">DM Sans</span>
+    <div class="stagger-inner absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20 rounded-lg px-3.5 py-2.5 md:px-4 md:py-3" style="--i: 8; background: rgba(255,255,255,0.9); box-shadow: 0 1px 6px rgba(0,0,0,0.08);">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#FCFAF5; box-shadow: 0 0 0 1px rgba(0,0,0,0.15);"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#FCFAF5 Fondo</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#00698D;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#00698D Primario</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#C9A84C;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#C9A84C Acento</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full shrink-0" style="background:#1A1A1A;"></span><span class="text-[10px] md:text-[11px] font-medium" style="color:#4B5563; font-family:'DM Sans',sans-serif;">#1A1A1A Texto</span>
+        </div>
+        <div class="h-px bg-black/8 my-0.5"></div>
+        <div class="text-[10px] md:text-[11px] font-semibold" style="color:#1A1A1A; font-family:'Cormorant Garamond',serif;">Cormorant Garamond</div>
+        <div class="text-[10px] md:text-[11px]" style="color:#6B7280; font-family:'Cabinet Grotesk',sans-serif;">Cabinet Grotesk</div>
       </div>
     </div>
   </section>

@@ -2,9 +2,12 @@
 
 @theme {
   --font-heading: 'DM Serif Display', serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-body: 'General Sans', sans-serif;
   --font-mono: 'Space Mono', monospace;
   --font-editorial: 'Cormorant Garamond', serif;
+  --font-satoshi: 'Satoshi', sans-serif;
+  --font-cabinet: 'Cabinet Grotesk', sans-serif;
+  --font-switzer: 'Switzer', sans-serif;
 }
 
 @layer base {
