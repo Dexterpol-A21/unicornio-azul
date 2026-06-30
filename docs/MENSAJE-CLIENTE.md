@@ -25,6 +25,8 @@ Contacto
 
 Más las páginas legales necesarias (aviso legal, privacidad) y la de confirmación post-contacto.
 
-Quedamos atentos a cualquier ajuste o comentario. Cuando tengas una dirección preferida, la trabajamos a fondo.
+Quedamos atentos a cualquier ajuste o comentario. Continuaré trabajando en otros aspectos de la página mientras tanto.
+
+Por otro lado, recuerda que debemos coordinar el pago. Nunca he trabajado con alguien de España, así que podemos revisar los métodos de pago — por el momento solo se me ocurre crypto o Revolut. Si tienes alguna otra opción, dime.
 
 Un saludo.
