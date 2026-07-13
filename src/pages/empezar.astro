@@ -1,0 +1,526 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Cuéntanos tu proyecto — Unicornio Azul"
+  description="Un formulario paso a paso que nos ayuda a entenderte mejor."
+  showHeader={true}
+>
+
+<!-- ═══════════════════════════════════════════════════
+  MULTI-STEP FORM — Conversacional
+  Cada paso es UNA pregunta. Fallback visible siempre.
+  ═══════════════════════════════════════════════════ -->
+<section style="background:#FFFFFF; padding-top:48px; padding-bottom:48px;" class="flex flex-col items-center px-4 md:px-8">
+  <div class="w-full max-w-xl mx-auto">
+
+    <!-- Step indicator -->
+    <div class="flex items-center justify-center gap-3 mb-10 md:mb-12" id="step-indicator">
+      <span class="step-dot w-3 h-3 rounded-full transition-all duration-500" style="background:#0F2548;" data-step="1"></span>
+      <span class="step-line w-8 h-px transition-all duration-500" style="background:rgba(15,37,72,0.2);" data-line="1"></span>
+      <span class="step-dot w-3 h-3 rounded-full transition-all duration-500" style="background:rgba(15,37,72,0.15);" data-step="2"></span>
+      <span class="step-line w-8 h-px transition-all duration-500" style="background:rgba(15,37,72,0.1);" data-line="2"></span>
+      <span class="step-dot w-3 h-3 rounded-full transition-all duration-500" style="background:rgba(15,37,72,0.15);" data-step="3"></span>
+      <span class="step-line w-8 h-px transition-all duration-500" style="background:rgba(15,37,72,0.1);" data-line="3"></span>
+      <span class="step-dot w-3 h-3 rounded-full transition-all duration-500" style="background:rgba(15,37,72,0.15);" data-step="4"></span>
+    </div>
+
+    <!-- ═══ FORM ═══ -->
+    <form id="multistep-form" class="relative" style="min-height:420px;" novalidate>
+
+      <!-- ── STEP 1: ¿En qué te podemos ayudar? ── -->
+      <fieldset class="step active" data-step="1" style="border:none;padding:0;margin:0;transition:opacity 0.4s ease,transform 0.4s ease,position 0s 0.4s;">
+        <legend class="block text-2xl md:text-3xl font-bold text-center mb-3" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+          ¿Qué te ayudamos a hacer realidad?
+        </legend>
+        <p class="text-sm text-center mb-8 opacity-65" style="font-family:'Satoshi',sans-serif;color:#6B7280;">Elige la opción que más se acerque a lo que tienes en mente.</p>
+        <div class="grid grid-cols-2 gap-3">
+          <label class="step-option group cursor-pointer flex items-center gap-5 p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-md" style="border-color:rgba(15,37,72,0.1); --card-r:15; --card-g:37; --card-b:72;">
+            <input type="radio" name="objetivo" value="negocios" class="sr-only peer" required>
+            <svg viewBox="0 0 40 40" class="w-10 h-10 shrink-0 transition-transform duration-300 group-hover:scale-110"><path d="M20 0Q20 20 40 20Q20 20 20 40Q20 20 0 20Q20 20 20 0Z" fill="#0F2548"/></svg>
+            <div class="text-left">
+              <span class="text-base font-semibold block" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Desarrollo de negocio</span>
+              <span class="text-sm opacity-65" style="font-family:'Satoshi',sans-serif;color:#6B7280;">Modelo de negocio, marca y estrategia desde cero.</span>
+            </div>
+          </label>
+          <label class="step-option group cursor-pointer flex items-center gap-5 p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-md" style="border-color:rgba(15,37,72,0.1); --card-r:22; --card-g:54; --card-b:103;">
+            <input type="radio" name="objetivo" value="producto" class="sr-only peer">
+            <svg viewBox="0 0 40 40" class="w-10 h-10 shrink-0 transition-transform duration-300 group-hover:scale-110"><rect x="0" y="0" width="40" height="40" rx="3" fill="#163667"/></svg>
+            <div class="text-left">
+              <span class="text-base font-semibold block" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Producto y compras internacionales</span>
+              <span class="text-sm opacity-65" style="font-family:'Satoshi',sans-serif;color:#6B7280;">Desarrollo de producto, sourcing, fabricación e import/export.</span>
+            </div>
+          </label>
+          <label class="step-option group cursor-pointer flex items-center gap-5 p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-md" style="border-color:rgba(15,37,72,0.1); --card-r:0; --card-g:105; --card-b:141;">
+            <input type="radio" name="objetivo" value="marketing" class="sr-only peer">
+            <svg viewBox="0 0 40 40" class="w-10 h-10 shrink-0 transition-transform duration-300 group-hover:scale-110"><circle cx="20" cy="20" r="20" fill="#00698D"/></svg>
+            <div class="text-left">
+              <span class="text-base font-semibold block" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Marketing digital</span>
+              <span class="text-sm opacity-65" style="font-family:'Satoshi',sans-serif;color:#6B7280;">Branding, estrategia digital, SEO y anuncios orientados a venta.</span>
+            </div>
+          </label>
+          <label class="step-option group cursor-pointer flex items-center gap-5 p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-md" style="border-color:rgba(15,37,72,0.1); --card-r:0; --card-g:136; --card-b:179;">
+            <input type="radio" name="objetivo" value="escalado" class="sr-only peer">
+            <svg viewBox="0 0 40 40" class="w-10 h-10 shrink-0 transition-transform duration-300 group-hover:scale-110"><polygon points="20,0 40,40 0,40" fill="#0088B3"/></svg>
+            <div class="text-left">
+              <span class="text-base font-semibold block" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Canales digitales y escalado</span>
+              <span class="text-sm opacity-65" style="font-family:'Satoshi',sans-serif;color:#6B7280;">Amazon, e-commerce y marketplaces internacionales.</span>
+            </div>
+          </label>
+          <label class="step-option group cursor-pointer flex items-center gap-5 p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-md col-span-2" style="border-color:rgba(15,37,72,0.1); --card-r:22; --card-g:54; --card-b:103;">
+            <input type="radio" name="objetivo" value="otro" class="sr-only peer">
+            <svg viewBox="0 0 40 40" class="w-10 h-10 shrink-0 transition-transform duration-300 group-hover:scale-110" style="opacity:0.5;">
+              <text x="20" y="29" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="28" font-weight="700" fill="#6B7280">?</text>
+            </svg>
+            <div class="text-left">
+              <span class="text-base font-semibold block" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Algo distinto</span>
+              <span class="text-sm opacity-65" style="font-family:'Satoshi',sans-serif;color:#6B7280;">Cuéntanos lo que necesitas y vemos cómo ayudarte.</span>
+            </div>
+          </label>
+        </div>
+        <div class="flex justify-center mt-8">
+          <button type="button" class="step-next animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 48px 0 28px;font-size:15px;background-color:rgba(15,37,72,0.06);border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:rgba(15,37,72,0.3);cursor:not-allowed;overflow:hidden;border:none;transition:all 0.3s ease;" disabled>
+            <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Siguiente</span>
+            <svg class="arr-1" style="position:absolute;top:50%;margin-top:-9px;width:18px;height:18px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg class="arr-2" style="position:absolute;top:50%;margin-top:-9px;width:18px;height:18px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:18px;height:18px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+          </button>
+        </div>
+      </fieldset>
+
+      <!-- ── STEP 2: ¿Cómo te llamas? ── -->
+      <fieldset class="step" data-step="2" style="border:none;padding:0;margin:0;opacity:0;transform:translateX(40px);pointer-events:none;position:absolute;top:0;left:0;width:100%;">
+        <legend class="block text-2xl md:text-3xl font-bold text-center mb-3" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+          Genial. ¿Cómo te llamas?
+        </legend>
+        <p class="text-sm text-center mb-8 opacity-65" style="font-family:'Satoshi',sans-serif;color:#6B7280;">Así sabemos cómo dirigirnos a ti.</p>
+        <div class="max-w-sm mx-auto">
+          <input type="text" name="nombre" required placeholder="Tu nombre completo"
+            class="w-full px-4 py-3.5 rounded-lg border-2 text-base transition-all duration-300 outline-none"
+            style="font-family:'Satoshi',sans-serif;border-color:rgba(22,54,103,0.2);color:#1A1A1A;background:#FFFFFF;"
+            onfocus="this.style.borderColor='#163667';this.style.boxShadow='0 0 0 3px rgba(22,54,103,0.06)'"
+            onblur="this.style.borderColor='rgba(22,54,103,0.2)';this.style.boxShadow='none'"
+          >
+          <span class="field-error" data-field="nombre"></span>
+        </div>
+        <div class="flex justify-center gap-4 mt-8">
+          <button type="button" class="step-prev py-3 px-6 rounded text-base font-semibold transition-all duration-300 hover:opacity-70" style="font-family:'Satoshi',sans-serif;background:transparent;color:#6B7280;border:none;cursor:pointer;">← Atrás</button>
+          <button type="button" class="step-next animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 48px 0 28px;font-size:15px;background-color:rgba(15,37,72,0.06);border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:rgba(15,37,72,0.3);cursor:not-allowed;overflow:hidden;border:none;transition:all 0.3s ease;" disabled>
+            <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Siguiente</span>
+            <svg class="arr-1" style="position:absolute;top:50%;margin-top:-9px;width:18px;height:18px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg class="arr-2" style="position:absolute;top:50%;margin-top:-9px;width:18px;height:18px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:18px;height:18px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+          </button>
+        </div>
+      </fieldset>
+
+      <!-- ── STEP 3: Rapport ── -->
+      <fieldset class="step" data-step="3" style="border:none;padding:0;margin:0;opacity:0;transform:translateX(40px);pointer-events:none;position:absolute;top:0;left:0;width:100%;">
+        <legend class="block text-2xl md:text-3xl font-bold text-center mb-3" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+          Cuéntanos más. ¿Hay algo que quieras compartirnos?
+        </legend>
+        <p class="text-sm text-center mb-8 opacity-65 max-w-xs mx-auto" style="font-family:'Satoshi',sans-serif;color:#6B7280;">No es obligatorio, pero cualquier detalle nos ayuda a prepararnos mejor.</p>
+        <div class="max-w-sm mx-auto">
+          <textarea name="contexto" rows="3" placeholder="Lo que tengas en mente…"
+            class="w-full px-4 py-3.5 rounded-lg border-2 text-base transition-all duration-300 outline-none resize-none"
+            style="font-family:'Satoshi',sans-serif;border-color:rgba(22,54,103,0.2);color:#1A1A1A;background:#FFFFFF;"
+            onfocus="this.style.borderColor='#163667';this.style.boxShadow='0 0 0 3px rgba(22,54,103,0.06)'"
+            onblur="this.style.borderColor='rgba(22,54,103,0.2)';this.style.boxShadow='none'"
+          ></textarea>
+        </div>
+        <div class="flex justify-center gap-4 mt-8">
+          <button type="button" class="step-prev py-3 px-6 rounded text-base font-semibold transition-all duration-300 hover:opacity-70" style="font-family:'Satoshi',sans-serif;background:transparent;color:#6B7280;border:none;cursor:pointer;">← Atrás</button>
+          <button type="button" class="step-next animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 48px 0 28px;font-size:15px;background-color:#163667;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;border:none;box-shadow:0 0.625em 1em 0 rgba(22,54,103,0.20);">
+            <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Siguiente</span>
+            <svg class="arr-1" style="position:absolute;top:50%;margin-top:-9px;width:18px;height:18px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg class="arr-2" style="position:absolute;top:50%;margin-top:-9px;width:18px;height:18px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:18px;height:18px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+          </button>
+        </div>
+      </fieldset>
+
+      <!-- ── STEP 4: Email y teléfono ── -->
+      <fieldset class="step" data-step="4" style="border:none;padding:0;margin:0;opacity:0;transform:translateX(40px);pointer-events:none;position:absolute;top:0;left:0;width:100%;">
+        <legend class="block text-2xl md:text-3xl font-bold text-center mb-3" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+          ¿Cuál es la mejor forma de contactarte?
+        </legend>
+        <p class="text-sm text-center mb-8 opacity-65" style="font-family:'Satoshi',sans-serif;color:#6B7280;">Elige cómo prefieres que te respondamos.</p>
+        <div class="flex flex-col gap-4 max-w-sm mx-auto">
+          <div>
+            <label class="text-sm font-semibold mb-1.5 block" style="font-family:'Satoshi',sans-serif;color:#1A1A1A;">Email</label>
+            <input type="email" name="email" required placeholder="tu@email.com"
+              class="w-full px-4 py-3.5 rounded-lg border-2 text-base transition-all duration-300 outline-none"
+              style="font-family:'Satoshi',sans-serif;border-color:rgba(22,54,103,0.2);color:#1A1A1A;background:#FFFFFF;"
+              onfocus="this.style.borderColor='#163667';this.style.boxShadow='0 0 0 3px rgba(22,54,103,0.06)'"
+              onblur="this.style.borderColor='rgba(22,54,103,0.2)';this.style.boxShadow='none'"
+            >
+            <span class="field-error" data-field="email"></span>
+          </div>
+          <div>
+            <label class="text-sm font-semibold mb-1.5 block" style="font-family:'Satoshi',sans-serif;color:#1A1A1A;">Teléfono <span class="font-normal opacity-40">(opcional)</span></label>
+            <input type="tel" name="telefono" placeholder="+34 600 000 000"
+              class="w-full px-4 py-3.5 rounded-lg border-2 text-base transition-all duration-300 outline-none"
+              style="font-family:'Satoshi',sans-serif;border-color:rgba(22,54,103,0.2);color:#1A1A1A;background:#FFFFFF;"
+              onfocus="this.style.borderColor='#163667';this.style.boxShadow='0 0 0 3px rgba(22,54,103,0.06)'"
+              onblur="this.style.borderColor='rgba(22,54,103,0.2)';this.style.boxShadow='none'"
+            >
+          </div>
+        </div>
+        <div class="flex justify-center gap-4 mt-8">
+          <button type="button" class="step-prev py-3 px-6 rounded text-base font-semibold transition-all duration-300 hover:opacity-70" style="font-family:'Satoshi',sans-serif;background:transparent;color:#6B7280;border:none;cursor:pointer;">← Atrás</button>
+          <button type="submit" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 48px 0 28px;font-size:15px;background-color:rgba(15,37,72,0.06);border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:rgba(15,37,72,0.3);cursor:not-allowed;overflow:hidden;text-decoration:none;border:none;transition:all 0.3s ease;" disabled>
+            <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Enviar</span>
+            <svg class="arr-1" style="position:absolute;top:50%;margin-top:-9px;width:18px;height:18px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg class="arr-2" style="position:absolute;top:50%;margin-top:-9px;width:18px;height:18px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:18px;height:18px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+          </button>
+        </div>
+      </fieldset>
+
+    </form>
+
+    <!-- ═══ Fallback: ¿Prefieres contactarnos tú? ═══ -->
+    <div id="form-fallback" class="text-center mt-10 pt-8" style="border-top:1px solid rgba(15,37,72,0.06);">
+      <p class="text-sm" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
+        ¿Prefieres contactarnos tú directamente?
+      </p>
+      <a href="/contacto" class="inline-flex items-center gap-2 mt-2 text-sm font-semibold no-underline transition-all duration-300 hover:opacity-70" style="font-family:'Space Grotesk',sans-serif;color:#163667;position:relative;z-index:10;">
+        Ir a la página de contacto
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('multistep-form');
+  const steps = form.querySelectorAll('.step');
+  const dots = document.querySelectorAll('.step-dot');
+  const lines = document.querySelectorAll('.step-line');
+  const totalSteps = 4;
+  let currentStep = 1;
+
+  function showStep(n) {
+    steps.forEach(s => {
+      const sn = parseInt(s.dataset.step);
+      if (sn === n) {
+        s.style.position = 'relative';
+        s.style.opacity = '1';
+        s.style.transform = 'translateX(0)';
+        s.style.pointerEvents = 'auto';
+      } else {
+        s.style.position = 'absolute';
+        s.style.opacity = '0';
+        s.style.transform = sn < n ? 'translateX(-40px)' : 'translateX(40px)';
+        s.style.pointerEvents = 'none';
+      }
+    });
+
+    dots.forEach(d => {
+      const ds = parseInt(d.dataset.step);
+      if (ds === n) { d.style.background = '#0F2548'; d.style.transform = 'scale(1.3)'; }
+      else if (ds < n) { d.style.background = '#0F2548'; d.style.opacity = '0.5'; d.style.transform = 'scale(1)'; }
+      else { d.style.background = 'rgba(15,37,72,0.15)'; d.style.opacity = '1'; d.style.transform = 'scale(1)'; }
+    });
+
+    lines.forEach(l => {
+      const ls = parseInt(l.dataset.line);
+      l.style.background = ls < n ? 'rgba(15,37,72,0.4)' : 'rgba(15,37,72,0.1)';
+    });
+
+    currentStep = n;
+  }
+
+  // Next buttons
+  form.querySelectorAll('.step-next').forEach(btn => {
+    btn.addEventListener('click', () => { if (currentStep < totalSteps) showStep(currentStep + 1); });
+  });
+
+  // Prev buttons
+  form.querySelectorAll('.step-prev').forEach(btn => {
+    btn.addEventListener('click', () => { if (currentStep > 1) showStep(currentStep - 1); });
+  });
+
+  // Step 1: enable next on radio select
+  const step1Radios = form.querySelectorAll('input[name="objetivo"]');
+  const step1Next = form.querySelector('[data-step="1"] .step-next');
+  step1Radios.forEach(r => r.addEventListener('change', () => enableBtn(step1Next)));
+
+  // Visual selection for radio cards
+  document.querySelectorAll('.step-option input[type="radio"]').forEach(input => {
+    input.addEventListener('change', () => {
+      document.querySelectorAll('.step-option').forEach(opt => {
+        opt.classList.remove('selected');
+        opt.style.borderColor = 'rgba(15,37,72,0.1)'; opt.style.background = 'transparent';
+      });
+      const label = input.closest('.step-option');
+      label.classList.add('selected');
+    });
+  });
+
+  // Step 2: enable next when name is not empty
+  const step2Next = form.querySelector('[data-step="2"] .step-next');
+  const nombreInput = form.querySelector('input[name="nombre"]');
+  nombreInput.addEventListener('input', () => {
+    const val = nombreInput.value.trim();
+    if (val) { enableBtn(step2Next); }
+    else { disableBtn(step2Next); }
+    clearFieldError('nombre');
+  });
+
+  // Step 4: enable submit when email is valid; validate on blur
+  const step4Submit = form.querySelector('[data-step="4"] button[type="submit"]');
+  const emailInput = form.querySelector('input[name="email"]');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function checkEmailValid() {
+    const val = emailInput.value.trim();
+    return val && emailRe.test(val);
+  }
+
+  emailInput.addEventListener('input', () => {
+    if (checkEmailValid()) { enableBtn(step4Submit); }
+    else { disableBtn(step4Submit); }
+    clearFieldError('email');
+  });
+
+  emailInput.addEventListener('blur', () => {
+    const val = emailInput.value.trim();
+    if (!val) { clearFieldError('email'); disableBtn(step4Submit); return; }
+    if (!emailRe.test(val)) {
+      showFieldError('email', 'Ese email no parece válido. ¿Lo revisas?');
+      disableBtn(step4Submit);
+    } else {
+      clearFieldError('email');
+      enableBtn(step4Submit);
+    }
+  });
+
+  // ── Button helpers ──
+  function enableBtn(btn) {
+    if (!btn) return;
+    btn.disabled = false; btn.style.cursor = 'pointer';
+    btn.style.background = '#163667'; btn.style.color = '#ffffff';
+    btn.style.boxShadow = '0 0.625em 1em 0 rgba(22,54,103,0.20)';
+    const arrow = btn.querySelector('.arr-1');
+    if (arrow) arrow.style.stroke = '#ffffff';
+  }
+  function disableBtn(btn) {
+    if (!btn) return;
+    btn.disabled = true; btn.style.cursor = 'not-allowed';
+    btn.style.background = 'rgba(15,37,72,0.06)'; btn.style.color = 'rgba(15,37,72,0.3)';
+    btn.style.boxShadow = 'none';
+    const arrow = btn.querySelector('.arr-1');
+    if (arrow) arrow.style.stroke = 'currentColor';
+  }
+
+  function showFieldError(fieldName, message) {
+    const span = document.querySelector('.field-error[data-field="' + fieldName + '"]');
+    const input = form.querySelector('input[name="' + fieldName + '"]');
+    if (span) { span.textContent = message; span.classList.add('visible'); }
+    if (input) { input.style.borderColor = '#D92D20'; }
+  }
+  function clearFieldError(fieldName) {
+    const span = document.querySelector('.field-error[data-field="' + fieldName + '"]');
+    const input = form.querySelector('input[name="' + fieldName + '"]');
+    if (span) { span.textContent = ''; span.classList.remove('visible'); }
+    if (input) { input.style.borderColor = 'rgba(22,54,103,0.2)'; }
+  }
+
+  // Submit (safety net)
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = nombreInput.value.trim();
+    const email = emailInput.value.trim();
+    let hasError = false;
+
+    if (!name) { showFieldError('nombre', 'Por favor dinos cómo te llamas.'); hasError = true; }
+    if (!email) { showFieldError('email', 'Necesitamos tu email para contactarte.'); hasError = true; }
+    else if (!emailRe.test(email)) { showFieldError('email', 'Ese email no parece válido. ¿Lo revisas?'); hasError = true; }
+    if (hasError) return;
+
+    const objetivoVal = form.querySelector('input[name="objetivo"]:checked')?.value || '';
+    const telefono = form.querySelector('input[name="telefono"]')?.value.trim() || '';
+    const contexto = form.querySelector('textarea[name="contexto"]')?.value.trim() || '';
+
+    const labels = {
+      negocios: 'Desarrollo de negocio',
+      producto: 'Producto y compras internacionales',
+      marketing: 'Marketing digital',
+      escalado: 'Canales digitales y escalado',
+      otro: 'Algo distinto'
+    };
+    const objetivoLabel = labels[objetivoVal] || 'tu proyecto';
+
+    let canal = 'por email';
+    if (email && telefono) canal = 'por email o teléfono';
+    else if (telefono) canal = 'por teléfono';
+
+    const successName = document.getElementById('success-name');
+    const successObjetivo = document.getElementById('success-objetivo');
+    const successCanal = document.getElementById('success-canal');
+    if (successName) successName.textContent = name;
+    if (successObjetivo) successObjetivo.textContent = objetivoLabel;
+    if (successCanal) successCanal.textContent = canal;
+
+    console.log('Form data:', { objetivo: objetivoVal, nombre: name, email, telefono, contexto });
+
+    form.style.opacity = '0'; form.style.transform = 'scale(0.98)'; form.style.transition = 'all 0.5s ease';
+    const fallback = document.getElementById('form-fallback');
+    setTimeout(() => {
+      form.style.display = 'none';
+      if (fallback) fallback.style.display = 'none';
+      const success = document.getElementById('form-success');
+      if (success) { success.classList.remove('hidden'); success.style.opacity = '1'; success.style.transform = 'translateY(0)'; }
+    }, 500);
+  });
+
+  showStep(1);
+</script>
+
+<!-- Success message (hidden) -->
+<div id="form-success" class="hidden text-center py-16" style="opacity:0;transform:translateY(24px);transition:all 0.6s cubic-bezier(0.23,1,0.32,1);max-width:28rem;margin:0 auto;">
+
+  <!-- Animated checkmark with glow ring -->
+  <div class="success-icon-wrap" style="position:relative;width:88px;height:88px;margin:0 auto 2rem;">
+    <svg class="success-ring" viewBox="0 0 88 88" style="position:absolute;inset:0;width:100%;height:100%;">
+      <circle cx="44" cy="44" r="38" fill="none" stroke="#00698D" stroke-width="2.5" style="stroke-dasharray:239;stroke-dashoffset:239;animation: ringDraw 0.8s cubic-bezier(0.23,1,0.32,1) 0.3s forwards;"/>
+      <circle cx="44" cy="44" r="38" fill="none" stroke="#00698D" stroke-width="6" opacity="0" style="animation: ringPulse 1s ease-out 1.1s forwards;"/>
+    </svg>
+    <svg viewBox="0 0 88 88" class="success-check" style="position:absolute;inset:0;width:100%;height:100%;">
+      <circle cx="44" cy="44" r="34" fill="#00698D" style="transform-origin:center;animation: checkPop 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.4s both;"/>
+      <path d="M26 44l12 12L62 32" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:60;stroke-dashoffset:60;animation: checkDraw 0.5s ease 0.7s forwards;"/>
+    </svg>
+  </div>
+
+  <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">¡Gracias, <span id="success-name">---</span>!</h2>
+  <p class="text-base md:text-lg leading-relaxed mb-1" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
+    Hemos recibido tu interés en <strong style="color:#1A1A1A;" id="success-objetivo">tu proyecto</strong>.
+  </p>
+  <p class="text-base md:text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
+    Te contactaremos <span id="success-canal">por email</span> en menos de <strong style="color:#1A1A1A;">48 horas</strong>.
+  </p>
+  <a href="/" class="inline-flex items-center gap-2 mt-8 text-base font-semibold no-underline transition-all duration-300 hover:opacity-70" style="font-family:'Space Grotesk',sans-serif;color:#163667;">
+    ← Volver al inicio
+  </a>
+</div>
+
+<style is:global>
+  .hidden { display: none !important; }
+  .step { width: 100%; }
+
+  /* Circle-expand hover (hero CTA effect) */
+  .animated-btn:not(:disabled):hover {
+    box-shadow: 0 0.625em 1em 0 rgba(0, 105, 141, 0.30) !important;
+  }
+  .animated-btn:not(:disabled):hover .arr-1 {
+    right: -25% !important;
+  }
+  .animated-btn:not(:disabled):hover .arr-2 {
+    left: 16px !important;
+  }
+  .animated-btn:not(:disabled):hover .text {
+    transform: translateX(14px) !important;
+  }
+  .animated-btn:not(:disabled):hover .circle {
+    width: 400px !important;
+    height: 400px !important;
+    opacity: 1 !important;
+  }
+  .animated-btn:not(:disabled):active {
+    scale: 0.95 !important;
+    box-shadow: inset 0 0 0 3px #00698D !important;
+  }
+
+  .step-option {
+    transition: all 0.3s ease;
+  }
+  .step-option:hover {
+    background: rgb(var(--card-r), var(--card-g), var(--card-b)) !important;
+    border-color: rgb(var(--card-r), var(--card-g), var(--card-b)) !important;
+  }
+  .step-option:hover span,
+  .step-option:hover .text-left span,
+  .step-option:hover .text-left > span:first-child {
+    color: #ffffff !important;
+  }
+  .step-option:hover span[style*="opacity"],
+  .step-option:hover .text-left > span:last-child {
+    color: rgba(255,255,255,0.7) !important;
+  }
+  .step-option:hover svg path,
+  .step-option:hover svg rect,
+  .step-option:hover svg circle,
+  .step-option:hover svg polygon {
+    fill: rgba(255,255,255,0.9) !important;
+  }
+  .step-option:hover svg text {
+    fill: rgba(255,255,255,0.9) !important;
+  }
+
+  /* Selected state: navy + white too */
+  .step-option.selected {
+    background: rgb(var(--card-r), var(--card-g), var(--card-b)) !important;
+    border-color: rgb(var(--card-r), var(--card-g), var(--card-b)) !important;
+  }
+  .step-option.selected span,
+  .step-option.selected .text-left span,
+  .step-option.selected .text-left > span:first-child {
+    color: #ffffff !important;
+  }
+  .step-option.selected span[style*="opacity"],
+  .step-option.selected .text-left > span:last-child {
+    color: rgba(255,255,255,0.7) !important;
+  }
+  .step-option.selected svg path,
+  .step-option.selected svg rect,
+  .step-option.selected svg circle,
+  .step-option.selected svg polygon {
+    fill: rgba(255,255,255,0.9) !important;
+  }
+  .step-option.selected svg text {
+    fill: rgba(255,255,255,0.9) !important;
+  }
+
+  /* Inline field error */
+  .field-error {
+    display: none;
+    font-size: 0.8125rem;
+    margin-top: 0.375rem;
+    font-family: 'Satoshi', sans-serif;
+    color: #D92D20;
+  }
+  .field-error.visible {
+    display: block;
+    animation: errorShake 0.4s ease;
+  }
+  @keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-4px); }
+    40% { transform: translateX(4px); }
+    60% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+  }
+
+  /* Success animations */
+  @keyframes checkPop {
+    0%   { transform: scale(0); }
+    60%  { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+  @keyframes checkDraw {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes ringDraw {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes ringPulse {
+    0%   { opacity: 0.2; stroke-width: 6; r: 38; }
+    50%  { opacity: 0.08; stroke-width: 2; r: 42; }
+    100% { opacity: 0; stroke-width: 1; r: 46; }
+  }
+</style>

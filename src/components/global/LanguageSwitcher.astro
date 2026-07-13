@@ -1,0 +1,27 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { type Lang } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { t } = useTranslations(lang);
+const altLang: Lang = lang === 'es' ? 'en' : 'es';
+
+const currentPath = Astro.url.pathname.replace(/^\/(es|en)(\/|$)/, '/$2').replace(/^\/\//, '/') || '/';
+const altUrl = getRelativeLocaleUrl(altLang, currentPath);
+---
+
+<a
+  href={altUrl}
+  hreflang={altLang}
+  lang={altLang}
+  aria-label={lang === 'es' ? t('lang.switcher_label') + ': English' : t('lang.switcher_label') + ': Español'}
+  class="inline-flex items-center gap-1 px-3 py-2 rounded text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 hover:opacity-80"
+  style="font-family: 'Space Grotesk', sans-serif; color: #163667; background: rgba(255,255,255,0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
+>
+  {altLang === 'es' ? 'ES' : 'EN'}
+</a>

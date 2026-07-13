@@ -1,0 +1,95 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { type Lang } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { t } = useTranslations(lang);
+
+function l(path: string): string {
+  return getRelativeLocaleUrl(lang, path);
+}
+---
+
+<footer style="background:#0F2548;font-family:'Satoshi',sans-serif;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+
+      <div class="flex flex-col gap-4">
+        <a href={l('/')} style="text-decoration:none;">
+          <div class="inline-block rounded p-3" style="background: rgba(255,255,255,0.95);">
+            <img src="/images/logo-marino.png" alt={t('footer.logo_alt')} class="h-10 md:h-11 w-auto" />
+          </div>
+        </a>
+        <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">
+          {lang === 'es' ? 'Soluciones reales para ideas extraordinarias.' : 'Real solutions for extraordinary ideas.'}
+        </p>
+        <div class="flex flex-col gap-1.5 mt-1">
+          <a href="mailto:hola@unicornioazul.com" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">hola@unicornioazul.com</a>
+          <div class="flex items-center gap-4">
+            <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">LinkedIn</a>
+            <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">{t('footer.que_hacemos')}</span>
+        <a href={l('/que-hacemos/desarrollo-de-negocios')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
+          {lang === 'es' ? 'Desarrollo de negocios' : 'Business Development'}
+        </a>
+        <a href={l('/que-hacemos/producto-compras-internacionales')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
+          {lang === 'es' ? 'Producto y compras' : 'Product & Sourcing'}
+        </a>
+        <a href={l('/que-hacemos/marketing-digital')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
+          {lang === 'es' ? 'Marketing digital' : 'Digital Marketing'}
+        </a>
+        <a href={l('/que-hacemos/canales-digitales-escalado')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
+          {lang === 'es' ? 'Canales digitales y escalado' : 'Digital Channels & Scaling'}
+        </a>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">{t('footer.como_trabajamos')}</span>
+        <a href={l('/como-trabajamos#proceso')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
+          {lang === 'es' ? 'Proceso 5 pasos' : '5-Step Process'}
+        </a>
+        <a href={l('/metodologia-sorie')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
+          {lang === 'es' ? 'Metodología SORIE™' : 'SORIE™ Methodology'}
+        </a>
+        <a href={l('/casos')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
+          {lang === 'es' ? 'Casos' : 'Case Studies'}
+        </a>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">{t('footer.empresa')}</span>
+        <a href={l('/sobre-nosotros')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
+          {lang === 'es' ? 'Sobre nosotros' : 'About Us'}
+        </a>
+        <a href={l('/contacto')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
+          {lang === 'es' ? 'Contacto' : 'Contact'}
+        </a>
+      </div>
+
+    </div>
+
+    <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
+      <span class="text-xs" style="color:rgba(255,255,255,0.3);">
+        {lang === 'es' ? '© 2026 Unicornio Azul. Todos los derechos reservados.' : '© 2026 Blue Unicorn. All rights reserved.'}
+      </span>
+      <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
+        <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">
+          {lang === 'es' ? 'Aviso legal' : 'Legal notice'}
+        </a>
+        <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">
+          {lang === 'es' ? 'Privacidad' : 'Privacy'}
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

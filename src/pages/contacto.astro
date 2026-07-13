@@ -1,0 +1,162 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contacto — Unicornio Azul"
+  description="Encuentra todas las formas de contactar con Unicornio Azul. Email, LinkedIn, Instagram o cuéntanos tu proyecto paso a paso."
+  showHeader={true}
+>
+
+<!-- ═══════════════════════════════════════════════════
+  CONTACTO — layout editorial, sin secciones, tipografía masiva
+  ═══════════════════════════════════════════════════ -->
+<div class="min-h-screen flex flex-col overflow-x-hidden" style="background:#FFFFFF;">
+
+  <!-- Bloque principal tipográfico -->
+  <div class="flex-1 flex flex-col justify-center w-full max-w-[92vw] md:max-w-[80vw] mx-auto px-4 md:px-0 pt-16 md:pt-36 pb-16 md:pb-32">
+
+    <!-- H1 masivo -->
+    <h1 class="text-[19vw] md:text-[14vw] lg:text-[16vw] font-black leading-[0.85] tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+      Hable<span style="color:transparent;-webkit-text-stroke:2px #00698D;">mos</span>
+    </h1>
+
+    <!-- Email + Teléfono — side by side -->
+    <div class="mt-10 md:mt-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-16">
+
+      <a href="mailto:hola@unicornioazul.com"
+         class="group no-underline transition-colors duration-500"
+         style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+        <span class="hidden md:block text-[5vw] lg:text-[4.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D]">hola@unicornio</span>
+        <span class="hidden md:block text-[5vw] lg:text-[4.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D]">azul.com</span>
+        <span class="md:hidden block text-[6.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D] whitespace-nowrap">hola@unicornioazul.com</span>
+      </a>
+
+      <a href="tel:+34600000000"
+         class="group no-underline transition-colors duration-500"
+         style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+        <span class="hidden md:block text-[5vw] lg:text-[4.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D]">+34 123</span>
+        <span class="hidden md:block text-[5vw] lg:text-[4.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D]">456 789</span>
+        <span class="md:hidden block text-[6.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D] whitespace-nowrap">+34 123 456 789</span>
+      </a>
+
+    </div>
+
+    <!-- Línea horizontal sutil -->
+    <div class="mt-12 md:mt-24 w-full" style="height:1px;background:rgba(22,54,103,0.06);"></div>
+
+    <!-- Info en 3 columnas -->
+    <div class="mt-10 md:mt-20 grid md:grid-cols-3 gap-6 md:gap-16">
+
+      <!-- Col 1: Respuesta -->
+      <div>
+        <span class="text-[11px] tracking-[0.35em] uppercase font-semibold block mb-4 opacity-35" style="font-family:'Satoshi',sans-serif;color:#6B7280;">Respuesta en</span>
+        <p class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.95] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+          &lt; 48h
+        </p>
+        <p class="mt-3 text-lg max-w-[28ch] leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+          Sin automatismos. Te responde una persona que ha leído tu mensaje.
+        </p>
+      </div>
+
+      <!-- Col 2: Social -->
+      <div>
+        <span class="text-[11px] tracking-[0.35em] uppercase font-semibold block mb-4 opacity-35" style="font-family:'Satoshi',sans-serif;color:#6B7280;">También en</span>
+        <div class="flex flex-col gap-3">
+          <a href="#" class="text-base font-semibold no-underline hover:opacity-50 transition-opacity" style="font-family:'Satoshi',sans-serif;color:#374151;">LinkedIn</a>
+          <a href="#" class="text-base font-semibold no-underline hover:opacity-50 transition-opacity" style="font-family:'Satoshi',sans-serif;color:#374151;">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Col 3: Ubicación -->
+      <div>
+        <span class="text-[11px] tracking-[0.35em] uppercase font-semibold block mb-2 opacity-35" style="font-family:'Satoshi',sans-serif;color:#6B7280;">Desde</span>
+        <p class="text-lg leading-relaxed max-w-[28ch]" style="font-family:'Satoshi',sans-serif;color:#374151;">
+          Madrid, España<br>
+          <span style="color:#6B7280;">Operando con clientes y proveedores en Europa, LATAM y Asia.</span>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- CTA — full width abajo -->
+    <div class="mt-12 md:mt-24">
+      <a href="/empezar"
+         class="group block p-6 md:p-12 rounded-sm no-underline transition-all duration-500 hover:scale-[1.01]"
+         style="background:#F5F1EC;">
+        <p class="text-4xl md:text-7xl font-bold leading-[0.92] tracking-tight transition-colors duration-500" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+          Cuéntanos tu proyecto
+        </p>
+        <p class="mt-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+          Sin formularios largos. Sin compromiso. Te guiamos paso a paso para entender qué necesitas.
+        </p>
+        <div class="mt-6 flex items-center gap-3 text-sm font-semibold" style="font-family:'Space Grotesk',sans-serif;color:#163667;">
+          <span>Empezar</span>
+          <svg class="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════ -->
+  <footer style="background:#0F2548;font-family:'Satoshi',sans-serif;">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+
+        <div class="flex flex-col gap-4">
+          <a href="/" style="text-decoration:none;">
+            <div class="inline-block rounded p-3" style="background: rgba(255,255,255,0.95);">
+              <img src="/images/logo-marino.png" alt="Unicornio Azul" class="h-10 md:h-11 w-auto" />
+            </div>
+          </a>
+          <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">
+            Soluciones reales para ideas extraordinarias.
+          </p>
+          <div class="flex flex-col gap-1.5 mt-1">
+            <a href="mailto:hola@unicornioazul.com" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">hola@unicornioazul.com</a>
+            <div class="flex items-center gap-4">
+              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">LinkedIn</a>
+              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Qué hacemos</span>
+          <a href="/que-hacemos/desarrollo-de-negocios" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Desarrollo de negocios</a>
+          <a href="/que-hacemos/producto-compras-internacionales" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Producto y compras</a>
+          <a href="/que-hacemos/marketing-digital" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Marketing digital</a>
+          <a href="/que-hacemos/canales-digitales-escalado" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Canales digitales y escalado</a>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Cómo trabajamos</span>
+          <a href="/como-trabajamos#proceso" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Proceso 5 pasos</a>
+          <a href="/metodologia-sorie" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Metodología SORIE™</a>
+          <a href="/casos" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Casos</a>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Empresa</span>
+          <a href="/sobre-nosotros" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Sobre nosotros</a>
+          <a href="/contacto" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Contacto</a>
+        </div>
+
+      </div>
+
+      <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
+        <span class="text-xs" style="color:rgba(255,255,255,0.3);">© 2026 Unicornio Azul. Todos los derechos reservados.</span>
+        <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
+          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Aviso legal</a>
+          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</BaseLayout>

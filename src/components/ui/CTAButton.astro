@@ -1,0 +1,79 @@
+---
+// ═══════════════════════════════════════════════════
+// CTAButton — Circle-expand hover effect
+// Texto en flujo flex (no absolute) para que el botón
+// tenga ancho propio. line-height:1 para centrado
+// vertical preciso con las flechas.
+// ═══════════════════════════════════════════════════
+
+interface Props {
+  size?: "lg" | "sm";
+  href?: string;
+  label?: string;
+  class?: string;
+}
+
+const {
+  size = "lg",
+  href = "/empezar",
+  label = "Cuéntanos tu proyecto",
+  class: className = "",
+} = Astro.props;
+
+const isLg = size === "lg";
+
+const height        = isLg ? 52  : 48;
+const fontSize      = isLg ? 15  : 14;
+const padL          = isLg ? 32  : 28;
+const padR          = isLg ? 48  : 44;
+const svgSize       = isLg ? 20  : 18;
+const circleInit    = svgSize;
+const circleExpand  = isLg ? 400 : 340;
+const textShift     = isLg ? 14  : 12;
+const arrowShift    = isLg ? 16  : 14;
+const arrowRight    = isLg ? 20  : 18;
+const mt            = -(svgSize / 2);
+
+const aStyle = `--cta-text-shift:${textShift}px;--cta-arrow-shift:${arrowShift}px;--cta-circle-expand:${circleExpand}px;position:relative;display:inline-flex;align-items:center;height:${height}px;padding:0 ${padR}px 0 ${padL}px;font-size:${fontSize}px;background-color:#163667;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#fff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(22,54,103,0.20)`;
+
+const arrStyle = `position:absolute;top:50%;margin-top:${mt}px;width:${svgSize}px;height:${svgSize}px;z-index:2;transition:all 0.8s cubic-bezier(0.23,1,0.32,1)`;
+
+const circleStyle = `position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:${circleInit}px;height:${circleInit}px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1)`;
+---
+
+<a
+  href={href}
+  class:list={["cta-btn", className]}
+  style={aStyle}
+>
+  <span class="cta-text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);line-height:1">
+    {label}
+  </span>
+  <svg class="cta-arr-1" style={`${arrStyle};right:${arrowRight}px`} fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  <svg class="cta-arr-2" style={`${arrStyle};left:-25%`} fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  <span class="cta-circle" style={circleStyle}></span>
+</a>
+
+<style>
+  .cta-btn:hover {
+    box-shadow: 0 0.625em 1em 0 rgba(0, 105, 141, 0.30) !important;
+  }
+  .cta-btn:hover .cta-arr-1 {
+    right: -25% !important;
+  }
+  .cta-btn:hover .cta-arr-2 {
+    left: var(--cta-arrow-shift) !important;
+  }
+  .cta-btn:hover .cta-text {
+    transform: translateX(var(--cta-text-shift)) !important;
+  }
+  .cta-btn:hover .cta-circle {
+    width: var(--cta-circle-expand) !important;
+    height: var(--cta-circle-expand) !important;
+    opacity: 1 !important;
+  }
+  .cta-btn:active {
+    scale: 0.95 !important;
+    box-shadow: inset 0 0 0 3px #00698D !important;
+  }
+</style>

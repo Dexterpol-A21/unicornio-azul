@@ -1,13 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --font-heading: 'DM Serif Display', serif;
-  --font-body: 'General Sans', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Satoshi', sans-serif;
   --font-mono: 'Space Mono', monospace;
   --font-editorial: 'Cormorant Garamond', serif;
   --font-satoshi: 'Satoshi', sans-serif;
   --font-cabinet: 'Cabinet Grotesk', sans-serif;
   --font-switzer: 'Switzer', sans-serif;
+  /* Arcoiris de azules -- Unicornio Azul */
+  --blue-navy: #163667;
+  --blue-midnight: #0F2548;
+  --blue-aqua: #00698D;
+  --blue-sky: #0088B3;
+  --blue-ice: #A8D8EA;
 }
 
 @layer base {
@@ -29,46 +35,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ═════════════════════════════════════════
-   Theme variables per proposal
-   ═════════════════════════════════════════ */
-
-.theme-a {
-  --bg: #FFFBEF;
-  --surface: #FFFFFF;
-  --primary: #00698D;
-  --primary-dark: #005573;
-  --text: #1A1A1A;
-  --text-muted: #6B7280;
-  --border: #F0E8D5;
-  --accent: #C9A84C;
-}
-
-.theme-b {
-  --bg: #F5F5F7;
-  --surface: #FFFFFF;
-  --primary: #163667;
-  --primary-dark: #0F2548;
-  --text: #111827;
-  --text-muted: #6B7280;
-  --border: #E5E7EB;
-  --accent: #C9A84C;
-}
-
-.theme-c {
-  --bg: #FFFFFF;
-  --surface: #F8F6F2;
-  --primary: #00698D;
-  --primary-dark: #005573;
-  --text: #1A1A1A;
-  --text-muted: #6B7280;
-  --border: #EBE7DF;
-  --accent: #C9A84C;
-}
-
-/* ═════════════════════════════════════════
-   Stagger animation system (taste-skill motion 6)
-   ═════════════════════════════════════════ */
+/* Stagger animation system */
 
 @keyframes fade-up {
   from {
@@ -137,11 +104,170 @@ button:focus-visible {
   transform: translateY(1px) scale(0.98);
 }
 
-/* Safe area for header */
-header {
-  padding-top: env(safe-area-inset-top);
+/* Safe area for floating navbar */
+#navbar-wrapper {
+  top: calc(16px + env(safe-area-inset-top));
 }
 
-main section:first-of-type {
-  padding-top: calc(72px + env(safe-area-inset-top));
+body.has-header main section:first-of-type {
+  padding-top: calc(108px + env(safe-area-inset-top));
+}
+
+@media (max-width: 767px) {
+  body.has-header main section:first-of-type {
+    padding-top: calc(clamp(16px, 5vw, 40px) + env(safe-area-inset-top, 0px));
+  }
+
+  body {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   QUE HACEMOS — PILLAR CARDS
+   ═══════════════════════════════════════════════ */
+
+/* Card: solo estructura */
+.pillar-card {
+  overflow: visible;
+}
+
+/* Rectangulo + figura: UN wrapper, escala como un solo elemento */
+.pillar-shape {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Contenido: tambien escala con el hover */
+.pillar-content {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* CTA: oculto por defecto, aparece solo en hover */
+.pillar-card .pillar-cta {
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover effects — solo en dispositivos con hover real */
+@media (hover: hover) {
+  .pillar-card:hover .pillar-shape {
+    transform: scale(1.1);
+  }
+  .pillar-card:hover .pillar-content {
+    transform: translateY(-50%) scale(1.08) !important;
+  }
+  .pillar-card:hover .pillar-cta {
+    opacity: 1;
+  }
+}
+
+/* ── Mobile layout ── */
+@media (max-width: 767px) {
+  .pillar-card .pillar-cta {
+    font-size: 0.8rem !important;
+  }
+
+  /* Card: auto height, allows content to breathe */
+  .pillar-card {
+    height: auto !important;
+  }
+
+  /* Shape: fills card as colored background */
+  .pillar-shape {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .pillar-shape > div:first-child {
+    position: absolute !important;
+    inset: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+  }
+
+  /* Shape SVG: subtle centered watermark */
+  .pillar-shape > div:last-child {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0.65) !important;
+    opacity: 0.12 !important;
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  /* Content: flows naturally, stacked vertically */
+  .pillar-content {
+    position: relative !important;
+    z-index: 20 !important;
+    flex-direction: column !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    transform: translateY(0) !important;
+    max-height: none !important;
+    padding: 2.5rem 1.5rem !important;
+    gap: 1.25rem !important;
+    align-items: flex-start !important;
+  }
+
+  .pillar-content h3 {
+    font-size: 2.5rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .pillar-card .pillar-cta {
+    opacity: 1 !important;
+    margin-top: 0.25rem !important;
+    align-self: flex-start !important;
+  }
+
+  /* No scale transforms on mobile */
+  .pillar-card:hover .pillar-shape,
+  .pillar-card:hover .pillar-content {
+    transform: none !important;
+  }
+}
+
+/* ════════════════════════════════════════
+   ANIMATED BUTTON — Circle-expand hover
+   ════════════════════════════════════════ */
+.animated-btn .text {
+  transition: transform 0.8s cubic-bezier(0.23,1,0.32,1), color 0.4s ease;
+}
+.animated-btn .arr-1,
+.animated-btn .arr-2 {
+  transition: all 0.8s cubic-bezier(0.23,1,0.32,1);
+}
+.animated-btn .circle {
+  z-index: 1;
+}
+.animated-btn:hover {
+  box-shadow: 0 0.625em 1em 0 rgba(0, 105, 141, 0.30) !important;
+}
+.animated-btn:hover .arr-1 {
+  right: -25% !important;
+  stroke: #ffffff !important;
+}
+.animated-btn:hover .arr-2 {
+  left: 16px !important;
+  stroke: #ffffff !important;
+}
+.animated-btn:hover .text {
+  transform: translateX(14px) !important;
+  color: #ffffff !important;
+}
+.animated-btn:hover .circle {
+  width: 400px !important;
+  height: 400px !important;
+  opacity: 1 !important;
+  background-color: #00698D !important;
+}
+.animated-btn:active {
+  scale: 0.95 !important;
+  box-shadow: inset 0 0 0 3px #00698D !important;
 }

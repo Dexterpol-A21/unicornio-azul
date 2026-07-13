@@ -1,10 +1,512 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-3">
-      <img src="/images/logo-aqua.png" alt="Unicornio Azul" class="h-10 w-auto" />
-    </a>
-    <a href="#contacto" class="px-5 py-2 rounded-full text-sm font-semibold text-white btn-cta" style="background: #00698D; --primary: #00698D">
-      Cuéntanos tu proyecto
+---
+import CTAButton from '@components/ui/CTAButton.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { type Lang } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { t } = useTranslations(lang);
+const altLang: Lang = lang === 'es' ? 'en' : 'es';
+const currentPath = Astro.url.pathname.replace(/^\/(es|en)(\/|$)/, '/$2').replace(/^\/\//, '/') || '/';
+const altUrl = getRelativeLocaleUrl(altLang, currentPath);
+
+function l(path: string): string {
+  return getRelativeLocaleUrl(lang, path);
+}
+const langLabelDisplay = altLang === 'es' ? 'ES' : 'EN';
+---
+<div
+  id="navbar-wrapper"
+  class="fixed top-4 left-0 right-0 z-50 px-4 md:px-6 hidden md:flex items-center"
+>
+
+  <!-- ▸ Isla izquierda: Logo -->
+  <div class="shrink-0 rounded bg-white/75 backdrop-blur-xl shadow-float p-4">
+    <a href={l(t('route.home'))} class="block" aria-label="Unicornio Azul — Inicio">
+      <img
+        src="/images/logo-marino.png"
+        alt="Unicornio Azul"
+        class="h-10 md:h-11 w-auto"
+      />
     </a>
   </div>
-</header>
+
+  <!-- ▸ Píldora centrada: nav links + dropdown conectado -->
+  <div class="hidden md:flex rounded bg-white/75 backdrop-blur-xl shadow-float items-center gap-1 px-4 py-2.5 absolute left-1/2 -translate-x-1/2">
+
+    <nav class="flex items-center gap-1" style="font-family: 'Space Grotesk', sans-serif;">
+
+      <!-- ▾ Qué hacemos — mega menu -->
+      <div class="relative group/qh z-10">
+        <button class="nav-link-trigger px-5 py-3 rounded text-base font-semibold tracking-tight whitespace-nowrap">
+          {t('nav.que_hacemos')}
+        </button>
+        <span class="absolute left-0 top-full w-full h-4 z-20"></span>
+
+        <div class="mega-panel absolute top-full left-1/2 pt-4 z-30
+                    pointer-events-none opacity-0
+                    group-hover/qh:pointer-events-auto group-hover/qh:opacity-100
+                    transition-all duration-[400ms] ease-out">
+          <div class="mega-inner rounded-2xl p-5 border"
+               style="background: #ffffff; border-color: rgba(22,54,103,0.08); box-shadow: 0 20px 60px -12px rgba(22,54,103,0.15), 0 4px 16px -4px rgba(22,54,103,0.08);">
+            <div class="grid grid-cols-2 gap-3" style="width: clamp(640px, 68vw, 860px);">
+
+              <a href={l(t('route.negocios'))} class="mega-card group/card flex items-start gap-4 p-3 rounded-xl transition-all duration-300" style="--card-r: 15; --card-g: 37; --card-b: 72;">
+                <div class="mega-icon w-28 h-20 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center" style="background: rgba(15,37,72,0.06);">
+                  <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><path d="M20 0Q20 20 40 20Q20 20 20 40Q20 20 0 20Q20 20 20 0Z" fill="#0F2548" opacity="0.35"/></svg>
+                </div>
+                <div class="flex flex-col gap-1 min-w-0">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #0F2548; font-family: 'Space Grotesk', sans-serif;">{t('nav.negocios')}</span>
+                  <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.negocios_desc')}</p>
+                </div>
+              </a>
+
+              <a href={l(t('route.producto'))} class="mega-card group/card flex items-start gap-4 p-3 rounded-xl transition-all duration-300" style="--card-r: 22; --card-g: 54; --card-b: 103;">
+                <div class="mega-icon w-28 h-20 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center" style="background: rgba(22,54,103,0.06);">
+                  <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="0" y="0" width="40" height="40" rx="3" fill="#163667" opacity="0.35"/></svg>
+                </div>
+                <div class="flex flex-col gap-1 min-w-0">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #163667; font-family: 'Space Grotesk', sans-serif;">{t('nav.producto')}</span>
+                  <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.producto_desc')}</p>
+                </div>
+              </a>
+
+              <a href={l(t('route.marketing'))} class="mega-card group/card flex items-start gap-4 p-3 rounded-xl transition-all duration-300" style="--card-r: 0; --card-g: 105; --card-b: 141;">
+                <div class="mega-icon w-28 h-20 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center" style="background: rgba(0,105,141,0.06);">
+                  <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#00698D" opacity="0.35"/></svg>
+                </div>
+                <div class="flex flex-col gap-1 min-w-0">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #00698D; font-family: 'Space Grotesk', sans-serif;">{t('nav.marketing')}</span>
+                  <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.marketing_desc')}</p>
+                </div>
+              </a>
+
+              <a href={l(t('route.escalado'))} class="mega-card group/card flex items-start gap-4 p-3 rounded-xl transition-all duration-300" style="--card-r: 0; --card-g: 136; --card-b: 179;">
+                <div class="mega-icon w-28 h-20 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center" style="background: rgba(0,136,179,0.06);">
+                  <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><polygon points="20,0 40,40 0,40" fill="#0088B3" opacity="0.35"/></svg>
+                </div>
+                <div class="flex flex-col gap-1 min-w-0">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #0088B3; font-family: 'Space Grotesk', sans-serif;">{t('nav.escalado')}</span>
+                  <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.escalado_desc')}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ▾ Cómo trabajamos — dropdown con cards -->
+      <div class="relative group/ct z-10">
+        <button class="nav-link-trigger px-5 py-3 rounded text-base font-semibold tracking-tight whitespace-nowrap">
+          {t('nav.como_trabajamos')}
+        </button>
+        <span class="absolute left-0 top-full w-full h-4 z-20"></span>
+
+        <div class="medium-panel absolute top-full left-1/2 pt-4 z-30
+                    pointer-events-none opacity-0
+                    group-hover/ct:pointer-events-auto group-hover/ct:opacity-100
+                    transition-all duration-[400ms] ease-out">
+          <div class="rounded-2xl p-5 border"
+               style="background: #ffffff; border-color: rgba(22,54,103,0.08); box-shadow: 0 20px 60px -12px rgba(22,54,103,0.15), 0 4px 16px -4px rgba(22,54,103,0.08);">
+            <div class="grid grid-cols-2 gap-3" style="width: 560px;">
+
+              <a href={l(t('route.como_trabajamos') + '#proceso')} class="mega-card ct-proceso group/card flex flex-col gap-2 p-4 rounded-xl" style="--card-r: 22; --card-g: 54; --card-b: 103;">
+                <div class="flex items-baseline gap-2">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #163667; font-family: 'Space Grotesk', sans-serif;">{t('nav.proceso')}</span>
+                  <span class="mega-title text-lg font-bold" style="--mc: #00698D; font-family: 'Space Grotesk', sans-serif;">1</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0; --ms: #00698D;" stroke-width="3" class="mega-svg"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <span class="mega-title text-lg font-bold" style="--mc: #0088B3; font-family: 'Space Grotesk', sans-serif;">5</span>
+                </div>
+                <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.proceso_desc')}</p>
+              </a>
+
+              <a href={l(t('route.metodologia_sorie'))} class="mega-card ct-sorie group/card flex flex-col gap-2 p-4 rounded-xl" style="--card-r: 22; --card-g: 54; --card-b: 103;">
+                <div>
+                  <span class="text-lg font-black tracking-tighter leading-tight" style="font-family: 'Space Grotesk', sans-serif; line-height: 1;">
+                    <span class="mega-title" style="--mc: #0F2548;">S</span><span class="mega-title" style="--mc: #163667;">O</span><span class="mega-title" style="--mc: #0B4F7A;">R</span><span class="mega-title" style="--mc: #00698D;">I</span><span class="mega-title" style="--mc: #0088B3;">E</span><span style="color: #163667; font-weight: 700; font-size: 0.65em; vertical-align: top;" class="mega-title">&trade;</span>
+                  </span>
+                </div>
+                <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.sorie_desc')}</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Casos -->
+      <a href={l(t('route.casos'))} class="nav-link px-5 py-3 rounded text-base font-semibold tracking-tight whitespace-nowrap">{t('nav.casos')}</a>
+
+      <!-- ▾ Sobre nosotros — dropdown con cards -->
+      <div class="relative group/sn z-10">
+        <button class="nav-link-trigger px-5 py-3 rounded text-base font-semibold tracking-tight whitespace-nowrap">
+          {t('nav.sobre_nosotros')}
+        </button>
+        <span class="absolute left-0 top-full w-full h-4 z-20"></span>
+
+        <div class="medium-panel absolute top-full left-1/2 pt-4 z-30
+                    pointer-events-none opacity-0
+                    group-hover/sn:pointer-events-auto group-hover/sn:opacity-100
+                    transition-all duration-[400ms] ease-out">
+          <div class="rounded-2xl p-5 border"
+               style="background: #ffffff; border-color: rgba(22,54,103,0.08); box-shadow: 0 20px 60px -12px rgba(22,54,103,0.15), 0 4px 16px -4px rgba(22,54,103,0.08);">
+            <div class="grid grid-cols-2 gap-3" style="width: 560px;">
+
+              <a href={l(t('route.sobre_nosotros'))} class="mega-card group/card flex flex-col gap-2 p-4 rounded-xl transition-all duration-300" style="--card-r: 22; --card-g: 54; --card-b: 103;">
+                <div class="flex items-baseline gap-2">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #163667; font-family: 'Space Grotesk', sans-serif;">{t('nav.unicornio_azul')}</span>
+                  <img src="/images/logo-marino.png" alt="UA" class="h-4 w-auto transition-opacity duration-300" style="transition: filter 0.35s ease;" />
+                </div>
+                <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.unicornio_azul_desc')}</p>
+              </a>
+
+              <a href={l(t('route.contacto'))} class="mega-card group/card flex flex-col gap-2 p-4 rounded-xl transition-all duration-300" style="--card-r: 0; --card-g: 105; --card-b: 141;">
+                <div class="flex items-baseline gap-2">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #00698D; font-family: 'Space Grotesk', sans-serif;">{t('nav.habla_con_nosotros')}</span>
+                  <svg class="mega-svg shrink-0 transition-transform duration-300 group-hover/card:scale-110" width="16" height="16" viewBox="0 0 24 24" fill="none" style="--ms: #00698D;" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.habla_con_nosotros_desc')}</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Idioma — separador sutil -->
+    <div class="hidden md:flex items-center gap-1 ml-1 pl-1">
+      <span class="w-px h-6" style="background: rgba(22,54,103,0.12);"></span>
+      <a
+        href={altUrl}
+        class="nav-link px-3 py-2 rounded text-sm font-semibold tracking-tight whitespace-nowrap !no-underline"
+        style="font-family: 'Space Grotesk', sans-serif;"
+        title={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+      >
+        {langLabelDisplay}
+      </a>
+    </div>
+  </div>
+
+  <!-- ▸ Isla derecha: CTA (solo desktop) -->
+  <div class="flex items-center gap-2 ml-auto">
+    <span class="hidden md:inline"><CTAButton size="lg" label={t('cta.primary')} href={l(t('route.empezar'))} /></span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     Bottom nav bar (mobile only)
+     Logo en el centro, con recuadro y sombra como en desktop
+     Items con dropdown tienen panel que desliza hacia arriba
+     ═══════════════════════════════════════════════════ -->
+
+<!-- backdrop -->
+<div id="mb-backdrop" class="md:hidden fixed inset-0 z-40 pointer-events-none opacity-0 transition-opacity duration-300" style="background: rgba(15,37,72,0.3);"></div>
+
+<!-- ▼ Qué hacemos — 2×2 grid 45vh -->
+<div id="mb-panel-qh" class="mb-dropdown md:hidden fixed left-0 right-0 bottom-0 z-50 pointer-events-none opacity-0 transition-all duration-300 ease-out"
+     style="height: 45dvh; padding: 0 12px 74px; padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px));">
+  <div class="h-full rounded-2xl overflow-hidden grid grid-cols-2 grid-rows-2 gap-[2px]" style="background: rgba(22,54,103,0.06); box-shadow: 0 -8px 40px -6px rgba(22,54,103,0.10);">
+    <!-- Negocios -->
+    <a href={l(t('route.negocios'))} class="mb-quad flex flex-col items-center justify-center gap-2 p-3 text-center" style="background: #EEF1F8;">
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(15,37,72,0.10);">
+        <svg width="22" height="22" viewBox="0 0 40 40" fill="none"><path d="M20 0Q20 20 40 20Q20 20 20 40Q20 20 0 20Q20 20 20 0Z" fill="#0F2548"/></svg>
+      </div>
+      <span style="font-family: 'Space Grotesk', sans-serif; color: #0F2548;" class="text-[17px] font-semibold leading-tight">{t('nav.negocios')}</span>
+      <span style="font-family: 'Satoshi', sans-serif; color: #6B7280;" class="text-[13px] leading-snug">{t('mobile.negocios_desc')}</span>
+    </a>
+    <!-- Producto -->
+    <a href={l(t('route.producto'))} class="mb-quad flex flex-col items-center justify-center gap-2 p-3 text-center" style="background: #EEF4FA;">
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(22,54,103,0.10);">
+        <svg width="22" height="22" viewBox="0 0 40 40" fill="none"><rect x="0" y="0" width="40" height="40" rx="3" fill="#163667"/></svg>
+      </div>
+      <span style="font-family: 'Space Grotesk', sans-serif; color: #163667;" class="text-[17px] font-semibold leading-tight">{t('nav.producto')}</span>
+      <span style="font-family: 'Satoshi', sans-serif; color: #6B7280;" class="text-[13px] leading-snug">{t('mobile.producto_desc')}</span>
+    </a>
+    <!-- Marketing -->
+    <a href={l(t('route.marketing'))} class="mb-quad flex flex-col items-center justify-center gap-2 p-3 text-center" style="background: #EDF6F9;">
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(0,105,141,0.10);">
+        <svg width="22" height="22" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#00698D"/></svg>
+      </div>
+      <span style="font-family: 'Space Grotesk', sans-serif; color: #00698D;" class="text-[17px] font-semibold leading-tight">{t('nav.marketing')}</span>
+      <span style="font-family: 'Satoshi', sans-serif; color: #6B7280;" class="text-[13px] leading-snug">{t('mobile.marketing_desc')}</span>
+    </a>
+    <!-- Escalado -->
+    <a href={l(t('route.escalado'))} class="mb-quad flex flex-col items-center justify-center gap-2 p-3 text-center" style="background: #ECF6FA;">
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(0,136,179,0.10);">
+        <svg width="22" height="22" viewBox="0 0 40 40" fill="none"><polygon points="20,0 40,40 0,40" fill="#0088B3"/></svg>
+      </div>
+      <span style="font-family: 'Space Grotesk', sans-serif; color: #0088B3;" class="text-[17px] font-semibold leading-tight">{t('nav.escalado')}</span>
+      <span style="font-family: 'Satoshi', sans-serif; color: #6B7280;" class="text-[13px] leading-snug">{t('mobile.escalado_desc')}</span>
+    </a>
+  </div>
+</div>
+
+<!-- ▼ Método — 2×1 grid 45vh -->
+<div id="mb-panel-mt" class="mb-dropdown md:hidden fixed left-0 right-0 bottom-0 z-50 pointer-events-none opacity-0 transition-all duration-300 ease-out"
+     style="height: 45dvh; padding: 0 12px 74px; padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px));">
+  <div class="h-full rounded-2xl overflow-hidden grid grid-cols-2 gap-[2px]" style="background: rgba(22,54,103,0.06); box-shadow: 0 -8px 40px -6px rgba(22,54,103,0.10);">
+    <!-- Proceso 5 pasos -->
+    <a href={l(t('route.como_trabajamos') + '#proceso')} class="mb-quad flex flex-col items-center justify-center gap-2.5 p-3 text-center" style="background: #EEF4FA;">
+      <div class="flex items-baseline gap-1.5">
+        <span style="font-family:'Space Grotesk',sans-serif;color:#163667;" class="text-[17px] font-semibold leading-tight">{t('nav.proceso')}</span>
+        <span style="font-family:'Space Grotesk',sans-serif;color:#00698D;" class="text-[17px] font-bold">1</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00698D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span style="font-family:'Space Grotesk',sans-serif;color:#0088B3;" class="text-[17px] font-bold">5</span>
+      </div>
+      <span style="font-family: 'Satoshi', sans-serif; color: #6B7280;" class="text-[13px] leading-snug">{t('nav.proceso_desc')}</span>
+    </a>
+    <!-- SORIE™ -->
+    <a href={l(t('route.metodologia_sorie'))} class="mb-quad flex flex-col items-center justify-center gap-2.5 p-3 text-center" style="background: #EEF1F8;">
+      <div>
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:20px;letter-spacing:-1px;line-height:1;">
+          <span style="color:#0F2548;">S</span><span style="color:#163667;">O</span><span style="color:#0B4F7A;">R</span><span style="color:#00698D;">I</span><span style="color:#0088B3;">E</span><span style="color:#163667;font-weight:700;font-size:0.65em;vertical-align:top;">™</span>
+        </span>
+      </div>
+      <span style="font-family: 'Satoshi', sans-serif; color: #6B7280;" class="text-[13px] leading-snug">{t('nav.sorie_desc')}</span>
+    </a>
+  </div>
+</div>
+
+<!-- ▼ Nosotros — 2×1 grid 45vh -->
+<div id="mb-panel-ns" class="mb-dropdown md:hidden fixed left-0 right-0 bottom-0 z-50 pointer-events-none opacity-0 transition-all duration-300 ease-out"
+     style="height: 45dvh; padding: 0 12px 74px; padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px));">
+  <div class="h-full rounded-2xl overflow-hidden grid grid-cols-2 gap-[2px]" style="background: rgba(22,54,103,0.06); box-shadow: 0 -8px 40px -6px rgba(22,54,103,0.10);">
+    <!-- Unicornio Azul -->
+    <a href={l(t('route.sobre_nosotros'))} class="mb-quad flex flex-col items-center justify-center gap-2.5 p-3 text-center" style="background: #EEF4FA;">
+      <div class="flex items-baseline gap-1.5">
+        <span style="font-family: 'Space Grotesk', sans-serif; color: #163667;" class="text-[17px] font-semibold leading-tight">{t('nav.unicornio_azul')}</span>
+        <img src="/images/logo-marino.png" alt="UA" class="h-4 w-auto" />
+      </div>
+      <span style="font-family: 'Satoshi', sans-serif; color: #6B7280;" class="text-[13px] leading-snug">{t('nav.unicornio_azul_desc')}</span>
+    </a>
+    <!-- Habla con nosotros -->
+    <a href={l(t('route.contacto'))} class="mb-quad flex flex-col items-center justify-center gap-2.5 p-3 text-center" style="background: #EEF1F8;">
+      <div class="flex items-baseline gap-1.5">
+        <span style="font-family: 'Space Grotesk', sans-serif; color: #00698D;" class="text-[17px] font-semibold leading-tight">{t('nav.habla_con_nosotros')}</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00698D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <span style="font-family: 'Satoshi', sans-serif; color: #6B7280;" class="text-[13px] leading-snug">{t('nav.habla_con_nosotros_desc')}</span>
+    </a>
+  </div>
+</div>
+
+<div
+  id="bottom-nav"
+  class="md:hidden fixed bottom-0 left-0 right-0 z-50"
+  style="padding: 0 12px 8px; padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));"
+>
+  <div
+    class="flex items-center h-14 rounded-[14px] gap-0"
+    style="
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 -2px 20px -6px rgba(22,54,103,0.10), 0 -1px 4px rgba(22,54,103,0.04);
+    "
+  >
+    <!-- Qué hacemos — trigger -->
+    <button type="button" data-mb-trigger="qh" class="bottom-nav-item flex-1 flex flex-col items-center justify-center gap-[2px] h-full rounded-[10px] min-w-0" style="color: #163667;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+      <span class="text-[10px] font-semibold tracking-tight leading-none" style="font-family: 'Satoshi', sans-serif;">{t('mobile.que_hacemos')}</span>
+    </button>
+
+    <!-- Método — trigger -->
+    <button type="button" data-mb-trigger="mt" class="bottom-nav-item flex-1 flex flex-col items-center justify-center gap-[2px] h-full rounded-[10px] min-w-0" style="color: #163667;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.611 1.611a2.404 2.404 0 0 1-1.704.706 2.404 2.404 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.878-.289c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.968-1.02a1.026 1.026 0 0 0-.289-.878l-1.568-1.568A2.404 2.404 0 0 1 2 11.999c0-.617.236-1.234.706-1.704L4.317 8.684a.98.98 0 0 1 .837-.276c.47.07.802.48.968.925a2.501 2.501 0 1 0 3.214-3.214c-.446-.166-.855-.497-.925-.968a.979.979 0 0 1 .276-.837L10.298 2.7a2.404 2.404 0 0 1 3.408 0l1.568 1.568c.23.23.556.338.878.289.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.968 1.02Z"/></svg>
+      <span class="text-[10px] font-semibold tracking-tight leading-none" style="font-family: 'Satoshi', sans-serif;">{t('mobile.metodo')}</span>
+    </button>
+
+    <!-- Logo (sin dropdown) -->
+    <a
+      href={l(t('route.home'))}
+      aria-label="Unicornio Azul — Inicio"
+      class="flex-1 flex items-center justify-center h-full min-w-0 transition-transform duration-200 active:scale-95"
+    >
+      <div class="rounded bg-white/75 backdrop-blur-xl shadow-float p-1.5">
+        <img src="/images/logo-marino.png" alt="Unicornio Azul" class="h-8 w-auto" />
+      </div>
+    </a>
+
+    <!-- Casos (sin dropdown) -->
+    <a href={l(t('route.casos'))} class="bottom-nav-item flex-1 flex flex-col items-center justify-center gap-[2px] h-full rounded-[10px] min-w-0" style="color: #163667;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+      <span class="text-[10px] font-semibold tracking-tight leading-none" style="font-family: 'Satoshi', sans-serif;">{t('mobile.casos')}</span>
+    </a>
+
+    <!-- Nosotros — trigger -->
+    <button type="button" data-mb-trigger="ns" class="bottom-nav-item flex-1 flex flex-col items-center justify-center gap-[2px] h-full rounded-[10px] min-w-0" style="color: #163667;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="text-[10px] font-semibold tracking-tight leading-none" style="font-family: 'Satoshi', sans-serif;">{t('mobile.nosotros')}</span>
+    </button>
+  </div>
+</div>
+
+<style>
+  .shadow-float {
+    box-shadow:
+      0 2px 16px -4px rgba(0,0,0,0.06),
+      0 4px 32px -8px rgba(0,0,0,0.04);
+  }
+
+  .nav-link {
+    color: #163667;
+    transition: color 0.25s ease, background-color 0.25s ease;
+  }
+  .nav-link:hover {
+    background-color: #163667;
+    color: #ffffff;
+  }
+
+  .nav-link-trigger {
+    color: #163667;
+    background-color: transparent;
+    transition: color 0.25s ease, background-color 0.35s ease;
+  }
+  .group\/qh:hover .nav-link-trigger,
+  .group\/ct:hover .nav-link-trigger,
+  .group\/sn:hover .nav-link-trigger {
+    background-color: #163667;
+    color: #ffffff;
+  }
+
+  .mega-panel {
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
+    transition: opacity 0.35s ease, pointer-events 0s 0.35s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .group\/qh:hover .mega-panel {
+    transform: translateX(-50%) scaleY(1);
+    transition: opacity 0.25s ease, pointer-events 0s 0s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .medium-panel {
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
+    transition: opacity 0.35s ease, pointer-events 0s 0.35s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .group\/ct:hover .medium-panel,
+  .group\/sn:hover .medium-panel {
+    transform: translateX(-50%) scaleY(1);
+    transition: opacity 0.25s ease, pointer-events 0s 0s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mega-card {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.35s ease, background-color 0.35s ease;
+  }
+  .mega-card:hover {
+    box-shadow: 0 6px 20px -6px rgba(22,54,103,0.15);
+    background-color: rgb(var(--card-r), var(--card-g), var(--card-b));
+  }
+  .mega-card.ct-proceso:hover {
+    background: linear-gradient(to right, #0F2548 0%, #0F2548 20%, #163667 20%, #163667 40%, #0B4F7A 40%, #0B4F7A 60%, #00698D 60%, #00698D 80%, #0088B3 80%, #0088B3 100%);
+  }
+  .mega-card.ct-sorie:hover {
+    background: linear-gradient(135deg, #0F2548, #163667, #0B4F7A, #00698D, #0088B3);
+  }
+  /* Base colours via custom properties */
+  .mega-title { color: var(--mc); transition: color 0.35s ease; }
+  .mega-desc  { color: var(--mdc); transition: color 0.35s ease; }
+  /* Hover */
+  .mega-card:hover .mega-title { color: #ffffff; }
+  .mega-card:hover .mega-desc  { color: rgba(255,255,255,0.75); }
+  .mega-card:hover .mega-icon {
+    background-color: rgba(255,255,255,0.15) !important;
+  }
+  .mega-card:hover .mega-icon svg {
+    fill: #ffffff !important;
+  }
+  .mega-card:hover .mega-icon svg * {
+    fill: #ffffff !important;
+    opacity: 1 !important;
+  }
+  .mega-card:hover img:not(.no-hover-invert) {
+    filter: brightness(0) invert(1);
+    opacity: 1 !important;
+  }
+  .mega-svg { stroke: var(--ms); }
+  .mega-card svg { transition: stroke 0.35s ease; }
+  .mega-card:hover svg:not(.hover-preserve) {
+    stroke: #ffffff;
+  }
+</style>
+
+<style is:global>
+  .bottom-nav-item {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .bottom-nav-item:active {
+    background: rgba(22,54,103,0.06);
+  }
+
+  .mb-quad {
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s ease;
+  }
+  .mb-quad:active {
+    filter: brightness(0.94);
+  }
+
+  .mb-dropdown.open {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  }
+  #mb-backdrop.open {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  }
+</style>
+
+<script>
+  (function () {
+    const triggers = document.querySelectorAll('[data-mb-trigger]');
+    const backdrop = document.getElementById('mb-backdrop');
+    let activePanel: HTMLElement | null = null;
+    let activeTrigger: Element | null = null;
+
+    function closeAll() {
+      document.querySelectorAll('.mb-dropdown.open').forEach(el => el.classList.remove('open'));
+      if (backdrop) backdrop.classList.remove('open');
+      activePanel = null;
+      activeTrigger = null;
+    }
+
+    triggers.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = (btn as HTMLElement).dataset.mbTrigger;
+        const panel = document.getElementById('mb-panel-' + id);
+
+        if (activePanel === panel) {
+          closeAll();
+          return;
+        }
+
+        closeAll();
+
+        if (panel) {
+          panel.classList.add('open');
+          if (backdrop) backdrop.classList.add('open');
+          activePanel = panel;
+          activeTrigger = btn;
+        }
+      });
+    });
+
+    if (backdrop) {
+      backdrop.addEventListener('click', closeAll);
+    }
+
+    document.addEventListener('click', (e) => {
+      const target = e.target as Node;
+      if (activePanel && !activePanel.contains(target) && target !== activeTrigger && !activeTrigger?.contains(target)) {
+        closeAll();
+      }
+    });
+  })();
+</script>

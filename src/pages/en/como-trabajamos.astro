@@ -1,0 +1,602 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="This is how we work — Blue Unicorn"
+  description="We don't work with promises or miracle formulas. At Blue Unicorn we follow a clear 5-step process: analysis, product, brand, sales, and scaling."
+  showHeader={true}
+>
+
+<!-- ═════════════════════════════════════════
+HERO — How we work
+midnight #0A1628 · editorial process
+═════════════════════════════════════════ -->
+<section class="relative overflow-hidden md:min-h-[60dvh] flex items-center" style="background: linear-gradient(to right, #0F2548 0%, #0F2548 20%, #163667 20%, #163667 40%, #0B4F7A 40%, #0B4F7A 60%, #00698D 60%, #00698D 80%, #0088B3 80%, #0088B3 100%);">
+
+  <!-- Geometric background — lines and connected dots (process / path) -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <!-- Horizontal dashed line — like a timeline -->
+    <line x1="120" y1="350" x2="1320" y2="350" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,12" opacity="0.08"/>
+    <!-- Nodes on the line -->
+    <circle cx="120" cy="350" r="4" fill="#ffffff" opacity="0.12"/>
+    <circle cx="420" cy="350" r="4" fill="#ffffff" opacity="0.12"/>
+    <circle cx="720" cy="350" r="4" fill="#ffffff" opacity="0.12"/>
+    <circle cx="1020" cy="350" r="4" fill="#ffffff" opacity="0.12"/>
+    <circle cx="1320" cy="350" r="4" fill="#ffffff" opacity="0.12"/>
+    <!-- Decorative star top-right -->
+    <g transform="translate(1340, 80) scale(1.2)" opacity="0.06">
+      <path d="M0 -20 Q0 0 20 0 Q0 0 0 20 Q0 0 -20 0 Q0 0 0 -20Z" fill="#ffffff"/>
+    </g>
+  </svg>
+
+  <div class="relative z-10 w-full max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-28 text-center">
+    <h1 class="leading-[0.92] tracking-tight mb-6" style="color:#ffffff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.8rem,8vw,5.5rem);">
+      This is how<br>we work
+    </h1>
+    <p class="text-lg md:text-xl max-w-[48ch] mx-auto leading-relaxed" style="color:rgba(255,255,255,0.5);font-family:'Satoshi',sans-serif;">
+      We don't work with promises or miracle formulas. We work with clear processes, real experience, and medium to long-term vision.
+    </p>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+PROCESS — 5 steps · Vertical timeline
+═════════════════════════════════════════ -->
+<section id="proceso" style="background:#FFFFFF;">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-14 md:py-28">
+
+    <div class="hidden md:block relative">
+
+      <!-- Central vertical line — fills on scroll -->
+      <div class="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2" style="background:rgba(22,54,103,0.06);">
+        <div id="linea-relleno" class="w-full" style="height:0%;background:#163667;transition:height 0.4s ease-out;"></div>
+      </div>
+
+      <!-- Step 01 -->
+      <div class="paso-container relative flex items-start gap-16 mb-16 md:mb-24" data-paso="1">
+        <div class="w-1/2 text-right pr-8">
+          <span class="block text-8xl font-black leading-none tracking-tighter mb-3" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.06);">01</span>
+          <h3 class="text-2xl font-bold mb-2 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Analysis & Viability</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We study the project, the market, and the numbers before moving forward.</p>
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2">
+          <div class="nodo-paso w-4 h-4 rounded-full border-2 transition-colors duration-500" data-paso="1" style="background:#FFFFFF;border-color:#163667;"></div>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="paso-container relative flex items-start gap-16 mb-16 md:mb-24" data-paso="2">
+        <div class="w-1/2 pr-8"></div>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2">
+          <div class="nodo-paso w-4 h-4 rounded-full border-2 transition-colors duration-500" data-paso="2" style="background:#FFFFFF;border-color:#163667;"></div>
+        </div>
+        <div class="w-1/2 pl-8">
+          <span class="block text-8xl font-black leading-none tracking-tighter mb-3" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.06);">02</span>
+          <h3 class="text-2xl font-bold mb-2 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Product & Structure Definition</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We decide what to sell, how to produce it, and how to structure the business.</p>
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="paso-container relative flex items-start gap-16 mb-16 md:mb-24" data-paso="3">
+        <div class="w-1/2 text-right pr-8">
+          <span class="block text-8xl font-black leading-none tracking-tighter mb-3" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.06);">03</span>
+          <h3 class="text-2xl font-bold mb-2 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Brand & Positioning</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We create the brand, the story, and the strategy to connect with the market.</p>
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2">
+          <div class="nodo-paso w-4 h-4 rounded-full border-2 transition-colors duration-500" data-paso="3" style="background:#FFFFFF;border-color:#163667;"></div>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="paso-container relative flex items-start gap-16 mb-16 md:mb-24" data-paso="4">
+        <div class="w-1/2 pr-8"></div>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2">
+          <div class="nodo-paso w-4 h-4 rounded-full border-2 transition-colors duration-500" data-paso="4" style="background:#FFFFFF;border-color:#163667;"></div>
+        </div>
+        <div class="w-1/2 pl-8">
+          <span class="block text-8xl font-black leading-none tracking-tighter mb-3" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.06);">04</span>
+          <h3 class="text-2xl font-bold mb-2 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Sales & Channels</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We launch, test, and optimize sales channels from day one.</p>
+        </div>
+      </div>
+
+      <!-- Step 05 -->
+      <div class="paso-container relative flex items-start gap-16" data-paso="5">
+        <div class="w-1/2 text-right pr-8">
+          <span class="block text-8xl font-black leading-none tracking-tighter mb-3" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.06);">05</span>
+          <h3 class="text-2xl font-bold mb-2 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Scaling & Optimization</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We scale what works and optimize every part of the funnel.</p>
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2">
+          <div class="nodo-paso w-4 h-4 rounded-full border-2 transition-colors duration-500" data-paso="5" style="background:#FFFFFF;border-color:#163667;"></div>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+
+    </div>
+
+    <!-- Mobile: horizontal scroll cards -->
+    <div class="md:hidden overflow-hidden w-full">
+      <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory" style="scrollbar-width:none; -ms-overflow-style:none; padding-left:24px; padding-right:24px; scroll-padding-left:24px; scroll-padding-right:24px;">
+
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.08);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">01</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Analysis & Viability</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We study the project, the market, and the numbers before moving forward.</p>
+        </div>
+
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.08);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">02</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Product & Structure Definition</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We decide what to sell, how to produce it, and how to structure the business.</p>
+        </div>
+
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.08);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">03</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Brand & Positioning</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We create the brand, the story, and the strategy to connect with the market.</p>
+        </div>
+
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.08);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">04</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Sales & Channels</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We launch, test, and optimize sales channels from day one.</p>
+        </div>
+
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.08);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">05</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Scaling & Optimization</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We scale what works and optimize every part of the funnel.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Indicator dots (mobile only) -->
+    <div id="proceso-dots" class="md:hidden flex items-center justify-center gap-2 mt-5">
+      <span class="block w-2 h-2 rounded-full" style="background:#163667;"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+AUTHORITY QUOTE
+═════════════════════════════════════════ -->
+<section style="background:#F5F1EC;">
+  <div class="max-w-3xl mx-auto px-6 md:px-12 py-12 md:py-20 text-center">
+    <img src="/images/logo-marino.png" alt="Blue Unicorn" class="h-8 w-auto mx-auto mb-5 opacity-50" />
+    <blockquote class="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#163667;">
+      &ldquo;We don't work with promises or miracle formulas.&rdquo;
+    </blockquote>
+    <p class="mt-4 text-base opacity-50" style="font-family:'Satoshi',sans-serif;color:#6B7280;">— Core principle at Blue Unicorn</p>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+SORIE™ — Method (copied from index)
+═════════════════════════════════════════ -->
+<section class="relative" style="background: #FFFFFF;">
+
+    <div class="text-center pt-14 md:pt-32 pb-6 md:pb-10 px-4">
+      <span class="text-[11px] tracking-[0.35em] uppercase font-semibold opacity-35" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">Our methodology</span>
+      <h2 class="mt-4 text-4xl md:text-5xl font-bold tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #1A1A1A;">
+        The method behind<br class="md:hidden"> everything we do<br>at Blue Unicorn
+      </h2>
+    </div>
+
+    <!-- Letters S O R I E — bilingual -->
+    <div class="flex flex-wrap items-end justify-center gap-6 md:gap-12 lg:gap-20 px-4 pb-10 md:pb-14 max-w-4xl mx-auto">
+
+      <!-- S — Soluciones / Solutions -->
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #0F2548;">S</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #0F2548;">Soluciones</span>
+        <span class="text-[10px] md:text-xs font-medium tracking-wide opacity-40" style="font-family: 'Satoshi', sans-serif; color: #0F2548;">Solutions</span>
+      </div>
+
+      <!-- O — Oportunidad / Opportunity -->
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #163667;">O</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #163667;">Oportunidad</span>
+        <span class="text-[10px] md:text-xs font-medium tracking-wide opacity-40" style="font-family: 'Satoshi', sans-serif; color: #163667;">Opportunity</span>
+      </div>
+
+      <!-- R — Reales / Reality -->
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #0B4F7A;">R</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #0B4F7A;">Reales</span>
+        <span class="text-[10px] md:text-xs font-medium tracking-wide opacity-40" style="font-family: 'Satoshi', sans-serif; color: #0B4F7A;">Reality</span>
+      </div>
+
+      <!-- I — Innovación / Innovation -->
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #00698D;">I</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #00698D;">Innovación</span>
+        <span class="text-[10px] md:text-xs font-medium tracking-wide opacity-40" style="font-family: 'Satoshi', sans-serif; color: #00698D;">Innovation</span>
+      </div>
+
+      <!-- E — Ejecución / Execution -->
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #0088B3;">E</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #0088B3;">Ejecución</span>
+        <span class="text-[10px] md:text-xs font-medium tracking-wide opacity-40" style="font-family: 'Satoshi', sans-serif; color: #0088B3;">Execution</span>
+      </div>
+
+    </div>
+
+    <!-- Slogan -->
+    <div class="text-center pb-8 md:pb-10 px-4">
+      <p class="text-lg md:text-xl font-semibold italic opacity-70 tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #163667;">
+        Real Solutions for Extraordinary Ideas
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center pb-12 md:pb-32 px-4">
+      <a href="/en/sorie-methodology" class="cta-slide" style="
+        display: inline-block; width: 260px; height: 52px;
+        border-radius: 4px; overflow: hidden;
+        cursor: pointer; text-decoration: none;
+        box-shadow: inset 0 0 0 2px #163667;
+      ">
+        <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0;">
+          <span style="font-size: 15px; font-weight: 600; color: #163667; font-family: 'Satoshi', sans-serif;">Discover the SORIE™ method</span>
+        </div>
+        <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0; background: #163667;">
+          <span style="font-size: 15px; font-weight: 600; color: #ffffff; font-family: 'Satoshi', sans-serif;">SORIE™</span>
+        </div>
+      </a>
+    </div>
+
+  </section>
+
+<style is:global>
+  .cta-slide {
+    transition: box-shadow 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .cta-slide:hover {
+    box-shadow: inset 0 0 0 2px #163667, 0 0.625em 1em 0 rgba(22, 54, 103, 0.30) !important;
+  }
+  .cta-slide:hover div {
+    transform: translateY(-52px) !important;
+  }
+  .cta-slide:active {
+    transform: scale(0.97) !important;
+  }
+
+  /* ─── FAQ accordion ─── */
+  .faq-trigger:hover span:first-child { color: #163667; }
+  .faq-content > div { overflow: hidden; }
+</style>
+
+<!-- FAQ accordion script -->
+<script>
+  (function () {
+    const accordion = document.getElementById('faq-accordion');
+    if (!accordion) return;
+    const triggers = accordion.querySelectorAll('.faq-trigger');
+    triggers.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item')!;
+        const content = item.querySelector('.faq-content') as HTMLElement;
+        const icon = btn.querySelector('.faq-icon') as HTMLElement;
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close all others
+        triggers.forEach(other => {
+          if (other !== btn) {
+            other.setAttribute('aria-expanded', 'false');
+            (other.querySelector('.faq-icon') as HTMLElement).style.transform = 'rotate(0deg)';
+            const otherContent = other.closest('.faq-item')!.querySelector('.faq-content') as HTMLElement;
+            otherContent.style.maxHeight = '0';
+          }
+        });
+
+        if (isOpen) {
+          btn.setAttribute('aria-expanded', 'false');
+          icon.style.transform = 'rotate(0deg)';
+          content.style.maxHeight = '0';
+        } else {
+          btn.setAttribute('aria-expanded', 'true');
+          icon.style.transform = 'rotate(45deg)';
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  })();
+</script>
+
+<!-- ═════════════════════════════════════════
+WHO'S BEHIND IT — Luis Chicharro
+═════════════════════════════════════════ -->
+<section style="background:#F5F1EC;">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-14 md:py-28">
+
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+
+      <!-- Quote / text — full width, no avatar -->
+      <div class="flex-1 space-y-6">
+        <blockquote class="text-xl md:text-2xl font-bold leading-[1.25] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+          &ldquo;This process doesn't come from a manual. It comes from years of building real businesses in international sourcing, product development, and digital channels.&rdquo;
+        </blockquote>
+
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+          Blue Unicorn is led by a team with real, on-the-ground experience — not from theory — with an approach that was featured in <a href="https://cincodias.elpais.com/companias/2023-04-11/los-secretos-para-vender-en-plataformas-como-amazon.html" target="_blank" rel="noopener" style="color:#1A1A1A;font-weight:700;text-decoration:underline;text-underline-offset:3px;">Cinco Días (Grupo El País)</a>.
+        </p>
+
+        <!-- CTA — cta-slide style like SORIE -->
+        <div>
+          <a href="/en/about-us" class="cta-slide" style="
+            display: inline-block; width: 260px; height: 52px;
+            border-radius: 4px; overflow: hidden;
+            cursor: pointer; text-decoration: none;
+            box-shadow: inset 0 0 0 2px #163667;
+          ">
+            <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0;">
+              <span style="font-size: 15px; font-weight: 600; color: #163667; font-family: 'Satoshi', sans-serif;">Meet the team</span>
+            </div>
+            <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0; background: #163667;">
+              <span style="font-size: 15px; font-weight: 600; color: #ffffff; font-family: 'Satoshi', sans-serif;">About us</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+FAQ — Frequently asked questions about the process
+═════════════════════════════════════════ -->
+<section style="background:#F2F5F8;">
+  <div class="max-w-3xl mx-auto px-6 md:px-12 py-14 md:py-28">
+
+    <div class="space-y-1" id="faq-accordion">
+
+      <div class="faq-item border-b" style="border-color:rgba(22,54,103,0.08);">
+        <button class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none" aria-expanded="false">
+          <span class="text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">How long does the full process take?</span>
+          <span class="faq-icon shrink-0 text-xl leading-none" style="color:#163667;transition:transform 0.4s ease;">+</span>
+        </button>
+        <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div>
+            <p class="pb-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+              There's no single answer because every project is different. A viability analysis can be resolved in weeks. Building a brand from scratch and launching it on digital channels can take months. What matters is that each step is completed without shortcuts.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b" style="border-color:rgba(22,54,103,0.08);">
+        <button class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none" aria-expanded="false">
+          <span class="text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Can I hire just one step of the process?</span>
+          <span class="faq-icon shrink-0 text-xl leading-none" style="color:#163667;transition:transform 0.4s ease;">+</span>
+        </button>
+        <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div>
+            <p class="pb-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+              Our process is designed to work end-to-end. That said, we understand that each project has its starting point. If you already have a validated product but need to scale, we start where you are. What we won't do is activate marketing without having a clear product and structure.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b" style="border-color:rgba(22,54,103,0.08);">
+        <button class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none" aria-expanded="false">
+          <span class="text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">What kind of businesses do you work with?</span>
+          <span class="faq-icon shrink-0 text-xl leading-none" style="color:#163667;transition:transform 0.4s ease;">+</span>
+        </button>
+        <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div>
+            <p class="pb-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+              We work with entrepreneurs, companies, and projects from any sector that need to build, launch, or scale a business with sound judgment. Our process adapts to the size, market, and stage of each project. Whether you have an idea or an ongoing business, we can help.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b" style="border-color:rgba(22,54,103,0.08);">
+        <button class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none" aria-expanded="false">
+          <span class="text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">How do I know if my project is viable?</span>
+          <span class="faq-icon shrink-0 text-xl leading-none" style="color:#163667;transition:transform 0.4s ease;">+</span>
+        </button>
+        <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div>
+            <p class="pb-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+              That's exactly what the first step of the process is: viability analysis. We study the market, competition, margins, and cost structure before making any decision. We don't validate with surveys or likes. We validate with real data. <a href="/en/get-started" style="color:#163667;font-weight:600;text-decoration:underline;text-underline-offset:3px;">Tell us about your project and we'll tell you if it makes sense.</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b" style="border-color:rgba(22,54,103,0.08);">
+        <button class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none" aria-expanded="false">
+          <span class="text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">How much does it cost?</span>
+          <span class="faq-icon shrink-0 text-xl leading-none" style="color:#163667;transition:transform 0.4s ease;">+</span>
+        </button>
+        <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div>
+            <p class="pb-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+              It depends on the scope. We don't work with fixed packages because each project has different needs. <a href="/en/get-started" style="color:#163667;font-weight:600;text-decoration:underline;text-underline-offset:3px;">Tell us about your project and we'll prepare a proposal</a> with clear scope, phases, and investment. No fine print.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+FINAL CTA
+═════════════════════════════════════════ -->
+<section class="relative flex flex-col md:flex-row items-center md:items-center justify-center gap-8 md:gap-20 px-6 md:px-12 py-14 md:py-32" style="background:#FFFFFF;">
+
+    <!-- Text + desktop button -->
+    <div class="text-center md:text-left max-w-lg">
+      <h2 class="text-[2.5rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Shall we start?<br>Let's talk.</h2>
+      <p class="mt-6 text-lg md:text-lg leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">Tell us about your project and we'll analyze if it makes sense to apply our process to build it together.</p>
+      <!-- Button — desktop -->
+      <div class="hidden md:flex mt-8">
+        <a href="/en/get-started" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#163667;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(22,54,103,0.2);">
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:22px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Geometric shapes -->
+    <div class="grid grid-cols-2 gap-4 md:gap-8 shrink-0">
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><polygon points="50,4 96,96 4,96" fill="#00698D" opacity="0.8"/></svg>
+    </div>
+
+    <!-- Button — mobile only -->
+    <div class="md:hidden">
+      <a href="/en/get-started" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#163667;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(22,54,103,0.2);">
+        <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+        <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+      </a>
+    </div>
+
+  </section>
+
+<!-- Timeline scroll animation — circles fill + line grows/shrinks -->
+<script>
+  (function () {
+    const nodos = document.querySelectorAll('.nodo-paso');
+    const contenedores = document.querySelectorAll('.paso-container');
+    const linea = document.getElementById('linea-relleno');
+    if (!nodos.length || !linea) return;
+
+    const activos = new Set<number>();
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const idx = Number((entry.target as HTMLElement).dataset.paso);
+        if (entry.isIntersecting) {
+          activos.add(idx);
+        } else {
+          activos.delete(idx);
+        }
+      }
+      const maxActivo = activos.size > 0 ? Math.max(...activos) : 0;
+
+      nodos.forEach((n, i) => {
+        const paso = i + 1;
+        if (paso <= maxActivo) {
+          (n as HTMLElement).style.background = '#163667';
+          (n as HTMLElement).style.borderColor = '#163667';
+        } else {
+          (n as HTMLElement).style.background = '#FFFFFF';
+          (n as HTMLElement).style.borderColor = '#163667';
+        }
+      });
+      linea.style.height = ((maxActivo / nodos.length) * 100) + '%';
+    }, { threshold: 0, rootMargin: "-30% 0px -30% 0px" });
+
+    contenedores.forEach(c => observer.observe(c));
+  })();
+</script>
+
+<!-- Mobile scroll indicator script -->
+<script>
+  (function () {
+    const scroller = document.querySelector('.overflow-x-auto');
+    const dots = document.querySelectorAll('#proceso-dots span');
+    if (scroller && dots.length) {
+      scroller.addEventListener('scroll', () => {
+        const step = (scroller.scrollWidth - scroller.clientWidth) / (dots.length - 1);
+        const idx = Math.round(scroller.scrollLeft / (step || 1));
+        const clamped = Math.min(idx, dots.length - 1);
+        dots.forEach((d, i) => {
+          (d as HTMLElement).style.background = i === clamped ? '#163667' : 'rgba(22,54,103,0.2)';
+        });
+      }, { passive: true });
+    }
+  })();
+</script>
+
+<!-- ═══════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════ -->
+  <footer style="background:#0F2548;font-family:'Satoshi',sans-serif;">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+
+        <!-- Column 1: Brand -->
+        <div class="flex flex-col gap-4">
+          <a href="/" style="text-decoration:none;">
+            <div class="inline-block rounded p-3" style="background: rgba(255,255,255,0.95);">
+              <img src="/images/logo-marino.png" alt="Blue Unicorn" class="h-10 md:h-11 w-auto" />
+            </div>
+          </a>
+          <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">
+            Clear processes, real results. That's how we build businesses.
+          </p>
+          <div class="flex flex-col gap-1.5 mt-1">
+            <a href="mailto:hola@unicornioazul.com" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">hola@unicornioazul.com</a>
+            <div class="flex items-center gap-4">
+              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">LinkedIn</a>
+              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Services -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">What we do</span>
+          <a href="/en/what-we-do/business-development" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Business development</a>
+          <a href="/en/what-we-do/product-international-sourcing" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Product & sourcing</a>
+          <a href="/en/what-we-do/digital-marketing" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Digital marketing</a>
+          <a href="/en/what-we-do/digital-channels-scaling" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Digital channels & scaling</a>
+        </div>
+
+        <!-- Column 3: How we work + Cases -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">How we work</span>
+          <a href="/en/how-we-work#proceso" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">5-step process</a>
+          <a href="/en/sorie-methodology" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">SORIE™ methodology</a>
+          <a href="/en/case-studies" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Cases</a>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Company</span>
+          <a href="/en/about-us" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">About us</a>
+          <a href="/en/contact" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Contact</a>
+        </div>
+
+      </div>
+
+      <!-- Subtle top border + copyright -->
+      <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
+        <span class="text-xs" style="color:rgba(255,255,255,0.3);">© 2026 Blue Unicorn. All rights reserved.</span>
+        <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
+          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal notice</a>
+          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>

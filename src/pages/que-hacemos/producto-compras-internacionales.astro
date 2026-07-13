@@ -1,0 +1,687 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Producto y Compras Internacionales — Unicornio Azul"
+  description="En Unicornio Azul nos encargamos del desarrollo de producto y la gestión de compras internacionales: sourcing, negociación con fabricantes, control de calidad, importación y exportación."
+  image="/images/og-producto-compras.jpg"
+  showHeader={true}
+>
+
+<!-- ═════════════════════════════════════════
+HERO LANDING — Producto y Compras Internacionales
+navy #163667 · cuadrado ■
+═════════════════════════════════════════ -->
+<section class="relative overflow-hidden md:min-h-[85dvh]" style="background:#163667;">
+
+  <!-- Fondo geométrico — cuadrado gigante top-right + cuadrados pequeños izquierda -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <!-- ═══ CUADRADO GIGANTE — top-right, enorme, recortado ═══ -->
+    <g transform="translate(1480, 310) scale(7)" opacity="0.045">
+      <rect x="-30" y="-30" width="60" height="60" rx="4" fill="#ffffff"/>
+    </g>
+
+    <!-- ═══ CUADRADOS PEQUEÑOS — izquierda del contenido ═══ -->
+    <g transform="translate(80, 120) scale(0.9)" opacity="0.07">
+      <rect x="0" y="0" width="28" height="28" rx="3" fill="#ffffff"/>
+    </g>
+    <g transform="translate(140, 260) scale(0.6)" opacity="0.06">
+      <rect x="0" y="0" width="28" height="28" rx="3" fill="#ffffff"/>
+    </g>
+    <g transform="translate(60, 380) scale(0.75)" opacity="0.055">
+      <rect x="0" y="0" width="28" height="28" rx="3" fill="#ffffff"/>
+    </g>
+    <g transform="translate(180, 480) scale(0.55)" opacity="0.05">
+      <rect x="0" y="0" width="28" height="28" rx="3" fill="#ffffff"/>
+    </g>
+    <g transform="translate(100, 620) scale(0.7)" opacity="0.06">
+      <rect x="0" y="0" width="28" height="28" rx="3" fill="#ffffff"/>
+    </g>
+    <g transform="translate(200, 760) scale(0.5)" opacity="0.05">
+      <rect x="0" y="0" width="28" height="28" rx="3" fill="#ffffff"/>
+    </g>
+    <g transform="translate(50, 830) scale(0.65)" opacity="0.055">
+      <rect x="0" y="0" width="28" height="28" rx="3" fill="#ffffff"/>
+    </g>
+  </svg>
+
+  <div class="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 h-full flex flex-col">
+
+    <!-- GRID 2-columnas: texto izq · visual der -->
+    <div class="flex-1 flex flex-col items-center gap-6 md:gap-8 pt-10 md:pt-20 pb-4 md:pb-28">
+
+      <!-- TOP ROW: texto izq + ilustración der -->
+      <div class="w-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+
+        <!-- COLUMNA IZQUIERDA — texto -->
+        <div class="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <!-- H1 — enorme -->
+          <h1 class="leading-[0.92] tracking-tight max-w-[14ch]" style="color:#ffffff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.8rem,10vw,5.5rem);">
+            Producto y compras<br>internacionales
+          </h1>
+
+          <!-- Subtítulo -->
+          <p class="mt-4 md:mt-8 text-lg md:text-lg max-w-[40ch] leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+            Sourcing, desarrollo de producto y logística internacional. Buscamos proveedor en China y gestionamos todo el proceso de importación.
+          </p>
+
+          <!-- CTA — desktop (en columna de texto) -->
+          <div class="hidden lg:flex mt-8">
+            <a href="/empezar" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#ffffff;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#163667;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(0,0,0,0.12);">
+              <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Cuéntanos tu proyecto</span>
+              <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:22px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#163667" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#163667" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUMNA DERECHA — ilustración conceptual: producto y logística -->
+        <div class="flex-1 w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px] aspect-[4/3] flex items-center justify-center relative" role="img" aria-label="Ilustración de caja isométrica con globo terráqueo representando producto y compras internacionales">
+          <svg viewBox="0 0 480 360" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <style>
+                @keyframes orbit {
+                  from { stroke-dashoffset: 160; }
+                  to { stroke-dashoffset: 0; }
+                }
+                @keyframes float-box {
+                  0%, 100% { transform: translateY(0px); }
+                  50% { transform: translateY(-12px); }
+                }
+                @keyframes float-ui {
+                  0%, 100% { transform: translateY(0px); }
+                  50% { transform: translateY(-8px); }
+                }
+                .anim-orbit {
+                  stroke-dasharray: 8 8;
+                  animation: orbit 4s linear infinite;
+                }
+                .anim-orbit-reverse {
+                  stroke-dasharray: 8 8;
+                  animation: orbit 5s linear infinite reverse;
+                }
+                .anim-float {
+                  animation: float-box 6s ease-in-out infinite;
+                }
+                .anim-float-ui {
+                  animation: float-ui 5s ease-in-out infinite;
+                }
+                .anim-float-ui-delayed {
+                  animation: float-ui 5s ease-in-out -2.5s infinite;
+                }
+              </style>
+
+              <linearGradient id="boxTop" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8"/>
+              </linearGradient>
+              <linearGradient id="boxLeft" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4"/>
+              </linearGradient>
+              <linearGradient id="boxRight" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.1"/>
+              </linearGradient>
+              
+              <radialGradient id="globeGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- 1. FONDO: El Mundo / Mercado Internacional -->
+            <g transform="translate(240, 180)">
+              <circle cx="0" cy="0" r="170" fill="url(#globeGlow)" />
+              
+              <!-- Retícula del globo (Latitud / Longitud) -->
+              <circle cx="0" cy="0" r="170" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.25" />
+              <ellipse cx="0" cy="0" rx="85" ry="170" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.2" />
+              <ellipse cx="0" cy="0" rx="170" ry="55" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.2" />
+              <ellipse cx="0" cy="0" rx="170" ry="110" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.2" />
+              
+              <!-- Rutas Logísticas (Órbitas animadas) -->
+              <path d="M -150,20 C -80,120 80,120 150,20" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8" stroke-dasharray="8 8">
+                <animate attributeName="stroke-dashoffset" from="160" to="0" dur="4s" repeatCount="indefinite" />
+              </path>
+              <path d="M -130,-60 C -70,-130 70,-130 130,-60" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6" stroke-dasharray="8 8">
+                <animate attributeName="stroke-dashoffset" from="0" to="160" dur="5s" repeatCount="indefinite" />
+              </path>
+              
+              <!-- Nodos en las rutas -->
+              <circle cx="-150" cy="20" r="4" fill="#ffffff" opacity="0.9" />
+              <circle cx="150" cy="20" r="4" fill="#ffffff" opacity="0.9" />
+              <circle cx="-130" cy="-60" r="3" fill="#ffffff" opacity="0.8" />
+              <circle cx="130" cy="-60" r="3" fill="#ffffff" opacity="0.8" />
+            </g>
+
+            <!-- 2. CENTRO: El Producto / La Caja (Isométrico) -->
+            <g transform="translate(240, 200)">
+              <g class="anim-float">
+                <!-- Sombra base -->
+                <polygon points="0,40 90,0 0,-40 -90,0" fill="#000000" opacity="0.2" transform="translate(0, 70)" />
+                
+                <!-- Cara Izquierda (Glassmorphism) -->
+                <polygon points="-90,-10 0,35 0,-75 -90,-120" fill="url(#boxLeft)" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" />
+                
+                <!-- Cara Derecha (Glassmorphism) -->
+                <polygon points="0,35 90,-10 90,-120 0,-75" fill="url(#boxRight)" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" />
+                
+                <!-- Cara Superior (Tapa abierta/flotando) -->
+                <g transform="translate(0, -25)">
+                  <polygon points="0,-75 90,-120 0,-165 -90,-120" fill="url(#boxTop)" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" />
+                  
+                  <!-- El "Producto" interno (Núcleo) - Mantenemos el azul para que contraste con el blanco de la caja -->
+                  <polygon points="0,-95 45,-115 0,-135 -45,-115" fill="#0088B3" opacity="0.9" />
+                  <polygon points="-45,-115 0,-95 0,-70 -45,-90" fill="#163667" opacity="0.85" />
+                  <polygon points="0,-95 45,-115 45,-90 0,-70" fill="#00698D" opacity="0.85" />
+                </g>
+                
+                <!-- Detalles de Logística (Código de barras / Etiqueta) en Cara Izquierda -->
+                <g transform="translate(-70, -45) skewY(26.5)">
+                  <rect x="0" y="0" width="35" height="5" fill="#163667" opacity="0.7" />
+                  <rect x="0" y="10" width="20" height="3" fill="#163667" opacity="0.5" />
+                  <rect x="0" y="18" width="45" height="20" fill="#ffffff" opacity="0.9" />
+                  <!-- Líneas del código de barras -->
+                  <rect x="3" y="21" width="2" height="14" fill="#163667" opacity="0.8" />
+                  <rect x="7" y="21" width="4" height="14" fill="#163667" opacity="0.8" />
+                  <rect x="14" y="21" width="2" height="14" fill="#163667" opacity="0.8" />
+                  <rect x="19" y="21" width="6" height="14" fill="#163667" opacity="0.8" />
+                  <rect x="28" y="21" width="3" height="14" fill="#163667" opacity="0.8" />
+                  <rect x="34" y="21" width="5" height="14" fill="#163667" opacity="0.8" />
+                  <rect x="41" y="21" width="2" height="14" fill="#163667" opacity="0.8" />
+                </g>
+                
+                <!-- Detalles de Exportación (Flechas) en Cara Derecha -->
+                <g transform="translate(25, -60) skewY(-26.5)">
+                  <path d="M0,0 L25,0 L25,-12 L45,12 L25,36 L25,24 L0,24 Z" fill="#ffffff" opacity="0.8" />
+                </g>
+              </g>
+            </g>
+            
+            <!-- 3. ELEMENTOS FLOTANTES: Control y Calidad -->
+            <!-- UI Card (Sourcing / Datos) -->
+            <g transform="translate(100, 100)">
+              <g>
+                <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="5s" repeatCount="indefinite" />
+                <rect x="0" y="0" width="80" height="50" rx="6" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" opacity="0.95" />
+                <circle cx="20" cy="18" r="5" fill="#00698D" />
+                <rect x="35" y="15" width="30" height="5" rx="2.5" fill="#163667" opacity="0.4" />
+                <rect x="20" y="32" width="45" height="5" rx="2.5" fill="#163667" opacity="0.2" />
+              </g>
+            </g>
+            
+            <!-- Checkmark Badge (Control de Calidad) -->
+            <g transform="translate(340, 260)">
+              <g>
+                <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="5s" begin="-2.5s" repeatCount="indefinite" />
+                <rect x="0" y="0" width="60" height="60" rx="30" fill="#ffffff" stroke="#ffffff" stroke-width="2" opacity="0.95" />
+                <path d="M18,30 L26,38 L42,22" fill="none" stroke="#00698D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+      <!-- END top row -->
+
+      <!-- CTA — debajo de la ilustración (solo mobile) -->
+      <div class="lg:hidden mt-2 md:mt-4">
+        <a href="/empezar" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#ffffff;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#163667;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(0,0,0,0.12);">
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#163667" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#163667" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+2. INTRO — Producto, compras e internacionalización
+Diseño editorial · 2-columnas
+═════════════════════════════════════════ -->
+<section style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 pt-14 md:pt-32 pb-12 md:pb-24 flex flex-col md:flex-row gap-8 md:gap-20">
+
+    <!-- COLUMNA IZQUIERDA — headline -->
+    <div class="md:w-[42%] flex flex-col">
+      <h2 class="text-[2.5rem] md:text-[2.5rem] font-bold leading-[1.05] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+        Del producto<br>a la venta<br>en cualquier mercado
+      </h2>
+      <div class="mt-6 md:mt-8 w-16 h-[2px]" style="background:#163667;opacity:0.2;"></div>
+    </div>
+
+    <!-- COLUMNA DERECHA — texto -->
+    <div class="md:w-[58%] space-y-6 text-lg md:text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+      <!-- Lead — destacado -->
+      <p class="text-xl md:text-2xl leading-relaxed" style="color:#163667;font-weight:700; font-family:'Space Grotesk',sans-serif;">
+        Una parte clave del éxito de un negocio es el producto y cómo se fabrica.
+      </p>
+      <p>
+        En Unicornio Azul nos encargamos del <strong style="color:#1A1A1A;font-weight:700;">desarrollo de producto</strong> y de toda la gestión de compras internacionales: búsqueda de proveedores fiables en China y otros mercados, negociación, control de calidad, certificaciones y logística.
+      </p>
+      <p>
+        Trabajamos con <strong style="color:#1A1A1A;font-weight:700;">fabricantes internacionales y asiáticos</strong> y acompañamos tanto en procesos de importación como de exportación, preparando el negocio para operar en distintos mercados.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+3. QUÉ INCLUYE — 5 bloques según el brief
+═════════════════════════════════════════ -->
+<section style="background:#F2F5F8;">
+  <div class="max-w-4xl mx-auto md:px-12 py-14 md:py-28">
+
+    <div class="px-6 md:px-0">
+      <h2 class="text-[2.5rem] md:text-4xl font-bold tracking-tight mb-8 md:mb-14" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+        Cinco bloques. Del sourcing<br>a la entrega.
+      </h2>
+    </div>
+
+    <!-- Mobile: horizontal gallery -->
+    <div class="md:hidden overflow-hidden w-full">
+      <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory" style="scrollbar-width:none; -ms-overflow-style:none; padding-left:24px; padding-right:24px; scroll-padding-left:24px; scroll-padding-right:24px;">
+
+        <!-- 01 -->
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">01</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Desarrollo de producto</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Diseño, prototipado y especificaciones técnicas. Convertimos tu idea en un producto listo para fabricar.</p>
+        </div>
+
+        <!-- 02 -->
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">02</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Sourcing internacional</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Búsqueda y selección de proveedores en mercados internacionales con criterios de fiabilidad, coste y calidad.</p>
+        </div>
+
+        <!-- 03 -->
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">03</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Negociación con fabricantes</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Negociamos condiciones, volúmenes y plazos directamente con los fabricantes para maximizar el margen y minimizar el riesgo.</p>
+        </div>
+
+        <!-- 04 -->
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">04</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Control de producción y calidad</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Inspecciones, certificaciones y controles de calidad en origen para asegurar que el producto llega como tiene que llegar.</p>
+        </div>
+
+        <!-- 05 -->
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">05</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Importación y exportación</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Gestionamos toda la logística internacional: aduanas, transporte y documentación para mover tu producto sin fronteras.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Indicador dots (solo mobile) -->
+    <div id="bloques2-dots" class="md:hidden flex items-center justify-center gap-2 mt-5">
+      <span class="block w-2 h-2 rounded-full" style="background:#163667;"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+    </div>
+
+    <!-- Desktop: vertical stack -->
+    <div class="hidden md:flex flex-col gap-4 mt-14 px-12">
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
+        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">01</span></div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Desarrollo de producto</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Diseño, prototipado y especificaciones técnicas. Convertimos tu idea en un producto listo para fabricar.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
+        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">02</span></div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Sourcing internacional</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Búsqueda y selección de proveedores en mercados internacionales con criterios de fiabilidad, coste y calidad.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
+        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">03</span></div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Negociación con fabricantes</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Negociamos condiciones, volúmenes y plazos directamente con los fabricantes para maximizar el margen y minimizar el riesgo.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
+        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">04</span></div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Control de producción y calidad</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Inspecciones, certificaciones y controles de calidad en origen para asegurar que el producto llega como tiene que llegar.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
+        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">05</span></div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Importación y exportación</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Gestionamos toda la logística internacional: aduanas, transporte y documentación para mover tu producto sin fronteras.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+4. FRASE DE AUTORIDAD
+═════════════════════════════════════════ -->
+<section style="background:#FFFFFF;">
+  <div class="max-w-3xl mx-auto px-6 md:px-12 py-12 md:py-20 text-center">
+    <svg viewBox="0 0 40 40" class="w-8 h-8 mx-auto mb-5 opacity-20" style="color:#163667;">
+      <rect x="4" y="4" width="32" height="32" rx="2" fill="currentColor"/>
+    </svg>
+    <blockquote class="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#163667;">
+      &ldquo;El producto es lo único que toca tu cliente. Todo lo demás es opinión.&rdquo;
+    </blockquote>
+    <p class="mt-4 text-base opacity-50" style="font-family:'Satoshi',sans-serif;color:#6B7280;">— Principio fundamental en Unicornio Azul</p>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+5. PARA QUIÉN ES
+═════════════════════════════════════════ -->
+<section style="background:#163667;">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-14 md:py-28">
+
+    <h2 class="text-[2.5rem] md:text-4xl font-bold tracking-tight mb-8 md:mb-14" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">
+      Para quien necesita<br>fabricar sin dramas
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
+      <!-- Emprendedor -->
+      <div class="p-5 md:p-8 rounded-xl" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
+        <h4 class="text-xl font-bold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">Emprendedor con una idea de producto</h4>
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">
+          Tienes claro qué quieres vender pero necesitas encontrar quién lo fabrique, cómo producirlo y cómo traerlo sin sorpresas.
+        </p>
+      </div>
+
+      <!-- Empresa -->
+      <div class="p-5 md:p-8 rounded-xl" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
+        <h4 class="text-xl font-bold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">Empresa que busca proveedores</h4>
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">
+          Necesitas diversificar proveedores, mejorar márgenes o entrar en nuevos mercados con control real sobre la cadena de suministro.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+6. CTA FINAL
+═════════════════════════════════════════ -->
+<section class="relative flex flex-col md:flex-row items-center md:items-center justify-center gap-8 md:gap-20 px-6 md:px-12 py-10 md:py-32" style="background:#FFFFFF;">
+
+    <!-- Texto + botón desktop -->
+    <div class="text-center md:text-left max-w-lg">
+      <h2 class="text-[2.5rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">¿Tienes un<br>producto en mente?<br>Hablemos.</h2>
+      <p class="mt-6 text-lg md:text-lg leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">Cuéntanos qué quieres fabricar. Te ayudamos a encontrar el proveedor adecuado sin sorpresas.</p>
+      <!-- Botón — desktop -->
+      <div class="hidden md:flex mt-8 flex-col sm:flex-row items-center md:items-start gap-4">
+        <a href="/empezar" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#163667;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(22,54,103,0.2);">
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:22px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Formas geométricas -->
+    <div class="grid grid-cols-2 gap-4 md:gap-8 shrink-0">
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><polygon points="50,4 96,96 4,96" fill="#00698D" opacity="0.8"/></svg>
+    </div>
+
+    <!-- Botón — solo mobile -->
+    <div class="md:hidden">
+      <a href="/empezar" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#163667;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(22,54,103,0.2);">
+        <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Cuéntanos tu proyecto</span>
+        <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+      </a>
+    </div>
+
+  </section>
+
+<!-- ═════════════════════════════════════════
+7. OTROS PILARES — Navegación inferior
+═════════════════════════════════════════ -->
+<section style="background:#F5F1EC;">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-12 md:py-20">
+
+    <!-- Mobile: horizontal gallery -->
+    <div class="md:hidden overflow-hidden w-full -mx-6">
+      <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory" style="scrollbar-width:none; -ms-overflow-style:none; padding-left:24px; padding-right:24px; scroll-padding-left:24px; scroll-padding-right:24px;">
+
+        <a href="/que-hacemos/desarrollo-de-negocios" class="snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
+          <svg viewBox="0 0 40 40" class="w-8 h-8"><path d="M20 0 Q20 20 40 20 Q20 20 20 40 Q20 20 0 20 Q20 20 20 0Z" fill="#0F2548"/></svg>
+          <h4 class="text-xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Desarrollo de negocios</h4>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Análisis, validación y creación de marcas desde cero.</p>
+        </a>
+
+        <a href="/que-hacemos/marketing-digital" class="snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
+          <svg viewBox="0 0 40 40" class="w-8 h-8"><circle cx="20" cy="20" r="20" fill="#0B4F7A"/></svg>
+          <h4 class="text-xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Marketing digital</h4>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Branding, SEO y publicidad orientada a venta.</p>
+        </a>
+
+        <a href="/que-hacemos/canales-digitales-escalado" class="snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
+          <svg viewBox="0 0 40 40" class="w-8 h-8"><polygon points="20,0 40,40 0,40" fill="#00698D"/></svg>
+          <h4 class="text-xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Escalado internacional</h4>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Amazon, e-commerce y marketplaces.</p>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Indicador con figuras geométricas (solo mobile) -->
+    <div id="pilares2-figs" class="md:hidden flex items-center justify-center gap-3 mt-5">
+      <svg viewBox="0 0 24 24" width="12" height="12"><path d="M12 0 Q12 12 24 12 Q12 12 12 24 Q12 12 0 12 Q12 12 12 0Z" fill="#0F2548"/></svg>
+      <svg viewBox="0 0 24 24" width="12" height="12"><circle cx="12" cy="12" r="12" fill="#0B4F7A33"/></svg>
+      <svg viewBox="0 0 24 24" width="12" height="12"><polygon points="12,0 24,24 0,24" fill="#00698D33"/></svg>
+    </div>
+
+    <!-- Desktop: grid 3-columns -->
+    <div class="hidden md:grid grid-cols-3 gap-4 pillars2-nav">
+
+      <a href="/que-hacemos/desarrollo-de-negocios" class="block p-6 rounded-xl border transition-colors duration-300 hover:shadow-md no-underline" style="border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
+        <svg viewBox="0 0 40 40" class="w-8 h-8 mb-4"><path d="M20 0 Q20 20 40 20 Q20 20 20 40 Q20 20 0 20 Q20 20 20 0Z" fill="#0F2548"/></svg>
+        <h4 class="text-xl font-bold mb-1.5" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Desarrollo de negocios</h4>
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Análisis, validación y creación de marcas desde cero.</p>
+      </a>
+
+      <a href="/que-hacemos/marketing-digital" class="block p-6 rounded-xl border transition-colors duration-300 hover:shadow-md no-underline" style="border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
+        <svg viewBox="0 0 40 40" class="w-8 h-8 mb-4"><circle cx="20" cy="20" r="20" fill="#0B4F7A"/></svg>
+        <h4 class="text-xl font-bold mb-1.5" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Marketing digital</h4>
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Branding, SEO y publicidad orientada a venta.</p>
+      </a>
+
+      <a href="/que-hacemos/canales-digitales-escalado" class="block p-6 rounded-xl border transition-colors duration-300 hover:shadow-md no-underline" style="border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
+        <svg viewBox="0 0 40 40" class="w-8 h-8 mb-4"><polygon points="20,0 40,40 0,40" fill="#00698D"/></svg>
+        <h4 class="text-xl font-bold mb-1.5" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Escalado internacional</h4>
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Amazon, e-commerce y marketplaces.</p>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @media (hover: hover) {
+    .pillars2-nav a:hover h4,
+    .pillars2-nav a:hover p { color: #ffffff !important; }
+    .pillars2-nav a:nth-child(1):hover { background: #0F2548 !important; border-color: #0F2548 !important; }
+    .pillars2-nav a:nth-child(2):hover { background: #0B4F7A !important; border-color: #0B4F7A !important; }
+    .pillars2-nav a:nth-child(3):hover { background: #00698D !important; border-color: #00698D !important; }
+    .pillars2-nav a:hover svg { filter: none; }
+    .pillars2-nav a:hover svg path,
+    .pillars2-nav a:hover svg circle,
+    .pillars2-nav a:hover svg polygon { fill: #ffffff !important; }
+  }
+</style>
+
+<!-- Scroll indicator scripts for mobile horizontal galleries -->
+<script>
+  (function () {
+    // Bloques 01-05 gallery
+    const scroller = document.querySelector('.overflow-x-auto');
+    const dots = document.querySelectorAll('#bloques2-dots span');
+    if (scroller && dots.length) {
+      scroller.addEventListener('scroll', () => {
+        const step = (scroller.scrollWidth - scroller.clientWidth) / (dots.length - 1);
+        const idx = Math.round(scroller.scrollLeft / (step || 1));
+        const clamped = Math.min(idx, dots.length - 1);
+        dots.forEach((d, i) => {
+          (d as HTMLElement).style.background = i === clamped ? '#163667' : 'rgba(22,54,103,0.2)';
+        });
+      }, { passive: true });
+    }
+
+    // Pilares gallery (with geometric figure indicators)
+    const pillarsScroller = document.querySelectorAll('.overflow-x-auto')[1];
+    const figs = document.querySelectorAll('#pilares2-figs svg');
+    if (pillarsScroller && figs.length) {
+      const colors = ['#0F2548', '#0B4F7A', '#00698D']; // star, circle, triangle
+      pillarsScroller.addEventListener('scroll', () => {
+        const step = (pillarsScroller.scrollWidth - pillarsScroller.clientWidth) / (figs.length - 1);
+        const idx = Math.round(pillarsScroller.scrollLeft / (step || 1));
+        const clamped = Math.min(idx, figs.length - 1);
+        figs.forEach((fig, i) => {
+          const fill = i === clamped ? colors[i] : colors[i] + '33';
+          if (fig.querySelector('path')) fig.querySelector('path')!.setAttribute('fill', fill);
+          else if (fig.querySelector('circle')) fig.querySelector('circle')!.setAttribute('fill', fill);
+          else if (fig.querySelector('polygon')) fig.querySelector('polygon')!.setAttribute('fill', fill);
+        });
+      }, { passive: true });
+    }
+  })();
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Producto y Compras Internacionales",
+        "provider": { "@type": "Organization", "name": "Unicornio Azul" },
+        "description": "Desarrollo de producto, sourcing internacional, negociación con fabricantes, control de calidad, importación y exportación.",
+        "areaServed": "ES",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de producto y compras internacionales",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo de producto" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sourcing internacional" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Negociación con fabricantes" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Control de producción y calidad" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Importación y exportación" } }
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://unicornioazul.com" },
+          { "@type": "ListItem", "position": 2, "name": "Qué hacemos", "item": "https://unicornioazul.com/#que-hacemos" },
+          { "@type": "ListItem", "position": 3, "name": "Producto y Compras Internacionales" }
+        ]
+      }
+    ]
+  }
+</script>
+
+<!-- ═══════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════ -->
+  <footer style="background:#0F2548;font-family:'Satoshi',sans-serif;">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+
+        <!-- Columna 1: Marca -->
+        <div class="flex flex-col gap-4">
+          <a href="/" style="text-decoration:none;">
+            <div class="inline-block rounded p-3" style="background: rgba(255,255,255,0.95);">
+              <img src="/images/logo-marino.png" alt="Unicornio Azul" class="h-10 md:h-11 w-auto" />
+            </div>
+          </a>
+          <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">
+            Producto, compras internacionales y logística. Todo para fabricar y mover tu producto por el mundo.
+          </p>
+          <div class="flex flex-col gap-1.5 mt-1">
+            <a href="mailto:hola@unicornioazul.com" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">hola@unicornioazul.com</a>
+            <div class="flex items-center gap-4">
+              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">LinkedIn</a>
+              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna 2: Servicios -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Qué hacemos</span>
+          <a href="/que-hacemos/desarrollo-de-negocios" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Desarrollo de negocios</a>
+          <a href="/que-hacemos/producto-compras-internacionales" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Producto y compras</a>
+          <a href="/que-hacemos/marketing-digital" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Marketing digital</a>
+          <a href="/que-hacemos/canales-digitales-escalado" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Canales digitales y escalado</a>
+        </div>
+
+        <!-- Columna 3: Cómo trabajamos + Casos -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Cómo trabajamos</span>
+          <a href="/como-trabajamos#proceso" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Proceso 5 pasos</a>
+          <a href="/metodologia-sorie" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Metodología SORIE™</a>
+          <a href="/casos" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Casos</a>
+        </div>
+
+        <!-- Columna 4: Empresa -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Empresa</span>
+          <a href="/sobre-nosotros" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Sobre nosotros</a>
+          <a href="/contacto" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Contacto</a>
+        </div>
+
+      </div>
+
+      <!-- Borde superior sutil + copyright -->
+      <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
+        <span class="text-xs" style="color:rgba(255,255,255,0.3);">© 2026 Unicornio Azul. Todos los derechos reservados.</span>
+        <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
+          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Aviso legal</a>
+          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>

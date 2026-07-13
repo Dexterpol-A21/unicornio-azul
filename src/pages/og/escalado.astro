@@ -1,0 +1,91 @@
+<!-- OG Image: Escalado Internacional — Pirámides + Trendline -->
+<style>html,body{margin:0;padding:0;overflow:hidden}</style>
+<div style="
+  width:1200px;height:630px;overflow:hidden;position:relative;
+  background:#00698D;
+  display:flex;align-items:center;justify-content:center;
+">
+  <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(1160,120) scale(7)" opacity="0.035"><polygon points="0,-50 -43,25 43,25" fill="#ffffff"/></g>
+    <g transform="translate(60,480) scale(1.4)" opacity="0.05"><polygon points="0,-15 -13,8 13,8" fill="#ffffff"/></g>
+    <g transform="translate(180,100) scale(1)" opacity="0.04"><polygon points="0,-14 -12,7 12,7" fill="#ffffff"/></g>
+    <g transform="translate(40,280) scale(1.2)" opacity="0.045"><polygon points="0,-15 -13,8 13,8" fill="#ffffff"/></g>
+  </svg>
+
+  <svg viewBox="0 0 480 360" style="width:750px;height:562px;position:relative;z-index:1;" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="pyrLeft" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4"/>
+      </linearGradient>
+      <linearGradient id="pyrRight" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+      </linearGradient>
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="240" cy="180" r="200" fill="url(#glow)" />
+    <!-- Trendline -->
+    <path d="M 20,340 L 140,260 L 260,180 L 380,100 L 460,20" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.2" />
+    <path d="M 20,340 L 140,260 L 260,180 L 380,100 L 460,20" fill="none" stroke="#ffffff" stroke-width="3" stroke-dasharray="12 12" />
+    <g opacity="0.15" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 4">
+      <line x1="140" y1="260" x2="140" y2="340" />
+      <line x1="260" y1="180" x2="260" y2="340" />
+      <line x1="380" y1="100" x2="380" y2="340" />
+      <line x1="20" y1="340" x2="460" y2="340" stroke-dasharray="none" opacity="0.5" />
+    </g>
+    <!-- Pirámide 1 -->
+    <g transform="translate(140, 260) scale(0.6)">
+      <circle cx="0" cy="-10" r="20" fill="url(#coreGlow)" />
+      <polygon points="0,-50 -40,10 0,30" fill="url(#pyrLeft)" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round" />
+      <polygon points="0,-50 40,10 0,30" fill="url(#pyrRight)" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round" />
+    </g>
+    <!-- Pirámide 2 -->
+    <g transform="translate(260, 180) scale(0.8)">
+      <circle cx="0" cy="-10" r="25" fill="url(#coreGlow)" />
+      <polygon points="0,-50 -40,10 0,30" fill="url(#pyrLeft)" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round" />
+      <polygon points="0,-50 40,10 0,30" fill="url(#pyrRight)" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round" />
+    </g>
+    <!-- Pirámide 3 (Grande) -->
+    <g transform="translate(380, 100) scale(1.1)">
+      <path d="M -60,15 A 60,20 0 1,1 60,15 A 60,20 0 1,1 -60,15" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.4" stroke-dasharray="4 4" />
+      <circle cx="30" cy="15" r="4" fill="#ffffff" />
+      <circle cx="-30" cy="15" r="3" fill="#ffffff" opacity="0.6" />
+      <circle cx="0" cy="-10" r="30" fill="url(#coreGlow)" />
+      <polygon points="0,-50 -40,10 0,30" fill="url(#pyrLeft)" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round" />
+      <polygon points="0,-50 40,10 0,30" fill="url(#pyrRight)" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round" />
+    </g>
+    <!-- UI Cards -->
+    <g transform="translate(50, 140)">
+      <rect x="0" y="0" width="60" height="70" rx="6" fill="#ffffff" opacity="0.95" stroke="#ffffff" stroke-width="1.5" />
+      <rect x="0" y="0" width="60" height="15" rx="6" fill="#00698D" opacity="0.1" />
+      <circle cx="10" cy="7.5" r="3" fill="#00698D" />
+      <rect x="8" y="22" width="44" height="20" rx="3" fill="#00698D" opacity="0.2" />
+      <rect x="8" y="48" width="30" height="4" rx="2" fill="#00698D" opacity="0.4" />
+      <rect x="8" y="56" width="20" height="4" rx="2" fill="#00698D" opacity="0.2" />
+    </g>
+    <g transform="translate(260, 295)">
+      <rect x="0" y="0" width="70" height="50" rx="6" fill="#ffffff" opacity="0.95" stroke="#ffffff" stroke-width="1.5" />
+      <rect x="8" y="8" width="14" height="14" rx="2" fill="#00698D" opacity="0.6" />
+      <rect x="28" y="8" width="14" height="14" rx="2" fill="#00698D" opacity="0.4" />
+      <rect x="48" y="8" width="14" height="14" rx="2" fill="#00698D" opacity="0.2" />
+      <rect x="8" y="28" width="14" height="14" rx="2" fill="#00698D" opacity="0.2" />
+      <rect x="28" y="28" width="14" height="14" rx="2" fill="#00698D" opacity="0.6" />
+      <rect x="48" y="28" width="14" height="14" rx="2" fill="#00698D" opacity="0.4" />
+    </g>
+    <g transform="translate(360, 30)">
+      <rect x="0" y="0" width="60" height="30" rx="15" fill="#ffffff" opacity="0.95" stroke="#ffffff" stroke-width="1.5" />
+      <path d="M 15,18 L 22,11 L 29,18" fill="none" stroke="#00698D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      <line x1="22" y1="11" x2="22" y2="22" stroke="#00698D" stroke-width="2.5" stroke-linecap="round" />
+      <circle cx="42" cy="15" r="3" fill="#00698D" />
+      <circle cx="50" cy="15" r="3" fill="#00698D" opacity="0.4" />
+    </g>
+  </svg>
+</div>

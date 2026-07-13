@@ -1,0 +1,602 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Así es como trabajamos — Unicornio Azul"
+  description="No trabajamos con promesas ni fórmulas milagro. En Unicornio Azul seguimos un proceso claro de 5 pasos: análisis, producto, marca, ventas y escalado."
+  showHeader={true}
+>
+
+<!-- ═════════════════════════════════════════
+HERO — Cómo trabajamos
+midnight #0A1628 · proceso editorial
+═════════════════════════════════════════ -->
+<section class="relative overflow-hidden md:min-h-[60dvh] flex items-center" style="background: linear-gradient(to right, #0F2548 0%, #0F2548 20%, #163667 20%, #163667 40%, #0B4F7A 40%, #0B4F7A 60%, #00698D 60%, #00698D 80%, #0088B3 80%, #0088B3 100%);">
+
+  <!-- Fondo geométrico — líneas y puntos conectados (proceso / ruta) -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <!-- Línea horizontal punteada — como un timeline -->
+    <line x1="120" y1="350" x2="1320" y2="350" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,12" opacity="0.08"/>
+    <!-- Nodos en la línea -->
+    <circle cx="120" cy="350" r="4" fill="#ffffff" opacity="0.12"/>
+    <circle cx="420" cy="350" r="4" fill="#ffffff" opacity="0.12"/>
+    <circle cx="720" cy="350" r="4" fill="#ffffff" opacity="0.12"/>
+    <circle cx="1020" cy="350" r="4" fill="#ffffff" opacity="0.12"/>
+    <circle cx="1320" cy="350" r="4" fill="#ffffff" opacity="0.12"/>
+    <!-- Estrella decorativa top-right -->
+    <g transform="translate(1340, 80) scale(1.2)" opacity="0.06">
+      <path d="M0 -20 Q0 0 20 0 Q0 0 0 20 Q0 0 -20 0 Q0 0 0 -20Z" fill="#ffffff"/>
+    </g>
+  </svg>
+
+  <div class="relative z-10 w-full max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-28 text-center">
+    <h1 class="leading-[0.92] tracking-tight mb-6" style="color:#ffffff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.8rem,8vw,5.5rem);">
+      Así es como<br>trabajamos
+    </h1>
+    <p class="text-lg md:text-xl max-w-[48ch] mx-auto leading-relaxed" style="color:rgba(255,255,255,0.5);font-family:'Satoshi',sans-serif;">
+      No trabajamos con promesas ni fórmulas milagro. Trabajamos con procesos claros, experiencia real y visión a medio y largo plazo.
+    </p>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+PROCESO — 5 pasos · Timeline vertical
+═════════════════════════════════════════ -->
+<section id="proceso" style="background:#FFFFFF;">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-14 md:py-28">
+
+    <div class="hidden md:block relative">
+
+      <!-- Línea vertical central — se llena con scroll -->
+      <div class="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2" style="background:rgba(22,54,103,0.06);">
+        <div id="linea-relleno" class="w-full" style="height:0%;background:#163667;transition:height 0.4s ease-out;"></div>
+      </div>
+
+      <!-- Paso 01 -->
+      <div class="paso-container relative flex items-start gap-16 mb-16 md:mb-24" data-paso="1">
+        <div class="w-1/2 text-right pr-8">
+          <span class="block text-8xl font-black leading-none tracking-tighter mb-3" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.06);">01</span>
+          <h3 class="text-2xl font-bold mb-2 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Análisis y viabilidad</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Estudiamos el proyecto, el mercado y los números antes de avanzar.</p>
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2">
+          <div class="nodo-paso w-4 h-4 rounded-full border-2 transition-colors duration-500" data-paso="1" style="background:#FFFFFF;border-color:#163667;"></div>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+
+      <!-- Paso 02 -->
+      <div class="paso-container relative flex items-start gap-16 mb-16 md:mb-24" data-paso="2">
+        <div class="w-1/2 pr-8"></div>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2">
+          <div class="nodo-paso w-4 h-4 rounded-full border-2 transition-colors duration-500" data-paso="2" style="background:#FFFFFF;border-color:#163667;"></div>
+        </div>
+        <div class="w-1/2 pl-8">
+          <span class="block text-8xl font-black leading-none tracking-tighter mb-3" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.06);">02</span>
+          <h3 class="text-2xl font-bold mb-2 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Definición de producto y estructura</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Decidimos qué vender, cómo producirlo y cómo estructurar el negocio.</p>
+        </div>
+      </div>
+
+      <!-- Paso 03 -->
+      <div class="paso-container relative flex items-start gap-16 mb-16 md:mb-24" data-paso="3">
+        <div class="w-1/2 text-right pr-8">
+          <span class="block text-8xl font-black leading-none tracking-tighter mb-3" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.06);">03</span>
+          <h3 class="text-2xl font-bold mb-2 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Desarrollo de marca y operaciones</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Creamos la marca y ponemos en marcha la operativa real.</p>
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2">
+          <div class="nodo-paso w-4 h-4 rounded-full border-2 transition-colors duration-500" data-paso="3" style="background:#FFFFFF;border-color:#163667;"></div>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+
+      <!-- Paso 04 -->
+      <div class="paso-container relative flex items-start gap-16 mb-16 md:mb-24" data-paso="4">
+        <div class="w-1/2 pr-8"></div>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2">
+          <div class="nodo-paso w-4 h-4 rounded-full border-2 transition-colors duration-500" data-paso="4" style="background:#FFFFFF;border-color:#163667;"></div>
+        </div>
+        <div class="w-1/2 pl-8">
+          <span class="block text-8xl font-black leading-none tracking-tighter mb-3" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.06);">04</span>
+          <h3 class="text-2xl font-bold mb-2 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Activación de ventas y marketing</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Activamos marketing, publicidad y canales digitales.</p>
+        </div>
+      </div>
+
+      <!-- Paso 05 -->
+      <div class="paso-container relative flex items-start gap-16" data-paso="5">
+        <div class="w-1/2 text-right pr-8">
+          <span class="block text-8xl font-black leading-none tracking-tighter mb-3" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.06);">05</span>
+          <h3 class="text-2xl font-bold mb-2 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Escalado y optimización</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Optimizamos procesos y escalamos el negocio de forma sostenible.</p>
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2">
+          <div class="nodo-paso w-4 h-4 rounded-full border-2 transition-colors duration-500" data-paso="5" style="background:#FFFFFF;border-color:#163667;"></div>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+
+    </div>
+
+    <!-- Mobile: horizontal scroll cards -->
+    <div class="md:hidden overflow-hidden w-full">
+      <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory" style="scrollbar-width:none; -ms-overflow-style:none; padding-left:24px; padding-right:24px; scroll-padding-left:24px; scroll-padding-right:24px;">
+
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.08);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">01</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Análisis y viabilidad</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Estudiamos el proyecto, el mercado y los números antes de avanzar.</p>
+        </div>
+
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.08);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">02</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Definición de producto y estructura</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Decidimos qué vender, cómo producirlo y cómo estructurar el negocio.</p>
+        </div>
+
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.08);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">03</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Desarrollo de marca y operaciones</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Creamos la marca y ponemos en marcha la operativa real.</p>
+        </div>
+
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.08);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">04</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Activación de ventas y marketing</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Activamos marketing, publicidad y canales digitales.</p>
+        </div>
+
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.08);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">05</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Escalado y optimización</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Optimizamos procesos y escalamos el negocio de forma sostenible.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Indicador dots (solo mobile) -->
+    <div id="proceso-dots" class="md:hidden flex items-center justify-center gap-2 mt-5">
+      <span class="block w-2 h-2 rounded-full" style="background:#163667;"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+FRASE DE AUTORIDAD
+═════════════════════════════════════════ -->
+<section style="background:#F5F1EC;">
+  <div class="max-w-3xl mx-auto px-6 md:px-12 py-12 md:py-20 text-center">
+    <img src="/images/logo-marino.png" alt="Unicornio Azul" class="h-8 w-auto mx-auto mb-5 opacity-50" />
+    <blockquote class="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#163667;">
+      &ldquo;No trabajamos con promesas ni fórmulas milagro.&rdquo;
+    </blockquote>
+    <p class="mt-4 text-base opacity-50" style="font-family:'Satoshi',sans-serif;color:#6B7280;">— Principio fundamental en Unicornio Azul</p>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+SORIE™ — Método (calcado del index)
+═════════════════════════════════════════ -->
+<section class="relative" style="background: #FFFFFF;">
+
+    <div class="text-center pt-14 md:pt-32 pb-6 md:pb-10 px-4">
+      <span class="text-[11px] tracking-[0.35em] uppercase font-semibold opacity-35" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">Nuestra metodología</span>
+      <h2 class="mt-4 text-4xl md:text-5xl font-bold tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #1A1A1A;">
+        El método detrás de<br class="md:hidden"> todo lo que hacemos<br>en Unicornio Azul
+      </h2>
+    </div>
+
+    <!-- Letras S O R I E — bilingüe -->
+    <div class="flex flex-wrap items-end justify-center gap-6 md:gap-12 lg:gap-20 px-4 pb-10 md:pb-14 max-w-4xl mx-auto">
+
+      <!-- S — Soluciones / Solutions -->
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #0F2548;">S</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #0F2548;">Soluciones</span>
+        <span class="text-[10px] md:text-xs font-medium tracking-wide opacity-40" style="font-family: 'Satoshi', sans-serif; color: #0F2548;">Solutions</span>
+      </div>
+
+      <!-- O — Oportunidad / Opportunity -->
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #163667;">O</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #163667;">Oportunidad</span>
+        <span class="text-[10px] md:text-xs font-medium tracking-wide opacity-40" style="font-family: 'Satoshi', sans-serif; color: #163667;">Opportunity</span>
+      </div>
+
+      <!-- R — Reales / Reality -->
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #0B4F7A;">R</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #0B4F7A;">Reales</span>
+        <span class="text-[10px] md:text-xs font-medium tracking-wide opacity-40" style="font-family: 'Satoshi', sans-serif; color: #0B4F7A;">Reality</span>
+      </div>
+
+      <!-- I — Innovación / Innovation -->
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #00698D;">I</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #00698D;">Innovación</span>
+        <span class="text-[10px] md:text-xs font-medium tracking-wide opacity-40" style="font-family: 'Satoshi', sans-serif; color: #00698D;">Innovation</span>
+      </div>
+
+      <!-- E — Ejecución / Execution -->
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #0088B3;">E</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #0088B3;">Ejecución</span>
+        <span class="text-[10px] md:text-xs font-medium tracking-wide opacity-40" style="font-family: 'Satoshi', sans-serif; color: #0088B3;">Execution</span>
+      </div>
+
+    </div>
+
+    <!-- Slogan -->
+    <div class="text-center pb-8 md:pb-10 px-4">
+      <p class="text-lg md:text-xl font-semibold italic opacity-70 tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #163667;">
+        Soluciones Reales para Ideas Extraordinarias
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center pb-12 md:pb-32 px-4">
+      <a href="/metodologia-sorie" class="cta-slide" style="
+        display: inline-block; width: 260px; height: 52px;
+        border-radius: 4px; overflow: hidden;
+        cursor: pointer; text-decoration: none;
+        box-shadow: inset 0 0 0 2px #163667;
+      ">
+        <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0;">
+          <span style="font-size: 15px; font-weight: 600; color: #163667; font-family: 'Satoshi', sans-serif;">Conoce el método SORIE™</span>
+        </div>
+        <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0; background: #163667;">
+          <span style="font-size: 15px; font-weight: 600; color: #ffffff; font-family: 'Satoshi', sans-serif;">SORIE™</span>
+        </div>
+      </a>
+    </div>
+
+  </section>
+
+<style is:global>
+  .cta-slide {
+    transition: box-shadow 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .cta-slide:hover {
+    box-shadow: inset 0 0 0 2px #163667, 0 0.625em 1em 0 rgba(22, 54, 103, 0.30) !important;
+  }
+  .cta-slide:hover div {
+    transform: translateY(-52px) !important;
+  }
+  .cta-slide:active {
+    transform: scale(0.97) !important;
+  }
+
+  /* ─── FAQ accordion ─── */
+  .faq-trigger:hover span:first-child { color: #163667; }
+  .faq-content > div { overflow: hidden; }
+</style>
+
+<!-- FAQ accordion script -->
+<script>
+  (function () {
+    const accordion = document.getElementById('faq-accordion');
+    if (!accordion) return;
+    const triggers = accordion.querySelectorAll('.faq-trigger');
+    triggers.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item')!;
+        const content = item.querySelector('.faq-content') as HTMLElement;
+        const icon = btn.querySelector('.faq-icon') as HTMLElement;
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close all others
+        triggers.forEach(other => {
+          if (other !== btn) {
+            other.setAttribute('aria-expanded', 'false');
+            (other.querySelector('.faq-icon') as HTMLElement).style.transform = 'rotate(0deg)';
+            const otherContent = other.closest('.faq-item')!.querySelector('.faq-content') as HTMLElement;
+            otherContent.style.maxHeight = '0';
+          }
+        });
+
+        if (isOpen) {
+          btn.setAttribute('aria-expanded', 'false');
+          icon.style.transform = 'rotate(0deg)';
+          content.style.maxHeight = '0';
+        } else {
+          btn.setAttribute('aria-expanded', 'true');
+          icon.style.transform = 'rotate(45deg)';
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  })();
+</script>
+
+<!-- ═════════════════════════════════════════
+QUIÉN ESTÁ DETRÁS — Luis Chicharro
+═════════════════════════════════════════ -->
+<section style="background:#F5F1EC;">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-14 md:py-28">
+
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+
+      <!-- Cita / texto — full width, sin avatar -->
+      <div class="flex-1 space-y-6">
+        <blockquote class="text-xl md:text-2xl font-bold leading-[1.25] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+          &ldquo;Este proceso no viene de un manual. Viene de años construyendo negocios reales en compras internacionales, desarrollo de producto y canales digitales.&rdquo;
+        </blockquote>
+
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+          Unicornio Azul está liderado por un equipo con experiencia real en el terreno, no desde la teoría, con una forma de trabajar que fue destacada en <a href="https://cincodias.elpais.com/companias/2023-04-11/los-secretos-para-vender-en-plataformas-como-amazon.html" target="_blank" rel="noopener" style="color:#1A1A1A;font-weight:700;text-decoration:underline;text-underline-offset:3px;">Cinco Días (Grupo El País)</a>.
+        </p>
+
+        <!-- CTA — estilo cta-slide como el de SORIE -->
+        <div>
+          <a href="/sobre-nosotros" class="cta-slide" style="
+            display: inline-block; width: 260px; height: 52px;
+            border-radius: 4px; overflow: hidden;
+            cursor: pointer; text-decoration: none;
+            box-shadow: inset 0 0 0 2px #163667;
+          ">
+            <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0;">
+              <span style="font-size: 15px; font-weight: 600; color: #163667; font-family: 'Satoshi', sans-serif;">Conoce al equipo</span>
+            </div>
+            <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0; background: #163667;">
+              <span style="font-size: 15px; font-weight: 600; color: #ffffff; font-family: 'Satoshi', sans-serif;">Nosotros</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+FAQ — Preguntas frecuentes sobre el proceso
+═════════════════════════════════════════ -->
+<section style="background:#F2F5F8;">
+  <div class="max-w-3xl mx-auto px-6 md:px-12 py-14 md:py-28">
+
+    <div class="space-y-1" id="faq-accordion">
+
+      <div class="faq-item border-b" style="border-color:rgba(22,54,103,0.08);">
+        <button class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none" aria-expanded="false">
+          <span class="text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">¿Cuánto dura el proceso completo?</span>
+          <span class="faq-icon shrink-0 text-xl leading-none" style="color:#163667;transition:transform 0.4s ease;">+</span>
+        </button>
+        <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div>
+            <p class="pb-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+              No hay una respuesta única porque cada proyecto es distinto. Un análisis de viabilidad puede resolverse en semanas. Construir una marca desde cero y lanzarla a canales digitales puede llevar meses. Lo importante es que cada paso se cumple sin atajos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b" style="border-color:rgba(22,54,103,0.08);">
+        <button class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none" aria-expanded="false">
+          <span class="text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">¿Puedo contratar solo un paso del proceso?</span>
+          <span class="faq-icon shrink-0 text-xl leading-none" style="color:#163667;transition:transform 0.4s ease;">+</span>
+        </button>
+        <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div>
+            <p class="pb-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+              Nuestro proceso está diseñado para funcionar de forma integral. Dicho esto, entendemos que cada proyecto tiene su punto de partida. Si ya tienes producto validado pero necesitas escalar, empezamos desde donde estás. Lo que no hacemos es activar marketing sin tener claro el producto y la estructura.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b" style="border-color:rgba(22,54,103,0.08);">
+        <button class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none" aria-expanded="false">
+          <span class="text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">¿Con qué tipo de negocios trabajan?</span>
+          <span class="faq-icon shrink-0 text-xl leading-none" style="color:#163667;transition:transform 0.4s ease;">+</span>
+        </button>
+        <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div>
+            <p class="pb-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+              Trabajamos con emprendedores, empresas y proyectos de cualquier sector que necesiten construir, lanzar o escalar un negocio con criterio. Nuestro proceso se adapta al tamaño, al mercado y al momento de cada proyecto. Si tienes una idea o un negocio en marcha, podemos ayudarte.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b" style="border-color:rgba(22,54,103,0.08);">
+        <button class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none" aria-expanded="false">
+          <span class="text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">¿Cómo sé si mi proyecto es viable?</span>
+          <span class="faq-icon shrink-0 text-xl leading-none" style="color:#163667;transition:transform 0.4s ease;">+</span>
+        </button>
+        <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div>
+            <p class="pb-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+              El primer paso del proceso es precisamente eso: análisis de viabilidad. Estudiamos mercado, competencia, márgenes y estructura de costes antes de tomar cualquier decisión. No validamos con encuestas ni con likes. Validamos con datos reales. <a href="/empezar" style="color:#163667;font-weight:600;text-decoration:underline;text-underline-offset:3px;">Cuéntanos tu proyecto y te decimos si tiene sentido.</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b" style="border-color:rgba(22,54,103,0.08);">
+        <button class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none" aria-expanded="false">
+          <span class="text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">¿Cuánto cuesta?</span>
+          <span class="faq-icon shrink-0 text-xl leading-none" style="color:#163667;transition:transform 0.4s ease;">+</span>
+        </button>
+        <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div>
+            <p class="pb-5 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+              Depende del alcance. No trabajamos con paquetes cerrados porque cada proyecto tiene necesidades distintas. <a href="/empezar" style="color:#163667;font-weight:600;text-decoration:underline;text-underline-offset:3px;">Háblanos de tu proyecto y te preparamos una propuesta</a> con alcance, fases e inversión clara. Sin letra pequeña.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+CTA FINAL
+═════════════════════════════════════════ -->
+<section class="relative flex flex-col md:flex-row items-center md:items-center justify-center gap-8 md:gap-20 px-6 md:px-12 py-14 md:py-32" style="background:#FFFFFF;">
+
+    <!-- Texto + botón desktop -->
+    <div class="text-center md:text-left max-w-lg">
+      <h2 class="text-[2.5rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">¿Empezamos?<br>Hablemos.</h2>
+      <p class="mt-6 text-lg md:text-lg leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">Cuéntanos tu proyecto y analizamos si tiene sentido aplicar nuestro proceso para construirlo juntos.</p>
+      <!-- Botón — desktop -->
+      <div class="hidden md:flex mt-8">
+        <a href="/empezar" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#163667;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(22,54,103,0.2);">
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:22px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Formas geométricas -->
+    <div class="grid grid-cols-2 gap-4 md:gap-8 shrink-0">
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><polygon points="50,4 96,96 4,96" fill="#00698D" opacity="0.8"/></svg>
+    </div>
+
+    <!-- Botón — solo mobile -->
+    <div class="md:hidden">
+      <a href="/empezar" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#163667;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(22,54,103,0.2);">
+        <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Cuéntanos tu proyecto</span>
+        <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+      </a>
+    </div>
+
+  </section>
+
+<!-- Timeline scroll animation — círculos se llenan + línea crece / decrece -->
+<script>
+  (function () {
+    const nodos = document.querySelectorAll('.nodo-paso');
+    const contenedores = document.querySelectorAll('.paso-container');
+    const linea = document.getElementById('linea-relleno');
+    if (!nodos.length || !linea) return;
+
+    const activos = new Set<number>();
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const idx = Number((entry.target as HTMLElement).dataset.paso);
+        if (entry.isIntersecting) {
+          activos.add(idx);
+        } else {
+          activos.delete(idx);
+        }
+      }
+      const maxActivo = activos.size > 0 ? Math.max(...activos) : 0;
+
+      nodos.forEach((n, i) => {
+        const paso = i + 1;
+        if (paso <= maxActivo) {
+          (n as HTMLElement).style.background = '#163667';
+          (n as HTMLElement).style.borderColor = '#163667';
+        } else {
+          (n as HTMLElement).style.background = '#FFFFFF';
+          (n as HTMLElement).style.borderColor = '#163667';
+        }
+      });
+      linea.style.height = ((maxActivo / nodos.length) * 100) + '%';
+    }, { threshold: 0, rootMargin: "-30% 0px -30% 0px" });
+
+    contenedores.forEach(c => observer.observe(c));
+  })();
+</script>
+
+<!-- Mobile scroll indicator script -->
+<script>
+  (function () {
+    const scroller = document.querySelector('.overflow-x-auto');
+    const dots = document.querySelectorAll('#proceso-dots span');
+    if (scroller && dots.length) {
+      scroller.addEventListener('scroll', () => {
+        const step = (scroller.scrollWidth - scroller.clientWidth) / (dots.length - 1);
+        const idx = Math.round(scroller.scrollLeft / (step || 1));
+        const clamped = Math.min(idx, dots.length - 1);
+        dots.forEach((d, i) => {
+          (d as HTMLElement).style.background = i === clamped ? '#163667' : 'rgba(22,54,103,0.2)';
+        });
+      }, { passive: true });
+    }
+  })();
+</script>
+
+<!-- ═══════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════ -->
+  <footer style="background:#0F2548;font-family:'Satoshi',sans-serif;">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+
+        <!-- Columna 1: Marca -->
+        <div class="flex flex-col gap-4">
+          <a href="/" style="text-decoration:none;">
+            <div class="inline-block rounded p-3" style="background: rgba(255,255,255,0.95);">
+              <img src="/images/logo-marino.png" alt="Unicornio Azul" class="h-10 md:h-11 w-auto" />
+            </div>
+          </a>
+          <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">
+            Procesos claros, resultados reales. Así construimos negocios.
+          </p>
+          <div class="flex flex-col gap-1.5 mt-1">
+            <a href="mailto:hola@unicornioazul.com" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">hola@unicornioazul.com</a>
+            <div class="flex items-center gap-4">
+              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">LinkedIn</a>
+              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna 2: Servicios -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Qué hacemos</span>
+          <a href="/que-hacemos/desarrollo-de-negocios" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Desarrollo de negocios</a>
+          <a href="/que-hacemos/producto-compras-internacionales" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Producto y compras</a>
+          <a href="/que-hacemos/marketing-digital" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Marketing digital</a>
+          <a href="/que-hacemos/canales-digitales-escalado" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Canales digitales y escalado</a>
+        </div>
+
+        <!-- Columna 3: Cómo trabajamos + Casos -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Cómo trabajamos</span>
+          <a href="/como-trabajamos#proceso" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Proceso 5 pasos</a>
+          <a href="/metodologia-sorie" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Metodología SORIE™</a>
+          <a href="/casos" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Casos</a>
+        </div>
+
+        <!-- Columna 4: Empresa -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Empresa</span>
+          <a href="/sobre-nosotros" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Sobre nosotros</a>
+          <a href="/contacto" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Contacto</a>
+        </div>
+
+      </div>
+
+      <!-- Borde superior sutil + copyright -->
+      <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
+        <span class="text-xs" style="color:rgba(255,255,255,0.3);">© 2026 Unicornio Azul. Todos los derechos reservados.</span>
+        <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
+          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Aviso legal</a>
+          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>

@@ -1,0 +1,122 @@
+<div class="geometric-ecosystem" style="position: relative; width: 320px; height: 120px; margin: 0 auto; overflow: visible;">
+          <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; overflow: visible; padding: 20px 0;">
+            <defs>
+              <!-- Gradiente marcando la ruta de evolución -->
+              <linearGradient id="flow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#163667" stop-opacity="0.1"/>
+                <stop offset="33%" stop-color="#0F2548" stop-opacity="0.3"/>
+                <stop offset="66%" stop-color="#00698D" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#0088B3" stop-opacity="0.8"/>
+              </linearGradient>
+
+              <!-- Brillo sutil para la estrella final -->
+              <filter id="glow-star" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            <!-- Ruta de conexión base tenue -->
+            <path class="base-path" d="M 40 60 C 70 60, 70 20, 110 20 C 140 20, 150 70, 190 70 C 230 70, 240 30, 280 30"
+                  fill="none" stroke="url(#flow-grad)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+
+            <!-- Flujo de datos animado -->
+            <path class="animated-flow" d="M 40 60 C 70 60, 70 20, 110 20 C 140 20, 150 70, 190 70 C 230 70, 240 30, 280 30"
+                  fill="none" stroke="url(#flow-grad)" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- Pilar 1: Círculo (Negocios) -->
+            <g class="float-shape shape-1" style="transform-origin: 40px 60px;">
+              <circle cx="40" cy="60" r="10" fill="#163667" opacity="0.95"/>
+              <circle cx="40" cy="60" r="10" fill="none" stroke="#163667" stroke-width="1.5" class="ripple-pulse"/>
+            </g>
+
+            <!-- Pilar 2: Cuadrado Redondeado (Producto) -->
+            <g class="float-shape shape-2" style="transform-origin: 110px 20px;">
+              <rect x="100" y="10" width="20" height="20" rx="4" fill="#0F2548" opacity="0.95"/>
+            </g>
+
+            <!-- Pilar 3: Triángulo Redondeado (Marketing) -->
+            <g class="float-shape shape-3" style="transform-origin: 190px 70px;">
+              <path d="M190 58 L202 78 A3 3 0 0 1 199 83 L181 83 A3 3 0 0 1 178 78 Z" fill="#00698D" opacity="0.95"/>
+            </g>
+
+            <!-- Pilar 4: Rombo (Escalado) -->
+            <g class="float-shape shape-4" style="transform-origin: 280px 30px;">
+              <rect x="271" y="21" width="18" height="18" rx="2.5" fill="#0088B3" opacity="0.95" transform="rotate(45 280 30)"/>
+            </g>
+
+            <!-- El Fin del Trayecto: Estrella 4 Puntas (Ideas Extraordinarias) -->
+            <g class="star-float" style="transform-origin: 280px 0px;" transform="translate(0, -35)">
+              <!-- Glow -->
+              <path d="M280 -10 Q280 10 300 10 Q280 10 280 30 Q280 10 260 10 Q280 10 280 -10Z" fill="#00698D" opacity="0.3" filter="url(#glow-star)"/>
+              <!-- Base star -->
+              <path d="M280 -4 Q280 10 294 10 Q280 10 280 24 Q280 10 266 10 Q280 10 280 -4Z" fill="#A8D8EA"/>
+              <path d="M280 2 Q280 10 288 10 Q280 10 280 18 Q280 10 272 10 Q280 10 280 2Z" fill="#FFFFFF"/>
+            </g>
+
+            <!-- Partículas decorativas ambientales -->
+            <circle cx="80" cy="45" r="2.5" fill="#A8D8EA" opacity="0.6" class="particle p-1"/>
+            <circle cx="150" cy="15" r="1.5" fill="#0088B3" opacity="0.5" class="particle p-2"/>
+            <circle cx="230" cy="85" r="2" fill="#00698D" opacity="0.4" class="particle p-3"/>
+          </svg>
+        </div>
+
+<!-- Y los estilos CSS -->
+<style>
+  /* --- Ecosistema Geométrico SVG Animaciones --- */
+  .animated-flow {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: drawFlow 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  @keyframes drawFlow {
+    0% { stroke-dashoffset: 600; opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0; }
+  }
+
+  .float-shape {
+    animation: gentleFloat 5s ease-in-out infinite alternate;
+  }
+  .shape-1 { animation-delay: 0s; }
+  .shape-2 { animation-delay: -1.2s; }
+  .shape-3 { animation-delay: -2.4s; }
+  .shape-4 { animation-delay: -3.6s; }
+
+  @keyframes gentleFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+  }
+
+  .ripple-pulse {
+    transform-origin: 40px 60px;
+    animation: rippleEffect 3s cubic-bezier(0.1, 0, 0.3, 1) infinite;
+  }
+  @keyframes rippleEffect {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+
+  .star-float {
+    animation: starRotateFloat 6s ease-in-out infinite alternate;
+  }
+  @keyframes starRotateFloat {
+    0% { transform: translate(0, -35px) scale(0.95) rotate(-4deg); }
+    100% { transform: translate(0, -42px) scale(1.05) rotate(4deg); }
+  }
+
+  .particle {
+    animation: particleDrift 8s linear infinite;
+  }
+  .p-1 { animation-delay: 0s; animation-duration: 7s; }
+  .p-2 { animation-delay: -2s; animation-duration: 9s; }
+  .p-3 { animation-delay: -4s; animation-duration: 11s; }
+
+  @keyframes particleDrift {
+    0% { transform: translate(0, 0) scale(0.8); opacity: 0; }
+    20% { opacity: 0.6; }
+    80% { opacity: 0.6; }
+    100% { transform: translate(15px, -25px) scale(1.2); opacity: 0; }
+  }
+</style>

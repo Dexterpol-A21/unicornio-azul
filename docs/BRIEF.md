@@ -200,3 +200,57 @@
 - Sourcing internacional
 - Escalado de negocios
 - Desarrollo de producto
+
+---
+
+## 💎 NUEVO CONTENIDO DEL CLIENTE (01/07/2026)
+
+### 🧬 Ideas base centrales — Diferenciación
+
+> "Construimos oportunidades donde otros solo ven ideas."
+
+- No vendemos servicios. Creamos negocios.
+- Desde una marca hasta una fábrica.
+- Desde una idea hasta un canal de venta.
+- Desde un producto hasta una expansión internacional.
+
+> "Un unicornio es esa oportunidad extraordinaria que casi nadie consigue encontrar... pero que algunos consiguen construir."
+
+### 👤 Perfil de LinkedIn
+
+👉 [linkedin.com/in/luis-chicharro](https://www.linkedin.com/in/luis-chicharro/?skipRedirect=true)
+
+### 💬 Frases / Conceptos sueltos
+
+- Nunca enamorarte de una idea antes de validar el mercado.
+- El proveedor es tan importante como el producto.
+- Una marca vale más que un catálogo.
+- Lo barato suele salir caro cuando compras fuera.
+- No escales un negocio que todavía no gana dinero.
+- El marketing no arregla un mal producto.
+- La reputación tarda años en construirse y minutos en perderse.
+- Conectamos mundos que normalmente no se hablan entre sí.
+
+### 🧩 Método SORIE™ (no registrado aún)
+
+**Versión A — Español:**
+
+| Letra | Palabra |
+|-------|---------|
+| **S** | Soluciones |
+| **O** | — |
+| **R** | Reales |
+| **I** | Ideas |
+| **E** | Extraordinarias |
+
+**Versión B — Inglés:**
+
+| Letra | Palabra |
+|-------|---------|
+| **S** | Strategy |
+| **O** | Opportunity |
+| **R** | Reality |
+| **I** | Innovation |
+| **E** | Execution |
+
+> El acrónimo SORIE™ se alinea directamente con el slogan: *"Soluciones Reales para Ideas Extraordinarias"*. La versión en inglés añade dimensión internacional. Aún no está registrado.

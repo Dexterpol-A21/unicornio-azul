@@ -1,0 +1,634 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Digital Marketing — Blue Unicorn"
+  description="Results-oriented digital marketing: ecommerce SEO, Amazon ads, applied branding, SEM, and online advertising designed to sell."
+  image="/images/og-marketing-digital.jpg"
+  showHeader={true}
+>
+
+<!-- ═════════════════════════════════════════
+HERO LANDING — Digital Marketing
+teal #0B4F7A · circle ● · min-h-85dvh
+═════════════════════════════════════════ -->
+<section class="relative overflow-hidden md:min-h-[85dvh]" style="background:#0B4F7A;">
+
+  <!-- Geometric background — giant circle top-right + small circles left -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <!-- ═══ GIANT CIRCLE — top-right, huge, cropped ═══ -->
+    <g transform="translate(1520, 200) scale(7)" opacity="0.04">
+      <circle cx="0" cy="0" r="50" fill="#ffffff"/>
+    </g>
+
+    <!-- ═══ SMALL CIRCLES — left of content ═══ -->
+    <g transform="translate(80, 120) scale(0.9)" opacity="0.07">
+      <circle cx="0" cy="0" r="14" fill="#ffffff"/>
+    </g>
+    <g transform="translate(140, 260) scale(0.6)" opacity="0.06">
+      <circle cx="0" cy="0" r="14" fill="#ffffff"/>
+    </g>
+    <g transform="translate(60, 380) scale(0.75)" opacity="0.055">
+      <circle cx="0" cy="0" r="14" fill="#ffffff"/>
+    </g>
+    <g transform="translate(180, 480) scale(0.55)" opacity="0.05">
+      <circle cx="0" cy="0" r="14" fill="#ffffff"/>
+    </g>
+    <g transform="translate(100, 620) scale(0.7)" opacity="0.06">
+      <circle cx="0" cy="0" r="14" fill="#ffffff"/>
+    </g>
+    <g transform="translate(200, 760) scale(0.5)" opacity="0.05">
+      <circle cx="0" cy="0" r="14" fill="#ffffff"/>
+    </g>
+    <g transform="translate(50, 830) scale(0.65)" opacity="0.055">
+      <circle cx="0" cy="0" r="14" fill="#ffffff"/>
+    </g>
+  </svg>
+
+  <div class="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 h-full flex flex-col">
+
+    <!-- GRID 2-columns: text left · visual right -->
+    <div class="flex-1 flex flex-col items-center gap-6 md:gap-8 pt-10 md:pt-20 pb-4 md:pb-28">
+
+      <!-- TOP ROW: text left + illustration right -->
+      <div class="w-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+
+        <!-- LEFT COLUMN — text -->
+        <div class="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <!-- H1 — huge -->
+          <h1 class="leading-[0.92] tracking-tight max-w-[14ch]" style="color:#ffffff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.8rem,10vw,5.5rem);">
+            Marketing<br>that sells
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="mt-4 md:mt-8 text-lg md:text-lg max-w-[40ch] leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+            Ecommerce SEO, SEM, Amazon ads, and applied branding. Digital marketing that generates sales, not empty metrics.
+          </p>
+
+          <!-- CTA — desktop (in text column) -->
+          <div class="hidden lg:flex mt-8">
+            <a href="/en/empezar" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#ffffff;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#0B4F7A;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(0,0,0,0.12);">
+              <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+              <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:22px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#0B4F7A" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#0B4F7A" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex-1 w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px] aspect-[4/3] flex items-center justify-center relative" role="img" aria-label="Illustration of a glass funnel with bar chart representing digital marketing and online advertising">
+          <svg viewBox="0 0 480 360" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="glassTop" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+              </linearGradient>
+              <linearGradient id="glassMid" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.1"/>
+              </linearGradient>
+              <linearGradient id="glassBot" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4"/>
+              </linearGradient>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <g transform="translate(0, -16)">
+            <!-- 1. BACKGROUND: Glow -->
+            <circle cx="240" cy="180" r="200" fill="url(#glow)" />
+
+            <!-- 2. CONNECTOR LINES: Funnel walls -->
+            <path d="M 100,80 L 200,280" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3" stroke-dasharray="6 6" />
+            <path d="M 380,80 L 280,280" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3" stroke-dasharray="6 6" />
+            <path d="M 140,80 L 215,280" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.15" />
+            <path d="M 340,80 L 265,280" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.15" />
+
+            <!-- 3. USER FLOW: Particles falling through the funnel -->
+            <g>
+              <circle cx="180" cy="90" r="4" fill="#ffffff">
+                <animate attributeName="cy" values="90; 220" dur="2.5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0; 0.8; 0" dur="2.5s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="300" cy="110" r="3" fill="#ffffff">
+                <animate attributeName="cy" values="110; 280" dur="3s" begin="0.5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0; 0.8; 0" dur="3s" begin="0.5s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="240" cy="80" r="5" fill="#ffffff">
+                <animate attributeName="cy" values="80; 340" dur="3.5s" begin="1s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0; 1; 0" dur="3.5s" begin="1s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="210" cy="130" r="3" fill="#ffffff">
+                <animate attributeName="cy" values="130; 300" dur="2.8s" begin="1.5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0; 0.6; 0" dur="2.8s" begin="1.5s" repeatCount="indefinite" />
+              </circle>
+            </g>
+
+            <!-- 4. THE FUNNEL: Glass Rings (Glassmorphism) -->
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="6s" repeatCount="indefinite" />
+              <ellipse cx="240" cy="140" rx="140" ry="45" fill="url(#glassTop)" stroke="#ffffff" stroke-width="2" />
+              <ellipse cx="240" cy="140" rx="120" ry="35" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3" />
+            </g>
+
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="5s" begin="1s" repeatCount="indefinite" />
+              <ellipse cx="240" cy="240" rx="90" ry="30" fill="url(#glassMid)" stroke="#ffffff" stroke-width="2" />
+              <ellipse cx="240" cy="240" rx="75" ry="22" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.4" />
+            </g>
+
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="0,0; 0,-2; 0,0" dur="4s" begin="2s" repeatCount="indefinite" />
+              <ellipse cx="240" cy="340" rx="40" ry="15" fill="url(#glassBot)" stroke="#ffffff" stroke-width="2" />
+              <circle cx="240" cy="340" r="12" fill="#ffffff" />
+              <circle cx="240" cy="340" r="24" fill="#ffffff" opacity="0.4">
+                <animate attributeName="r" values="12; 30; 12" dur="2s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.6; 0; 0.6" dur="2s" repeatCount="indefinite" />
+              </circle>
+            </g>
+
+            <!-- 5. FLOATING ELEMENTS (UI Cards) -->
+            <g transform="translate(60, 220)">
+              <g>
+                <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="4.5s" repeatCount="indefinite" />
+                <rect x="0" y="0" width="70" height="70" rx="8" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" opacity="0.95" />
+                <path d="M 15,50 L 30,35 L 45,40 L 55,20" fill="none" stroke="#0B4F7A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                <polygon points="57,16 57,26 49,22" fill="#0B4F7A" stroke="#0B4F7A" stroke-width="1" stroke-linejoin="round" />
+                <circle cx="15" cy="50" r="3" fill="#0B4F7A" />
+                <circle cx="30" cy="35" r="3" fill="#0B4F7A" />
+                <circle cx="45" cy="40" r="3" fill="#0B4F7A" />
+              </g>
+            </g>
+
+            <g transform="translate(350, 160)">
+              <g>
+                <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="5.5s" begin="-2s" repeatCount="indefinite" />
+                <rect x="0" y="0" width="60" height="60" rx="30" fill="#ffffff" stroke="#ffffff" stroke-width="2" opacity="0.95" />
+                <circle cx="30" cy="30" r="16" fill="none" stroke="#0B4F7A" stroke-width="2" />
+                <circle cx="30" cy="30" r="6" fill="#0B4F7A" />
+                <line x1="30" y1="6" x2="30" y2="14" stroke="#0B4F7A" stroke-width="2" stroke-linecap="round" />
+                <line x1="30" y1="46" x2="30" y2="54" stroke="#0B4F7A" stroke-width="2" stroke-linecap="round" />
+                <line x1="6" y1="30" x2="14" y2="30" stroke="#0B4F7A" stroke-width="2" stroke-linecap="round" />
+                <line x1="46" y1="30" x2="54" y2="30" stroke="#0B4F7A" stroke-width="2" stroke-linecap="round" />
+              </g>
+            </g>
+            </g>
+
+          </svg>
+        </div>
+
+      </div>
+      <!-- END top row -->
+
+      <!-- CTA — below illustration (mobile only) -->
+      <div class="lg:hidden mt-2">
+        <a href="/en/empezar" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#ffffff;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#0B4F7A;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(0,0,0,0.12);">
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#0B4F7A" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#0B4F7A" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+2. INTRO — Sales-oriented digital marketing and advertising
+Editorial design · 2-columns
+═════════════════════════════════════════ -->
+<section style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 pt-14 md:pt-32 pb-12 md:pb-24 flex flex-col md:flex-row gap-8 md:gap-20">
+
+    <!-- LEFT COLUMN — headline -->
+    <div class="md:w-[42%] flex flex-col">
+      <h2 class="text-[2.5rem] md:text-[2.5rem] font-bold leading-[1.05] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+        Sales-oriented marketing<br>and advertising
+      </h2>
+      <div class="mt-6 md:mt-8 w-16 h-[2px]" style="background:#0B4F7A;opacity:0.2;"></div>
+    </div>
+
+    <!-- RIGHT COLUMN — text -->
+    <div class="md:w-[58%] space-y-6 text-lg md:text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+      <!-- Lead — highlighted -->
+      <p class="text-xl md:text-2xl leading-relaxed" style="color:#0B4F7A;font-weight:700; font-family:'Space Grotesk',sans-serif;">
+        Marketing isn't just creativity, it's strategy applied to business.
+      </p>
+      <p>
+        We develop <strong style="color:#1A1A1A;font-weight:700;">digital marketing and online advertising (SEM)</strong> plans designed to sell, not to generate empty metrics.
+      </p>
+      <p>
+        We work on <strong style="color:#1A1A1A;font-weight:700;">applied branding, ecommerce SEO, Amazon ads, and online advertising</strong> as tools at the service of the product and the channel, always with a clear vision of profitability.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+3. WHAT'S INCLUDED — 4 blocks according to brief
+═════════════════════════════════════════ -->
+<section style="background:#F2F5F8;">
+  <div class="max-w-4xl mx-auto md:px-12 py-14 md:py-28">
+
+    <div class="px-6 md:px-0">
+      <h2 class="text-[2.5rem] md:text-4xl font-bold tracking-tight mb-8 md:mb-14" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+        Four blocks.<br>All results-oriented.
+      </h2>
+    </div>
+
+    <!-- Mobile: horizontal gallery -->
+    <div class="md:hidden overflow-hidden w-full">
+      <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory" style="scrollbar-width:none; -ms-overflow-style:none; padding-left:24px; padding-right:24px; scroll-padding-left:24px; scroll-padding-right:24px;">
+
+        <!-- 01 -->
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(11,79,122,0.06);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(11,79,122,0.07);">01</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Digital strategy</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We define the action plan together: objectives, channels, audience, and real KPIs aligned with business profitability.</p>
+        </div>
+
+        <!-- 02 -->
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(11,79,122,0.06);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(11,79,122,0.07);">02</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Online marketing & advertising</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Conversion-oriented social media, search, and display campaigns. Not likes, sales.</p>
+        </div>
+
+        <!-- 03 -->
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(11,79,122,0.06);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(11,79,122,0.07);">03</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">SEO</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Organic positioning with commercial purpose. We work on content, web architecture, and domain authority so your business is found by those who need it.</p>
+        </div>
+
+        <!-- 04 -->
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(11,79,122,0.06);">
+          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(11,79,122,0.07);">04</span>
+          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Applied branding</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We design brand identities with purpose: naming, logo, tone, and visual assets that convey value from day one.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Dots indicator (mobile only) -->
+    <div id="mkt-dots" class="md:hidden flex items-center justify-center gap-2 mt-5">
+      <span class="block w-2 h-2 rounded-full" style="background:#0B4F7A;"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(11,79,122,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(11,79,122,0.2);"></span>
+      <span class="block w-2 h-2 rounded-full" style="background:rgba(11,79,122,0.2);"></span>
+    </div>
+
+    <!-- Desktop: vertical stack -->
+    <div class="hidden md:flex flex-col gap-4 mt-14 px-12">
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(11,79,122,0.06);">
+        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(11,79,122,0.07);">01</span></div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Digital strategy</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We define the action plan together: objectives, channels, audience, and real KPIs aligned with business profitability.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(11,79,122,0.06);">
+        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(11,79,122,0.07);">02</span></div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Online marketing & advertising</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Conversion-oriented social media, search, and display campaigns. Not likes, sales.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(11,79,122,0.06);">
+        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(11,79,122,0.07);">03</span></div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">SEO</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Organic positioning with commercial purpose. We work on content, web architecture, and domain authority so your business is found by those who need it.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(11,79,122,0.06);">
+        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(11,79,122,0.07);">04</span></div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Applied branding</h3>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We design brand identities with purpose: naming, logo, tone, and visual assets that convey value from day one.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+4. AUTHORITY QUOTE
+═════════════════════════════════════════ -->
+<section style="background:#FFFFFF;">
+  <div class="max-w-3xl mx-auto px-6 md:px-12 py-12 md:py-20 text-center">
+    <svg viewBox="0 0 40 40" class="w-8 h-8 mx-auto mb-5 opacity-20" style="color:#0B4F7A;">
+      <circle cx="20" cy="20" r="20" fill="currentColor"/>
+    </svg>
+    <blockquote class="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#0B4F7A;">
+      &ldquo;Marketing doesn't fix a bad product.&rdquo;
+    </blockquote>
+    <p class="mt-4 text-base opacity-50" style="font-family:'Satoshi',sans-serif;color:#6B7280;">— Core principle at Blue Unicorn</p>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+5. WHO IT'S FOR
+═════════════════════════════════════════ -->
+<section style="background:#0B4F7A;">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-14 md:py-28">
+
+    <h2 class="text-[2.5rem] md:text-4xl font-bold tracking-tight mb-8 md:mb-14" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">
+      For those who want to sell<br>with strategy, not intuition
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
+      <!-- Entrepreneur -->
+      <div class="p-5 md:p-8 rounded-xl" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
+        <h4 class="text-xl font-bold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">Entrepreneur with a brand or product</h4>
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">
+          You have a business or a brand and you need people to find it, understand it, and buy it. No tricks, just strategy.
+        </p>
+      </div>
+
+      <!-- Company -->
+      <div class="p-5 md:p-8 rounded-xl" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
+        <h4 class="text-xl font-bold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">Company wanting to scale digitally</h4>
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">
+          You're already selling but want to grow in digital channels with a clear strategy, real metrics, and a marketing plan that knows where every euro invested is going.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+6. FINAL CTA
+═════════════════════════════════════════ -->
+<section class="relative flex flex-col md:flex-row items-center md:items-center justify-center gap-8 md:gap-20 px-6 md:px-12 py-10 md:py-32" style="background:#FFFFFF;">
+
+    <!-- Text + desktop button -->
+    <div class="text-center md:text-left max-w-lg">
+      <h2 class="text-[2.5rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Ready to<br>truly sell?<br>Let's talk.</h2>
+      <p class="mt-6 text-lg md:text-lg leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">Tell us about your project and together we'll design the marketing strategy you need to sell, not to accumulate hollow metrics.</p>
+      <!-- Button — desktop -->
+      <div class="hidden md:flex mt-8 flex-col sm:flex-row items-center md:items-start gap-4">
+        <a href="/en/empezar" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#0B4F7A;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(11,79,122,0.2);">
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:22px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Geometric shapes -->
+    <div class="grid grid-cols-2 gap-4 md:gap-8 shrink-0">
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><polygon points="50,4 96,96 4,96" fill="#00698D" opacity="0.8"/></svg>
+    </div>
+
+    <!-- Button — mobile only -->
+    <div class="md:hidden">
+      <a href="/en/empezar" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#0B4F7A;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(11,79,122,0.2);">
+        <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+        <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+      </a>
+    </div>
+
+  </section>
+
+<!-- ═════════════════════════════════════════
+7. OTHER PILLARS — Bottom navigation
+═════════════════════════════════════════ -->
+<section style="background:#F5F1EC;">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-12 md:py-20">
+
+    <!-- Mobile: horizontal gallery -->
+    <div class="md:hidden overflow-hidden w-full -mx-6">
+      <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory" style="scrollbar-width:none; -ms-overflow-style:none; padding-left:24px; padding-right:24px; scroll-padding-left:24px; scroll-padding-right:24px;">
+
+        <a href="/en/que-hacemos/desarrollo-de-negocios" class="snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="border-color:rgba(11,79,122,0.1);background:#FFFFFF;">
+          <svg viewBox="0 0 40 40" class="w-8 h-8"><path d="M20 0 Q20 20 40 20 Q20 20 20 40 Q20 20 0 20 Q20 20 20 0Z" fill="#0F2548"/></svg>
+          <h4 class="text-xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Business Development</h4>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Analysis, validation, and brand creation from scratch.</p>
+        </a>
+
+        <a href="/en/que-hacemos/producto-compras-internacionales" class="snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="border-color:rgba(11,79,122,0.1);background:#FFFFFF;">
+          <svg viewBox="0 0 40 40" class="w-8 h-8"><rect x="0" y="0" width="40" height="40" rx="3" fill="#163667"/></svg>
+          <h4 class="text-xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Product & Sourcing</h4>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">International sourcing, manufacturing, and import/export.</p>
+        </a>
+
+        <a href="/en/que-hacemos/canales-digitales-escalado" class="snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="border-color:rgba(11,79,122,0.1);background:#FFFFFF;">
+          <svg viewBox="0 0 40 40" class="w-8 h-8"><polygon points="20,0 40,40 0,40" fill="#00698D"/></svg>
+          <h4 class="text-xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">International Scaling</h4>
+          <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Amazon, e-commerce, and marketplaces.</p>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Geometric figure indicator (mobile only) -->
+    <div id="mkt-pilares-figs" class="md:hidden flex items-center justify-center gap-3 mt-5">
+      <svg viewBox="0 0 24 24" width="12" height="12"><path d="M12 0 Q12 12 24 12 Q12 12 12 24 Q12 12 0 12 Q12 12 12 0Z" fill="#0F2548"/></svg>
+      <svg viewBox="0 0 24 24" width="12" height="12"><rect x="0" y="0" width="24" height="24" rx="2" fill="#16366733"/></svg>
+      <svg viewBox="0 0 24 24" width="12" height="12"><polygon points="12,0 24,24 0,24" fill="#00698D33"/></svg>
+    </div>
+
+    <!-- Desktop: grid 3-columns -->
+    <div class="hidden md:grid grid-cols-3 gap-4 mkt-pilars-nav">
+
+      <a href="/en/que-hacemos/desarrollo-de-negocios" class="block p-6 rounded-xl border transition-colors duration-300 hover:shadow-md no-underline" style="border-color:rgba(11,79,122,0.1);background:#FFFFFF;">
+        <svg viewBox="0 0 40 40" class="w-8 h-8 mb-4"><path d="M20 0 Q20 20 40 20 Q20 20 20 40 Q20 20 0 20 Q20 20 20 0Z" fill="#0F2548"/></svg>
+        <h4 class="text-xl font-bold mb-1.5" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Business Development</h4>
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Analysis, validation, and brand creation from scratch.</p>
+      </a>
+
+      <a href="/en/que-hacemos/producto-compras-internacionales" class="block p-6 rounded-xl border transition-colors duration-300 hover:shadow-md no-underline" style="border-color:rgba(11,79,122,0.1);background:#FFFFFF;">
+        <svg viewBox="0 0 40 40" class="w-8 h-8 mb-4"><rect x="0" y="0" width="40" height="40" rx="3" fill="#163667"/></svg>
+        <h4 class="text-xl font-bold mb-1.5" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Product & Sourcing</h4>
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">International sourcing, manufacturing, and import/export.</p>
+      </a>
+
+      <a href="/en/que-hacemos/canales-digitales-escalado" class="block p-6 rounded-xl border transition-colors duration-300 hover:shadow-md no-underline" style="border-color:rgba(11,79,122,0.1);background:#FFFFFF;">
+        <svg viewBox="0 0 40 40" class="w-8 h-8 mb-4"><polygon points="20,0 40,40 0,40" fill="#00698D"/></svg>
+        <h4 class="text-xl font-bold mb-1.5" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">International Scaling</h4>
+        <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Amazon, e-commerce, and marketplaces.</p>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<style is:global>
+  /* ─── Hover circle override: darker for contrast against lighter #0B4F7A bg ─── */
+  .animated-btn:hover .circle {
+    background-color: #163667 !important;
+  }
+</style>
+
+<style>
+  @media (hover: hover) {
+    .mkt-pilars-nav a:hover h4,
+    .mkt-pilars-nav a:hover p { color: #ffffff !important; }
+    .mkt-pilars-nav a:nth-child(1):hover { background: #0F2548 !important; border-color: #0F2548 !important; }
+    .mkt-pilars-nav a:nth-child(2):hover { background: #163667 !important; border-color: #163667 !important; }
+    .mkt-pilars-nav a:nth-child(3):hover { background: #00698D !important; border-color: #00698D !important; }
+    .mkt-pilars-nav a:hover svg { filter: none; }
+    .mkt-pilars-nav a:hover svg path,
+    .mkt-pilars-nav a:hover svg rect,
+    .mkt-pilars-nav a:hover svg polygon { fill: #ffffff !important; }
+  }
+</style>
+
+<!-- Scroll indicator scripts for mobile horizontal galleries -->
+<script>
+  (function () {
+    // Blocks 01-04 gallery
+    const scroller = document.querySelector('.overflow-x-auto');
+    const dots = document.querySelectorAll('#mkt-dots span');
+    if (scroller && dots.length) {
+      scroller.addEventListener('scroll', () => {
+        const step = (scroller.scrollWidth - scroller.clientWidth) / (dots.length - 1);
+        const idx = Math.round(scroller.scrollLeft / (step || 1));
+        const clamped = Math.min(idx, dots.length - 1);
+        dots.forEach((d, i) => {
+          (d as HTMLElement).style.background = i === clamped ? '#0B4F7A' : 'rgba(11,79,122,0.2)';
+        });
+      }, { passive: true });
+    }
+
+    // Pillars gallery (with geometric figure indicators)
+    const pillarsScroller = document.querySelectorAll('.overflow-x-auto')[1];
+    const figs = document.querySelectorAll('#mkt-pilares-figs svg');
+    if (pillarsScroller && figs.length) {
+      const colors = ['#0F2548', '#163667', '#00698D']; // star, square, triangle
+      pillarsScroller.addEventListener('scroll', () => {
+        const step = (pillarsScroller.scrollWidth - pillarsScroller.clientWidth) / (figs.length - 1);
+        const idx = Math.round(pillarsScroller.scrollLeft / (step || 1));
+        const clamped = Math.min(idx, figs.length - 1);
+        figs.forEach((fig, i) => {
+          const fill = i === clamped ? colors[i] : colors[i] + '33';
+          if (fig.querySelector('path')) fig.querySelector('path')!.setAttribute('fill', fill);
+          else if (fig.querySelector('rect')) fig.querySelector('rect')!.setAttribute('fill', fill);
+          else if (fig.querySelector('polygon')) fig.querySelector('polygon')!.setAttribute('fill', fill);
+        });
+      }, { passive: true });
+    }
+  })();
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Digital Marketing",
+        "provider": { "@type": "Organization", "name": "Blue Unicorn" },
+        "description": "Results-oriented digital marketing: applied branding, ecommerce SEO, Amazon ads, and online advertising.",
+        "areaServed": "ES",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Digital marketing services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital strategy" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Online marketing & advertising" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ecommerce SEO" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Applied branding" } }
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://unicornioazul.com" },
+          { "@type": "ListItem", "position": 2, "name": "What We Do", "item": "https://unicornioazul.com/en/#que-hacemos" },
+          { "@type": "ListItem", "position": 3, "name": "Digital Marketing" }
+        ]
+      }
+    ]
+  }
+</script>
+
+<!-- ═══════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════ -->
+  <footer style="background:#0F2548;font-family:'Satoshi',sans-serif;">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+
+        <!-- Column 1: Brand -->
+        <div class="flex flex-col gap-4">
+          <a href="/en" style="text-decoration:none;">
+            <div class="inline-block rounded p-3" style="background: rgba(255,255,255,0.95);">
+              <img src="/images/logo-marino.png" alt="Blue Unicorn" class="h-10 md:h-11 w-auto" />
+            </div>
+          </a>
+          <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">
+            Results-oriented digital marketing. Strategy that sells.
+          </p>
+          <div class="flex flex-col gap-1.5 mt-1">
+            <a href="mailto:hola@unicornioazul.com" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">hola@unicornioazul.com</a>
+            <div class="flex items-center gap-4">
+              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">LinkedIn</a>
+              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Services -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">What We Do</span>
+          <a href="/en/que-hacemos/desarrollo-de-negocios" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Business Development</a>
+          <a href="/en/que-hacemos/producto-compras-internacionales" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Product & Sourcing</a>
+          <a href="/en/que-hacemos/marketing-digital" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Digital Marketing</a>
+          <a href="/en/que-hacemos/canales-digitales-escalado" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Digital Channels & Scaling</a>
+        </div>
+
+        <!-- Column 3: How We Work + Cases -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">How We Work</span>
+          <a href="/en/como-trabajamos#proceso" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">5-Step Process</a>
+          <a href="/en/metodologia-sorie" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">SORIE™ Methodology</a>
+          <a href="/en/casos" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Cases</a>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div class="flex flex-col gap-3">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Company</span>
+          <a href="/en/sobre-nosotros" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">About Us</a>
+          <a href="/en/contacto" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Contact</a>
+        </div>
+
+      </div>
+
+      <!-- Subtle top border + copyright -->
+      <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
+        <span class="text-xs" style="color:rgba(255,255,255,0.3);">© 2026 Blue Unicorn. All rights reserved.</span>
+        <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
+          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal Notice</a>
+          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>
