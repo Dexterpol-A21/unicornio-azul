@@ -11,11 +11,48 @@ interface Props {
 const { lang } = Astro.props;
 const { t } = useTranslations(lang);
 const altLang: Lang = lang === 'es' ? 'en' : 'es';
-const currentPath = Astro.url.pathname.replace(/^\/(es|en)(\/|$)/, '/$2').replace(/^\/\//, '/') || '/';
-const altUrl = getRelativeLocaleUrl(altLang, currentPath);
+
+// Path mapping: Spanish (input to this component) → English
+const pathMap: Record<string, string> = {
+  '/que-hacemos/desarrollo-de-negocios': '/what-we-do/business-development',
+  '/que-hacemos/producto-compras-internacionales': '/what-we-do/product-international-sourcing',
+  '/que-hacemos/marketing-digital': '/what-we-do/digital-marketing',
+  '/que-hacemos/canales-digitales-escalado': '/what-we-do/digital-channels-scaling',
+  '/como-trabajamos': '/how-we-work',
+  '/como-trabajamos#proceso': '/how-we-work#proceso',
+  '/sobre-nosotros': '/about-us',
+  '/casos': '/case-studies',
+  '/contacto': '/contact',
+  '/empezar': '/get-started',
+  '/metodologia-sorie': '/sorie-methodology',
+  '/propuestas': '/proposals',
+};
+
+// Reverse mapping: English → Spanish
+const reversePathMap: Record<string, string> = {
+  '/what-we-do/business-development': '/que-hacemos/desarrollo-de-negocios',
+  '/what-we-do/product-international-sourcing': '/que-hacemos/producto-compras-internacionales',
+  '/what-we-do/digital-marketing': '/que-hacemos/marketing-digital',
+  '/what-we-do/digital-channels-scaling': '/que-hacemos/canales-digitales-escalado',
+  '/how-we-work': '/como-trabajamos',
+  '/how-we-work#proceso': '/como-trabajamos#proceso',
+  '/about-us': '/sobre-nosotros',
+  '/case-studies': '/casos',
+  '/contact': '/contacto',
+  '/get-started': '/empezar',
+  '/sorie-methodology': '/metodologia-sorie',
+  '/proposals': '/propuestas',
+};
+
+const currentPath = Astro.url.pathname;
+const cleanPath = (currentPath.replace(/^\/(es|en)(\/|$)/, '/$2').replace(/^\/\//, '/') || '/').replace(/\/$/, '') || '/';
+const mappedPath = lang === 'en' ? (reversePathMap[cleanPath] ?? cleanPath) : (pathMap[cleanPath] ?? cleanPath);
+const altUrl = getRelativeLocaleUrl(altLang, mappedPath);
 
 function l(path: string): string {
-  return getRelativeLocaleUrl(lang, path);
+  if (lang === 'es') return getRelativeLocaleUrl(lang, path);
+  const enPath = pathMap[path];
+  return getRelativeLocaleUrl(lang, enPath ?? path);
 }
 const langLabelDisplay = altLang === 'es' ? 'ES' : 'EN';
 ---
