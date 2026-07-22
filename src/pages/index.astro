@@ -798,16 +798,27 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Unicornio Azul",
-    "url": "https://unicornioazul.es",
-    "logo": "https://unicornioazul.es/images/logo-marino.png",
-    "description": "Agencia 360º de desarrollo de negocios. Soluciones reales para ideas extraordinarias.",
-    "email": "hola@unicornioazul.com",
-    "sameAs": [
-      "https://www.linkedin.com/in/luis-chicharro/"
-    ],
-    "areaServed": "ES"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Unicornio Azul",
+        "url": "https://unicornioazul.es",
+        "logo": "https://unicornioazul.es/images/logo-marino.png",
+        "description": "Agencia 360º de desarrollo de negocios. Soluciones reales para ideas extraordinarias.",
+        "email": "hola@unicornioazul.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/luis-chicharro/"
+        ],
+        "areaServed": "ES"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Unicornio Azul",
+        "url": "https://unicornioazul.es",
+        "inLanguage": "es-ES",
+        "publisher": { "@type": "Organization", "name": "Unicornio Azul" }
+      }
+    ]
   }
 </script>
 

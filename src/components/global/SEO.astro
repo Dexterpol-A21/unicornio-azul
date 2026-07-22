@@ -1,38 +1,50 @@
 ---
-import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from 'astro:i18n';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { type Lang } from '../../i18n/ui';
-import { useTranslations } from '../../i18n/utils';
+import { getAltLangUrl, useTranslations } from '../../i18n/utils';
 
 interface Props {
   title: string;
   description: string;
   image?: string;
+  imageAlt?: string;
   lang: Lang;
   url: URL;
+  noindex?: boolean;
 }
 
 const {
   title,
   description,
   image = '/images/og-default.jpg',
+  imageAlt,
   lang,
   url,
+  noindex = false,
 } = Astro.props;
 
 const { t } = useTranslations(lang);
 const siteName = t('seo.site_name');
 const ogLocale = t('seo.og_locale');
+const siteOrigin = Astro.site?.origin ?? url.origin;
 
 const altLocale: Lang = lang === 'es' ? 'en' : 'es';
 const currentPath = url.pathname.replace(/^\/(es|en)(\/|$)/, '/$2').replace(/^\/\//, '/') || '/';
 const canonicalPath = getRelativeLocaleUrl(lang, currentPath);
-const alternatePath = getAbsoluteLocaleUrl(altLocale, currentPath);
+
+const toAbs = (path: string) => new URL(path, siteOrigin).href;
+const canonicalHref = toAbs(canonicalPath);
+const alternateHref = toAbs(getAltLangUrl(url, altLocale));
+const xDefaultHref = lang === 'es' ? canonicalHref : toAbs(getAltLangUrl(url, 'es'));
+const imageHref = toAbs(image);
+const resolvedImageAlt = imageAlt ?? title;
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta charset="UTF-8" />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
 
 <!-- Open Graph -->
 <meta property="og:title" content={title} />
@@ -40,25 +52,27 @@ const alternatePath = getAbsoluteLocaleUrl(altLocale, currentPath);
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={siteName} />
 <meta property="og:locale" content={ogLocale} />
+<meta property="og:url" content={canonicalHref} />
 
 <!-- Canonical -->
-<link rel="canonical" href={new URL(canonicalPath, Astro.url.origin).href} />
+<link rel="canonical" href={canonicalHref} />
 
-<!-- hreflang -->
-<link rel="alternate" hreflang={lang} href={new URL(canonicalPath, Astro.url.origin).href} />
-<link rel="alternate" hreflang={altLocale} href={alternatePath} />
-<link rel="alternate" hreflang="x-default" href={new URL(getRelativeLocaleUrl('es', currentPath), Astro.url.origin).href} />
+<!-- hreflang — usa ROUTE_MAP (rutas traducidas reales) -->
+<link rel="alternate" hreflang={lang} href={canonicalHref} />
+<link rel="alternate" hreflang={altLocale} href={alternateHref} />
+<link rel="alternate" hreflang="x-default" href={xDefaultHref} />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={new URL(image, Astro.url.origin).href} />
+<meta name="twitter:image" content={imageHref} />
 
 <!-- OG Image -->
-<meta property="og:image" content={new URL(image, Astro.url.origin).href} />
+<meta property="og:image" content={imageHref} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={resolvedImageAlt} />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />

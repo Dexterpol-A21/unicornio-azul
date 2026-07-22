@@ -4,7 +4,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Get Started — Blue Unicorn"
-  description="A step-by-step form that helps us understand you better."
+  description="Tell us about your project in a step-by-step form. We review your business idea, product or digital channel and tell you if it makes sense to build it together."
   showHeader={true}
 >
 
@@ -193,6 +193,28 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
   </div>
 </section>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Get Started — Blue Unicorn",
+        "description": "Step-by-step form to tell us about your business idea, product or digital channel.",
+        "url": "https://unicornioazul.es/en/get-started",
+        "isPartOf": { "@type": "WebSite", "name": "Blue Unicorn", "url": "https://unicornioazul.es/en" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://unicornioazul.es/en" },
+          { "@type": "ListItem", "position": 2, "name": "Get started" }
+        ]
+      }
+    ]
+  }
+</script>
 
 </BaseLayout>
 

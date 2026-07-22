@@ -1,5 +1,13 @@
 User-agent: *
 Allow: /
+
+# Páginas de captura OG (no indexar)
 Disallow: /og/
+
+# Páginas internas / UX
+Disallow: /propuestas
+Disallow: /en/proposals
 Disallow: /gracias
+Disallow: /en/thank-you
+
 Sitemap: https://unicornioazul.es/sitemap-index.xml

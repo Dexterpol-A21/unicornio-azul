@@ -1,0 +1,37 @@
+# Unicornio Azul
+
+> Agencia 360º de desarrollo de negocios. Soluciones reales para ideas extraordinarias. Producto, compras internacionales, marketing digital y canales como Amazon.
+
+Unicornio Azul no es una agencia de marketing tradicional: construye negocios desde la idea hasta la venta, con metodología SORIE™ (Strategy, Opportunity, Reality, Innovation, Execution).
+
+## Páginas principales
+
+- [Home](https://unicornioazul.es/): Desarrollo de marcas propias, producto, compras internacionales y canales digitales
+- [Desarrollo de Negocios](https://unicornioazul.es/que-hacemos/desarrollo-de-negocios): Validar ideas, crear marca propia y estructurar el modelo de negocio
+- [Producto y Compras Internacionales](https://unicornioazul.es/que-hacemos/producto-compras-internacionales): Sourcing, fabricación, importación y exportación
+- [Marketing Digital](https://unicornioazul.es/que-hacemos/marketing-digital): SEO, SEM, anuncios en Amazon y branding orientado a venta
+- [Canales Digitales y Escalado](https://unicornioazul.es/que-hacemos/canales-digitales-escalado): Amazon FBA, marketplaces, e-commerce B2B y fulfillment
+- [Cómo trabajamos](https://unicornioazul.es/como-trabajamos): Proceso claro en 5 pasos
+- [Metodología SORIE™](https://unicornioazul.es/metodologia-sorie): Soluciones Reales para Ideas Extraordinarias
+- [Casos de éxito](https://unicornioazul.es/casos): Roll Order, bicicleta eléctrica y smart watch de pádel
+- [Sobre nosotros](https://unicornioazul.es/sobre-nosotros): Luis Chicharro y la firma Unicornio Azul
+- [Contacto](https://unicornioazul.es/contacto): Email, LinkedIn y vías de contacto
+- [Empezar](https://unicornioazul.es/empezar): Formulario paso a paso para contar tu proyecto
+
+## English
+
+- [Home EN](https://unicornioazul.es/en/): Blue Unicorn — Real solutions for extraordinary ideas
+- [Business Development](https://unicornioazul.es/en/what-we-do/business-development): Validate ideas and build proprietary brands
+- [Product & International Sourcing](https://unicornioazul.es/en/what-we-do/product-international-sourcing): Sourcing, manufacturing, import and export
+- [Digital Marketing](https://unicornioazul.es/en/what-we-do/digital-marketing): Ecommerce SEO, SEM, Amazon ads and applied branding
+- [Digital Channels & Scaling](https://unicornioazul.es/en/what-we-do/digital-channels-scaling): Amazon FBA, marketplaces and B2B ecommerce
+- [How we work](https://unicornioazul.es/en/how-we-work): Clear 5-step process
+- [SORIE™ Methodology](https://unicornioazul.es/en/sorie-methodology): Strategy, Opportunity, Reality, Innovation, Execution
+- [Case studies](https://unicornioazul.es/en/case-studies): Real projects from patent to Amazon
+- [About us](https://unicornioazul.es/en/about-us): Luis Chicharro and the Blue Unicorn team
+- [Contact](https://unicornioazul.es/en/contact): Ways to get in touch
+- [Get started](https://unicornioazul.es/en/get-started): Step-by-step project form
+
+## Optional
+
+- [LinkedIn — Luis Chicharro](https://www.linkedin.com/in/luis-chicharro/): Founder profile

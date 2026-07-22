@@ -4,7 +4,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Cuéntanos tu proyecto — Unicornio Azul"
-  description="Un formulario paso a paso que nos ayuda a entenderte mejor."
+  description="Cuéntanos tu proyecto en un formulario paso a paso. Analizamos tu idea de negocio, producto o canal digital y te decimos si tiene sentido construirlo juntos."
   showHeader={true}
 >
 
@@ -193,6 +193,28 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
   </div>
 </section>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Cuéntanos tu proyecto — Unicornio Azul",
+        "description": "Formulario paso a paso para contar tu proyecto de negocio, producto o canal digital.",
+        "url": "https://unicornioazul.es/empezar",
+        "isPartOf": { "@type": "WebSite", "name": "Unicornio Azul", "url": "https://unicornioazul.es" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://unicornioazul.es" },
+          { "@type": "ListItem", "position": 2, "name": "Empezar" }
+        ]
+      }
+    ]
+  }
+</script>
 
 </BaseLayout>
 

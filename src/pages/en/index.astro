@@ -775,6 +775,34 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     </div>
   </footer>
 
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Blue Unicorn",
+        "alternateName": "Unicornio Azul",
+        "url": "https://unicornioazul.es/en",
+        "logo": "https://unicornioazul.es/images/logo-marino.png",
+        "description": "360º business development agency. Real solutions for extraordinary ideas.",
+        "email": "hola@unicornioazul.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/luis-chicharro/"
+        ],
+        "areaServed": "ES"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Blue Unicorn",
+        "url": "https://unicornioazul.es/en",
+        "inLanguage": "en",
+        "publisher": { "@type": "Organization", "name": "Blue Unicorn" }
+      }
+    ]
+  }
+</script>
+
 </BaseLayout>
 
 <style is:global>
