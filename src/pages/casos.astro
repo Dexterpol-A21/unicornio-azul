@@ -3,8 +3,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Casos — Unicornio Azul"
-  description="Proyectos reales: de la patente a Amazon, bicicletas eléctricas con SORIE™ y productos presentados en feria. Resultados en el terreno."
+  title="Casos de éxito — Unicornio Azul"
+  description="Casos de éxito reales: de la patente a Amazon, bicicletas eléctricas con SORIE™ y productos industrializados. Resultados en el terreno, no promesas."
+  image="/images/og-casos.jpg"
   showHeader={true}
 >
 
@@ -19,10 +20,10 @@ HERO
   <div class="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-5 md:pt-20 md:pb-6">
     <p class="text-sm font-semibold tracking-[0.2em] uppercase mb-3" style="color:#0088B3;font-family:'Satoshi',sans-serif;">Unicornio Azul</p>
     <h1 class="leading-[0.92] tracking-tight mb-3" style="color:#ffffff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(3rem,8vw,5.5rem);text-wrap:balance;">
-      Casos
+      Casos de éxito
     </h1>
     <p class="text-lg md:text-xl max-w-[42ch] leading-relaxed mb-4" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
-      Ideas que llegaron a fábrica, a Amazon y al mercado.
+      Proyectos reales de desarrollo de negocio, producto e importación. Ideas que llegaron a fábrica, a Amazon y al mercado.
     </p>
     <nav class="flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-x-10 sm:gap-y-3" aria-label="Ir a un caso">
       <a href="#roll-order" class="caso-link inline-flex items-baseline gap-3 no-underline" style="font-family:'Space Grotesk',sans-serif;">
@@ -339,7 +340,7 @@ CTA
             <img src="/images/logo-marino.png" alt="Unicornio Azul" class="h-10 md:h-11 w-auto" />
           </div>
         </a>
-        <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">Soluciones reales para ideas extraordinarias.</p>
+        <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">Casos de éxito reales. Resultados en el terreno, no promesas.</p>
         <div class="flex flex-col gap-1.5 mt-1">
           <a href="mailto:hola@unicornioazul.com" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">hola@unicornioazul.com</a>
           <div class="flex items-center gap-4">
@@ -526,6 +527,58 @@ CTA
     );
     blocks.forEach((el) => io.observe(el));
   })();
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": "Casos de éxito — Unicornio Azul",
+        "description": "Casos de éxito reales: de la patente a Amazon, bicicletas eléctricas con SORIE™ y productos industrializados.",
+        "url": "https://unicornioazul.es/casos",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Roll Order",
+              "url": "https://unicornioazul.es/casos#roll-order",
+              "description": "De un documento de patente a un producto vendiendo en Amazon."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Bicicleta eléctrica para uso compartido",
+              "url": "https://unicornioazul.es/casos#bicicleta-electrica",
+              "description": "Producto a medida con metodología SORIE™ e importación adaptada a aranceles."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Smart watch de pádel",
+              "url": "https://unicornioazul.es/casos#padel-watch",
+              "description": "Del prototipo a la feria más importante de España y al lanzamiento global."
+            }
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://unicornioazul.es" },
+          { "@type": "ListItem", "position": 2, "name": "Casos de éxito" }
+        ]
+      }
+    ]
+  }
 </script>
 
 </BaseLayout>
