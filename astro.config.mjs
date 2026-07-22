@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://unicornio-azul.pages.dev',
+  site: 'https://unicornioazul.es',
   integrations: [sitemap()],
   vite: { plugins: [tailwindcss()] },
   devToolbar: { enabled: false },

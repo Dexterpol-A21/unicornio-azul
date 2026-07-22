@@ -3,138 +3,252 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Case Studies — Blue Unicorn"
-  description="Real business development projects, brand creation, and digital scaling. Results, not promises."
+  title="Case studies — Blue Unicorn"
+  description="Real projects: from patent to Amazon, e-bikes with SORIE™, and products launched at trade shows. Results on the ground."
   showHeader={true}
 >
 
-<!-- ═════════════════════════════════════════
-HERO — clean, no decoration
-═════════════════════════════════════════ -->
-<section class="text-center px-6 md:px-12 pt-20 pb-10 md:pt-32 md:pb-16" style="background:#FFFFFF;">
-  <h1 class="leading-[0.92] tracking-tight mb-4" style="color:#1A1A1A;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.6rem,7vw,5rem);">
-    Case Studies
-  </h1>
-  <p class="text-lg max-w-[38ch] mx-auto leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">
-    We don't talk about what we do.<br>We show what we've achieved.
-  </p>
-</section>
-
-<!-- ═════════════════════════════════════════
-CASE 01 — Giant background number + card
-═════════════════════════════════════════ -->
-<section class="relative px-6 md:px-12 py-16 md:py-28" style="background:#0A1628;">
-
-  <span class="absolute select-none pointer-events-none z-0" style="top:-0.15em;left:0;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(14rem,28vw,26rem);line-height:1;color:rgba(255,255,255,0.02);">01</span>
-
-  <div class="relative z-10 max-w-3xl mx-auto">
-    <span class="inline-block text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full mb-6" style="background:rgba(15,37,72,0.5);color:#A8D8EA;font-family:'Satoshi',sans-serif;">Business Development</span>
-
-    <div class="flex items-baseline gap-4 mb-6">
-      <span class="text-5xl md:text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:#A8D8EA;">3×</span>
-      <span class="text-base md:text-lg leading-snug" style="color:rgba(255,255,255,0.5);font-family:'Satoshi',sans-serif;">return on<br>investment</span>
-    </div>
-
-    <h3 class="text-xl md:text-2xl font-bold mb-8 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">
-      From a napkin idea to a brand selling on Amazon Europe
-    </h3>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Problem</p>
-        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">Entrepreneur with a home product idea, no manufacturing or online sales experience. Didn't know where to start.</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Solution</p>
-        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">Market validation, Asian manufacturer, product development, brand from scratch, and launch on Amazon ES, DE, and FR.</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Result</p>
-        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">Brand in 3 European markets. Profitable from month six. +€200K in sales in the first year.</p>
-      </div>
-    </div>
+<section class="relative overflow-hidden flex items-end" style="background:#0F2548;">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute right-0 top-0 bottom-0 w-1/2 md:w-2/5 opacity-[0.07]" style="background:linear-gradient(135deg, transparent 40%, #0088B3 100%);"></div>
+    <span class="absolute select-none pointer-events-none" style="right:-0.05em;bottom:-0.22em;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(8rem,28vw,22rem);line-height:0.8;color:rgba(255,255,255,0.03);letter-spacing:-0.06em;">CASES</span>
+  </div>
+  <div class="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-5 md:pt-20 md:pb-6">
+    <p class="text-sm font-semibold tracking-[0.2em] uppercase mb-3" style="color:#0088B3;font-family:'Satoshi',sans-serif;">Blue Unicorn</p>
+    <h1 class="leading-[0.92] tracking-tight mb-3" style="color:#ffffff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(3rem,8vw,5.5rem);text-wrap:balance;">
+      Cases
+    </h1>
+    <p class="text-lg md:text-xl max-w-[42ch] leading-relaxed mb-4" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+      Ideas that reached the factory, Amazon and the market.
+    </p>
+    <nav class="flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-x-10 sm:gap-y-3" aria-label="Jump to a case">
+      <a href="#roll-order" class="caso-link inline-flex items-baseline gap-3 no-underline" style="font-family:'Space Grotesk',sans-serif;">
+        <span class="text-xs font-semibold tracking-[0.14em]" style="color:rgba(255,255,255,0.35);">01</span>
+        <span class="text-base md:text-lg font-semibold" style="color:#A8D8EA;">Roll Order</span>
+      </a>
+      <a href="#e-bike" class="caso-link inline-flex items-baseline gap-3 no-underline" style="font-family:'Space Grotesk',sans-serif;">
+        <span class="text-xs font-semibold tracking-[0.14em]" style="color:rgba(255,255,255,0.35);">02</span>
+        <span class="text-base md:text-lg font-semibold" style="color:#A8D8EA;">Electric bike</span>
+      </a>
+      <a href="#padel-watch" class="caso-link inline-flex items-baseline gap-3 no-underline" style="font-family:'Space Grotesk',sans-serif;">
+        <span class="text-xs font-semibold tracking-[0.14em]" style="color:rgba(255,255,255,0.35);">03</span>
+        <span class="text-base md:text-lg font-semibold" style="color:#A8D8EA;">Padel smart watch</span>
+      </a>
+    </nav>
   </div>
 </section>
 
-<!-- ═════════════════════════════════════════
-CASE 02
-═════════════════════════════════════════ -->
-<section class="relative px-6 md:px-12 py-16 md:py-28" style="background:#FFFFFF;">
-
-  <span class="absolute select-none pointer-events-none z-0" style="top:-0.15em;right:0;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(14rem,28vw,26rem);line-height:1;color:rgba(22,54,103,0.03);">02</span>
-
-  <div class="relative z-10 max-w-3xl mx-auto">
-    <span class="inline-block text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full mb-6" style="background:rgba(0,105,141,0.1);color:#00698D;font-family:'Satoshi',sans-serif;">Product & Sourcing</span>
-
-    <div class="flex items-baseline gap-4 mb-6">
-      <span class="text-5xl md:text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:#00698D;">+240%</span>
-      <span class="text-base md:text-lg leading-snug" style="color:#6B7280;font-family:'Satoshi',sans-serif;">increase in<br>net margin</span>
-    </div>
-
-    <h3 class="text-xl md:text-2xl font-bold mb-8 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
-      Manufacturing relocalization and cost optimization for a cosmetics brand
-    </h3>
-
-    <div class="grid md:grid-cols-3 gap-6">
+<article id="roll-order" class="caso-block relative overflow-hidden" style="background:#FFFFFF;">
+  <span class="caso-bg-num caso-bg-num--left select-none pointer-events-none" aria-hidden="true" style="color:rgba(22,54,103,0.03);">01</span>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-12">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Problem</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Spanish natural cosmetics brand with tight margins due to a single expensive supplier blocking growth.</p>
+        <p class="text-xs font-semibold tracking-[0.18em] uppercase mb-5" style="color:#0F2548;font-family:'Satoshi',sans-serif;">Business · Product · Amazon</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-3" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;text-wrap:balance;">Roll Order</h2>
+        <p class="text-lg font-medium mb-8 max-w-[36ch] leading-snug" style="font-family:'Space Grotesk',sans-serif;color:#163667;">
+          From a patent document to a product selling on Amazon.
+        </p>
+        <div class="space-y-6 max-w-[48ch]">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Challenge</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              The client arrived with patent documentation. They had a protected idea — but not the product, the factory, or the sales channel.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">What we did</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              We developed the product end to end: industrialization, manufacturing, packaging, logistics and import. Then the Amazon launch and promotion.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Result</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              Product industrialized, imported and launched on Amazon. The patent stopped being a document and became a business in the market.
+            </p>
+          </div>
+        </div>
+        <a href="https://roll-order.com/" target="_blank" rel="noopener" class="caso-link mt-10 inline-flex items-center gap-2 text-sm font-semibold no-underline" style="font-family:'Space Grotesk',sans-serif;color:#0F2548;">
+          roll-order.com
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
       </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Solution</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Sourcing from 3 manufacturers in Asia, negotiation, production supervision, quality control, and CE certifications.</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Result</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">−40% unit cost. Net margin from 22% to 53%. Scaled production without losing quality.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═════════════════════════════════════════
-CASE 03
-═════════════════════════════════════════ -->
-<section class="relative px-6 md:px-12 py-16 md:py-28" style="background:#F2F5F8;">
-
-  <span class="absolute select-none pointer-events-none z-0" style="top:-0.15em;left:0;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(14rem,28vw,26rem);line-height:1;color:rgba(22,54,103,0.04);">03</span>
-
-  <div class="relative z-10 max-w-3xl mx-auto">
-    <span class="inline-block text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full mb-6" style="background:rgba(0,136,179,0.1);color:#0088B3;font-family:'Satoshi',sans-serif;">Digital Channels & Scaling</span>
-
-    <div class="flex items-baseline gap-4 mb-6">
-      <span class="text-5xl md:text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:#0088B3;">500K</span>
-      <span class="text-base md:text-lg leading-snug" style="color:#6B7280;font-family:'Satoshi',sans-serif;">€ in sales<br>first year</span>
-    </div>
-
-    <h3 class="text-xl md:text-2xl font-bold mb-8 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
-      Expansion of accessories brand to 5 European marketplaces
-    </h3>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Problem</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Fashion accessories brand selling only in Spain via their own website. Wanted Europe but didn't know how.</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Solution</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Amazon Seller Central in ES, DE, FR, IT, and UK. Listings, A+ Content, Brand Registry, and campaigns.</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Result</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">+€500K first year. 5 marketplaces with FBA. Brand registered on Amazon Brand Registry.</p>
+      <div class="caso-visual relative flex justify-center lg:justify-end" aria-hidden="true">
+        <ol class="pipeline flex flex-col gap-0 w-full max-w-[420px]">
+          <li class="pipeline-step" style="--c:#0F2548;"><span class="pipeline-dot"></span><span class="pipeline-label">Patent</span></li>
+          <li class="pipeline-step" style="--c:#163667;"><span class="pipeline-dot"></span><span class="pipeline-label">Product</span></li>
+          <li class="pipeline-step" style="--c:#0B4F7A;"><span class="pipeline-dot"></span><span class="pipeline-label">Factory</span></li>
+          <li class="pipeline-step" style="--c:#00698D;"><span class="pipeline-dot"></span><span class="pipeline-label">Import</span></li>
+          <li class="pipeline-step pipeline-step--last" style="--c:#0088B3;"><span class="pipeline-dot"></span><span class="pipeline-label">Amazon</span></li>
+        </ol>
       </div>
     </div>
   </div>
+</article>
+
+<article id="e-bike" class="caso-block relative overflow-hidden" style="background:#0A1628;">
+  <span class="caso-bg-num caso-bg-num--right select-none pointer-events-none" aria-hidden="true" style="color:rgba(255,255,255,0.02);">02</span>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-12">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div>
+        <p class="text-xs font-semibold tracking-[0.18em] uppercase mb-5" style="color:#A8D8EA;font-family:'Satoshi',sans-serif;">Product · SORIE™ · Import</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-3" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;text-wrap:balance;">Shared-use electric bike</h2>
+        <p class="text-lg font-medium mb-8 max-w-[40ch] leading-snug" style="font-family:'Space Grotesk',sans-serif;color:rgba(255,255,255,0.65);">
+          The perfect bike checklist — and tariffs that jumped from 10% to 70%.
+        </p>
+        <div class="space-y-6 max-w-[48ch]">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Challenge</p>
+            <p class="text-base leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+              A Spanish client building charging stations and e-bike rental for municipalities. Bikes bought in Spain were failing: stolen seats and baskets, snap-off kickstands, and other design issues for heavy shared use.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">What we did</p>
+            <p class="text-base leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+              We defined the perfect bike and applied SORIE™: competition analysis, manufacturers, trade fairs, and a factory trip with the CEO. We developed the full product — including how to navigate the tariff hike from 10% to 70%.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Result</p>
+            <p class="text-base leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+              A product built for urban rental, suppliers validated at origin, and a cost structure adapted to the new tariff scenario.
+            </p>
+          </div>
+        </div>
+        <a href="/en/sorie-methodology" class="caso-link mt-10 inline-flex items-center gap-2 text-sm font-semibold no-underline" style="font-family:'Space Grotesk',sans-serif;color:#A8D8EA;">
+          See SORIE™ methodology
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="caso-visual relative flex justify-center lg:justify-end" aria-hidden="true">
+        <div class="w-full max-w-[420px] flex flex-col gap-10">
+          <div class="flex items-end justify-between gap-4 px-2">
+            <div class="flex flex-col items-center gap-2.5 flex-1">
+              <span class="font-bold leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(3.5rem,8vw,5rem);color:#A8D8EA;">10%</span>
+              <span class="text-sm font-semibold tracking-wide uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.4);">Before</span>
+            </div>
+            <div class="pb-10 opacity-50" style="color:#0088B3;">
+              <svg width="52" height="30" viewBox="0 0 40 24" fill="none"><path d="M2 12h30M24 4l12 8-12 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="flex flex-col items-center gap-2.5 flex-1">
+              <span class="font-bold leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(3.5rem,8vw,5rem);color:#ffffff;">70%</span>
+              <span class="text-sm font-semibold tracking-wide uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.4);">Tariff</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-end px-1 pt-3 border-t" style="border-color:rgba(255,255,255,0.12);">
+            <span class="font-bold tracking-tighter leading-none" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,6vw,3.75rem);color:#A8D8EA;">S</span>
+            <span class="font-bold tracking-tighter leading-none" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,6vw,3.75rem);color:#7EC8E3;">O</span>
+            <span class="font-bold tracking-tighter leading-none" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,6vw,3.75rem);color:#0088B3;">R</span>
+            <span class="font-bold tracking-tighter leading-none" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,6vw,3.75rem);color:#40B0D0;">I</span>
+            <span class="font-bold tracking-tighter leading-none" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,6vw,3.75rem);color:#ffffff;">E</span>
+          </div>
+          <p class="text-center text-sm font-semibold tracking-[0.16em] uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.4);">Methodology applied</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<article id="padel-watch" class="caso-block relative overflow-hidden" style="background:#F2F5F8;">
+  <span class="caso-bg-num caso-bg-num--left select-none pointer-events-none" aria-hidden="true" style="color:rgba(22,54,103,0.04);">03</span>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-12">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div>
+        <p class="text-xs font-semibold tracking-[0.18em] uppercase mb-5" style="color:#0088B3;font-family:'Satoshi',sans-serif;">Industrialization · Logistics · Import</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-3" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;text-wrap:balance;">Padel smart watch</h2>
+        <p class="text-lg font-medium mb-8 max-w-[40ch] leading-snug" style="font-family:'Space Grotesk',sans-serif;color:#163667;">
+          From prototype to Spain’s top padel fair — and toward a global launch.
+        </p>
+        <div class="space-y-6 max-w-[48ch]">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Challenge</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              Invention studios often stop at the prototype. The hard jump is industrializing, importing and getting the product to market.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">What we did</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              Support for industrialization, logistics and import. Padelgest Hit X was presented at Spain’s most important padel fair, in Barcelona.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Result</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              Product shown at the fair and moving toward a global launch. From prototype to an import and go-to-market operation.
+            </p>
+          </div>
+        </div>
+        <a href="https://comunicae.es/notas-de-prensa/padelgest-revoluciona-el-padel-con-hit-x-el" target="_blank" rel="noopener" class="caso-link mt-10 inline-flex items-center gap-2 text-sm font-semibold no-underline" style="font-family:'Space Grotesk',sans-serif;color:#0F2548;">
+          Press release — Padelgest / Hit X
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <div class="caso-visual relative flex justify-center lg:justify-end" aria-hidden="true">
+        <ol class="stair w-full max-w-[440px] flex flex-col gap-3">
+          <li class="stair-step" style="--c:#0F2548; --w:58%;">
+            <span class="stair-num">01</span>
+            <span class="stair-label">Prototype</span>
+          </li>
+          <li class="stair-step" style="--c:#163667; --w:72%;">
+            <span class="stair-num">02</span>
+            <span class="stair-label">Industrialization</span>
+          </li>
+          <li class="stair-step" style="--c:#00698D; --w:86%;">
+            <span class="stair-num">03</span>
+            <span class="stair-label">Barcelona fair</span>
+          </li>
+          <li class="stair-step stair-step--last" style="--c:#0088B3; --w:100%;">
+            <span class="stair-num">04</span>
+            <span class="stair-label">Global launch</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</article>
+
+<section style="background:#FFFFFF;">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col items-center" style="text-align:center;">
+    <p class="font-bold tracking-tight leading-[1.2]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;font-size:clamp(1.35rem,3vw,2rem);text-wrap:balance;">
+      Behind these projects is a team that works from the ground — product, manufacturing and digital channels.
+      <a href="/en/about-us" class="caso-link whitespace-nowrap" style="color:#163667;text-decoration:underline;text-underline-offset:4px;">Learn more on About us</a>
+    </p>
+  </div>
 </section>
 
-<!-- ═════════════════════════════════════════
-FINAL CTA — same as index, only copy changes
-═════════════════════════════════════════ -->
+<section class="relative overflow-hidden px-6 md:px-12 py-20 md:py-28" style="background:#0A1628;">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute left-0 bottom-0 w-2/3 h-2/3 opacity-[0.06]" style="background:radial-gradient(ellipse at 20% 80%, #0088B3 0%, transparent 60%);"></div>
+  </div>
+  <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center">
+    <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-6" style="color:#0088B3;font-family:'Satoshi',sans-serif;">And also</p>
+    <h2 class="font-bold tracking-tight leading-[1.08] mb-6" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;font-size:clamp(1.85rem,4.5vw,3rem);text-wrap:balance;">
+      Among other stories, we’ve taken sound, campaigns and digital presence where the brand needed to go.
+    </h2>
+    <p class="text-base md:text-lg leading-relaxed max-w-[46ch]" style="color:rgba(255,255,255,0.5);font-family:'Satoshi',sans-serif;">
+      Artists positioned. Campaign spotlights. Marketing layers you don’t see in the factory — and you do feel in the market.
+    </p>
+  </div>
+</section>
+
+<section style="background:#F2F5F8;">
+  <div class="max-w-3xl mx-auto px-6 md:px-12 py-14 md:py-20 flex flex-col items-center" style="text-align:center;">
+    <p class="text-xs font-semibold tracking-[0.18em] uppercase mb-5" style="color:#0088B3;font-family:'Satoshi',sans-serif;">Press</p>
+    <h2 class="font-bold tracking-tight leading-[1.1] mb-5" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;font-size:clamp(1.85rem,4.5vw,3rem);text-wrap:balance;">
+      Featured in Cinco Días
+    </h2>
+    <p class="text-base md:text-lg leading-relaxed max-w-[48ch]" style="font-family:'Satoshi',sans-serif;color:#374151;text-align:center;">
+      The firm is led by Luis Chicharro, with a track record in business development, internationalization, proprietary brand creation, and scaling through digital channels. His approach was featured in <a href="https://cincodias.elpais.com/companias/2023-04-11/los-secretos-para-vender-en-plataformas-como-amazon.html" target="_blank" rel="noopener" style="color:#163667;font-weight:700;text-decoration:underline;text-underline-offset:3px;">Cinco Días (Grupo El País)</a>, where he explained how to build real businesses on digital platforms — from product and manufacturing to sales.
+    </p>
+  </div>
+</section>
+
 <section class="relative flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 px-6 md:px-12 py-12 md:py-32" style="background:#FFFFFF;">
   <div class="text-center md:text-left max-w-lg">
     <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Every case starts<br>with a<br>conversation</h2>
-    <p class="mt-6 text-base md:text-lg leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">If you have a project, an idea, or a business you want to take to the next level, let's talk. No obligation.</p>
+    <p class="mt-6 text-base md:text-lg leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">If you have a project, an idea or a business you want to take further, let’s talk. No commitment.</p>
     <div class="mt-8">
       <a href="/en/get-started" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#0F2548;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(15,37,72,0.2);">
         <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
@@ -144,7 +258,7 @@ FINAL CTA — same as index, only copy changes
       </a>
     </div>
   </div>
-  <div class="grid grid-cols-2 gap-6 md:gap-8 shrink-0">
+  <div class="grid grid-cols-2 gap-6 md:gap-8 shrink-0" aria-hidden="true">
     <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
     <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
     <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
@@ -152,45 +266,188 @@ FINAL CTA — same as index, only copy changes
   </div>
 </section>
 
-<!-- ═════════════════════════════════════════
-FOOTER
-═════════════════════════════════════════ -->
 <footer style="background:#0F2548;font-family:'Satoshi',sans-serif;">
-  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-20">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-      <div class="col-span-2 md:col-span-1 flex flex-col gap-4">
-        <div class="bg-white rounded-xl p-3 inline-flex"><img src="/images/logo-marino.png" alt="Unicornio Azul" class="h-6 w-auto" /></div>
-        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.5);">Real solutions for extraordinary ideas.</p>
-        <a href="mailto:hola@unicornioazul.com" class="text-sm font-medium hover:underline" style="color:rgba(255,255,255,0.65);">hola@unicornioazul.com</a>
-        <div class="flex gap-4">
-          <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-sm font-medium hover:underline" style="color:rgba(255,255,255,0.55);">LinkedIn</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener" class="text-sm font-medium hover:underline" style="color:rgba(255,255,255,0.55);">Instagram</a>
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+      <div class="flex flex-col gap-4">
+        <a href="/en" style="text-decoration:none;">
+          <div class="inline-block rounded p-3" style="background: rgba(255,255,255,0.95);">
+            <img src="/images/logo-marino.png" alt="Blue Unicorn" class="h-10 md:h-11 w-auto" />
+          </div>
+        </a>
+        <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">Real Solutions for Extraordinary Ideas.</p>
+        <div class="flex flex-col gap-1.5 mt-1">
+          <a href="mailto:hola@unicornioazul.com" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">hola@unicornioazul.com</a>
+          <div class="flex items-center gap-4">
+            <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">LinkedIn</a>
+            <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">Instagram</a>
+          </div>
         </div>
       </div>
       <div class="flex flex-col gap-3">
-        <p class="text-sm font-semibold tracking-tight mb-1" style="color:rgba(255,255,255,0.8);">What we do</p>
-        <a href="/en/what-we-do/business-development" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Business Development</a>
-        <a href="/en/what-we-do/product-international-sourcing" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Product & Sourcing</a>
-        <a href="/en/what-we-do/digital-marketing" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Digital Marketing</a>
-        <a href="/en/what-we-do/digital-channels-scaling" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Channels & Scaling</a>
+        <p class="text-sm font-semibold mb-1" style="color:#ffffff;">What we do</p>
+        <a href="/en/what-we-do/business-development" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Business development</a>
+        <a href="/en/what-we-do/product-international-sourcing" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Product & sourcing</a>
+        <a href="/en/what-we-do/digital-marketing" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Digital marketing</a>
+        <a href="/en/what-we-do/digital-channels-scaling" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Digital channels & scaling</a>
       </div>
       <div class="flex flex-col gap-3">
-        <p class="text-sm font-semibold tracking-tight mb-1" style="color:rgba(255,255,255,0.8);">How we work</p>
-        <a href="/en/how-we-work#proceso" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">5-Step Process</a>
-        <a href="/en/sorie-methodology" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">SORIE&trade; Methodology</a>
-        <a href="/en/case-studies" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Case Studies</a>
+        <p class="text-sm font-semibold mb-1" style="color:#ffffff;">How we work</p>
+        <a href="/en/how-we-work#proceso" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">5-step process</a>
+        <a href="/en/sorie-methodology" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">SORIE™ methodology</a>
+        <a href="/en/case-studies" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Cases</a>
       </div>
       <div class="flex flex-col gap-3">
-        <p class="text-sm font-semibold tracking-tight mb-1" style="color:rgba(255,255,255,0.8);">Company</p>
-        <a href="/en/about-us" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Who we are</a>
-        <a href="/en/contact" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Contact</a>
+        <p class="text-sm font-semibold mb-1" style="color:#ffffff;">Company</p>
+        <a href="/en/about-us" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">About us</a>
+        <a href="/en/contact" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Contact</a>
       </div>
     </div>
-    <div class="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between gap-4" style="border-color:rgba(255,255,255,0.08);">
-      <p class="text-xs" style="color:rgba(255,255,255,0.35);">&copy; 2026 Blue Unicorn. All rights reserved.</p>
-      <p class="text-xs" style="color:rgba(255,255,255,0.25);">Madrid, Spain</p>
+    <div class="mt-10 md:mt-16 pt-6 md:pt-8 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" style="border-color:rgba(255,255,255,0.1);">
+      <p class="text-xs" style="color:rgba(255,255,255,0.35);">&copy; {new Date().getFullYear()} Blue Unicorn. All rights reserved.</p>
+      <div class="flex items-center gap-5 text-xs">
+        <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal notice</a>
+        <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy</a>
+      </div>
     </div>
   </div>
 </footer>
+
+<style>
+  .caso-bg-num {
+    position: absolute;
+    z-index: 0;
+    top: -0.15em;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: clamp(14rem, 28vw, 26rem);
+    line-height: 1;
+  }
+  .caso-bg-num--left { left: 0; }
+  .caso-bg-num--right { right: 0; }
+
+  .caso-link { transition: opacity 0.25s ease, gap 0.25s ease; }
+  .caso-link:hover { opacity: 0.7; gap: 0.65rem; }
+
+  .pipeline-step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.45rem 0;
+    list-style: none;
+  }
+  .pipeline-step:not(.pipeline-step--last)::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: calc(50% + 18px);
+    bottom: -18px;
+    width: 3px;
+    background: var(--c);
+  }
+  .pipeline-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--c);
+  }
+  .pipeline-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--c);
+  }
+
+  .stair {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;
+  }
+  .stair-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: var(--w);
+    min-height: 4.25rem;
+    padding: 1rem 1.35rem;
+    background: var(--c);
+    list-style: none;
+  }
+  .stair-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.45);
+    flex-shrink: 0;
+  }
+  .stair-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.2rem, 2.8vw, 1.55rem);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: #ffffff;
+  }
+
+  .caso-block { transform: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .caso-block {
+      transform: translateY(20px);
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .caso-block.is-in { transform: translateY(0); }
+    .pipeline-step {
+      opacity: 0.35;
+      transform: translateX(12px);
+      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .caso-block.is-in .pipeline-step { opacity: 1; transform: translateX(0); }
+    .caso-block.is-in .pipeline-step:nth-child(1) { transition-delay: 0.08s; }
+    .caso-block.is-in .pipeline-step:nth-child(2) { transition-delay: 0.16s; }
+    .caso-block.is-in .pipeline-step:nth-child(3) { transition-delay: 0.24s; }
+    .caso-block.is-in .pipeline-step:nth-child(4) { transition-delay: 0.32s; }
+    .caso-block.is-in .pipeline-step:nth-child(5) { transition-delay: 0.4s; }
+
+    .stair-step {
+      opacity: 0.35;
+      transform: translateX(16px);
+      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .caso-block.is-in .stair-step { opacity: 1; transform: translateX(0); }
+    .caso-block.is-in .stair-step:nth-child(1) { transition-delay: 0.08s; }
+    .caso-block.is-in .stair-step:nth-child(2) { transition-delay: 0.16s; }
+    .caso-block.is-in .stair-step:nth-child(3) { transition-delay: 0.24s; }
+    .caso-block.is-in .stair-step:nth-child(4) { transition-delay: 0.32s; }
+  }
+</style>
+
+<script>
+  (function () {
+    const blocks = document.querySelectorAll('.caso-block');
+    if (!blocks.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      blocks.forEach((el) => el.classList.add('is-in'));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+    );
+    blocks.forEach((el) => io.observe(el));
+  })();
+</script>
 
 </BaseLayout>

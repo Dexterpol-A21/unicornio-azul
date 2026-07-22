@@ -3,133 +3,311 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Casos de éxito — Unicornio Azul"
-  description="Proyectos reales de desarrollo de negocio, creación de marcas propias y escalado digital. Resultados, no promesas."
+  title="Casos — Unicornio Azul"
+  description="Proyectos reales: de la patente a Amazon, bicicletas eléctricas con SORIE™ y productos presentados en feria. Resultados en el terreno."
   showHeader={true}
 >
 
 <!-- ═════════════════════════════════════════
-HERO — limpio, sin decoración
+HERO
 ═════════════════════════════════════════ -->
-<section class="text-center px-6 md:px-12 pt-20 pb-10 md:pt-32 md:pb-16" style="background:#FFFFFF;">
-  <h1 class="leading-[0.92] tracking-tight mb-4" style="color:#1A1A1A;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.6rem,7vw,5rem);">
-    Casos de éxito
-  </h1>
-  <p class="text-lg max-w-[38ch] mx-auto leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">
-    No contamos lo que hacemos.<br>Mostramos lo que hemos conseguido.
-  </p>
-</section>
-
-<!-- ═════════════════════════════════════════
-CASO 01 — Número gigante de fondo + tarjeta
-═════════════════════════════════════════ -->
-<section class="relative px-6 md:px-12 py-16 md:py-28" style="background:#0A1628;">
-
-  <span class="absolute select-none pointer-events-none z-0" style="top:-0.15em;left:0;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(14rem,28vw,26rem);line-height:1;color:rgba(255,255,255,0.02);">01</span>
-
-  <div class="relative z-10 max-w-3xl mx-auto">
-    <span class="inline-block text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full mb-6" style="background:rgba(15,37,72,0.5);color:#A8D8EA;font-family:'Satoshi',sans-serif;">Desarrollo de negocio</span>
-
-    <div class="flex items-baseline gap-4 mb-6">
-      <span class="text-5xl md:text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:#A8D8EA;">3×</span>
-      <span class="text-base md:text-lg leading-snug" style="color:rgba(255,255,255,0.5);font-family:'Satoshi',sans-serif;">retorno sobre<br>la inversión</span>
-    </div>
-
-    <h3 class="text-xl md:text-2xl font-bold mb-8 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">
-      De una idea en servilleta a una marca vendiendo en Amazon Europa
-    </h3>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Problema</p>
-        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">Emprendedor con idea de producto para el hogar, sin experiencia en fabricación ni venta online. No sabía por dónde empezar.</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Solución</p>
-        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">Validación de mercado, fabricante en Asia, desarrollo de producto, marca desde cero y lanzamiento en Amazon ES, DE y FR.</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Resultado</p>
-        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">Marca en 3 mercados europeos. Rentable desde el sexto mes. +200K€ en ventas el primer año.</p>
-      </div>
-    </div>
+<section class="relative overflow-hidden flex items-end" style="background:#0F2548;">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute right-0 top-0 bottom-0 w-1/2 md:w-2/5 opacity-[0.07]" style="background:linear-gradient(135deg, transparent 40%, #0088B3 100%);"></div>
+    <span class="absolute select-none pointer-events-none" style="right:-0.05em;bottom:-0.22em;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(8rem,28vw,22rem);line-height:0.8;color:rgba(255,255,255,0.03);letter-spacing:-0.06em;">CASOS</span>
+  </div>
+  <div class="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-5 md:pt-20 md:pb-6">
+    <p class="text-sm font-semibold tracking-[0.2em] uppercase mb-3" style="color:#0088B3;font-family:'Satoshi',sans-serif;">Unicornio Azul</p>
+    <h1 class="leading-[0.92] tracking-tight mb-3" style="color:#ffffff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(3rem,8vw,5.5rem);text-wrap:balance;">
+      Casos
+    </h1>
+    <p class="text-lg md:text-xl max-w-[42ch] leading-relaxed mb-4" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+      Ideas que llegaron a fábrica, a Amazon y al mercado.
+    </p>
+    <nav class="flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-x-10 sm:gap-y-3" aria-label="Ir a un caso">
+      <a href="#roll-order" class="caso-link inline-flex items-baseline gap-3 no-underline" style="font-family:'Space Grotesk',sans-serif;">
+        <span class="text-xs font-semibold tracking-[0.14em]" style="color:rgba(255,255,255,0.35);">01</span>
+        <span class="text-base md:text-lg font-semibold" style="color:#A8D8EA;">Roll Order</span>
+      </a>
+      <a href="#bicicleta-electrica" class="caso-link inline-flex items-baseline gap-3 no-underline" style="font-family:'Space Grotesk',sans-serif;">
+        <span class="text-xs font-semibold tracking-[0.14em]" style="color:rgba(255,255,255,0.35);">02</span>
+        <span class="text-base md:text-lg font-semibold" style="color:#A8D8EA;">Bicicleta eléctrica</span>
+      </a>
+      <a href="#padel-watch" class="caso-link inline-flex items-baseline gap-3 no-underline" style="font-family:'Space Grotesk',sans-serif;">
+        <span class="text-xs font-semibold tracking-[0.14em]" style="color:rgba(255,255,255,0.35);">03</span>
+        <span class="text-base md:text-lg font-semibold" style="color:#A8D8EA;">Smart watch de pádel</span>
+      </a>
+    </nav>
   </div>
 </section>
 
 <!-- ═════════════════════════════════════════
-CASO 02
+CASO 01 — Roll Order
 ═════════════════════════════════════════ -->
-<section class="relative px-6 md:px-12 py-16 md:py-28" style="background:#FFFFFF;">
+<article id="roll-order" class="caso-block relative overflow-hidden" style="background:#FFFFFF;">
+  <span class="caso-bg-num caso-bg-num--left select-none pointer-events-none" aria-hidden="true" style="color:rgba(22,54,103,0.03);">01</span>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-12">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-  <span class="absolute select-none pointer-events-none z-0" style="top:-0.15em;right:0;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(14rem,28vw,26rem);line-height:1;color:rgba(22,54,103,0.03);">02</span>
+      <!-- Copy -->
+      <div>
+        <p class="text-xs font-semibold tracking-[0.18em] uppercase mb-5" style="color:#0F2548;font-family:'Satoshi',sans-serif;">Desarrollo · Producto · Amazon</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-3" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;text-wrap:balance;">
+          Roll Order
+        </h2>
+        <p class="text-lg font-medium mb-8 max-w-[36ch] leading-snug" style="font-family:'Space Grotesk',sans-serif;color:#163667;">
+          De un documento de patente a un producto vendiendo en Amazon.
+        </p>
 
-  <div class="relative z-10 max-w-3xl mx-auto">
-    <span class="inline-block text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full mb-6" style="background:rgba(0,105,141,0.1);color:#00698D;font-family:'Satoshi',sans-serif;">Producto y compras</span>
+        <div class="space-y-6 max-w-[48ch]">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Reto</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              El cliente llegó con la documentación de una patente. Tenía la idea protegida, pero no el producto, ni la fábrica, ni el canal de venta.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Qué hicimos</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              Desarrollamos el producto de principio a fin: industrialización, fabricación, packaging, logística e importación. Después, el lanzamiento en Amazon y la promoción.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Resultado</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              Producto industrializado, importado y lanzado en Amazon. La patente dejó de ser un documento y se convirtió en un negocio en el mercado.
+            </p>
+          </div>
+        </div>
 
-    <div class="flex items-baseline gap-4 mb-6">
-      <span class="text-5xl md:text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:#00698D;">+240%</span>
-      <span class="text-base md:text-lg leading-snug" style="color:#6B7280;font-family:'Satoshi',sans-serif;">incremento en<br>margen neto</span>
+        <a href="https://roll-order.com/" target="_blank" rel="noopener" class="caso-link mt-10 inline-flex items-center gap-2 text-sm font-semibold no-underline" style="font-family:'Space Grotesk',sans-serif;color:#0F2548;">
+          roll-order.com
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+
+      <!-- Visual: pipeline vertical -->
+      <div class="caso-visual relative flex justify-center lg:justify-end" aria-hidden="true">
+        <ol class="pipeline flex flex-col gap-0 w-full max-w-[420px]">
+          <li class="pipeline-step" style="--c:#0F2548;">
+            <span class="pipeline-dot"></span>
+            <span class="pipeline-label">Patente</span>
+          </li>
+          <li class="pipeline-step" style="--c:#163667;">
+            <span class="pipeline-dot"></span>
+            <span class="pipeline-label">Producto</span>
+          </li>
+          <li class="pipeline-step" style="--c:#0B4F7A;">
+            <span class="pipeline-dot"></span>
+            <span class="pipeline-label">Fábrica</span>
+          </li>
+          <li class="pipeline-step" style="--c:#00698D;">
+            <span class="pipeline-dot"></span>
+            <span class="pipeline-label">Importación</span>
+          </li>
+          <li class="pipeline-step pipeline-step--last" style="--c:#0088B3;">
+            <span class="pipeline-dot"></span>
+            <span class="pipeline-label">Amazon</span>
+          </li>
+        </ol>
+      </div>
+
     </div>
+  </div>
+</article>
 
-    <h3 class="text-xl md:text-2xl font-bold mb-8 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
-      Relocalización de fabricación y optimización de costes para marca de cosmética
-    </h3>
+<!-- ═════════════════════════════════════════
+CASO 02 — Bicicleta eléctrica
+═════════════════════════════════════════ -->
+<article id="bicicleta-electrica" class="caso-block relative overflow-hidden" style="background:#0A1628;">
+  <span class="caso-bg-num caso-bg-num--right select-none pointer-events-none" aria-hidden="true" style="color:rgba(255,255,255,0.02);">02</span>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-12">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-    <div class="grid md:grid-cols-3 gap-6">
       <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Problema</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Marca española de cosmética natural con márgenes ajustados por un único proveedor caro que bloqueaba el crecimiento.</p>
+        <p class="text-xs font-semibold tracking-[0.18em] uppercase mb-5" style="color:#A8D8EA;font-family:'Satoshi',sans-serif;">Producto · SORIE™ · Importación</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-3" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;text-wrap:balance;">
+          Bicicleta eléctrica para uso compartido
+        </h2>
+        <p class="text-lg font-medium mb-8 max-w-[40ch] leading-snug" style="font-family:'Space Grotesk',sans-serif;color:rgba(255,255,255,0.65);">
+          La lista de la bicicleta perfecta — y un arancel que pasó del 10% al 70%.
+        </p>
+
+        <div class="space-y-6 max-w-[48ch]">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Reto</p>
+            <p class="text-base leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+              Cliente español de estaciones de carga y alquiler en ayuntamientos. Las bicis compradas en España fallaban: robo de asientos y cestas, pata de soporte que se partía, y más problemas de diseño para uso intensivo.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Qué hicimos</p>
+            <p class="text-base leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+              Definimos la bicicleta perfecta y aplicamos SORIE™: competencia, fabricantes, ferias, y viaje con el CEO a fábrica. Desarrollamos el producto completo — incluyendo cómo superar el salto arancelario del 10% al 70%.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:rgba(255,255,255,0.35);font-family:'Satoshi',sans-serif;">Resultado</p>
+            <p class="text-base leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+              Producto a medida para alquiler urbano, proveedores validados en origen y estructura de costes adaptada al nuevo escenario arancelario.
+            </p>
+          </div>
+        </div>
+
+        <a href="/metodologia-sorie" class="caso-link mt-10 inline-flex items-center gap-2 text-sm font-semibold no-underline" style="font-family:'Space Grotesk',sans-serif;color:#A8D8EA;">
+          Ver metodología SORIE™
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Solución</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Sourcing de 3 fabricantes en Asia, negociación, supervisión de producción, control de calidad y certificaciones CE.</p>
+
+      <!-- Visual: aranceles + SORIE -->
+      <div class="caso-visual relative flex justify-center lg:justify-end" aria-hidden="true">
+        <div class="w-full max-w-[420px] flex flex-col gap-10">
+          <div class="flex items-end justify-between gap-4 px-2">
+            <div class="flex flex-col items-center gap-2.5 flex-1">
+              <span class="font-bold leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(3.5rem,8vw,5rem);color:#A8D8EA;">10%</span>
+              <span class="text-sm font-semibold tracking-wide uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.4);">Antes</span>
+            </div>
+            <div class="pb-10 opacity-50" style="color:#0088B3;">
+              <svg width="52" height="30" viewBox="0 0 40 24" fill="none"><path d="M2 12h30M24 4l12 8-12 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="flex flex-col items-center gap-2.5 flex-1">
+              <span class="font-bold leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(3.5rem,8vw,5rem);color:#ffffff;">70%</span>
+              <span class="text-sm font-semibold tracking-wide uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.4);">Arancel</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-end px-1 pt-3 border-t" style="border-color:rgba(255,255,255,0.12);">
+            <span class="font-bold tracking-tighter leading-none" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,6vw,3.75rem);color:#A8D8EA;">S</span>
+            <span class="font-bold tracking-tighter leading-none" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,6vw,3.75rem);color:#7EC8E3;">O</span>
+            <span class="font-bold tracking-tighter leading-none" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,6vw,3.75rem);color:#0088B3;">R</span>
+            <span class="font-bold tracking-tighter leading-none" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,6vw,3.75rem);color:#40B0D0;">I</span>
+            <span class="font-bold tracking-tighter leading-none" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,6vw,3.75rem);color:#ffffff;">E</span>
+          </div>
+          <p class="text-center text-sm font-semibold tracking-[0.16em] uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.4);">Metodología aplicada</p>
+        </div>
       </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Resultado</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">−40% coste unitario. Margen neto del 22% al 53%. Escalaron producción sin perder calidad.</p>
-      </div>
+
     </div>
+  </div>
+</article>
+
+<!-- ═════════════════════════════════════════
+CASO 03 — Smart watch pádel
+═════════════════════════════════════════ -->
+<article id="padel-watch" class="caso-block relative overflow-hidden" style="background:#F2F5F8;">
+  <span class="caso-bg-num caso-bg-num--left select-none pointer-events-none" aria-hidden="true" style="color:rgba(22,54,103,0.04);">03</span>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-12">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <div>
+        <p class="text-xs font-semibold tracking-[0.18em] uppercase mb-5" style="color:#0088B3;font-family:'Satoshi',sans-serif;">Industrialización · Logística · Importación</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-3" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;text-wrap:balance;">
+          Smart watch de pádel
+        </h2>
+        <p class="text-lg font-medium mb-8 max-w-[40ch] leading-snug" style="font-family:'Space Grotesk',sans-serif;color:#163667;">
+          Del prototipo a la feria más importante de España — y al lanzamiento global.
+        </p>
+
+        <div class="space-y-6 max-w-[48ch]">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Reto</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              Empresas de inventos suelen llegar hasta el prototipo. El salto difícil es industrializar, importar y poner el producto en el mercado.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Qué hicimos</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              Soporte a industrialización, logística e importación. Hit X de Padelgest se presentó en la feria de pádel más importante de España, en Barcelona.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Resultado</p>
+            <p class="text-base leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">
+              Producto presentado en feria y listo para el lanzamiento global. Del prototipo a una operación de importación y mercado.
+            </p>
+          </div>
+        </div>
+
+        <a href="https://comunicae.es/notas-de-prensa/padelgest-revoluciona-el-padel-con-hit-x-el" target="_blank" rel="noopener" class="caso-link mt-10 inline-flex items-center gap-2 text-sm font-semibold no-underline" style="font-family:'Space Grotesk',sans-serif;color:#0F2548;">
+          Nota de prensa — Padelgest / Hit X
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+
+      <!-- Visual: escalera ascendente -->
+      <div class="caso-visual relative flex justify-center lg:justify-end" aria-hidden="true">
+        <ol class="stair w-full max-w-[440px] flex flex-col gap-3">
+          <li class="stair-step" style="--c:#0F2548; --w:58%;">
+            <span class="stair-num">01</span>
+            <span class="stair-label">Prototipo</span>
+          </li>
+          <li class="stair-step" style="--c:#163667; --w:72%;">
+            <span class="stair-num">02</span>
+            <span class="stair-label">Industrialización</span>
+          </li>
+          <li class="stair-step" style="--c:#00698D; --w:86%;">
+            <span class="stair-num">03</span>
+            <span class="stair-label">Feria Barcelona</span>
+          </li>
+          <li class="stair-step stair-step--last" style="--c:#0088B3; --w:100%;">
+            <span class="stair-num">04</span>
+            <span class="stair-label">Lanzamiento global</span>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<!-- ═════════════════════════════════════════
+PUENTE — Sobre nosotros (bajo casos)
+═════════════════════════════════════════ -->
+<section style="background:#FFFFFF;">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col items-center" style="text-align:center;">
+    <p class="font-bold tracking-tight leading-[1.2]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;font-size:clamp(1.35rem,3vw,2rem);text-wrap:balance;">
+      Detrás de estos proyectos hay un equipo que trabaja desde el terreno — producto, fabricación y canales digitales.
+      <a href="/sobre-nosotros" class="caso-link whitespace-nowrap" style="color:#163667;text-decoration:underline;text-underline-offset:4px;">Conoce más en Sobre nosotros</a>
+    </p>
   </div>
 </section>
 
 <!-- ═════════════════════════════════════════
-CASO 03
+CAPA DE MARCA — mención (sin casos)
 ═════════════════════════════════════════ -->
-<section class="relative px-6 md:px-12 py-16 md:py-28" style="background:#F2F5F8;">
-
-  <span class="absolute select-none pointer-events-none z-0" style="top:-0.15em;left:0;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(14rem,28vw,26rem);line-height:1;color:rgba(22,54,103,0.04);">03</span>
-
-  <div class="relative z-10 max-w-3xl mx-auto">
-    <span class="inline-block text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full mb-6" style="background:rgba(0,136,179,0.1);color:#0088B3;font-family:'Satoshi',sans-serif;">Canales digitales y escalado</span>
-
-    <div class="flex items-baseline gap-4 mb-6">
-      <span class="text-5xl md:text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:#0088B3;">500K</span>
-      <span class="text-base md:text-lg leading-snug" style="color:#6B7280;font-family:'Satoshi',sans-serif;">€ en ventas<br>primer año</span>
-    </div>
-
-    <h3 class="text-xl md:text-2xl font-bold mb-8 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
-      Expansión de marca de accesorios a 5 marketplaces europeos
-    </h3>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Problema</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Marca de accesorios de moda vendiendo solo en España vía web propia. Quería Europa pero no sabía cómo.</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Solución</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Amazon Seller Central en ES, DE, FR, IT y UK. Listings, A+ Content, Brand Registry y campañas.</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-[0.12em] uppercase mb-2" style="color:rgba(0,0,0,0.3);font-family:'Satoshi',sans-serif;">Resultado</p>
-        <p class="text-sm leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">+500K€ primer año. 5 marketplaces con FBA. Marca registrada en Amazon Brand Registry.</p>
-      </div>
-    </div>
+<section class="relative overflow-hidden px-6 md:px-12 py-20 md:py-28" style="background:#0A1628;">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute left-0 bottom-0 w-2/3 h-2/3 opacity-[0.06]" style="background:radial-gradient(ellipse at 20% 80%, #0088B3 0%, transparent 60%);"></div>
+  </div>
+  <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center">
+    <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-6" style="color:#0088B3;font-family:'Satoshi',sans-serif;">Y también</p>
+    <h2 class="font-bold tracking-tight leading-[1.08] mb-6" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;font-size:clamp(1.85rem,4.5vw,3rem);text-wrap:balance;">
+      Entre otras historias, hemos llevado sonido, campañas y presencia digital hasta donde la marca necesitaba llegar.
+    </h2>
+    <p class="text-base md:text-lg leading-relaxed max-w-[46ch]" style="color:rgba(255,255,255,0.5);font-family:'Satoshi',sans-serif;">
+      Artistas posicionados. Spotlights de campaña. Capas de marketing que no se ven en la fábrica — y que sí se notan en el mercado.
+    </p>
   </div>
 </section>
 
 <!-- ═════════════════════════════════════════
-CTA FINAL — mismo que index, solo cambia el copy
+PRENSA — Cinco Días
+═════════════════════════════════════════ -->
+<section style="background:#F2F5F8;">
+  <div class="max-w-3xl mx-auto px-6 md:px-12 py-14 md:py-20 flex flex-col items-center" style="text-align:center;">
+    <p class="text-xs font-semibold tracking-[0.18em] uppercase mb-5" style="color:#0088B3;font-family:'Satoshi',sans-serif;">Prensa</p>
+    <h2 class="font-bold tracking-tight leading-[1.1] mb-5" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;font-size:clamp(1.85rem,4.5vw,3rem);text-wrap:balance;">
+      Destacados en Cinco Días
+    </h2>
+    <p class="text-base md:text-lg leading-relaxed max-w-[48ch]" style="font-family:'Satoshi',sans-serif;color:#374151;text-align:center;">
+      La firma está liderada por Luis Chicharro, con trayectoria en desarrollo de negocio, internacionalización, creación de marcas propias y escalado a través de canales digitales. Su enfoque ha sido recogido en <a href="https://cincodias.elpais.com/companias/2023-04-11/los-secretos-para-vender-en-plataformas-como-amazon.html" target="_blank" rel="noopener" style="color:#163667;font-weight:700;text-decoration:underline;text-underline-offset:3px;">Cinco Días (Grupo El País)</a>, medio donde explicó cómo construir negocios reales en plataformas digitales desde el producto y la fabricación hasta la venta.
+    </p>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+CTA
 ═════════════════════════════════════════ -->
 <section class="relative flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 px-6 md:px-12 py-12 md:py-32" style="background:#FFFFFF;">
   <div class="text-center md:text-left max-w-lg">
@@ -144,7 +322,7 @@ CTA FINAL — mismo que index, solo cambia el copy
       </a>
     </div>
   </div>
-  <div class="grid grid-cols-2 gap-6 md:gap-8 shrink-0">
+  <div class="grid grid-cols-2 gap-6 md:gap-8 shrink-0" aria-hidden="true">
     <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
     <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
     <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
@@ -152,45 +330,202 @@ CTA FINAL — mismo que index, solo cambia el copy
   </div>
 </section>
 
-<!-- ═════════════════════════════════════════
-FOOTER
-═════════════════════════════════════════ -->
 <footer style="background:#0F2548;font-family:'Satoshi',sans-serif;">
-  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-20">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-      <div class="col-span-2 md:col-span-1 flex flex-col gap-4">
-        <div class="bg-white rounded-xl p-3 inline-flex"><img src="/images/logo-marino.png" alt="Unicornio Azul" class="h-6 w-auto" /></div>
-        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.5);">Soluciones reales para ideas extraordinarias.</p>
-        <a href="mailto:hola@unicornioazul.com" class="text-sm font-medium hover:underline" style="color:rgba(255,255,255,0.65);">hola@unicornioazul.com</a>
-        <div class="flex gap-4">
-          <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-sm font-medium hover:underline" style="color:rgba(255,255,255,0.55);">LinkedIn</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener" class="text-sm font-medium hover:underline" style="color:rgba(255,255,255,0.55);">Instagram</a>
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-8 md:py-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+      <div class="flex flex-col gap-4">
+        <a href="/" style="text-decoration:none;">
+          <div class="inline-block rounded p-3" style="background: rgba(255,255,255,0.95);">
+            <img src="/images/logo-marino.png" alt="Unicornio Azul" class="h-10 md:h-11 w-auto" />
+          </div>
+        </a>
+        <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">Soluciones reales para ideas extraordinarias.</p>
+        <div class="flex flex-col gap-1.5 mt-1">
+          <a href="mailto:hola@unicornioazul.com" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">hola@unicornioazul.com</a>
+          <div class="flex items-center gap-4">
+            <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">LinkedIn</a>
+            <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">Instagram</a>
+          </div>
         </div>
       </div>
       <div class="flex flex-col gap-3">
-        <p class="text-sm font-semibold tracking-tight mb-1" style="color:rgba(255,255,255,0.8);">Qué hacemos</p>
-        <a href="/que-hacemos/desarrollo-de-negocios" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Desarrollo de negocio</a>
-        <a href="/que-hacemos/producto-compras-internacionales" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Producto y compras</a>
-        <a href="/que-hacemos/marketing-digital" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Marketing digital</a>
-        <a href="/que-hacemos/canales-digitales-escalado" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Canales y escalado</a>
+        <p class="text-sm font-semibold mb-1" style="color:#ffffff;">Qué hacemos</p>
+        <a href="/que-hacemos/desarrollo-de-negocios" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Desarrollo de negocios</a>
+        <a href="/que-hacemos/producto-compras-internacionales" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Producto y compras</a>
+        <a href="/que-hacemos/marketing-digital" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Marketing digital</a>
+        <a href="/que-hacemos/canales-digitales-escalado" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Canales digitales y escalado</a>
       </div>
       <div class="flex flex-col gap-3">
-        <p class="text-sm font-semibold tracking-tight mb-1" style="color:rgba(255,255,255,0.8);">Cómo trabajamos</p>
-        <a href="/como-trabajamos#proceso" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Proceso 5 pasos</a>
-        <a href="/metodologia-sorie" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Metodología SORIE&trade;</a>
-        <a href="/casos" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Casos de éxito</a>
+        <p class="text-sm font-semibold mb-1" style="color:#ffffff;">Cómo trabajamos</p>
+        <a href="/como-trabajamos#proceso" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Proceso 5 pasos</a>
+        <a href="/metodologia-sorie" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Metodología SORIE™</a>
+        <a href="/casos" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Casos</a>
       </div>
       <div class="flex flex-col gap-3">
-        <p class="text-sm font-semibold tracking-tight mb-1" style="color:rgba(255,255,255,0.8);">Sobre nosotros</p>
-        <a href="/sobre-nosotros" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Quiénes somos</a>
-        <a href="/contacto" class="text-sm hover:underline" style="color:rgba(255,255,255,0.5);">Contacto</a>
+        <p class="text-sm font-semibold mb-1" style="color:#ffffff;">Empresa</p>
+        <a href="/sobre-nosotros" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Sobre nosotros</a>
+        <a href="/contacto" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Contacto</a>
       </div>
     </div>
-    <div class="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between gap-4" style="border-color:rgba(255,255,255,0.08);">
-      <p class="text-xs" style="color:rgba(255,255,255,0.35);">&copy; 2026 Unicornio Azul. Todos los derechos reservados.</p>
-      <p class="text-xs" style="color:rgba(255,255,255,0.25);">Madrid, España</p>
+    <div class="mt-10 md:mt-16 pt-6 md:pt-8 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" style="border-color:rgba(255,255,255,0.1);">
+      <p class="text-xs" style="color:rgba(255,255,255,0.35);">&copy; {new Date().getFullYear()} Unicornio Azul. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-5 text-xs">
+        <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Aviso legal</a>
+        <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacidad</a>
+      </div>
     </div>
   </div>
 </footer>
+
+<style>
+  .caso-bg-num {
+    position: absolute;
+    z-index: 0;
+    top: -0.15em;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: clamp(14rem, 28vw, 26rem);
+    line-height: 1;
+  }
+  .caso-bg-num--left { left: 0; }
+  .caso-bg-num--right { right: 0; }
+
+  .caso-link {
+    transition: opacity 0.25s ease, gap 0.25s ease;
+  }
+  .caso-link:hover {
+    opacity: 0.7;
+    gap: 0.65rem;
+  }
+
+  /* Vertical pipeline diagram */
+  .pipeline-step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.45rem 0;
+    list-style: none;
+  }
+  .pipeline-step:not(.pipeline-step--last)::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: calc(50% + 18px);
+    bottom: -18px;
+    width: 3px;
+    background: var(--c);
+  }
+  .pipeline-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--c);
+  }
+  .pipeline-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--c);
+  }
+
+  /* Ascending stair diagram (padel) */
+  .stair {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;
+  }
+  .stair-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: var(--w);
+    min-height: 4.25rem;
+    padding: 1rem 1.35rem;
+    background: var(--c);
+    list-style: none;
+  }
+  .stair-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.45);
+    flex-shrink: 0;
+  }
+  .stair-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.2rem, 2.8vw, 1.55rem);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: #ffffff;
+  }
+
+  .caso-block { transform: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .caso-block {
+      transform: translateY(20px);
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .caso-block.is-in { transform: translateY(0); }
+
+    .pipeline-step {
+      opacity: 0.35;
+      transform: translateX(12px);
+      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .caso-block.is-in .pipeline-step {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .caso-block.is-in .pipeline-step:nth-child(1) { transition-delay: 0.08s; }
+    .caso-block.is-in .pipeline-step:nth-child(2) { transition-delay: 0.16s; }
+    .caso-block.is-in .pipeline-step:nth-child(3) { transition-delay: 0.24s; }
+    .caso-block.is-in .pipeline-step:nth-child(4) { transition-delay: 0.32s; }
+    .caso-block.is-in .pipeline-step:nth-child(5) { transition-delay: 0.4s; }
+
+    .stair-step {
+      opacity: 0.35;
+      transform: translateX(16px);
+      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .caso-block.is-in .stair-step {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .caso-block.is-in .stair-step:nth-child(1) { transition-delay: 0.08s; }
+    .caso-block.is-in .stair-step:nth-child(2) { transition-delay: 0.16s; }
+    .caso-block.is-in .stair-step:nth-child(3) { transition-delay: 0.24s; }
+    .caso-block.is-in .stair-step:nth-child(4) { transition-delay: 0.32s; }
+  }
+</style>
+
+<script>
+  (function () {
+    const blocks = document.querySelectorAll('.caso-block');
+    if (!blocks.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      blocks.forEach((el) => el.classList.add('is-in'));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+    );
+    blocks.forEach((el) => io.observe(el));
+  })();
+</script>
 
 </BaseLayout>
