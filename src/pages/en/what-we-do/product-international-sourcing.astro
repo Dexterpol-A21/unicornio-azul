@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import ProblemBridge from '@/components/ProblemBridge.astro';
 ---
 
 <BaseLayout
@@ -55,19 +56,19 @@ navy #163667 · square ■
       <div class="w-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
 
         <!-- LEFT COLUMN — text -->
-        <div class="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+        <div class="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left" data-reveal>
           <!-- H1 — huge -->
-          <h1 class="leading-[0.92] tracking-tight max-w-[14ch]" style="color:#ffffff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.8rem,10vw,5.5rem);">
+          <h1 class="reveal-item leading-[0.92] tracking-tight max-w-[14ch]" style="--i:0;color:#ffffff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.8rem,10vw,5.5rem);">
             Product & international<br>sourcing
           </h1>
 
           <!-- Subtitle -->
-          <p class="mt-4 md:mt-8 text-lg md:text-lg max-w-[40ch] leading-relaxed" style="color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
+          <p class="reveal-item mt-4 md:mt-8 text-lg md:text-lg max-w-[40ch] leading-relaxed" style="--i:1;color:rgba(255,255,255,0.55);font-family:'Satoshi',sans-serif;">
             Sourcing, product development, and international logistics. We find suppliers in China and manage the entire import process.
           </p>
 
           <!-- CTA — desktop (in text column) -->
-          <div class="hidden lg:flex mt-8">
+          <div class="reveal-item hidden lg:flex mt-8" style="--i:2">
             <a href="/en/get-started" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#ffffff;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#163667;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(0,0,0,0.12);">
               <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
               <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:22px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#163667" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -243,14 +244,26 @@ navy #163667 · square ■
 </section>
 
 <!-- ═════════════════════════════════════════
+PROBLEM → ANSWER (Feedback HOME §5)
+═════════════════════════════════════════ -->
+<ProblemBridge
+  problem="I want to manufacture a product"
+  solution="We design the full chain"
+  accent="#163667"
+  shape="square"
+  problemLabel="Problem"
+  solutionLabel="Answer"
+/>
+
+<!-- ═════════════════════════════════════════
 2. INTRO — Product, sourcing, and internationalization
 Editorial design · 2-columns
 ═════════════════════════════════════════ -->
-<section style="background:#FFFFFF;">
+<section style="background:#FFFFFF;" data-reveal>
   <div class="max-w-6xl mx-auto px-6 md:px-12 pt-14 md:pt-32 pb-12 md:pb-24 flex flex-col md:flex-row gap-8 md:gap-20">
 
     <!-- LEFT COLUMN — headline -->
-    <div class="md:w-[42%] flex flex-col">
+    <div class="reveal-item md:w-[42%] flex flex-col" style="--i:0">
       <h2 class="text-[2.5rem] md:text-[2.5rem] font-bold leading-[1.05] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
         From product<br>to sale<br>in any market
       </h2>
@@ -258,7 +271,7 @@ Editorial design · 2-columns
     </div>
 
     <!-- RIGHT COLUMN — text -->
-    <div class="md:w-[58%] space-y-6 text-lg md:text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+    <div class="reveal-item md:w-[58%] space-y-6 text-lg md:text-lg leading-relaxed" style="--i:1;font-family:'Satoshi',sans-serif;color:#374151;">
       <!-- Lead — highlighted -->
       <p class="text-xl md:text-2xl leading-relaxed" style="color:#163667;font-weight:700; font-family:'Space Grotesk',sans-serif;">
         A key part of business success is the product and how it's manufactured.
@@ -277,51 +290,51 @@ Editorial design · 2-columns
 <!-- ═════════════════════════════════════════
 3. WHAT'S INCLUDED — 5 blocks according to brief
 ═════════════════════════════════════════ -->
-<section style="background:#F2F5F8;">
+<section style="background:#F2F5F8;" data-reveal>
   <div class="max-w-4xl mx-auto md:px-12 py-14 md:py-28">
 
     <div class="px-6 md:px-0">
-      <h2 class="text-[2.5rem] md:text-4xl font-bold tracking-tight mb-8 md:mb-14" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+      <h2 class="reveal-item text-[2.5rem] md:text-4xl font-bold tracking-tight mb-8 md:mb-14" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
         Five blocks. From sourcing<br>to delivery.
       </h2>
     </div>
 
     <!-- Mobile: horizontal gallery -->
-    <div class="md:hidden overflow-hidden w-full">
-      <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory" style="scrollbar-width:none; -ms-overflow-style:none; padding-left:24px; padding-right:24px; scroll-padding-left:24px; scroll-padding-right:24px;">
+    <div class="md:hidden overflow-hidden w-full" data-bloque-rail data-bloque-x>
+      <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory" data-bloque-scroller style="scrollbar-width:none; -ms-overflow-style:none; padding-left:24px; padding-right:24px; scroll-padding-left:24px; scroll-padding-right:24px;">
 
         <!-- 01 -->
-        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
-          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">01</span>
-          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Product development</h3>
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" data-bloque-item style="--c:#0F2548;background:#FFFFFF;border:1px solid rgba(15,37,72,0.06);">
+          <span class="bloque-num block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;">01</span>
+          <h3 class="bloque-title text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Product development</h3>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Design, prototyping, and technical specifications. We turn your idea into a product ready to manufacture.</p>
         </div>
 
         <!-- 02 -->
-        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
-          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">02</span>
-          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">International sourcing</h3>
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" data-bloque-item style="--c:#163667;background:#FFFFFF;border:1px solid rgba(15,37,72,0.06);">
+          <span class="bloque-num block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;">02</span>
+          <h3 class="bloque-title text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">International sourcing</h3>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Searching and selecting suppliers in international markets with criteria of reliability, cost, and quality.</p>
         </div>
 
         <!-- 03 -->
-        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
-          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">03</span>
-          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Manufacturer negotiation</h3>
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" data-bloque-item style="--c:#0B4F7A;background:#FFFFFF;border:1px solid rgba(15,37,72,0.06);">
+          <span class="bloque-num block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;">03</span>
+          <h3 class="bloque-title text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Manufacturer negotiation</h3>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We negotiate terms, volumes, and timelines directly with manufacturers to maximize margin and minimize risk.</p>
         </div>
 
         <!-- 04 -->
-        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
-          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">04</span>
-          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Production & quality control</h3>
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" data-bloque-item style="--c:#00698D;background:#FFFFFF;border:1px solid rgba(15,37,72,0.06);">
+          <span class="bloque-num block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;">04</span>
+          <h3 class="bloque-title text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Production & quality control</h3>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Inspections, certifications, and quality controls at origin to ensure the product arrives as it should.</p>
         </div>
 
         <!-- 05 -->
-        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
-          <span class="block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">05</span>
-          <h3 class="text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Import & export</h3>
+        <div class="snap-start shrink-0 w-[82vw] max-w-[360px] flex flex-col gap-3 p-5 rounded-xl" data-bloque-item style="--c:#0088B3;background:#FFFFFF;border:1px solid rgba(15,37,72,0.06);">
+          <span class="bloque-num block text-6xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;">05</span>
+          <h3 class="bloque-title text-xl font-bold leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Import & export</h3>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We manage all international logistics: customs, transportation, and documentation to move your product without borders.</p>
         </div>
 
@@ -329,53 +342,53 @@ Editorial design · 2-columns
     </div>
 
     <!-- Dots indicator (mobile only) -->
-    <div id="bloques2-dots" class="md:hidden flex items-center justify-center gap-2 mt-5">
-      <span class="block w-2 h-2 rounded-full" style="background:#163667;"></span>
-      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
-      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
-      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
-      <span class="block w-2 h-2 rounded-full" style="background:rgba(22,54,103,0.2);"></span>
+    <div id="bloques2-dots" class="md:hidden flex items-center justify-center gap-2 mt-5" data-bloque-dots>
+      <span class="block w-2 h-2 rounded-full" data-color="#0F2548" style="background:#0F2548;opacity:1;"></span>
+      <span class="block w-2 h-2 rounded-full" data-color="#163667" style="background:#163667;opacity:0.22;"></span>
+      <span class="block w-2 h-2 rounded-full" data-color="#0B4F7A" style="background:#0B4F7A;opacity:0.22;"></span>
+      <span class="block w-2 h-2 rounded-full" data-color="#00698D" style="background:#00698D;opacity:0.22;"></span>
+      <span class="block w-2 h-2 rounded-full" data-color="#0088B3" style="background:#0088B3;opacity:0.22;"></span>
     </div>
 
     <!-- Desktop: vertical stack -->
-    <div class="hidden md:flex flex-col gap-4 mt-14 px-12">
+    <div class="hidden md:flex flex-col gap-4 mt-14 px-12" data-bloque-rail>
 
-      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
-        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">01</span></div>
+      <div class="reveal-item flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" data-bloque-item style="--i:1;--c:#0F2548;background:#FFFFFF;border:1px solid rgba(15,37,72,0.06);">
+        <div class="shrink-0"><span class="bloque-num block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;">01</span></div>
         <div class="flex-1">
-          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Product development</h3>
+          <h3 class="bloque-title text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Product development</h3>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Design, prototyping, and technical specifications. We turn your idea into a product ready to manufacture.</p>
         </div>
       </div>
 
-      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
-        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">02</span></div>
+      <div class="reveal-item flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" data-bloque-item style="--i:2;--c:#163667;background:#FFFFFF;border:1px solid rgba(15,37,72,0.06);">
+        <div class="shrink-0"><span class="bloque-num block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;">02</span></div>
         <div class="flex-1">
-          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">International sourcing</h3>
+          <h3 class="bloque-title text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">International sourcing</h3>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Searching and selecting suppliers in international markets with criteria of reliability, cost, and quality.</p>
         </div>
       </div>
 
-      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
-        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">03</span></div>
+      <div class="reveal-item flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" data-bloque-item style="--i:3;--c:#0B4F7A;background:#FFFFFF;border:1px solid rgba(15,37,72,0.06);">
+        <div class="shrink-0"><span class="bloque-num block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;">03</span></div>
         <div class="flex-1">
-          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Manufacturer negotiation</h3>
+          <h3 class="bloque-title text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Manufacturer negotiation</h3>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We negotiate terms, volumes, and timelines directly with manufacturers to maximize margin and minimize risk.</p>
         </div>
       </div>
 
-      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
-        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">04</span></div>
+      <div class="reveal-item flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" data-bloque-item style="--i:4;--c:#00698D;background:#FFFFFF;border:1px solid rgba(15,37,72,0.06);">
+        <div class="shrink-0"><span class="bloque-num block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;">04</span></div>
         <div class="flex-1">
-          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Production & quality control</h3>
+          <h3 class="bloque-title text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Production & quality control</h3>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Inspections, certifications, and quality controls at origin to ensure the product arrives as it should.</p>
         </div>
       </div>
 
-      <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" style="background:#FFFFFF;border:1px solid rgba(22,54,103,0.06);">
-        <div class="shrink-0"><span class="block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:rgba(22,54,103,0.07);">05</span></div>
+      <div class="reveal-item flex flex-col md:flex-row gap-4 md:gap-10 items-start p-5 md:p-8 rounded-xl" data-bloque-item style="--i:5;--c:#0088B3;background:#FFFFFF;border:1px solid rgba(15,37,72,0.06);">
+        <div class="shrink-0"><span class="bloque-num block text-8xl font-black leading-none tracking-tighter" style="font-family:'Space Grotesk',sans-serif;">05</span></div>
         <div class="flex-1">
-          <h3 class="text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Import & export</h3>
+          <h3 class="bloque-title text-2xl font-bold mb-1.5 leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Import & export</h3>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">We manage all international logistics: customs, transportation, and documentation to move your product without borders.</p>
         </div>
       </div>
@@ -388,32 +401,32 @@ Editorial design · 2-columns
 <!-- ═════════════════════════════════════════
 4. AUTHORITY QUOTE
 ═════════════════════════════════════════ -->
-<section style="background:#FFFFFF;">
+<section style="background:#FFFFFF;" data-reveal>
   <div class="max-w-3xl mx-auto px-6 md:px-12 py-12 md:py-20 text-center">
-    <svg viewBox="0 0 40 40" class="w-8 h-8 mx-auto mb-5 opacity-20" style="color:#163667;">
+    <svg viewBox="0 0 40 40" class="reveal-item w-8 h-8 mx-auto mb-5 opacity-20" style="--i:0;color:#163667;">
       <rect x="4" y="4" width="32" height="32" rx="2" fill="currentColor"/>
     </svg>
-    <blockquote class="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#163667;">
+    <blockquote class="reveal-item text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight" style="--i:1;font-family:'Space Grotesk',sans-serif;color:#163667;">
       &ldquo;The product is the only thing your customer touches. Everything else is opinion.&rdquo;
     </blockquote>
-    <p class="mt-4 text-base opacity-50" style="font-family:'Satoshi',sans-serif;color:#6B7280;">— Core principle at Blue Unicorn</p>
+    <p class="reveal-item mt-4 text-base opacity-50" style="--i:2;font-family:'Satoshi',sans-serif;color:#6B7280;">— Core principle at Blue Unicorn</p>
   </div>
 </section>
 
 <!-- ═════════════════════════════════════════
 5. WHO IT'S FOR
 ═════════════════════════════════════════ -->
-<section style="background:#163667;">
+<section style="background:#163667;" data-reveal>
   <div class="max-w-4xl mx-auto px-6 md:px-12 py-14 md:py-28">
 
-    <h2 class="text-[2.5rem] md:text-4xl font-bold tracking-tight mb-8 md:mb-14" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">
+    <h2 class="reveal-item text-[2.5rem] md:text-4xl font-bold tracking-tight mb-8 md:mb-14" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#ffffff;">
       For those who need<br>to manufacture without drama
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 
       <!-- Entrepreneur -->
-      <div class="p-5 md:p-8 rounded-xl" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
+      <div class="reveal-item p-5 md:p-8 rounded-xl" style="--i:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
         <h4 class="text-xl font-bold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">Entrepreneur with a product idea</h4>
         <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">
           You know what you want to sell but need to find who can manufacture it, how to produce it, and how to bring it in without surprises.
@@ -421,7 +434,7 @@ Editorial design · 2-columns
       </div>
 
       <!-- Company -->
-      <div class="p-5 md:p-8 rounded-xl" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
+      <div class="reveal-item p-5 md:p-8 rounded-xl" style="--i:2;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
         <h4 class="text-xl font-bold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#ffffff;">Company looking for suppliers</h4>
         <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">
           You need to diversify suppliers, improve margins, or enter new markets with real control over the supply chain.
@@ -435,16 +448,16 @@ Editorial design · 2-columns
 <!-- ═════════════════════════════════════════
 6. FINAL CTA
 ═════════════════════════════════════════ -->
-<section class="relative flex flex-col md:flex-row items-center md:items-center justify-center gap-8 md:gap-20 px-6 md:px-12 py-10 md:py-32" style="background:#FFFFFF;">
+<section class="relative flex flex-col md:flex-row items-center md:items-center justify-center gap-8 md:gap-20 px-6 md:px-12 py-10 md:py-32" style="background:#FFFFFF;" data-final-cta>
 
     <!-- Text + desktop button -->
     <div class="text-center md:text-left max-w-lg">
-      <h2 class="text-[2.5rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Have a product<br>in mind?<br>Let's talk.</h2>
-      <p class="mt-6 text-lg md:text-lg leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">Tell us what you want to manufacture. We'll help you find the right supplier without surprises.</p>
+      <h2 class="final-title text-[2.5rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Want to manufacture<br>a product?<br>We create it.</h2>
+      <p class="final-body mt-6 text-lg md:text-lg leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">Design, supplier and production. From idea to factory — no surprises, no blind middlemen.</p>
       <!-- Button — desktop -->
-      <div class="hidden md:flex mt-8 flex-col sm:flex-row items-center md:items-start gap-4">
+      <div class="final-cta hidden md:flex mt-8 flex-col sm:flex-row items-center md:items-start gap-4">
         <a href="/en/get-started" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#163667;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(22,54,103,0.2);">
-          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Create my product</span>
           <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:22px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
@@ -454,16 +467,16 @@ Editorial design · 2-columns
 
     <!-- Geometric shapes -->
     <div class="grid grid-cols-2 gap-4 md:gap-8 shrink-0">
-      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
-      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
-      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
-      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><polygon points="50,4 96,96 4,96" fill="#00698D" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="final-shape w-16 h-16 md:w-24 md:h-24" style="--i:0"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="final-shape w-16 h-16 md:w-24 md:h-24" style="--i:1"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="final-shape w-16 h-16 md:w-24 md:h-24" style="--i:2"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="final-shape w-16 h-16 md:w-24 md:h-24" style="--i:3"><polygon points="50,4 96,96 4,96" fill="#00698D" opacity="0.8"/></svg>
     </div>
 
     <!-- Button — mobile only -->
-    <div class="md:hidden">
+    <div class="final-cta md:hidden">
       <a href="/en/get-started" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#163667;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(22,54,103,0.2);">
-        <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+        <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Create my product</span>
         <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
@@ -475,26 +488,26 @@ Editorial design · 2-columns
 <!-- ═════════════════════════════════════════
 7. OTHER PILLARS — Bottom navigation
 ═════════════════════════════════════════ -->
-<section style="background:#F5F1EC;">
+<section style="background:#F5F1EC;" data-reveal>
   <div class="max-w-4xl mx-auto px-6 md:px-12 py-12 md:py-20">
 
     <!-- Mobile: horizontal gallery -->
     <div class="md:hidden overflow-hidden w-full -mx-6">
       <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory" style="scrollbar-width:none; -ms-overflow-style:none; padding-left:24px; padding-right:24px; scroll-padding-left:24px; scroll-padding-right:24px;">
 
-        <a href="/en/what-we-do/business-development" class="snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
+        <a href="/en/what-we-do/business-development" class="reveal-item snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="--i:0;border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
           <svg viewBox="0 0 40 40" class="w-8 h-8"><path d="M20 0 Q20 20 40 20 Q20 20 20 40 Q20 20 0 20 Q20 20 20 0Z" fill="#0F2548"/></svg>
           <h4 class="text-xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Business Development</h4>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Analysis, validation, and brand creation from scratch.</p>
         </a>
 
-        <a href="/en/what-we-do/digital-marketing" class="snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
+        <a href="/en/what-we-do/digital-marketing" class="reveal-item snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="--i:1;border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
           <svg viewBox="0 0 40 40" class="w-8 h-8"><circle cx="20" cy="20" r="20" fill="#0B4F7A"/></svg>
           <h4 class="text-xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Digital Marketing</h4>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Branding, SEO, and sales-oriented advertising.</p>
         </a>
 
-        <a href="/en/what-we-do/digital-channels-scaling" class="snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
+        <a href="/en/what-we-do/digital-channels-scaling" class="reveal-item snap-start shrink-0 w-[78vw] max-w-[340px] flex flex-col gap-3 p-5 rounded-xl border no-underline" style="--i:2;border-color:rgba(22,54,103,0.1);background:#FFFFFF;">
           <svg viewBox="0 0 40 40" class="w-8 h-8"><polygon points="20,0 40,40 0,40" fill="#00698D"/></svg>
           <h4 class="text-xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">International Scaling</h4>
           <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">Amazon, e-commerce, and marketplaces.</p>
@@ -677,8 +690,8 @@ Editorial design · 2-columns
       <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
         <span class="text-xs" style="color:rgba(255,255,255,0.3);">© 2026 Blue Unicorn. All rights reserved.</span>
         <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
-          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal Notice</a>
-          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy</a>
+          <a href="/en/legal-notice" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal notice</a>
+          <a href="/en/privacy" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy & cookies</a>
         </div>
       </div>
     </div>

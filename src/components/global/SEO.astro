@@ -42,8 +42,16 @@ const resolvedImageAlt = imageAlt ?? title;
 
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta charset="UTF-8" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0F2548" media="(prefers-color-scheme: dark)" />
+<meta name="color-scheme" content="light" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content={siteName} />
+<meta name="format-detection" content="telephone=no" />
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 
 <!-- Open Graph -->

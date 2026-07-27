@@ -1,4 +1,6 @@
 @import "./fonts.css";
+@import "lenis/dist/lenis.css";
+@import "./reveals.css";
 @import "tailwindcss";
 
 @theme {
@@ -18,9 +20,19 @@
 }
 
 @layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: clip;
+  }
+
   body {
     @apply font-body antialiased;
+    overflow-x: clip;
+    max-width: 100%;
     -webkit-tap-highlight-color: transparent;
+    background-color: #ffffff;
+    color: #1A1A1A;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -30,10 +42,86 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+  /* Mobile theme — typography & readability (DESIGN.md ≤767px) */
+  @media (max-width: 767px) {
+    body {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+  }
 }
 
 html {
+  scroll-behavior: auto;
+  color-scheme: light;
+}
+
+html:not(.lenis) {
   scroll-behavior: smooth;
+}
+
+/* ═════════════════════════════════════════
+   Custom scrollbar — Arcoiris Unicornio Azul
+   ═════════════════════════════════════════ */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #163667 #F2F5F8;
+}
+
+/* Chromium / Safari / Edge */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #F2F5F8;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #163667 0%, #00698D 100%);
+  border-radius: 999px;
+  border: 2px solid #F2F5F8;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0F2548 0%, #0088B3 100%);
+}
+
+*::-webkit-scrollbar-corner {
+  background: #F2F5F8;
+}
+
+/* Mobile: keep chrome thin / system-friendly */
+@media (max-width: 767px) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #00698D transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #00698D;
+    border: none;
+    border-radius: 999px;
+  }
 }
 
 /* Stagger animation system */
@@ -131,6 +219,12 @@ body.has-header main section:first-of-type {
 /* Card: solo estructura */
 .pillar-card {
   overflow: visible;
+}
+
+/* Qué hacemos — clip overflow for side slides */
+#que-hacemos,
+#what-we-do {
+  overflow-x: clip;
 }
 
 /* Rectangulo + figura: UN wrapper, escala como un solo elemento */

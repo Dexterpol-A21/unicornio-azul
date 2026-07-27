@@ -1,0 +1,168 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Footer from '@components/global/Footer.astro';
+---
+
+<BaseLayout
+  title="Legal notice — Blue Unicorn"
+  description="Legal notice for Blue Unicorn (Unicornio Azul). Website ownership, terms of use and intellectual property."
+  showHeader={true}
+>
+
+<section class="relative" style="background:#FFFFFF;">
+  <div class="max-w-3xl mx-auto px-6 md:px-10 pt-28 md:pt-36 pb-20 md:pb-28">
+
+    <span class="text-[11px] tracking-[0.35em] uppercase font-semibold opacity-35" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Legal</span>
+    <h1 class="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+      Legal notice
+    </h1>
+    <p class="mt-4 text-sm" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
+      Last updated: July 2026
+    </p>
+
+    <div class="mt-12 md:mt-16 space-y-10 legal-prose" style="font-family:'Satoshi',sans-serif;color:#374151;">
+
+      <div>
+        <h2>1. Identification details</h2>
+        <p>
+          In compliance with Spanish Law 34/2002 on Information Society Services and Electronic Commerce (LSSI-CE), the owner of this website is:
+        </p>
+        <ul>
+          <li><strong>Trade name:</strong> Unicornio Azul (Blue Unicorn)</li>
+          <li><strong>Responsible person:</strong> Luis Chicharro</li>
+          <li><strong>Address:</strong> Madrid, Spain</li>
+          <li><strong>Email:</strong> <a href="mailto:hola@unicornioazul.com">hola@unicornioazul.com</a></li>
+          <li><strong>Website:</strong> <a href="https://unicornioazul.com">unicornioazul.com</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>2. Purpose</h2>
+        <p>
+          This legal notice governs access to, browsing and use of unicornioazul.com (the «Site»), as well as the responsibilities arising from the use of its content, texts, graphics, images and any other material available through it.
+        </p>
+        <p>
+          Accessing the Site implies full acceptance of these terms. If you do not agree, please refrain from using it.
+        </p>
+      </div>
+
+      <div>
+        <h2>3. Terms of use</h2>
+        <p>
+          Users undertake to use the Site and its content lawfully and appropriately, in accordance with applicable law, this legal notice, morality, public order and good customs.
+        </p>
+        <p>It is expressly forbidden to:</p>
+        <ul>
+          <li>Use the Site for unlawful purposes or in breach of this notice.</li>
+          <li>Cause damage to the physical or logical systems of Blue Unicorn, its providers or third parties.</li>
+          <li>Introduce or spread computer viruses or any other systems that may cause damage.</li>
+          <li>Attempt to access email accounts or restricted areas of the Site without authorisation.</li>
+          <li>Reproduce, distribute or publicly communicate the content without prior authorisation.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>4. Intellectual and industrial property</h2>
+        <p>
+          All Site content — including, without limitation, texts, photographs, graphics, images, icons, technology, software, links, trademarks, logos and graphic design — is owned by Blue Unicorn or by third parties who have authorised its use, and is protected by Spanish and international intellectual and industrial property laws.
+        </p>
+        <p>
+          Reproduction, distribution, public communication, transformation or any other form of exploitation of such content without the express written authorisation of the rights holder is prohibited.
+        </p>
+        <p>
+          The «Unicornio Azul» / «Blue Unicorn» brand, the SORIE™ method and associated distinctive signs are owned by Blue Unicorn. Unauthorised use constitutes an infringement of industrial property rights.
+        </p>
+      </div>
+
+      <div>
+        <h2>5. Third-party links</h2>
+        <p>
+          The Site may include links to third-party websites. Blue Unicorn has no control over those sites and assumes no responsibility for their content, privacy policies or practices. The inclusion of a link does not imply any relationship, approval or endorsement by Blue Unicorn.
+        </p>
+      </div>
+
+      <div>
+        <h2>6. Disclaimer of warranties and liability</h2>
+        <p>
+          Blue Unicorn does not guarantee continuous availability, freedom from errors or absolute security of the Site. To the extent permitted by law, it shall not be liable for:
+        </p>
+        <ul>
+          <li>Interruptions, delays or errors in accessing the Site.</li>
+          <li>Damage caused by viruses, malware or other harmful elements.</li>
+          <li>Decisions taken by the user based on information published on the Site.</li>
+          <li>Third-party content or services accessed via links.</li>
+        </ul>
+        <p>
+          Information published on the Site is for informational purposes only and does not constitute professional, legal, tax or investment advice.
+        </p>
+      </div>
+
+      <div>
+        <h2>7. Data protection</h2>
+        <p>
+          The processing of users' personal data is governed by our <a href="/en/privacy">Privacy policy</a>, in accordance with Regulation (EU) 2016/679 (GDPR) and Spanish Organic Law 3/2018 (LOPDGDD).
+        </p>
+      </div>
+
+      <div>
+        <h2>8. Applicable law and jurisdiction</h2>
+        <p>
+          These terms are governed by Spanish law. For any dispute arising from access to or use of the Site, the parties submit to the Courts and Tribunals of Madrid, Spain, expressly waiving any other jurisdiction that may apply, unless consumer and user regulations provide otherwise.
+        </p>
+      </div>
+
+      <div>
+        <h2>9. Contact</h2>
+        <p>
+          For any enquiry related to this legal notice, write to <a href="mailto:hola@unicornioazul.com">hola@unicornioazul.com</a>.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<Footer lang="en" />
+
+</BaseLayout>
+
+<style>
+  .legal-prose h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #163667;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+  .legal-prose p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .legal-prose ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0.75rem 0 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .legal-prose li {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .legal-prose a {
+    color: #163667;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .legal-prose a:hover {
+    opacity: 0.7;
+  }
+  .legal-prose strong {
+    color: #1A1A1A;
+    font-weight: 600;
+  }
+</style>

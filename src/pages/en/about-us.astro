@@ -4,21 +4,21 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 <BaseLayout
   title="About Us — Blue Unicorn"
-  description="Meet the team behind Blue Unicorn. Real experience, clear methods, and a different way of doing things."
+  description="Luis Chicharro. Brands Developer, Amazon, Import & Export. Over 30 years of experience in business development, international sourcing, and digital channels."
   showHeader={true}
 >
 
 <!-- ═════════════════════════════════════════
 HORIZONTAL PHOTO — editorial opening
 ═════════════════════════════════════════ -->
-<section class="relative" style="background:#FFFFFF;">
+<section class="relative" style="background:#FFFFFF;" data-reveal>
   <div class="max-w-5xl mx-auto px-4 md:px-12 pt-4 md:pt-16 pb-2 md:pb-0">
     <img
       src="/images/luischicharrohorizontal.png"
       alt="Luis Chicharro"
-      class="w-full h-auto md:h-[500px] object-cover"
+      class="reveal-item w-full h-auto md:h-[500px] object-cover"
       loading="eager"
-      style="filter: grayscale(20%);"
+      style="--i:0;filter: grayscale(20%);"
     />
   </div>
 </section>
@@ -26,14 +26,14 @@ HORIZONTAL PHOTO — editorial opening
 <!-- ═════════════════════════════════════════
 EDITORIAL TEXT — who we are (introduction)
 ═════════════════════════════════════════ -->
-<section style="background:#FFFFFF;">
+<section style="background:#FFFFFF;" data-reveal>
   <div class="max-w-3xl mx-auto px-6 md:px-12 py-14 md:py-24">
 
-    <h1 class="text-[2.5rem] md:text-5xl font-bold tracking-tight mb-6 md:mb-10" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+    <h1 class="reveal-item text-[2.5rem] md:text-5xl font-bold tracking-tight mb-6 md:mb-10" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
       About Blue Unicorn
     </h1>
 
-    <div class="space-y-6 md:space-y-10">
+    <div class="reveal-item space-y-6 md:space-y-10" style="--i:1">
       <p class="text-xl md:text-2xl leading-relaxed" style="font-family:'Space Grotesk',sans-serif;color:#0F2548;font-weight:700;">
         Blue Unicorn was born from real experience in international sourcing, product development, and digital marketing. We work from the ground, not from theory.
       </p>
@@ -41,7 +41,7 @@ EDITORIAL TEXT — who we are (introduction)
         We are not a traditional marketing agency. We are a 360° team that covers the full cycle: from idea to sale, from product to international expansion. Every decision, every strategy, and every step of the process is backed by years of real execution across different sectors and markets.
       </p>
       <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
-        The firm is led by Luis Chicharro, with a track record in business development, internationalization, proprietary brand creation, and scaling through digital channels. His approach was featured in <a href="https://cincodias.elpais.com/companias/2023-04-11/los-secretos-para-vender-en-plataformas-como-amazon.html" target="_blank" rel="noopener" style="color:#163667;font-weight:700;text-decoration:underline;text-underline-offset:3px;">Cinco Días (Grupo El País)</a>, where he explained how to build real businesses on digital platforms — from product and manufacturing to sales.
+        The firm is led by Luis Chicharro, with a track record in business development, internationalization, proprietary brand creation, and scaling through digital channels. In <a href="https://cincodias.elpais.com/companias/2023-04-11/los-secretos-para-vender-en-plataformas-como-amazon.html" target="_blank" rel="noopener" style="color:#163667;font-weight:700;text-decoration:underline;text-underline-offset:3px;">Cinco Días (Grupo El País)</a> he explained how to build real businesses on digital platforms: from product and manufacturing to sales.
       </p>
     </div>
 
@@ -51,11 +51,11 @@ EDITORIAL TEXT — who we are (introduction)
 <!-- ═════════════════════════════════════════
 PROFILE — square photo + name + details
 ═════════════════════════════════════════ -->
-<section class="flex flex-col md:flex-row" style="background:#F2F5F8;">
+<section class="flex flex-col md:flex-row overflow-x-clip" style="background:#F2F5F8;">
 
   <!-- LEFT: Square photo -->
-  <div class="flex-1 flex items-center justify-center py-10 md:py-20 relative">
-    <div class="w-[200px] h-[200px] md:w-[340px] md:h-[340px] overflow-hidden" style="box-shadow: 0 25px 70px rgba(0,0,0,0.10); border-radius: 2px;">
+  <div class="flex-1 flex items-center justify-center py-10 md:py-20 relative" data-reveal>
+    <div class="reveal-item w-[200px] h-[200px] md:w-[340px] md:h-[340px] overflow-hidden" style="--i:0;box-shadow: 0 25px 70px rgba(0,0,0,0.10); border-radius: 2px;">
       <img
         src="/images/luischicharrocuadro.jpg"
         alt="Luis Chicharro"
@@ -66,22 +66,22 @@ PROFILE — square photo + name + details
   </div>
 
   <!-- RIGHT: Name + details -->
-  <div class="flex-1 flex flex-col justify-center px-6 md:px-16 pb-12 md:pb-20 md:pt-20" style="background:#F2F5F8;">
-    <h2 class="text-[2.5rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.95]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+  <div class="flex-1 flex flex-col justify-center px-6 md:px-16 pb-12 md:pb-20 md:pt-20" style="background:#F2F5F8;" data-reveal>
+    <h2 class="reveal-item text-[2.5rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.95]" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
       Luis<br>Chicharro
     </h2>
-    <p class="text-sm md:text-base mt-2 mb-1.5 opacity-60" style="font-family:'Satoshi',sans-serif;color:#6B7280;font-weight:500;">
+    <p class="reveal-item text-sm md:text-base mt-2 mb-1.5 opacity-60" style="--i:1;font-family:'Satoshi',sans-serif;color:#6B7280;font-weight:500;">
       Brands Developer &mdash; Amazon, Import &amp; Export
     </p>
-    <p class="text-lg md:text-lg leading-relaxed max-w-[34ch] mb-5" style="font-family:'Satoshi',sans-serif;color:#374151;">
+    <p class="reveal-item text-lg md:text-lg leading-relaxed max-w-[34ch] mb-5" style="--i:2;font-family:'Satoshi',sans-serif;color:#374151;">
       We build opportunities where others only see ideas. From a brand to a factory. From a product to international expansion.
     </p>
 
     <!-- Quick facts -->
-    <div class="flex flex-wrap gap-4 md:gap-6 mb-8">
+    <div class="reveal-item flex flex-wrap gap-4 md:gap-6 mb-8" style="--i:3">
       <div class="flex items-center gap-2 text-xs md:text-sm" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span>+15 years of experience</span>
+        <span>+30 years of experience</span>
       </div>
       <div class="flex items-center gap-2 text-xs md:text-sm" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -99,28 +99,28 @@ PROFILE — square photo + name + details
 <!-- ═════════════════════════════════════════
 EXPERTISE — team's collective experience
 ═════════════════════════════════════════ -->
-<section style="background:#FFFFFF;">
+<section style="background:#FFFFFF;" data-reveal>
   <div class="max-w-3xl mx-auto px-6 md:px-12 py-14 md:py-24">
 
-    <h2 class="text-[2.5rem] md:text-3xl font-bold tracking-tight mb-4 md:mb-5" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
-      Over 15 years of experience
+    <h2 class="reveal-item text-[2.5rem] md:text-3xl font-bold tracking-tight mb-4 md:mb-5" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+      Over <span data-count data-to="30">30</span> years of experience
     </h2>
 
-    <p class="text-xl md:text-xl leading-relaxed mb-8 md:mb-14 max-w-[42ch]" style="font-family:'Space Grotesk',sans-serif;color:#0F2548;font-weight:700;">
-      This isn't theory. It's what we've done, tested, corrected, and done again for over a decade in real projects.
+    <p class="reveal-item text-xl md:text-xl leading-relaxed mb-8 md:mb-14 max-w-[42ch]" style="--i:1;font-family:'Space Grotesk',sans-serif;color:#0F2548;font-weight:700;">
+      This isn't theory. It's what we've done, tested, corrected, and done again for over three decades in real projects.
     </p>
 
     <div class="space-y-6 md:space-y-8">
 
-      <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+      <p class="reveal-item text-lg leading-relaxed" style="--i:2;font-family:'Satoshi',sans-serif;color:#374151;">
         We've developed products from scratch, sourced manufacturers in Asia, negotiated terms, managed CE and FDA certifications, and coordinated door-to-door logistics. No middlemen. Direct execution. We also know what it costs to launch a brand: naming, identity, packaging, product photography, optimized listings, A+ Content, Brand Registry. We create brands that sell, not brands that just look good.
       </p>
 
-      <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+      <p class="reveal-item text-lg leading-relaxed" style="--i:3;font-family:'Satoshi',sans-serif;color:#374151;">
         We manage digital channels with a profitability mindset: Amazon Seller Central and Vendor Central, organic and paid positioning, eBay, proprietary e-commerce, FBA logistics, and scaling strategies tested in real markets. We apply marketing without empty metrics: Google Ads, Facebook Ads, and Amazon Ads campaigns, SEOCommerce, lead generation. Only what converts.
       </p>
 
-      <p class="text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+      <p class="reveal-item text-lg leading-relaxed" style="--i:4;font-family:'Satoshi',sans-serif;color:#374151;">
         We've opened markets in Europe, LATAM, and Asia. We understand the specificities of each region: regulation, customs, taxation, consumer idiosyncrasy, and local distribution channels. Because scaling isn't translating a listing. It's understanding where you're entering and adapting the entire operation.
       </p>
 
@@ -132,19 +132,19 @@ EXPERTISE — team's collective experience
 <!-- ═════════════════════════════════════════
 QUOTE — logo + founding phrase
 ═════════════════════════════════════════ -->
-<section style="background:#F5F1EC;">
+<section style="background:#F5F1EC;" data-reveal>
   <div class="max-w-3xl mx-auto px-6 md:px-12 py-14 md:py-24 flex flex-col md:flex-row items-center gap-6 md:gap-10">
 
     <!-- Quote -->
     <div class="text-center md:text-left md:flex-1">
-      <p class="text-3xl md:text-5xl lg:text-6xl font-bold leading-[0.98] tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+      <p class="reveal-item text-3xl md:text-5xl lg:text-6xl font-bold leading-[0.98] tracking-tight" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
         &ldquo;We build<br>real businesses,<br>not promises.&rdquo;
       </p>
-      <p class="mt-6 md:mt-8 text-base md:text-lg opacity-40" style="font-family:'Satoshi',sans-serif;color:#6B7280;">&mdash; Blue Unicorn's founding principle</p>
+      <p class="reveal-item mt-6 md:mt-8 text-base md:text-lg opacity-40" style="--i:1;font-family:'Satoshi',sans-serif;color:#6B7280;">&mdash; Luis Chicharro · Brands Developer</p>
     </div>
 
     <!-- Logo -->
-    <div class="shrink-0 mr-4 md:mr-8">
+    <div class="reveal-item shrink-0 mr-4 md:mr-8" style="--i:2">
       <img src="/images/logo-marino.png" alt="Blue Unicorn" class="h-32 md:h-44 w-auto" />
     </div>
 
@@ -154,51 +154,51 @@ QUOTE — logo + founding phrase
 <!-- ═════════════════════════════════════════
 WHAT WE BELIEVE — 8 editorial principles
 ═════════════════════════════════════════ -->
-<section style="background:#F2F5F8;">
+<section style="background:#F2F5F8;" data-reveal>
   <div class="max-w-3xl mx-auto px-6 md:px-12 py-14 md:py-24">
 
-    <h2 class="text-[2.5rem] md:text-3xl font-bold tracking-tight mb-10 md:mb-14" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+    <h2 class="reveal-item text-[2.5rem] md:text-3xl font-bold tracking-tight mb-10 md:mb-14" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
       What we believe
     </h2>
 
     <div class="space-y-5 md:space-y-6">
 
-      <div class="flex items-start gap-4 md:gap-6">
+      <div class="reveal-item flex items-start gap-4 md:gap-6" style="--i:1">
         <span class="shrink-0 block w-2.5 h-2.5 rounded-full mt-[0.45em]" style="background:#0F2548;"></span>
         <p class="text-lg md:text-xl leading-snug" style="font-family:'Satoshi',sans-serif;color:#374151;">Never fall in love with an idea before validating the market.</p>
       </div>
 
-      <div class="flex items-start gap-4 md:gap-6">
+      <div class="reveal-item flex items-start gap-4 md:gap-6" style="--i:2">
         <span class="shrink-0 block w-2.5 h-2.5 rounded-full mt-[0.45em]" style="background:#163667;"></span>
         <p class="text-lg md:text-xl leading-snug" style="font-family:'Satoshi',sans-serif;color:#374151;">The supplier is as important as the product.</p>
       </div>
 
-      <div class="flex items-start gap-4 md:gap-6">
+      <div class="reveal-item flex items-start gap-4 md:gap-6" style="--i:3">
         <span class="shrink-0 block w-2.5 h-2.5 rounded-full mt-[0.45em]" style="background:#0B4F7A;"></span>
         <p class="text-lg md:text-xl leading-snug" style="font-family:'Satoshi',sans-serif;color:#374151;">A brand is worth more than a catalog.</p>
       </div>
 
-      <div class="flex items-start gap-4 md:gap-6">
+      <div class="reveal-item flex items-start gap-4 md:gap-6" style="--i:4">
         <span class="shrink-0 block w-2.5 h-2.5 rounded-full mt-[0.45em]" style="background:#00698D;"></span>
         <p class="text-lg md:text-xl leading-snug" style="font-family:'Satoshi',sans-serif;color:#374151;">Going cheap often turns out expensive when sourcing abroad.</p>
       </div>
 
-      <div class="flex items-start gap-4 md:gap-6">
+      <div class="reveal-item flex items-start gap-4 md:gap-6" style="--i:5">
         <span class="shrink-0 block w-2.5 h-2.5 rounded-full mt-[0.45em]" style="background:#0088B3;"></span>
         <p class="text-lg md:text-xl leading-snug" style="font-family:'Satoshi',sans-serif;color:#374151;">Don't scale a business that isn't making money yet.</p>
       </div>
 
-      <div class="flex items-start gap-4 md:gap-6">
+      <div class="reveal-item flex items-start gap-4 md:gap-6" style="--i:6">
         <span class="shrink-0 block w-2.5 h-2.5 rounded-full mt-[0.45em]" style="background:#0B4F7A;"></span>
         <p class="text-lg md:text-xl leading-snug" style="font-family:'Satoshi',sans-serif;color:#374151;">Marketing won't fix a bad product.</p>
       </div>
 
-      <div class="flex items-start gap-4 md:gap-6">
+      <div class="reveal-item flex items-start gap-4 md:gap-6" style="--i:7">
         <span class="shrink-0 block w-2.5 h-2.5 rounded-full mt-[0.45em]" style="background:#163667;"></span>
         <p class="text-lg md:text-xl leading-snug" style="font-family:'Satoshi',sans-serif;color:#374151;">Reputation takes years to build and minutes to lose.</p>
       </div>
 
-      <div class="flex items-start gap-4 md:gap-6">
+      <div class="reveal-item flex items-start gap-4 md:gap-6" style="--i:8">
         <span class="shrink-0 block w-2.5 h-2.5 rounded-full mt-[0.45em]" style="background:#0F2548;"></span>
         <p class="text-lg md:text-xl leading-snug" style="font-family:'Satoshi',sans-serif;color:#374151;">We connect worlds that don't normally talk to each other.</p>
       </div>
@@ -211,14 +211,14 @@ WHAT WE BELIEVE — 8 editorial principles
 <!-- ═════════════════════════════════════════
 FINAL CTA
 ═════════════════════════════════════════ -->
-<section class="relative flex flex-col md:flex-row items-center md:items-center justify-center gap-8 md:gap-20 px-6 md:px-12 py-10 md:py-32" style="background:#FFFFFF;">
+<section class="relative flex flex-col md:flex-row items-center md:items-center justify-center gap-8 md:gap-20 px-6 md:px-12 py-10 md:py-32" style="background:#FFFFFF;" data-final-cta>
 
     <div class="text-center md:text-left max-w-lg">
-      <h2 class="text-[2.5rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Shall we talk?</h2>
-      <p class="mt-6 text-lg md:text-lg leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">Tell us about your project and we'll see if it fits with how we work.</p>
-      <div class="hidden md:flex mt-8">
+      <h2 class="final-title text-[2.5rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">30+ years<br>building.<br>Are you next?</h2>
+      <p class="final-body mt-6 text-lg md:text-lg leading-relaxed" style="color:#374151;font-family:'Satoshi',sans-serif;">Real experience developing projects from idea to market. Let's talk about yours.</p>
+      <div class="final-cta hidden md:flex mt-8">
         <a href="/en/get-started" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#0F2548;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(15,37,72,0.2);">
-          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Let's talk</span>
           <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:22px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
@@ -227,15 +227,15 @@ FINAL CTA
     </div>
 
     <div class="grid grid-cols-2 gap-4 md:gap-8 shrink-0">
-      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
-      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
-      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
-      <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24"><polygon points="50,4 96,96 4,96" fill="#00698D" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="final-shape w-16 h-16 md:w-24 md:h-24" style="--i:0"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="final-shape w-16 h-16 md:w-24 md:h-24" style="--i:1"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="final-shape w-16 h-16 md:w-24 md:h-24" style="--i:2"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
+      <svg viewBox="0 0 100 100" class="final-shape w-16 h-16 md:w-24 md:h-24" style="--i:3"><polygon points="50,4 96,96 4,96" fill="#00698D" opacity="0.8"/></svg>
     </div>
 
-    <div class="md:hidden">
+    <div class="final-cta md:hidden">
       <a href="/en/get-started" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#0F2548;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(15,37,72,0.2);">
-        <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+        <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Let's talk</span>
         <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
@@ -295,8 +295,8 @@ FINAL CTA
       <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
         <span class="text-xs" style="color:rgba(255,255,255,0.3);">© 2026 Blue Unicorn. All rights reserved.</span>
         <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
-          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal notice</a>
-          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy</a>
+          <a href="/en/legal-notice" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal notice</a>
+          <a href="/en/privacy" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy & cookies</a>
         </div>
       </div>
     </div>

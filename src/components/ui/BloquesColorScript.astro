@@ -1,0 +1,89 @@
+---
+/**
+ * Pillar “bloques” scroll color fill.
+ * Markup:
+ *   [data-bloque-rail] — stack or horizontal scroller
+ *   [data-bloque-item][style="--c:#…"] — each block
+ *   .bloque-num — giant index that fills to --c
+ * Optional: [data-bloque-dots] > [data-color] for mobile indicators
+ */
+---
+<script>
+  (function () {
+    const rails = document.querySelectorAll('[data-bloque-rail]');
+    if (!rails.length) return;
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function activate(item) {
+      item.classList.add('is-lit');
+    }
+
+    if (reduce) {
+      rails.forEach((rail) => {
+        rail.querySelectorAll('[data-bloque-item]').forEach(activate);
+      });
+      return;
+    }
+
+    rails.forEach((rail) => {
+      const items = rail.querySelectorAll('[data-bloque-item]');
+      if (!items.length) return;
+
+      const isX = rail.hasAttribute('data-bloque-x');
+      const dotsRoot = rail.parentElement?.querySelector('[data-bloque-dots]');
+      const dots = dotsRoot ? dotsRoot.querySelectorAll('[data-color]') : [];
+
+      const paintDots = (activeIdx) => {
+        dots.forEach((d, i) => {
+          const color = d.getAttribute('data-color') || '#0F2548';
+          if (i === activeIdx) {
+            d.style.background = color;
+            d.style.opacity = '1';
+          } else {
+            d.style.background = color;
+            d.style.opacity = '0.22';
+          }
+        });
+      };
+
+      if (isX) {
+        /* Horizontal snap gallery: light the card nearest the scroller center */
+        const scroller = rail.querySelector('[data-bloque-scroller]') || rail;
+        const sync = () => {
+          const mid = scroller.scrollLeft + scroller.clientWidth / 2;
+          let best = 0;
+          let bestDist = Infinity;
+          items.forEach((item, i) => {
+            const center = item.offsetLeft + item.offsetWidth / 2;
+            const dist = Math.abs(center - mid);
+            if (dist < bestDist) {
+              bestDist = dist;
+              best = i;
+            }
+            if (item.offsetLeft + item.offsetWidth * 0.35 <= scroller.scrollLeft + scroller.clientWidth) {
+              activate(item);
+            }
+          });
+          paintDots(best);
+        };
+        scroller.addEventListener('scroll', sync, { passive: true });
+        sync();
+        return;
+      }
+
+      /* Vertical stack: progressive light as each block hits the mid band */
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            activate(entry.target);
+            io.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.35, rootMargin: '0px 0px -18% 0px' }
+      );
+      items.forEach((el) => io.observe(el));
+    });
+  })();
+</script>

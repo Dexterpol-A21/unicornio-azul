@@ -1,0 +1,108 @@
+---
+/**
+ * Sitewide scroll reveals.
+ * Observes: [data-reveal], home presets (opp/side/sorie/auth/philo/results/final-cta),
+ * and runs count-up for [data-auth-count] / [data-count] when a root activates.
+ * CSS lives in src/styles/reveals.css (gated by html.js).
+ */
+---
+<script>
+  (function () {
+    document.documentElement.classList.add('js');
+
+    const SELECTOR = [
+      '[data-reveal]',
+      '[data-opp-flow]',
+      '[data-side-reveal]',
+      '[data-sorie-reveal]',
+      '[data-auth-reveal]',
+      '[data-philo-reveal]',
+      '[data-results-reveal]',
+      '[data-final-cta]',
+    ].join(',');
+
+    const roots = document.querySelectorAll(SELECTOR);
+    if (!roots.length) return;
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function runCounts(root) {
+      root.querySelectorAll('[data-auth-count], [data-count]').forEach((counter) => {
+        if (counter.dataset.counted === '1') return;
+        counter.dataset.counted = '1';
+        const to = Number(counter.getAttribute('data-to') || '0');
+        const suffix = counter.getAttribute('data-suffix') || '';
+        counter.textContent = '0' + suffix;
+        const start = performance.now();
+        const duration = 1100;
+        function frame(now) {
+          const t = Math.min(1, (now - start) / duration);
+          counter.textContent = String(Math.round(easeOutCubic(t) * to)) + suffix;
+          if (t < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      });
+    }
+
+    function activate(root) {
+      root.classList.add('is-on');
+      if (reduce) return;
+      runCounts(root);
+    }
+
+    /** True if the element is already on screen (IO should have fired). */
+    function nearViewport(el) {
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight || 1;
+      return rect.top < vh * 0.94 && rect.bottom > vh * 0.06;
+    }
+
+    if (reduce) {
+      roots.forEach(activate);
+      return;
+    }
+
+    const pending = new Set(roots);
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          activate(entry.target);
+          pending.delete(entry.target);
+          io.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.22, rootMargin: '0px 0px -6% 0px' }
+    );
+
+    pending.forEach((el) => io.observe(el));
+
+    /* Failsafe: only rescue elements already in view (never pre-fire below-fold). */
+    const failSafe = window.setTimeout(() => {
+      pending.forEach((el) => {
+        if (el.classList.contains('is-on')) {
+          pending.delete(el);
+          return;
+        }
+        if (!nearViewport(el)) return;
+        activate(el);
+        pending.delete(el);
+        io.unobserve(el);
+      });
+    }, 4000);
+
+    window.addEventListener(
+      'pagehide',
+      () => {
+        window.clearTimeout(failSafe);
+        io.disconnect();
+      },
+      { once: true }
+    );
+  })();
+</script>

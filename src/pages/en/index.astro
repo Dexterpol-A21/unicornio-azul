@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { SparklesText } from '@/components/ui/sparkles-text';
+import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
 ---
 
 <BaseLayout
@@ -95,13 +97,13 @@ import BaseLayout from '@layouts/BaseLayout.astro';
  for
  </h1>
  <h1 class="leading-[0.88] tracking-tighter max-w-full" style="color: #163667; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2.5rem, 12.5vw, 8rem);">
- <span style="position: relative; display: inline-block;">
- extraordinary ideas
- <!-- Estrella 4 puntas — lo extraordinario -->
- <svg class="star-sparkle" viewBox="0 0 40 40" style="position: absolute; top: 0.12em; left: 100%; margin-left: 0.02em; width: 0.3em; height: 0.3em;">
- <path d="M20 6 Q20 20 34 20 Q20 20 20 34 Q20 20 6 20 Q20 20 20 6Z" fill="#00698D"/>
- </svg>
- </span>
+  <SparklesText
+    client:visible
+    text="extraordinary ideas"
+    sparklesCount={12}
+    colors={{ first: '#0088B3', second: '#A8D8EA' }}
+    className="leading-[inherit] tracking-[inherit] font-[inherit] text-[length:inherit] text-inherit"
+  />
  </h1>
  </div>
 
@@ -277,23 +279,58 @@ import BaseLayout from '@layouts/BaseLayout.astro';
  </section>
 
  <!-- ═══════════════════════════════════════════════════
+  BRIDGE — Opportunity
+  Philosophy only. No steps (SORIE / process live on their pages).
+ ═══════════════════════════════════════════════════ -->
+ <section id="opportunity" class="relative overflow-hidden" style="background: #F5F1EC;">
+  <div class="relative z-10 mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center" data-opp-flow>
+   <span class="opp-eyebrow text-[11px] tracking-[0.35em] uppercase font-semibold" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">
+    Opportunity
+   </span>
+   <h2
+    class="opp-title mt-5 md:mt-6 font-bold tracking-tight leading-[1.05] text-balance"
+    style="font-family: 'Space Grotesk', sans-serif; color: #0F2548; font-size: clamp(2rem, 5vw, 3.25rem);"
+   >
+    The best opportunities aren’t found. They’re built.
+   </h2>
+   <p
+    class="mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-lg md:text-xl font-bold tracking-tight"
+    style="font-family: 'Space Grotesk', sans-serif;"
+   >
+    <span class="opp-step" style="--i:0; color: #0F2548;">Discover</span>
+    <span class="opp-arrow" aria-hidden="true" style="--i:1; color: rgba(15,37,72,0.25); font-weight: 400;">→</span>
+    <span class="opp-step" style="--i:2; color: #00698D;">Validate</span>
+    <span class="opp-arrow" aria-hidden="true" style="--i:3; color: rgba(15,37,72,0.25); font-weight: 400;">→</span>
+    <span class="opp-step" style="--i:4; color: #0088B3;">Build</span>
+   </p>
+   <div class="mt-10 md:mt-12 flex justify-center gap-1.5" aria-hidden="true">
+    <span class="opp-bar block h-1 w-10 md:w-14" style="--i:0; background: #0F2548;"></span>
+    <span class="opp-bar block h-1 w-10 md:w-14" style="--i:1; background: #163667;"></span>
+    <span class="opp-bar block h-1 w-10 md:w-14" style="--i:2; background: #0B4F7A;"></span>
+    <span class="opp-bar block h-1 w-10 md:w-14" style="--i:3; background: #00698D;"></span>
+    <span class="opp-bar block h-1 w-10 md:w-14" style="--i:4; background: #0088B3;"></span>
+   </div>
+  </div>
+ </section>
+
+ <!-- ═══════════════════════════════════════════════════
  SECCION: WHAT WE DO — BRUTALISTA
  ═══════════════════════════════════════════════════ -->
  <section id="what-we-do" class="relative" style="background: #FFFFFF;">
 
     <!-- Intro -->
-    <div class="text-center pt-20 md:pt-28 pb-8 md:pb-12 px-4">
-      <span class="text-[11px] tracking-[0.35em] uppercase font-semibold opacity-35" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">What we do</span>
-      <h2 class="mt-4 text-4xl md:text-5xl font-bold tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #1A1A1A;">
+    <div class="text-center pt-20 md:pt-28 pb-8 md:pb-12 px-4" data-reveal>
+      <span class="reveal-item text-[11px] tracking-[0.35em] uppercase font-semibold opacity-35" style="--i:0;color: #6B7280; font-family: 'Satoshi', sans-serif;">What we do</span>
+      <h2 class="reveal-item mt-4 text-4xl md:text-5xl font-bold tracking-tight" style="--i:1;font-family: 'Space Grotesk', sans-serif; color: #1A1A1A;">
         We create and scale<br class="md:hidden"> real businesses
       </h2>
-      <p class="mt-4 text-base md:text-lg max-w-[55ch] mx-auto leading-relaxed" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">
+      <p class="reveal-item mt-4 text-base md:text-lg max-w-[55ch] mx-auto leading-relaxed" style="--i:2;color: #6B7280; font-family: 'Satoshi', sans-serif;">
         At Blue Unicorn we don't offer isolated services. We cover the full 360° cycle: from idea to sale and international scaling.
       </p>
     </div>
 
     <!-- ═══ ROW 1: BUSINESS DEVELOPMENT — midnight ★ ═══ -->
-    <a href="/en/what-we-do/business-development" class="pillar-card relative block w-full h-[440px] md:h-[520px] group cursor-pointer">
+    <a href="/en/what-we-do/business-development" class="pillar-card relative block w-full h-[440px] md:h-[520px] group cursor-pointer" data-side-reveal="left">
       <div class="pillar-shape absolute" style="left:0; width:85%; top:calc(50% - 150px); height:300px;">
         <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:#0F2548;"></div>
         <div style="position:absolute; left:calc(100% - 150px); top:0; width:300px; height:300px; display:flex; align-items:center; justify-content:center;">
@@ -335,7 +372,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     </a>
 
     <!-- ═══ ROW 2: PRODUCT & SOURCING — navy ■ ═══ -->
-    <a href="/en/what-we-do/product-international-sourcing" class="pillar-card relative block w-full h-[440px] md:h-[520px] group cursor-pointer">
+    <a href="/en/what-we-do/product-international-sourcing" class="pillar-card relative block w-full h-[440px] md:h-[520px] group cursor-pointer" data-side-reveal="right">
       <div class="pillar-shape absolute" style="right:0; width:85%; top:calc(50% - 150px); height:300px;">
         <div style="position:absolute; top:0; right:0; width:100%; height:100%; background:#163667;"></div>
         <div style="position:absolute; left:-150px; top:0; width:300px; height:300px; display:flex; align-items:center; justify-content:center;">
@@ -377,7 +414,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     </a>
 
     <!-- ═══ ROW 3: DIGITAL MARKETING — aqua ● ═══ -->
-    <a href="/en/what-we-do/digital-marketing" class="pillar-card relative block w-full h-[440px] md:h-[520px] group cursor-pointer">
+    <a href="/en/what-we-do/digital-marketing" class="pillar-card relative block w-full h-[440px] md:h-[520px] group cursor-pointer" data-side-reveal="left">
       <div class="pillar-shape absolute" style="left:0; width:85%; top:calc(50% - 150px); height:300px;">
         <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:#0B4F7A;"></div>
         <div style="position:absolute; left:calc(100% - 150px); top:0; width:300px; height:300px; display:flex; align-items:center; justify-content:center;">
@@ -419,7 +456,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     </a>
 
     <!-- ═══ ROW 4: INTERNATIONAL SCALING — sky ▲ ═══ -->
-    <a href="/en/what-we-do/digital-channels-scaling" class="pillar-card relative block w-full h-[440px] md:h-[520px] group cursor-pointer">
+    <a href="/en/what-we-do/digital-channels-scaling" class="pillar-card relative block w-full h-[440px] md:h-[520px] group cursor-pointer" data-side-reveal="right">
       <div class="pillar-shape absolute" style="right:0; width:85%; top:calc(50% - 150px); height:300px;">
         <div style="position:absolute; top:0; right:0; width:100%; height:100%; background:#00698D;"></div>
         <div style="position:absolute; left:-150px; top:0; width:300px; height:300px; display:flex; align-items:center; justify-content:center;">
@@ -469,44 +506,56 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   <section class="relative overflow-hidden" style="background: #F5F1EC;">
 
     <!-- Intro -->
-    <div class="text-center pt-24 md:pt-32 pb-16 md:pb-20 px-4">
-      <span class="text-[11px] tracking-[0.35em] uppercase font-semibold opacity-35" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">Our approach</span>
-      <h2 class="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-[18ch] mx-auto leading-[1.05]" style="font-family: 'Space Grotesk', sans-serif; color: #1A1A1A;">
+    <div class="text-center pt-24 md:pt-32 pb-16 md:pb-20 px-4" data-reveal>
+      <span class="reveal-item text-[11px] tracking-[0.35em] uppercase font-semibold opacity-35" style="--i:0;color: #6B7280; font-family: 'Satoshi', sans-serif;">Our approach</span>
+      <h2 class="reveal-item mt-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-[18ch] mx-auto leading-[1.05]" style="--i:1;font-family: 'Space Grotesk', sans-serif; color: #1A1A1A;">
         Before selling,<br>you have to build
       </h2>
-      <p class="mt-6 text-base md:text-lg max-w-[48ch] mx-auto leading-relaxed" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">
+      <p class="reveal-item mt-6 text-base md:text-lg max-w-[48ch] mx-auto leading-relaxed" style="--i:2;color: #6B7280; font-family: 'Satoshi', sans-serif;">
         Many projects start with advertising or marketing without properly defining the product, costs or structure. Blue Unicorn's approach is different.
       </p>
     </div>
 
-    <!-- Alternating quotes with central vertical line -->
-    <div class="relative max-w-5xl mx-auto px-6 md:px-10 pb-24 md:pb-32">
+    <!-- Quotes — padding outside timeline so the line never reaches SORIE -->
+    <div class="max-w-5xl mx-auto px-6 md:px-10 pb-24 md:pb-32">
+    <div class="relative" data-scroll-timeline>
 
-      <!-- Central vertical line (desktop only) -->
-      <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px" style="background: linear-gradient(to bottom, transparent, rgba(22,54,103,0.15) 5%, rgba(22,54,103,0.15) 95%, transparent); transform: translateX(-0.5px);"></div>
+      <!-- Start circle (desktop) — tip of the line -->
+      <div class="hidden md:block absolute left-1/2 top-0 z-10 -translate-x-1/2" aria-hidden="true">
+        <div class="w-3 h-3 rounded-full border-2 box-border" data-timeline-node data-paso="1" data-color="#0F2548" style="background:#0F2548;border-color:#0F2548;"></div>
+      </div>
 
-      <!-- Left vertical line (mobile only) — connects the dots -->
-      <div class="md:hidden absolute top-8 bottom-8 w-px" style="left: calc(1.5rem + 5px); background: linear-gradient(to bottom, transparent, rgba(22,54,103,0.12) 8%, rgba(22,54,103,0.12) 92%, transparent);"></div>
+      <!-- Desktop track: from start circle center to last circle -->
+      <div class="hidden md:block absolute left-1/2 top-1.5 bottom-6 w-0.5 -translate-x-1/2" style="background:rgba(15,37,72,0.08);">
+        <div data-timeline-fill class="absolute top-0 left-0 w-full origin-top" style="height:100%;transform:scaleY(0);background:linear-gradient(to bottom,#0F2548,#163667,#0B4F7A,#00698D);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);"></div>
+      </div>
 
-      <!-- Quote 1 — LEFT — midnight -->
-      <div class="relative flex flex-row items-start gap-3 md:gap-0 pb-12 md:pb-20">
-        <!-- Mobile dot -->
-        <div class="md:hidden w-2.5 h-2.5 rounded-full shrink-0 mt-[0.35em]" style="background: #0F2548;"></div>
-        <div class="flex-1 md:flex-initial md:w-1/2 md:pr-14 md:text-right">
+      <!-- Start circle (mobile) -->
+      <div class="md:hidden absolute z-10 -translate-x-1/2" style="left:calc(1.5rem + 5px);top:0;" aria-hidden="true">
+        <div class="w-2.5 h-2.5 rounded-full border-2 box-border" data-timeline-node data-paso="1" data-color="#0F2548" style="background:#0F2548;border-color:#0F2548;"></div>
+      </div>
+
+      <!-- Mobile track: first to last circle, no padding bleed -->
+      <div class="md:hidden absolute w-0.5" style="left:calc(1.5rem + 5px);top:5px;bottom:0.35em;background:rgba(15,37,72,0.08);transform:translateX(-50%);">
+        <div data-timeline-fill class="absolute top-0 left-0 w-full origin-top" style="height:100%;transform:scaleY(0);background:linear-gradient(to bottom,#0F2548,#163667,#0B4F7A,#00698D);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);"></div>
+      </div>
+
+      <!-- Quote 1 — LEFT — midnight (node = start circle) -->
+      <div class="relative flex flex-row items-start gap-3 md:gap-0 pb-12 md:pb-20" data-timeline-item data-paso="1">
+        <div class="md:hidden w-2.5 h-2.5 shrink-0 mt-[0.35em] opacity-0" aria-hidden="true"></div>
+        <div class="flex-1 md:flex-initial md:w-1/2 md:pr-14 md:text-right" data-side-reveal="left">
           <p class="text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.15] tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #0F2548;">
             The supplier is as important as the product.
           </p>
         </div>
-        <div class="hidden md:block absolute left-1/2 top-6 w-3 h-3 rounded-full shrink-0" style="background: #0F2548; transform: translate(-50%, 0);"></div>
       </div>
 
       <!-- Quote 2 — RIGHT — navy -->
-      <div class="relative flex flex-row items-start gap-3 md:gap-0 pb-12 md:pb-20">
-        <!-- Mobile dot -->
-        <div class="md:hidden w-2.5 h-2.5 rounded-full shrink-0 mt-[0.35em]" style="background: #163667;"></div>
+      <div class="relative flex flex-row items-start gap-3 md:gap-0 pb-12 md:pb-20" data-timeline-item data-paso="2">
+        <div class="md:hidden w-2.5 h-2.5 rounded-full shrink-0 mt-[0.35em] border-2 box-border" data-timeline-node data-paso="2" data-color="#163667" style="background:#FFFFFF;border-color:#163667;"></div>
         <div class="hidden md:flex md:w-1/2"></div>
-        <div class="hidden md:flex absolute left-1/2 top-6 w-3 h-3 rounded-full shrink-0" style="background: #163667; transform: translate(-50%, 0);"></div>
-        <div class="flex-1 md:flex-initial md:w-1/2 md:pl-14">
+        <div class="hidden md:block absolute left-1/2 top-6 w-3 h-3 rounded-full shrink-0 border-2 box-border" data-timeline-node data-paso="2" data-color="#163667" style="background:#FFFFFF;border-color:#163667;transform:translate(-50%,0);"></div>
+        <div class="flex-1 md:flex-initial md:w-1/2 md:pl-14" data-side-reveal="right">
           <p class="text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.15] tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #163667;">
             Marketing won't fix a bad product.
           </p>
@@ -514,24 +563,22 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       </div>
 
       <!-- Quote 3 — LEFT — teal -->
-      <div class="relative flex flex-row items-start gap-3 md:gap-0 pb-12 md:pb-20">
-        <!-- Mobile dot -->
-        <div class="md:hidden w-2.5 h-2.5 rounded-full shrink-0 mt-[0.35em]" style="background: #0B4F7A;"></div>
-        <div class="flex-1 md:flex-initial md:w-1/2 md:pr-14 md:text-right">
+      <div class="relative flex flex-row items-start gap-3 md:gap-0 pb-12 md:pb-20" data-timeline-item data-paso="3">
+        <div class="md:hidden w-2.5 h-2.5 rounded-full shrink-0 mt-[0.35em] border-2 box-border" data-timeline-node data-paso="3" data-color="#0B4F7A" style="background:#FFFFFF;border-color:#0B4F7A;"></div>
+        <div class="flex-1 md:flex-initial md:w-1/2 md:pr-14 md:text-right" data-side-reveal="left">
           <p class="text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.15] tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #0B4F7A;">
             Don't scale a business that doesn't make money yet.
           </p>
         </div>
-        <div class="hidden md:block absolute left-1/2 top-6 w-3 h-3 rounded-full shrink-0" style="background: #0B4F7A; transform: translate(-50%, 0);"></div>
+        <div class="hidden md:block absolute left-1/2 top-6 w-3 h-3 rounded-full shrink-0 border-2 box-border" data-timeline-node data-paso="3" data-color="#0B4F7A" style="background:#FFFFFF;border-color:#0B4F7A;transform:translate(-50%,0);"></div>
       </div>
 
-      <!-- Quote 4 — RIGHT — aqua -->
-      <div class="relative flex flex-row items-start gap-3 md:gap-0">
-        <!-- Mobile dot -->
-        <div class="md:hidden w-2.5 h-2.5 rounded-full shrink-0 mt-[0.35em]" style="background: #00698D;"></div>
+      <!-- Quote 4 — RIGHT — aqua (last circle = end of line) -->
+      <div class="relative flex flex-row items-start gap-3 md:gap-0" data-timeline-item data-paso="4">
+        <div class="md:hidden w-2.5 h-2.5 rounded-full shrink-0 mt-[0.35em] border-2 box-border" data-timeline-node data-paso="4" data-color="#00698D" style="background:#FFFFFF;border-color:#00698D;"></div>
         <div class="hidden md:flex md:w-1/2"></div>
-        <div class="hidden md:block absolute left-1/2 top-6 w-3 h-3 rounded-full shrink-0" style="background: #00698D; transform: translate(-50%, 0);"></div>
-        <div class="flex-1 md:flex-initial md:w-1/2 md:pl-14">
+        <div class="hidden md:block absolute left-1/2 top-6 w-3 h-3 rounded-full shrink-0 border-2 box-border" data-timeline-node data-paso="4" data-color="#00698D" style="background:#FFFFFF;border-color:#00698D;transform:translate(-50%,0);"></div>
+        <div class="flex-1 md:flex-initial md:w-1/2 md:pl-14" data-side-reveal="right">
           <p class="text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.15] tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #00698D;">
             We connect worlds that don't usually talk to each other.
           </p>
@@ -539,17 +586,18 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       </div>
 
     </div>
+    </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════
    SECTION: SORIE™ — Method
    Giant letters with words, blue palette
    ═══════════════════════════════════════════════════ -->
-  <section class="relative" style="background: #FFFFFF;">
+  <section class="relative" style="background: #FFFFFF;" data-sorie-reveal>
 
     <div class="text-center pt-24 md:pt-32 pb-8 md:pb-10 px-4">
-      <span class="text-[11px] tracking-[0.35em] uppercase font-semibold opacity-35" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">Our methodology</span>
-      <h2 class="mt-4 text-4xl md:text-5xl font-bold tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #1A1A1A;">
+      <span class="sorie-eyebrow text-[11px] tracking-[0.35em] uppercase font-semibold" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">Our methodology</span>
+      <h2 class="sorie-title mt-4 text-4xl md:text-5xl font-bold tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #1A1A1A;">
         The method behind<br class="md:hidden"> everything we do<br>at Blue Unicorn
       </h2>
     </div>
@@ -558,35 +606,35 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     <div class="flex flex-nowrap items-end justify-center gap-2.5 md:gap-12 lg:gap-20 px-4 pb-10 md:pb-14 max-w-4xl mx-auto">
 
       <!-- S — Strategy / Estrategia -->
-      <div class="flex flex-col items-center gap-1.5 shrink-0">
+      <div class="sorie-col flex flex-col items-center gap-1.5 shrink-0" style="--i:0">
         <span class="text-5xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #0F2548;">S</span>
         <span class="text-[10px] md:text-sm font-semibold tracking-wide whitespace-nowrap" style="font-family: 'Satoshi', sans-serif; color: #0F2548;">Strategy</span>
         <span class="text-[8px] md:text-xs font-medium tracking-wide opacity-40 whitespace-nowrap" style="font-family: 'Satoshi', sans-serif; color: #0F2548;">Estrategia</span>
       </div>
 
       <!-- O — Opportunity / Oportunidad -->
-      <div class="flex flex-col items-center gap-1.5 shrink-0">
+      <div class="sorie-col flex flex-col items-center gap-1.5 shrink-0" style="--i:1">
         <span class="text-5xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #163667;">O</span>
         <span class="text-[10px] md:text-sm font-semibold tracking-wide whitespace-nowrap" style="font-family: 'Satoshi', sans-serif; color: #163667;">Opportunity</span>
         <span class="text-[8px] md:text-xs font-medium tracking-wide opacity-40 whitespace-nowrap" style="font-family: 'Satoshi', sans-serif; color: #163667;">Oportunidad</span>
       </div>
 
       <!-- R — Reality / Realidad -->
-      <div class="flex flex-col items-center gap-1.5 shrink-0">
+      <div class="sorie-col flex flex-col items-center gap-1.5 shrink-0" style="--i:2">
         <span class="text-5xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #0B4F7A;">R</span>
         <span class="text-[10px] md:text-sm font-semibold tracking-wide whitespace-nowrap" style="font-family: 'Satoshi', sans-serif; color: #0B4F7A;">Reality</span>
         <span class="text-[8px] md:text-xs font-medium tracking-wide opacity-40 whitespace-nowrap" style="font-family: 'Satoshi', sans-serif; color: #0B4F7A;">Realidad</span>
       </div>
 
       <!-- I — Innovation / Innovación -->
-      <div class="flex flex-col items-center gap-1.5 shrink-0">
+      <div class="sorie-col flex flex-col items-center gap-1.5 shrink-0" style="--i:3">
         <span class="text-5xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #00698D;">I</span>
         <span class="text-[10px] md:text-sm font-semibold tracking-wide whitespace-nowrap" style="font-family: 'Satoshi', sans-serif; color: #00698D;">Innovation</span>
         <span class="text-[8px] md:text-xs font-medium tracking-wide opacity-40 whitespace-nowrap" style="font-family: 'Satoshi', sans-serif; color: #00698D;">Innovación</span>
       </div>
 
       <!-- E — Execution / Ejecución -->
-      <div class="flex flex-col items-center gap-1.5 shrink-0">
+      <div class="sorie-col flex flex-col items-center gap-1.5 shrink-0" style="--i:4">
         <span class="text-5xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter" style="font-family: 'Space Grotesk', sans-serif; color: #0088B3;">E</span>
         <span class="text-[10px] md:text-sm font-semibold tracking-wide whitespace-nowrap" style="font-family: 'Satoshi', sans-serif; color: #0088B3;">Execution</span>
         <span class="text-[8px] md:text-xs font-medium tracking-wide opacity-40 whitespace-nowrap" style="font-family: 'Satoshi', sans-serif; color: #0088B3;">Ejecución</span>
@@ -596,13 +644,13 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
     <!-- Slogan -->
     <div class="text-center pb-8 md:pb-10 px-4">
-      <p class="text-lg md:text-xl font-semibold italic opacity-70 tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #163667;">
+      <p class="sorie-slogan text-lg md:text-xl font-semibold italic tracking-wide" style="font-family: 'Satoshi', sans-serif; color: #163667;">
         Real Solutions for Extraordinary Ideas
       </p>
     </div>
 
     <!-- CTA -->
-    <div class="text-center pb-24 md:pb-32 px-4">
+    <div class="sorie-cta text-center pb-24 md:pb-32 px-4">
       <a href="/en/sorie-methodology" class="cta-slide" style="
         display: inline-block; width: 260px; height: 52px;
         border-radius: 4px; overflow: hidden;
@@ -621,17 +669,56 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   </section>
 
   <!-- ═══════════════════════════════════════════════════
-   SECTION: AUTHORITY — Endorsed philosophy
-   Luis quotes as a trust manifesto
+   SECTION: AUTHORITY — Trust (experience)
+   One job: generate confidence. No quotes, no steps.
+ ═══════════════════════════════════════════════════ -->
+  <section id="authority" class="relative overflow-hidden" style="background: #0F2548;">
+    <div class="relative z-10 mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center" data-auth-reveal>
+      <span class="auth-eyebrow text-[11px] tracking-[0.35em] uppercase font-semibold" style="color: rgba(168, 216, 234, 0.55); font-family: 'Satoshi', sans-serif;">
+        Experience
+      </span>
+      <h2
+        class="auth-title mt-5 md:mt-6 font-bold tracking-tight leading-[1.05] text-balance"
+        style="font-family: 'Space Grotesk', sans-serif; color: #FFFFFF; font-size: clamp(1.85rem, 4.5vw, 3rem);"
+      >
+        Over <span data-auth-count data-to="30">30</span> years connecting strategy, product, international sourcing, and marketing.
+      </h2>
+      <p
+        class="auth-body mt-6 text-base md:text-lg leading-relaxed max-w-[42ch] mx-auto"
+        style="color: rgba(255, 255, 255, 0.62); font-family: 'Satoshi', sans-serif;"
+      >
+        Experience developing projects from idea to market.
+      </p>
+      <div class="auth-cta mt-10">
+        <a href="/en/about-us" class="cta-slide" style="
+          display: inline-block; width: 240px; height: 52px;
+          border-radius: 4px; overflow: hidden;
+          cursor: pointer; text-decoration: none;
+          box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.85);
+        ">
+          <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0;">
+            <span style="font-size: 15px; font-weight: 600; color: #FFFFFF; font-family: 'Satoshi', sans-serif;">Meet the people behind</span>
+          </div>
+          <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0; background: #FFFFFF;">
+            <span style="font-size: 15px; font-weight: 600; color: #0F2548; font-family: 'Satoshi', sans-serif;">About us</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+   SECTION: PHILOSOPHY — Endorsed by media
+   Luis quotes as manifesto (kept as-is)
    ═══════════════════════════════════════════════════ -->
-  <section class="relative" style="background: #F2F5F8;">
+  <section class="relative" style="background: #F2F5F8;" data-philo-reveal>
 
     <div class="max-w-5xl mx-auto px-6 md:px-10 pt-24 md:pt-32 pb-8 md:pb-10">
-      <span class="text-[11px] tracking-[0.35em] uppercase font-semibold opacity-35" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">Our philosophy</span>
-      <h2 class="mt-4 text-4xl md:text-5xl font-bold tracking-tight max-w-[20ch] leading-[1.05]" style="font-family: 'Space Grotesk', sans-serif; color: #1A1A1A;">
+      <span class="philo-eyebrow text-[11px] tracking-[0.35em] uppercase font-semibold" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">Our philosophy</span>
+      <h2 class="philo-title mt-4 text-4xl md:text-5xl font-bold tracking-tight max-w-[20ch] leading-[1.05]" style="font-family: 'Space Grotesk', sans-serif; color: #1A1A1A;">
         An approach endorsed by clients and industry media
       </h2>
-      <p class="mt-5 text-base md:text-lg max-w-[52ch] leading-relaxed" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">
+      <p class="philo-body mt-5 text-base md:text-lg max-w-[52ch] leading-relaxed" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">
         At Blue Unicorn we work with a clear philosophy. These are the ideas that guide every decision and every project. This is how they told it in <a href="https://cincodias.elpais.com/companias/2023-04-11/los-secretos-para-vender-en-plataformas-como-amazon.html" target="_blank" rel="noopener" style="color:#163667;font-weight:700;text-decoration:underline;text-underline-offset:3px;">Cinco Días (Grupo El País)</a>.
       </p>
     </div>
@@ -640,28 +727,28 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     <div class="max-w-5xl mx-auto px-6 md:px-10 pb-24 md:pb-32 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
 
       <!-- Quote 1 -->
-      <div class="relative pl-6 border-l-2" style="border-color: #0F2548;">
+      <div class="philo-quote relative pl-6 border-l-2" style="--i:0; border-color: #0F2548;">
         <p class="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #0F2548;">
           Never fall in love with an idea before validating the market.
         </p>
       </div>
 
       <!-- Quote 2 -->
-      <div class="relative pl-6 border-l-2" style="border-color: #163667;">
+      <div class="philo-quote relative pl-6 border-l-2" style="--i:1; border-color: #163667;">
         <p class="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #163667;">
           A brand is worth more than a catalog.
         </p>
       </div>
 
       <!-- Quote 3 -->
-      <div class="relative pl-6 border-l-2" style="border-color: #0B4F7A;">
+      <div class="philo-quote relative pl-6 border-l-2" style="--i:2; border-color: #0B4F7A;">
         <p class="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #0B4F7A;">
           Cheap often turns out expensive when sourcing abroad.
         </p>
       </div>
 
       <!-- Quote 4 -->
-      <div class="relative pl-6 border-l-2" style="border-color: #00698D;">
+      <div class="philo-quote relative pl-6 border-l-2" style="--i:3; border-color: #00698D;">
         <p class="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight" style="font-family: 'Space Grotesk', sans-serif; color: #00698D;">
           Reputation takes years to build and minutes to lose.
         </p>
@@ -670,7 +757,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     </div>
 
     <!-- CTA -->
-    <div class="text-center pb-24 md:pb-32 px-4">
+    <div class="philo-cta text-center pb-24 md:pb-32 px-4">
       <a href="/en/about-us" class="cta-slide" style="
         display: inline-block; width: 220px; height: 52px;
         border-radius: 4px; overflow: hidden;
@@ -689,26 +776,102 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   </section>
 
   <!-- ═══════════════════════════════════════════════════
+   BRIDGE SECTION — Case studies
+   One job: proof on the ground → /en/case-studies
+ ═══════════════════════════════════════════════════ -->
+  <section id="case-studies" class="relative overflow-hidden" style="background: #F5F1EC;" data-results-reveal>
+    <div class="relative z-10 mx-auto max-w-6xl px-6 md:px-10 py-20 md:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-24 items-center">
+
+        <!-- Copy -->
+        <div class="text-center lg:text-left">
+          <span class="results-eyebrow text-[11px] tracking-[0.35em] uppercase font-semibold" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">
+            Results
+          </span>
+          <h2
+            class="results-title mt-5 md:mt-6 font-bold tracking-tight leading-[1.05] text-balance"
+            style="font-family: 'Space Grotesk', sans-serif; color: #0F2548; font-size: clamp(1.85rem, 4.5vw, 3rem);"
+          >
+            Ideas that reached the market.
+          </h2>
+          <p
+            class="results-body mt-6 text-base md:text-lg leading-relaxed max-w-[40ch] mx-auto lg:mx-0"
+            style="color: #6B7280; font-family: 'Satoshi', sans-serif;"
+          >
+            Real projects in product, import and Amazon. Results on the ground, not promises.
+          </p>
+          <div class="results-cta mt-10 flex justify-center lg:justify-start">
+            <a href="/en/case-studies" class="cta-slide" style="
+              display: inline-block; width: 240px; height: 52px;
+              border-radius: 4px; overflow: hidden;
+              cursor: pointer; text-decoration: none;
+              box-shadow: inset 0 0 0 2px #163667;
+            ">
+              <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0;">
+                <span style="font-size: 15px; font-weight: 600; color: #163667; font-family: 'Satoshi', sans-serif;">See the cases</span>
+              </div>
+              <div style="height: 52px; display: flex; align-items: center; justify-content: center; transition: transform 0.6s cubic-bezier(.16,1,.3,1); flex-shrink: 0; background: #163667;">
+                <span style="font-size: 15px; font-weight: 600; color: #ffffff; font-family: 'Satoshi', sans-serif;">Case studies</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Preview 3 cases -->
+        <div class="results-list flex flex-col" aria-label="Featured case studies">
+          <a href="/en/case-studies#roll-order" class="results-case flex items-start gap-5 md:gap-6 py-5 md:py-6 no-underline border-t" style="--i:0; border-color: rgba(15,37,72,0.1);">
+            <span class="results-case-num shrink-0 text-xs font-semibold tracking-[0.18em] pt-1.5" style="font-family:'Space Grotesk',sans-serif; color:#0F2548;">01</span>
+            <span class="results-case-bar shrink-0 w-0.5 self-stretch mt-1" style="background:#0F2548;" aria-hidden="true"></span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-xl md:text-2xl font-bold tracking-tight leading-tight" style="font-family:'Space Grotesk',sans-serif; color:#0F2548;">Roll Order</span>
+              <span class="block mt-1.5 text-sm md:text-base leading-snug" style="font-family:'Satoshi',sans-serif; color:#6B7280;">Patent → product on Amazon</span>
+            </span>
+          </a>
+
+          <a href="/en/case-studies#e-bike" class="results-case flex items-start gap-5 md:gap-6 py-5 md:py-6 no-underline border-t" style="--i:1; border-color: rgba(15,37,72,0.1);">
+            <span class="results-case-num shrink-0 text-xs font-semibold tracking-[0.18em] pt-1.5" style="font-family:'Space Grotesk',sans-serif; color:#163667;">02</span>
+            <span class="results-case-bar shrink-0 w-0.5 self-stretch mt-1" style="background:#163667;" aria-hidden="true"></span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-xl md:text-2xl font-bold tracking-tight leading-tight" style="font-family:'Space Grotesk',sans-serif; color:#163667;">Electric bike</span>
+              <span class="block mt-1.5 text-sm md:text-base leading-snug" style="font-family:'Satoshi',sans-serif; color:#6B7280;">SORIE™ → tariffs → import</span>
+            </span>
+          </a>
+
+          <a href="/en/case-studies#padel-watch" class="results-case flex items-start gap-5 md:gap-6 py-5 md:py-6 no-underline border-t border-b" style="--i:2; border-color: rgba(15,37,72,0.1);">
+            <span class="results-case-num shrink-0 text-xs font-semibold tracking-[0.18em] pt-1.5" style="font-family:'Space Grotesk',sans-serif; color:#0B4F7A;">03</span>
+            <span class="results-case-bar shrink-0 w-0.5 self-stretch mt-1" style="background:#0B4F7A;" aria-hidden="true"></span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-xl md:text-2xl font-bold tracking-tight leading-tight" style="font-family:'Space Grotesk',sans-serif; color:#0B4F7A;">Padel smart watch</span>
+              <span class="block mt-1.5 text-sm md:text-base leading-snug" style="font-family:'Satoshi',sans-serif; color:#6B7280;">Prototype → fair → market</span>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
    FINAL CTA
    ═══════════════════════════════════════════════════ -->
-  <section class="relative flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 px-6 md:px-12 py-12 md:py-32" style="background:#FFFFFF;">
+  <section class="relative flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 px-6 md:px-12 py-12 md:py-32" style="background:#FFFFFF;" data-final-cta>
     <div class="text-center md:text-left max-w-lg">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">If you have an idea,<br>we turn it<br>into reality</h2>
-      <p class="mt-6 text-base md:text-lg leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Tell us your idea and Blue Unicorn will support you in building it.</p>
-      <div class="mt-8">
+      <h2 class="final-title text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">Shall we build the<br>next<br>opportunity?</h2>
+      <p class="final-body mt-6 text-base md:text-lg leading-relaxed" style="color:#6B7280;font-family:'Satoshi',sans-serif;">Great ideas need more than inspiration. They need strategy, experience and execution.</p>
+      <div class="final-cta mt-8">
         <a href="/en/get-started" class="animated-btn" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 52px 0 36px;font-size:16px;background-color:#0F2548;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#ffffff;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(15,37,72,0.2);">
-          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Tell us about your project</span>
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Let's build it together</span>
           <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:22px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00698D;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
         </a>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-6 md:gap-8 shrink-0">
-      <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
-      <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
-      <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
-      <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24"><polygon points="50,4 96,96 4,96" fill="#00698D" opacity="0.8"/></svg>
+    <div class="final-shapes grid grid-cols-2 gap-6 md:gap-8 shrink-0" aria-hidden="true">
+      <svg class="final-shape w-20 h-20 md:w-24 md:h-24" style="--i:0" viewBox="0 0 100 100"><path d="M50 8 Q50 50 92 50 Q50 50 50 92 Q50 50 8 50 Q50 50 50 8Z" fill="#0F2548" opacity="0.8"/></svg>
+      <svg class="final-shape w-20 h-20 md:w-24 md:h-24" style="--i:1" viewBox="0 0 100 100"><rect x="8" y="8" width="84" height="84" rx="3" fill="#163667" opacity="0.8"/></svg>
+      <svg class="final-shape w-20 h-20 md:w-24 md:h-24" style="--i:2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#0B4F7A" opacity="0.8"/></svg>
+      <svg class="final-shape w-20 h-20 md:w-24 md:h-24" style="--i:3" viewBox="0 0 100 100"><polygon points="50,4 96,96 4,96" fill="#00698D" opacity="0.8"/></svg>
     </div>
   </section>
 
@@ -768,8 +931,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
         <span class="text-xs" style="color:rgba(255,255,255,0.3);">© 2026 Blue Unicorn. All rights reserved.</span>
         <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
-          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal notice</a>
-          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy</a>
+          <a href="/en/legal-notice" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal notice</a>
+          <a href="/en/privacy" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy & cookies</a>
         </div>
       </div>
     </div>
@@ -802,6 +965,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     ]
   }
 </script>
+
+<ScrollTimelineScript />
 
 </BaseLayout>
 

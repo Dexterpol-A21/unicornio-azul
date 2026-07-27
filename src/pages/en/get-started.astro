@@ -166,6 +166,17 @@ import BaseLayout from '@layouts/BaseLayout.astro';
               onblur="this.style.borderColor='rgba(22,54,103,0.2)';this.style.boxShadow='none'"
             >
           </div>
+          <label class="flex items-start gap-3 cursor-pointer select-none mt-1" style="font-family:'Satoshi',sans-serif;">
+            <input type="checkbox" name="privacidad" id="privacy-consent" required
+              class="mt-1 shrink-0"
+              style="width:18px;height:18px;accent-color:#163667;cursor:pointer;"
+            >
+            <span class="text-sm leading-relaxed" style="color:#374151;">
+              I have read and accept the <a href="/en/privacy" target="_blank" rel="noopener" class="font-semibold underline underline-offset-2" style="color:#163667;">privacy policy</a>
+              <span style="color:#D92D20;">*</span>
+            </span>
+          </label>
+          <span class="field-error" data-field="privacidad"></span>
         </div>
         <div class="flex justify-center gap-4 mt-8">
           <button type="button" class="step-prev py-3 px-6 rounded text-base font-semibold transition-all duration-300 hover:opacity-70" style="font-family:'Satoshi',sans-serif;background:transparent;color:#6B7280;border:none;cursor:pointer;">← Back</button>
@@ -297,6 +308,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   // Step 4: enable submit when email is valid; validate on blur
   const step4Submit = form.querySelector('[data-step="4"] button[type="submit"]');
   const emailInput = form.querySelector('input[name="email"]');
+  const privacyInput = form.querySelector('input[name="privacidad"]');
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function checkEmailValid() {
@@ -304,22 +316,31 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     return val && emailRe.test(val);
   }
 
+  function updateStep4Submit() {
+    if (checkEmailValid() && privacyInput?.checked) enableBtn(step4Submit);
+    else disableBtn(step4Submit);
+  }
+
   emailInput.addEventListener('input', () => {
-    if (checkEmailValid()) { enableBtn(step4Submit); }
-    else { disableBtn(step4Submit); }
+    updateStep4Submit();
     clearFieldError('email');
   });
 
   emailInput.addEventListener('blur', () => {
     const val = emailInput.value.trim();
-    if (!val) { clearFieldError('email'); disableBtn(step4Submit); return; }
+    if (!val) { clearFieldError('email'); updateStep4Submit(); return; }
     if (!emailRe.test(val)) {
       showFieldError('email', "That email doesn't look right. Could you double-check?");
       disableBtn(step4Submit);
     } else {
       clearFieldError('email');
-      enableBtn(step4Submit);
+      updateStep4Submit();
     }
+  });
+
+  privacyInput?.addEventListener('change', () => {
+    clearFieldError('privacidad');
+    updateStep4Submit();
   });
 
   // ── Button helpers ──
@@ -363,6 +384,10 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     if (!name) { showFieldError('nombre', 'Please tell us your name.'); hasError = true; }
     if (!email) { showFieldError('email', 'We need your email to contact you.'); hasError = true; }
     else if (!emailRe.test(email)) { showFieldError('email', "That email doesn't look right. Could you double-check?"); hasError = true; }
+    if (!privacyInput?.checked) {
+      showFieldError('privacidad', 'You must accept the privacy policy to continue.');
+      hasError = true;
+    }
     if (hasError) return;
 
     const objetivoVal = form.querySelector('input[name="objetivo"]:checked')?.value || '';

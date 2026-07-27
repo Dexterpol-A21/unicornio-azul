@@ -1,0 +1,36 @@
+---
+/**
+ * Smooth scroll global — Lenis ligero.
+ * lerp alto = más cercano al nativo; vibra premium sin flotar.
+ */
+---
+<script>
+  import Lenis from 'lenis';
+
+  function init() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const lenis = new Lenis({
+      autoRaf: true,
+      lerp: 0.12,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1,
+      syncTouch: false,
+      anchors: {
+        offset: 0,
+        duration: 0.9,
+      },
+      allowNestedScroll: true,
+      stopInertiaOnNavigate: true,
+    });
+
+    // Expose for optional use (hash links already handled via anchors)
+    window.__lenis = lenis;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+</script>

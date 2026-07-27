@@ -1,0 +1,87 @@
+---
+/**
+ * Scroll-linked timeline: line fill + nodes + step lit state.
+ * Markup contract inside [data-scroll-timeline]:
+ *   [data-timeline-item][data-paso]  — observed steps (gets .is-lit)
+ *   [data-timeline-node][data-paso][data-color] — dots (can be multiple per step)
+ *   [data-timeline-fill] — fill layer(s); scaleY from top
+ */
+---
+<script>
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('[data-scroll-timeline]').forEach((root) => {
+        root.querySelectorAll('[data-timeline-node]').forEach((n) => {
+          const color = n.dataset.color || '#163667';
+          n.style.background = color;
+          n.style.borderColor = color;
+        });
+        root.querySelectorAll('[data-timeline-fill]').forEach((f) => {
+          f.style.transform = 'scaleY(1)';
+        });
+        root.querySelectorAll('[data-timeline-item]').forEach((el) => {
+          el.classList.add('is-lit');
+        });
+      });
+      return;
+    }
+
+    document.querySelectorAll('[data-scroll-timeline]').forEach((root) => {
+      const items = root.querySelectorAll('[data-timeline-item]');
+      const nodes = root.querySelectorAll('[data-timeline-node]');
+      const fills = root.querySelectorAll('[data-timeline-fill]');
+      if (!items.length) return;
+
+      const activos = new Set();
+      const lit = new Set();
+      const total = items.length;
+
+      const paint = () => {
+        const maxActivo = activos.size > 0 ? Math.max(...activos) : 0;
+        items.forEach((el) => {
+          const paso = Number(el.dataset.paso);
+          if (paso <= maxActivo || lit.has(paso)) {
+            lit.add(paso);
+            el.classList.add('is-lit');
+          }
+        });
+        nodes.forEach((n) => {
+          const paso = Number(n.dataset.paso);
+          const color = n.dataset.color || '#163667';
+          if (paso === 1 || lit.has(paso) || paso <= maxActivo) {
+            n.style.background = color;
+            n.style.borderColor = color;
+          } else {
+            n.style.background = '#FFFFFF';
+            n.style.borderColor = color;
+          }
+        });
+        if (fills.length) {
+          const progress = Math.max(lit.size, maxActivo) / total;
+          fills.forEach((f) => {
+            f.style.transform = `scaleY(${progress})`;
+          });
+        }
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            const idx = Number(entry.target.dataset.paso);
+            if (entry.isIntersecting) {
+              activos.add(idx);
+              lit.add(idx);
+            } else {
+              activos.delete(idx);
+            }
+          }
+          paint();
+        },
+        { threshold: 0.2, rootMargin: '-18% 0px -18% 0px' }
+      );
+
+      items.forEach((el) => observer.observe(el));
+      paint();
+    });
+  })();
+</script>

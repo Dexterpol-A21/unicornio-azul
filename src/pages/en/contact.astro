@@ -14,15 +14,15 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 <div class="min-h-screen flex flex-col overflow-x-hidden" style="background:#FFFFFF;">
 
   <!-- Main typographic block -->
-  <div class="flex-1 flex flex-col justify-center w-full max-w-[92vw] md:max-w-[80vw] mx-auto px-4 md:px-0 pt-16 md:pt-36 pb-16 md:pb-32">
+  <div class="flex-1 flex flex-col justify-center w-full max-w-[92vw] md:max-w-[80vw] mx-auto px-4 md:px-0 pt-16 md:pt-36 pb-16 md:pb-32" data-reveal>
 
     <!-- Massive H1 -->
-    <h1 class="text-[19vw] md:text-[14vw] lg:text-[16vw] font-black leading-[0.85] tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+    <h1 class="reveal-item text-[19vw] md:text-[14vw] lg:text-[16vw] font-black leading-[0.85] tracking-tighter" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
       Let's <span style="color:transparent;-webkit-text-stroke:2px #00698D;">talk</span>
     </h1>
 
     <!-- Email + Phone — side by side -->
-    <div class="mt-10 md:mt-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-16">
+    <div class="reveal-item mt-10 md:mt-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-16" style="--i:1">
 
       <a href="mailto:hola@unicornioazul.com"
          class="group no-underline transition-colors duration-500"
@@ -46,7 +46,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     <div class="mt-12 md:mt-24 w-full" style="height:1px;background:rgba(22,54,103,0.06);"></div>
 
     <!-- Info in 3 columns -->
-    <div class="mt-10 md:mt-20 grid md:grid-cols-3 gap-6 md:gap-16">
+    <div class="reveal-item mt-10 md:mt-20 grid md:grid-cols-3 gap-6 md:gap-16" style="--i:2">
 
       <!-- Col 1: Response -->
       <div>
@@ -150,8 +150,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
         <span class="text-xs" style="color:rgba(255,255,255,0.3);">&copy; 2026 Blue Unicorn. All rights reserved.</span>
         <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
-          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal notice</a>
-          <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy</a>
+          <a href="/en/legal-notice" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Legal notice</a>
+          <a href="/en/privacy" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacy & cookies</a>
         </div>
       </div>
     </div>

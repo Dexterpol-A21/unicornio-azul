@@ -1,0 +1,122 @@
+---
+/**
+ * Puente visual post-hero: problema del cliente → respuesta UA.
+ * Feedback HOME §5 — lenguaje del cliente, no catálogo de servicios.
+ */
+interface Props {
+  problem: string;
+  solution: string;
+  accent: string;
+  shape: 'star' | 'square' | 'circle' | 'triangle';
+  problemLabel?: string;
+  solutionLabel?: string;
+}
+
+const {
+  problem,
+  solution,
+  accent,
+  shape,
+  problemLabel = 'Problema',
+  solutionLabel = 'Respuesta',
+} = Astro.props;
+---
+
+<section class="relative overflow-hidden" style="background: #F5F1EC;" aria-label={`${problemLabel}: ${problem}. ${solutionLabel}: ${solution}`} data-reveal>
+  <div class="relative z-10 mx-auto max-w-5xl px-6 md:px-10 py-16 md:py-24">
+
+    <!-- Diagrama: problema → forma → respuesta -->
+    <div class="flex flex-col md:flex-row items-stretch md:items-center gap-10 md:gap-0">
+
+      <!-- PROBLEMA -->
+      <div class="reveal-item flex-1 text-center md:text-right md:pr-6 lg:pr-10" style="--i:0">
+        <span
+          class="text-[11px] tracking-[0.35em] uppercase font-semibold"
+          style="color: #9CA3AF; font-family: 'Satoshi', sans-serif;"
+        >
+          {problemLabel}
+        </span>
+        <p
+          class="mt-4 font-bold tracking-tight leading-[1.1] text-balance"
+          style="font-family: 'Space Grotesk', sans-serif; color: #6B7280; font-size: clamp(1.5rem, 3.5vw, 2.25rem);"
+        >
+          {problem}
+        </p>
+      </div>
+
+      <!-- CONECTOR VISUAL -->
+      <div class="reveal-item shrink-0 flex flex-col items-center justify-center gap-3 px-2 md:px-4" style="--i:1" aria-hidden="true">
+        <!-- Desktop: línea — forma — línea + flecha -->
+        <div class="hidden md:flex items-center gap-0">
+          <span class="block h-[2px] w-10 lg:w-14" style="background: rgba(107,114,128,0.35);"></span>
+          <svg width="56" height="56" viewBox="0 0 56 56" class="shrink-0">
+            {shape === 'star' && (
+              <path d="M28 6 Q28 28 50 28 Q28 28 28 50 Q28 28 6 28 Q28 28 28 6Z" fill={accent} />
+            )}
+            {shape === 'square' && (
+              <rect x="10" y="10" width="36" height="36" rx="3" fill={accent} />
+            )}
+            {shape === 'circle' && (
+              <circle cx="28" cy="28" r="18" fill={accent} />
+            )}
+            {shape === 'triangle' && (
+              <polygon points="28,8 48,46 8,46" fill={accent} />
+            )}
+          </svg>
+          <span class="flex items-center">
+            <span class="block h-[2px] w-8 lg:w-12" style={`background: ${accent};`}></span>
+            <svg width="14" height="14" viewBox="0 0 14 14" class="-ml-0.5">
+              <path d="M2 7h9M7 2l5 5-5 5" fill="none" stroke={accent} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <!-- Mobile: forma + flecha vertical -->
+        <div class="flex md:hidden flex-col items-center gap-2">
+          <svg width="44" height="44" viewBox="0 0 56 56">
+            {shape === 'star' && (
+              <path d="M28 6 Q28 28 50 28 Q28 28 28 50 Q28 28 6 28 Q28 28 28 6Z" fill={accent} />
+            )}
+            {shape === 'square' && (
+              <rect x="10" y="10" width="36" height="36" rx="3" fill={accent} />
+            )}
+            {shape === 'circle' && (
+              <circle cx="28" cy="28" r="18" fill={accent} />
+            )}
+            {shape === 'triangle' && (
+              <polygon points="28,8 48,46 8,46" fill={accent} />
+            )}
+          </svg>
+          <svg width="16" height="20" viewBox="0 0 16 20">
+            <path d="M8 2v14M3 11l5 5 5-5" fill="none" stroke={accent} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- RESPUESTA -->
+      <div class="reveal-item flex-1 text-center md:text-left md:pl-6 lg:pl-10" style="--i:2">
+        <span
+          class="text-[11px] tracking-[0.35em] uppercase font-semibold"
+          style={`color: ${accent}; font-family: 'Satoshi', sans-serif; opacity: 0.75;`}
+        >
+          {solutionLabel}
+        </span>
+        <p
+          class="mt-4 font-bold tracking-tight leading-[1.1] text-balance"
+          style={`font-family: 'Space Grotesk', sans-serif; color: ${accent}; font-size: clamp(1.5rem, 3.5vw, 2.25rem);`}
+        >
+          {solution}
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Barra de ritmos de azul (gesto marca, como Opportunity) -->
+    <div class="reveal-item mt-12 md:mt-16 flex justify-center gap-1.5" style="--i:3" aria-hidden="true">
+      <span class="block h-1 w-8 md:w-12" style="background: #0F2548;"></span>
+      <span class="block h-1 w-8 md:w-12" style="background: #163667;"></span>
+      <span class="block h-1 w-8 md:w-12" style="background: #0B4F7A;"></span>
+      <span class="block h-1 w-8 md:w-12" style="background: #00698D;"></span>
+      <span class="block h-1 w-8 md:w-12" style="background: #0088B3;"></span>
+    </div>
+  </div>
+</section>

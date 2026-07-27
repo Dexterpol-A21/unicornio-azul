@@ -83,11 +83,11 @@ function l(path: string): string {
         {lang === 'es' ? '© 2026 Unicornio Azul. Todos los derechos reservados.' : '© 2026 Blue Unicorn. All rights reserved.'}
       </span>
       <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
-        <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">
+        <a href={lang === 'es' ? '/aviso-legal' : '/en/legal-notice'} class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">
           {lang === 'es' ? 'Aviso legal' : 'Legal notice'}
         </a>
-        <a href="#" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">
-          {lang === 'es' ? 'Privacidad' : 'Privacy'}
+        <a href={lang === 'es' ? '/privacidad' : '/en/privacy'} class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">
+          {lang === 'es' ? 'Privacidad y cookies' : 'Privacy & cookies'}
         </a>
       </div>
     </div>

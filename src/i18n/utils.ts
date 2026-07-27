@@ -15,6 +15,8 @@ const ROUTE_MAP: Record<string, Record<Lang, string>> = {
   route_empezar:                { es: '/empezar',                              en: '/en/get-started' },
   route_casos:                  { es: '/casos',                                en: '/en/case-studies' },
   route_propuestas:             { es: '/propuestas',                           en: '/en/proposals' },
+  route_aviso_legal:            { es: '/aviso-legal',                          en: '/en/legal-notice' },
+  route_privacidad:             { es: '/privacidad',                           en: '/en/privacy' },
 };
 
 // Build reverse index: path (without trailing slash) → route key

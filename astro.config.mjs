@@ -1,10 +1,20 @@
 import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   site: 'https://unicornioazul.es',
+  redirects: {
+    '/cookies': '/privacidad',
+    '/en/cookies': '/en/privacy',
+  },
   integrations: [
+    react(),
     sitemap({
       filter: (page) =>
         !page.includes('/og/') &&
@@ -14,7 +24,14 @@ export default defineConfig({
         !page.includes('/thank-you'),
     }),
   ],
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        '@': path.resolve(root, 'src'),
+      },
+    },
+  },
   devToolbar: { enabled: false },
   compressHTML: true,
   i18n: {
