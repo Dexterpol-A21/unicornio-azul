@@ -16,7 +16,7 @@
 | 5 | **Favicon** | Completo |
 | 6 | **Title + description** | Todas las páginas (empezar/get-started ampliadas) |
 | 7 | **Open Graph + Twitter** | + `og:url` + `og:image:alt` |
-| 8 | **OG imágenes** | 4 pilares + casos (logo) + default (logo) |
+| 8 | **OG imágenes** | 4 pilares + casos (logo) + 4 casos + default (logo) |
 | 9 | **Canonical** | Auto |
 | 10 | **`lang` dinámico** | BaseLayout |
 | 11 | **hreflang** | ✅ Usa `getAltLangUrl` + ROUTE_MAP (rutas traducidas reales) |
@@ -56,6 +56,10 @@
 | `/en/` | Organization + WebSite |
 | 4 pilares ES/EN | Service + Breadcrumb |
 | `/casos` + EN | CollectionPage + ItemList + Breadcrumb |
+| `/casos/roll-order` + EN | Article + Breadcrumb |
+| `/casos/utrilla` + EN | Article + Breadcrumb |
+| `/casos/bicicleta-electrica` + EN | Article + Breadcrumb |
+| `/casos/otras-historias` + EN | CollectionPage + ItemList + Breadcrumb |
 | `/como-trabajamos` + EN | WebPage + HowTo + Breadcrumb |
 | `/metodologia-sorie` + EN | WebPage + Breadcrumb |
 | `/sobre-nosotros` + EN | AboutPage + Person + Breadcrumb |

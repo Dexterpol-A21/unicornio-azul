@@ -1,0 +1,466 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const problems = [
+  { title: 'Robo de asientos' },
+  { title: 'Robo de cestas' },
+  { title: 'Pata de soporte' },
+  { title: 'Duración de la batería' },
+];
+
+const fixes = [
+  ['Robo de cestas', 'Cesta + manillar', 'Unidos en una única pieza.'],
+  ['Robo de asientos y piezas', 'Tornillería antirrobo', 'En todos los elementos que antes robaban.'],
+  ['Pata de soporte', 'Pata reforzada', 'Fortalecida la sujeción de la bicicleta.'],
+  ['Duración de la batería', 'Batería', 'Mejor calidad, especificaciones superiores y primera marca.'],
+  ['Estaciones de carga', 'Estaciones de carga', 'Soporte para las estaciones completas.'],
+];
+
+const milestones = [
+  ['Checklist', 'Identificamos todos los problemas de la bici.'],
+  ['Asia', 'Proveedores, ferias en China y Taiwán, viaje con el CEO.'],
+  ['Producto', 'Muestras, test y rediseño para sharing urbano.'],
+  ['Arancel', 'De un 73% a una operación legal al 10%.'],
+];
+---
+
+<BaseLayout
+  title="Bicicleta eléctrica: sharing y aranceles — Caso | Unicornio Azul"
+  description="Caso de éxito: bicicleta eléctrica para alquiler en ayuntamientos. Checklist de fallos, proveedores en Asia, rediseño y solución arancelaria del 73% al 10%."
+  image="/images/og-bicicleta-electrica.jpg"
+  imageAlt="Bicicleta eléctrica sharing urbano — caso de éxito | Unicornio Azul"
+  showHeader={true}
+>
+
+<div class="bici-page overflow-x-clip">
+
+<!-- HERO -->
+<section class="relative md:min-h-[100svh] flex items-center overflow-hidden" style="background:#00DD00;">
+  <div class="w-full max-w-6xl mx-auto px-6 md:px-12 pt-10 md:pt-0 pb-8 md:pb-0">
+    <div class="flex flex-col md:grid md:grid-cols-2 md:gap-10 lg:gap-16 md:items-center gap-6">
+
+      <div data-reveal>
+        <h1 class="reveal-item font-bold tracking-tight leading-[0.95] mb-4 md:mb-5 text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#0A1628;font-size:clamp(2.8rem,10vw,4.5rem);letter-spacing:-0.03em;">
+          Bicicleta eléctrica
+        </h1>
+        <p class="reveal-item text-lg md:text-xl max-w-[38ch] leading-relaxed mb-0 md:mb-10" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.72);">
+          Sharing urbano: de fallos de diseño y compra cara en España a producto en Asia y arancel al 10%.
+        </p>
+        <!-- CTA — desktop -->
+        <div class="reveal-item hidden md:flex flex-row items-center gap-4" style="--i:2">
+          <a href="/empezar" class="animated-btn animated-btn--bici" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 48px 0 32px;font-size:15px;background-color:#0A1628;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(10,22,40,0.25);">
+            <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Cuéntanos tu proyecto</span>
+            <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00DD00;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+          </a>
+          <a href="/metodologia-sorie" class="cta-slide cta-slide--bici" style="display:block;width:210px;height:52px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #0A1628;">
+            <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+              <span style="font-size:15px;font-weight:600;color:#0A1628;font-family:'Satoshi',sans-serif;">Ver SORIE™</span>
+            </div>
+            <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#0A1628;">
+              <span style="font-size:15px;font-weight:600;color:#00DD00;font-family:'Satoshi',sans-serif;">Metodología</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="relative flex items-center justify-center md:justify-end" data-reveal="side" data-reveal-from="right">
+        <img
+          src="/images/bicicleta-electrica-lime-2nof.png"
+          alt="Bicicleta eléctrica tipo sharing urbano desarrollada para alquiler"
+          class="w-full max-w-[360px] md:max-w-[520px] h-auto object-contain mx-auto"
+        />
+      </div>
+
+      <!-- CTA — mobile -->
+      <div class="md:hidden flex flex-col items-stretch gap-3">
+        <a href="/empezar" class="animated-btn animated-btn--bici" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#0A1628;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(10,22,40,0.25);">
+          <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00DD00;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+        <a href="/metodologia-sorie" class="cta-slide cta-slide--bici cta-slide--mobile" style="display:block;width:100%;height:60px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #0A1628;">
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+            <span style="font-size:17px;font-weight:600;color:#0A1628;font-family:'Satoshi',sans-serif;">Ver SORIE™</span>
+          </div>
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#0A1628;">
+            <span style="font-size:17px;font-weight:600;color:#00DD00;font-family:'Satoshi',sans-serif;">Metodología</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUNTO DE PARTIDA -->
+<section id="partida" class="relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div data-reveal>
+        <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-8 md:mb-10 text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#0A1628;font-size:clamp(2.5rem,4vw,3rem);letter-spacing:-0.03em;">
+          De compra cara a producto propio
+        </h2>
+        <div class="reveal-item space-y-6 md:space-y-7 max-w-[44ch]" style="--i:1">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.45);">Reto</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.78);">
+              Cliente con estaciones de carga y alquiler de bicicletas eléctricas en ayuntamientos. Compraba en España a coste muy elevado, con robos de asientos y cestas, fallos en la pata de soporte, batería y otros problemas de uso intensivo.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.45);">Qué hicimos</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.78);">
+              Checklist de fallos, análisis de empresas de alquiler en USA, informe de proveedores, viaje a China y Taiwán con el CEO, muestras, rediseño y, al subir el arancel, una nueva solución legal al 10%.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.45);">Resultado</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.78);">
+              Fabricante y bicicleta definidos, pedido de fabricación iniciado y operación de importación con un 10% de arancel de forma totalmente legal.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative w-full max-w-[360px] md:max-w-[480px] mx-auto lg:ml-auto lg:mr-0" data-reveal="side" data-reveal-from="right">
+        <img
+          src="/images/bicicleta-electrica-estacion.png"
+          alt="Estación de carga y bicicletas eléctricas para alquiler urbano"
+          class="w-full h-auto object-contain"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECORRIDO -->
+<section id="recorrido" class="relative overflow-hidden" style="background:#0A1628;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <div class="reveal-item flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8 pb-8 md:pb-10 md:border-b" style="--i:0;border-color:rgba(255,255,255,0.16);">
+      <img src="/images/lime-logo.svg" alt="Lime" class="w-full max-w-[140px] md:max-w-[180px] h-auto" />
+      <p class="text-lg md:text-xl max-w-[36ch] leading-relaxed md:text-right" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.66);">
+        Del diagnóstico del producto a la importación viable.
+      </p>
+    </div>
+
+    <div class="md:hidden overflow-hidden w-full mt-2 -mx-6">
+      <div
+        class="flex gap-3 overflow-x-auto snap-x snap-mandatory bici-no-scrollbar"
+        style="padding-left:24px;padding-right:24px;scroll-padding-left:24px;scroll-padding-right:24px;"
+      >
+        {milestones.map(([title, detail]) => (
+          <div class="snap-start shrink-0 w-[78vw] max-w-[320px] flex flex-col gap-3 p-5" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);">
+            <h3 class="text-xl font-bold tracking-tight m-0" style="font-family:'Space Grotesk',sans-serif;color:#FFFFFF;">{title}</h3>
+            <p class="text-lg leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">{detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <ol class="m-0 p-0 list-none hidden md:grid md:grid-cols-4">
+      {milestones.map(([title, detail], i) => (
+        <li
+          class:list={[
+            'reveal-item relative py-8',
+            i === 0 ? 'md:pr-8' : '',
+            i === milestones.length - 1 ? 'md:pl-8' : '',
+            i > 0 && i < milestones.length - 1 ? 'md:px-8' : '',
+            i > 0 ? 'md:border-l' : '',
+          ]}
+          style={`--i:${i + 1};border-color:rgba(255,255,255,0.16);`}
+        >
+          <h3 class="text-2xl font-bold mb-3 tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#FFFFFF;">{title}</h3>
+          <p class="text-base leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">{detail}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<!-- PROBLEMAS -->
+<section id="problemas" class="relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-4 max-w-[20ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#0A1628;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+      Checklist de fallos
+    </h2>
+    <p class="reveal-item text-lg max-w-[48ch] leading-relaxed mb-10 md:mb-12" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.72);">
+      Identificamos todos los problemas de la bicicleta para resolverlos uno a uno.
+    </p>
+    <div class="reveal-item grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4" style="--i:2">
+      {problems.map((item, i) => (
+        <div
+          class="relative overflow-hidden flex flex-col justify-between min-h-[140px] md:min-h-[200px] p-5 md:p-8"
+          style={`background:${i === 0 || i === 3 ? '#00DD00' : '#0A1628'};`}
+        >
+          <span
+            class="font-bold leading-none self-end"
+            style={`font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,8vw,5rem);letter-spacing:-0.04em;color:${i === 0 || i === 3 ? 'rgba(10,22,40,0.22)' : 'rgba(255,255,255,0.14)'};`}
+            aria-hidden="true"
+          >{String(i + 1).padStart(2, '0')}</span>
+          <h3
+            class="text-xl md:text-3xl font-bold tracking-tight m-0 leading-snug max-w-[12ch]"
+            style={`font-family:'Space Grotesk',sans-serif;color:${i === 0 || i === 3 ? '#0A1628' : '#FFFFFF'};letter-spacing:-0.03em;`}
+          >{item.title}</h3>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ASIA -->
+<section id="asia" class="relative overflow-hidden" style="background:#00DD00;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24">
+    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-center">
+      <div data-reveal>
+        <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-5 md:mb-6 max-w-[18ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#0A1628;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+          De USA a China y Taiwán
+        </h2>
+        <p class="reveal-item text-lg max-w-[42ch] leading-relaxed mb-8" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.78);">
+          Con business intelligence analizamos empresas americanas de alquiler urbano. Propusimos un reporte de importador en USA y proveedores —independientemente de que fuera China u otro país—.
+        </p>
+        <dl class="reveal-item m-0 grid gap-0 border-t" style="--i:2;border-color:rgba(10,22,40,0.2);">
+          {[
+            ['Informe', 'Proveedores y opciones de suministro.'],
+            ['Viaje', 'China: fabricantes y feria; Taiwán: segunda feria del sector.'],
+            ['Referencia', 'El mercado USA de sharing apuntaba a modelos tipo Lime.'],
+            ['Equipo', 'Acompañamos al CEO de movilidad para testar calidad.'],
+          ].map(([label, value]) => (
+            <div class="grid sm:grid-cols-[120px_1fr] gap-1.5 sm:gap-6 py-5 border-b" style="border-color:rgba(10,22,40,0.2);">
+              <dt class="text-base md:text-sm font-semibold" style="font-family:'Satoshi',sans-serif;color:#0A1628;">{label}</dt>
+              <dd class="m-0 text-lg md:text-base leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.72);">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <div class="flex justify-center lg:justify-end" data-reveal="side" data-reveal-from="right">
+        <img
+          src="/images/bicicleta-electrica-3.png"
+          alt="Visita a fábrica y producción de bicicletas eléctricas en Asia"
+          class="w-full max-w-[480px] h-auto object-cover mx-auto"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REDISEÑO -->
+<section id="rediseno" class="relative overflow-hidden" style="background:#0A1628;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-4 max-w-[18ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#FFFFFF;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+      Muestras, test y rediseño
+    </h2>
+    <p class="reveal-item text-lg max-w-[48ch] leading-relaxed mb-10 md:mb-12" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.66);">
+      Con fabricante y bicicleta definidos, pasamos a muestras y test para cerrar el producto de sharing.
+    </p>
+    <div class="reveal-item flex flex-col gap-0 border-t" style="--i:2;border-color:rgba(255,255,255,0.16);">
+      {fixes.map(([problem, title, detail]) => (
+        <div class="grid md:grid-cols-2 gap-4 md:gap-10 py-6 md:py-7 border-b" style="border-color:rgba(255,255,255,0.16);">
+          <p class="m-0 text-lg md:text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.4);">
+            <span class="block text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="color:rgba(255,255,255,0.35);">Fallo</span>
+            {problem}
+          </p>
+          <div>
+            <span class="block text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:#00DD00;">Solución</span>
+            <h3 class="text-xl md:text-2xl font-bold mb-1.5 tracking-tight m-0" style="font-family:'Space Grotesk',sans-serif;color:#FFFFFF;">{title}</h3>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.6);">{detail}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ARANCELES -->
+<section id="aranceles" class="relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-4 max-w-[18ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#0A1628;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+      El arancel cambió a mitad de pedido
+    </h2>
+    <p class="reveal-item text-lg max-w-[48ch] leading-relaxed mb-12 md:mb-16" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.72);">
+      En medio de la fabricación, la UE subió la tasa de aranceles de bicicletas eléctricas. Hubo que coordinar una nueva solución.
+    </p>
+
+    <div class="reveal-item grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 md:gap-8 items-end mb-12" style="--i:2">
+      <div>
+        <p class="m-0 font-bold tracking-tight leading-none mb-3" style="font-family:'Space Grotesk',sans-serif;color:#00DD00;font-size:clamp(3rem,8vw,5rem);letter-spacing:-0.04em;">14%</p>
+        <p class="m-0 text-sm font-semibold tracking-[0.14em] uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.45);">Antes</p>
+      </div>
+      <div>
+        <p class="m-0 font-bold tracking-tight leading-none mb-3" style="font-family:'Space Grotesk',sans-serif;color:#0A1628;font-size:clamp(3rem,8vw,5rem);letter-spacing:-0.04em;">73%</p>
+        <p class="m-0 text-sm font-semibold tracking-[0.14em] uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.45);">Subida UE</p>
+      </div>
+      <div>
+        <p class="m-0 font-bold tracking-tight leading-none mb-3" style="font-family:'Space Grotesk',sans-serif;color:#00DD00;font-size:clamp(3rem,8vw,5rem);letter-spacing:-0.04em;">10%</p>
+        <p class="m-0 text-sm font-semibold tracking-[0.14em] uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.45);">Operación final</p>
+      </div>
+    </div>
+
+    <p class="reveal-item text-lg md:text-xl max-w-[44ch] leading-relaxed m-0" style="--i:3;font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.78);">
+      Finalmente se realizó la operación con solo un 10% de arancel, de forma totalmente legal.
+    </p>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section id="cierre" class="relative overflow-hidden" style="background:#00DD00;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[0.95] mb-8 md:mb-10 text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#0A1628;font-size:clamp(2.8rem,12vw,5.5rem);letter-spacing:-0.04em;">
+      Bicicleta eléctrica
+    </h2>
+    <div class="reveal-item grid md:grid-cols-2 gap-8 md:gap-16 items-end border-t pt-8 md:pt-10" style="--i:1;border-color:rgba(10,22,40,0.2);">
+      <p class="text-lg md:text-xl leading-relaxed m-0 max-w-[36ch]" style="font-family:'Satoshi',sans-serif;color:rgba(10,22,40,0.72);">
+        Sharing urbano resuelto: producto, Asia y arancel viable.
+      </p>
+      <!-- CTA desktop -->
+      <div class="hidden md:flex flex-row justify-end items-start gap-4">
+        <a href="/empezar" class="animated-btn animated-btn--bici" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 48px 0 32px;font-size:15px;background-color:#0A1628;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(10,22,40,0.25);">
+          <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00DD00;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+        <a href="/metodologia-sorie" class="cta-slide cta-slide--bici" style="display:block;width:210px;height:52px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #0A1628;">
+          <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+            <span style="font-size:15px;font-weight:600;color:#0A1628;font-family:'Satoshi',sans-serif;">Ver SORIE™</span>
+          </div>
+          <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#0A1628;">
+            <span style="font-size:15px;font-weight:600;color:#00DD00;font-family:'Satoshi',sans-serif;">Metodología</span>
+          </div>
+        </a>
+      </div>
+      <!-- CTA mobile -->
+      <div class="md:hidden flex flex-col items-stretch gap-3">
+        <a href="/empezar" class="animated-btn animated-btn--bici" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#0A1628;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(10,22,40,0.25);">
+          <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#00DD00;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+        <a href="/metodologia-sorie" class="cta-slide cta-slide--bici cta-slide--mobile" style="display:block;width:100%;height:60px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #0A1628;">
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+            <span style="font-size:17px;font-weight:600;color:#0A1628;font-family:'Satoshi',sans-serif;">Ver SORIE™</span>
+          </div>
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#0A1628;">
+            <span style="font-size:17px;font-weight:600;color:#00DD00;font-family:'Satoshi',sans-serif;">Metodología</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<style is:global>
+  .animated-btn.animated-btn--bici:hover {
+    box-shadow: 0 0.625em 1em 0 rgba(10, 22, 40, 0.35) !important;
+  }
+  .animated-btn.animated-btn--bici:hover .arr-1 {
+    right: -25% !important;
+    stroke: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--bici:hover .arr-2 {
+    left: 16px !important;
+    stroke: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--bici:hover .text {
+    transform: translateX(14px) !important;
+    color: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--bici:hover .circle {
+    width: 400px !important;
+    height: 400px !important;
+    opacity: 1 !important;
+    background-color: #00DD00 !important;
+  }
+  .animated-btn.animated-btn--bici:active {
+    scale: 0.95 !important;
+    box-shadow: inset 0 0 0 3px #0A1628 !important;
+  }
+  .cta-slide--bici:hover div { transform: translateY(-52px); }
+  .cta-slide--bici.cta-slide--mobile:hover div { transform: translateY(-60px); }
+  .cta-slide--bici:active { scale: 0.95; }
+
+  .bici-no-scrollbar {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .bici-no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  /* Evita el shift a la derecha de los reveals laterales en móvil */
+  @media (max-width: 767px) {
+    html.js .bici-page [data-reveal="side"][data-reveal-from="right"],
+    html.js .bici-page [data-reveal="side"][data-reveal-from="left"] {
+      transform: translateY(12px);
+    }
+    html.js .bici-page [data-reveal="side"].is-on {
+      transform: none;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://unicornioazul.es/casos/bicicleta-electrica/#article",
+        "headline": "Bicicleta eléctrica: sharing y aranceles",
+        "name": "Bicicleta eléctrica — Caso de éxito",
+        "description": "Caso de éxito: bicicleta eléctrica para alquiler en ayuntamientos. Checklist de fallos, proveedores en Asia, rediseño y solución arancelaria del 73% al 10%.",
+        "url": "https://unicornioazul.es/casos/bicicleta-electrica/",
+        "inLanguage": "es",
+        "image": "https://unicornioazul.es/images/og-bicicleta-electrica.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://unicornioazul.es/images/logo-marino.png"
+          }
+        },
+        "about": {
+          "@type": "Product",
+          "name": "Bicicleta eléctrica para sharing urbano",
+          "description": "Bicicleta eléctrica rediseñada para alquiler en ayuntamientos, con importación legal al 10%."
+        },
+        "isPartOf": {
+          "@type": "CollectionPage",
+          "name": "Casos de éxito",
+          "url": "https://unicornioazul.es/casos"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://unicornioazul.es/casos/bicicleta-electrica/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://unicornioazul.es/casos/bicicleta-electrica/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://unicornioazul.es" },
+          { "@type": "ListItem", "position": 2, "name": "Casos de éxito", "item": "https://unicornioazul.es/casos" },
+          { "@type": "ListItem", "position": 3, "name": "Bicicleta eléctrica" }
+        ]
+      }
+    ]
+  }
+</script>
+
+</BaseLayout>

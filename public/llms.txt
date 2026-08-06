@@ -14,6 +14,10 @@ Unicornio Azul no es una agencia de marketing tradicional: construye negocios de
 - [Cómo trabajamos](https://unicornioazul.es/como-trabajamos): Proceso claro en 5 pasos
 - [Metodología SORIE™](https://unicornioazul.es/metodologia-sorie): Soluciones Reales para Ideas Extraordinarias
 - [Casos de éxito](https://unicornioazul.es/casos): Roll Order, bicicleta eléctrica y smart watch de pádel
+- [Caso Roll Order](https://unicornioazul.es/casos/roll-order): De la patente a Amazon — industrialización, listing y CES
+- [Caso Bicicleta eléctrica](https://unicornioazul.es/casos/bicicleta-electrica): Sharing urbano, Asia y aranceles
+- [Caso Utrilla](https://unicornioazul.es/casos/utrilla): De muebles a contract integral — Asia, Cantón y web
+- [Otras historias](https://unicornioazul.es/casos/otras-historias): SmartWatch Pádel, vehículos y música
 - [Sobre nosotros](https://unicornioazul.es/sobre-nosotros): Luis Chicharro y la firma Unicornio Azul
 - [Contacto](https://unicornioazul.es/contacto): Email, LinkedIn y vías de contacto
 - [Empezar](https://unicornioazul.es/empezar): Formulario paso a paso para contar tu proyecto
@@ -28,6 +32,10 @@ Unicornio Azul no es una agencia de marketing tradicional: construye negocios de
 - [How we work](https://unicornioazul.es/en/how-we-work): Clear 5-step process
 - [SORIE™ Methodology](https://unicornioazul.es/en/sorie-methodology): Strategy, Opportunity, Reality, Innovation, Execution
 - [Case studies](https://unicornioazul.es/en/case-studies): Real projects from patent to Amazon
+- [Roll Order case study](https://unicornioazul.es/en/case-studies/roll-order): From patent to Amazon — industrialization, listing and CES
+- [Electric bike case study](https://unicornioazul.es/en/case-studies/electric-bike): Urban sharing, Asia and tariffs
+- [Utrilla case study](https://unicornioazul.es/en/case-studies/utrilla): From furniture to full contract — Asia, Canton and web
+- [Other stories](https://unicornioazul.es/en/case-studies/other-stories): Padel smartwatch, vehicles and music
 - [About us](https://unicornioazul.es/en/about-us): Luis Chicharro and the Blue Unicorn team
 - [Contact](https://unicornioazul.es/en/contact): Ways to get in touch
 - [Get started](https://unicornioazul.es/en/get-started): Step-by-step project form

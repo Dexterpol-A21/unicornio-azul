@@ -1,0 +1,632 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const img = (file: string) => `/images/Utrilla%20(1)/${encodeURIComponent(file)}`;
+
+const milestones = [
+  ['Análisis', 'Informe de proveedores en Asia y ferias contract.'],
+  ['Oferta', 'Mapa para completar la habitación, no solo el mueble.'],
+  ['Suministro', 'Más de 50 proveedores y muestras a clientes.'],
+  ['Web', 'utrillacontract.com generando leads sin ads.'],
+];
+
+const gaps = [
+  {
+    title: 'Iluminación',
+    detail: 'Complemento habitual del mobiliario hotelero.',
+    icon: 'light',
+  },
+  {
+    title: 'Neveras',
+    detail: 'Equipamiento de habitación y apartamento.',
+    icon: 'fridge',
+  },
+  {
+    title: 'Cajas fuertes',
+    detail: 'Seguridad estándar en contract.',
+    icon: 'safe',
+  },
+  {
+    title: 'Ventiladores',
+    detail: 'Clima y confort en techo.',
+    icon: 'fan',
+  },
+];
+
+const prep = [
+  ['Informe Asia', 'Mapa de posibles proveedores para una oferta integral.'],
+  ['Ferias contract', 'Calendario de ferias internacionales dedicadas a hotelero.'],
+  ['Visita previa', 'Una persona del equipo en China evaluó si el mercado era interesante.'],
+];
+---
+
+<BaseLayout
+  title="Utrilla: de muebles a contract — Caso de éxito | Unicornio Azul"
+  description="Caso de éxito Utrilla: de fábrica de muebles a oferta contract integral. Proveedores en Asia, +50 suministros, Feria de Cantón y utrillacontract.com."
+  image="/images/og-utrilla.jpg"
+  imageAlt="Utrilla — caso de éxito: solución contract integral | Unicornio Azul"
+  showHeader={true}
+>
+<div class="ut-page overflow-x-clip">
+
+<!-- HERO -->
+<section class="relative md:min-h-[100svh] flex items-center overflow-hidden" style="background:#C2A582;">
+  <div class="w-full max-w-6xl mx-auto px-6 md:px-12 pt-10 md:pt-0 pb-8 md:pb-0">
+    <div class="flex flex-col md:grid md:grid-cols-2 md:gap-10 lg:gap-16 md:items-center gap-6">
+
+      <!-- Texto -->
+      <div data-reveal>
+        <h1 class="reveal-item font-bold tracking-tight leading-[0.95] mb-4 md:mb-5 text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(2.8rem,10vw,5.75rem);letter-spacing:-0.03em;">
+          Utrilla
+        </h1>
+        <p class="reveal-item text-lg md:text-xl max-w-[36ch] leading-relaxed mb-0 md:mb-10" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.72);">
+          De fábrica de muebles a solución contract integral: mobiliario, equipamiento y web.
+        </p>
+        <!-- CTA — desktop -->
+        <div class="reveal-item hidden md:flex flex-row items-center gap-4" style="--i:2">
+          <a href="/empezar" class="animated-btn animated-btn--utrilla" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 48px 0 32px;font-size:15px;background-color:#1C1C1C;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(28,28,28,0.25);">
+            <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Cuéntanos tu proyecto</span>
+            <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#C2A582;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+          </a>
+          <a href="https://www.utrillacontract.com/" target="_blank" rel="noopener" class="cta-slide cta-slide--utrilla" style="display:block;width:210px;height:52px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #1C1C1C;">
+            <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+              <span style="font-size:15px;font-weight:600;color:#1C1C1C;font-family:'Satoshi',sans-serif;">Ver web</span>
+            </div>
+            <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#1C1C1C;">
+              <span style="font-size:15px;font-weight:600;color:#C2A582;font-family:'Satoshi',sans-serif;">utrillacontract.com</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Collage — 3 fotos, aire en laptop -->
+      <div class="relative w-full max-w-[380px] lg:max-w-[460px] mx-auto md:ml-auto md:mr-0" data-reveal="side" data-reveal-from="right" aria-hidden="true">
+        <div class="ut-hero-collage grid grid-cols-2 gap-2.5 md:gap-3">
+          <img
+            src={img('Cliente-Utrilla-Feria-Canton.png')}
+            alt=""
+            class="w-full h-full object-cover row-span-2"
+            style="min-height:0;"
+          />
+          <img
+            src={img('fabrica-sofas-exterior.png')}
+            alt=""
+            class="w-full h-full object-cover"
+            style="min-height:0;"
+          />
+          <img
+            src={img('fabrica-casas-modulares.png')}
+            alt=""
+            class="w-full h-full object-cover"
+            style="min-height:0;"
+          />
+        </div>
+      </div>
+
+      <!-- CTA — mobile (debajo del collage) -->
+      <div class="md:hidden flex flex-col items-stretch gap-3">
+        <a href="/empezar" class="animated-btn animated-btn--utrilla" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#1C1C1C;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(28,28,28,0.25);">
+          <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#C2A582;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+        <a href="https://www.utrillacontract.com/" target="_blank" rel="noopener" class="cta-slide cta-slide--utrilla cta-slide--mobile" style="display:block;width:100%;height:60px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #1C1C1C;">
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+            <span style="font-size:17px;font-weight:600;color:#1C1C1C;font-family:'Satoshi',sans-serif;">Ver web</span>
+          </div>
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#1C1C1C;">
+            <span style="font-size:17px;font-weight:600;color:#C2A582;font-family:'Satoshi',sans-serif;">utrillacontract.com</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUNTO DE PARTIDA -->
+<section id="partida" class="relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div data-reveal>
+        <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-8 md:mb-10 text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(2.5rem,4vw,3rem);letter-spacing:-0.03em;">
+          De mueble a solución integral
+        </h2>
+
+        <div class="reveal-item space-y-6 md:space-y-7 max-w-[44ch]" style="--i:1">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.45);">Reto</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.78);">
+              Utrilla tenía fábrica de muebles tradicional y un enfoque contract para hoteles, residencias de estudiantes y apartamentos turísticos. Tenía al cliente del mobiliario, pero perdía iluminación, neveras, cajas fuertes, ventiladores de techo y otros elementos de una solución integral.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.45);">Qué hicimos</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.78);">
+              Análisis de negocio, mapa de proveedores en Asia, ferias contract, viaje a Cantón con el cliente, más de 50 proveedores, muestras a clientes internacionales y el desarrollo de utrillacontract.com.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.45);">Resultado</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.78);">
+              Oferta contract ampliada, canal de suministro en Asia y web generando leads de presupuesto en menos de un mes, sin inversión en publicidad.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual: trabajo real en terreno (feria + fábrica) -->
+      <div class="relative w-full max-w-[360px] md:max-w-[480px] mx-auto lg:ml-auto lg:mr-0 pb-8 md:pb-10" data-reveal="side" data-reveal-from="right">
+        <div class="relative">
+          <img
+            src={img('Cliente-Utrilla-Feria-Canton.png')}
+            alt="Cliente Utrilla en la Feria de Cantón evaluando proveedores contract"
+            class="w-full object-cover"
+            style="aspect-ratio:4/5;"
+          />
+          <!-- Marco acento marca Utrilla -->
+          <span class="pointer-events-none absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2" style="border-color:#C2A582;" aria-hidden="true"></span>
+          <span class="pointer-events-none absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2" style="border-color:#C2A582;" aria-hidden="true"></span>
+
+          <div class="absolute -bottom-8 left-0 md:-left-8 w-[58%] md:w-[52%]" style="box-shadow:0 16px 40px rgba(28,28,28,0.18);">
+            <img
+              src={img('utrilla-visitando-fabrica.png')}
+              alt="Visita a fábrica en Asia con documentación de proyecto hotelero"
+              class="w-full object-cover"
+              style="aspect-ratio:5/4;"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <p class="pt-12 md:pt-14 text-xs font-semibold tracking-[0.14em] uppercase m-0" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.45);">
+          Mobiliario · Fábricas · Contract
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECORRIDO -->
+<section id="recorrido" class="relative overflow-hidden" style="background:#1C1C1C;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <div class="reveal-item flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8 pb-8 md:pb-10 md:border-b" style="--i:0;border-color:rgba(255,255,255,0.16);">
+      <img src="/images/utrilla-logo-light.png" alt="Utrilla Mobiliario" class="w-full max-w-[200px] md:max-w-[260px] h-auto" />
+      <p class="text-lg md:text-xl max-w-[36ch] leading-relaxed md:text-right" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.66);">
+        Simplificar la operativa del interiorista y ampliar la facturación con una oferta completa.
+      </p>
+    </div>
+
+    <div class="md:hidden overflow-hidden w-full mt-2 -mx-6 max-w-[100vw]">
+      <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory ut-no-scrollbar" style="padding-left:24px;padding-right:24px;scroll-padding-left:24px;scroll-padding-right:24px;">
+        {milestones.map(([title, detail]) => (
+          <div class="snap-start shrink-0 w-[78vw] max-w-[320px] flex flex-col gap-3 p-5" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);">
+            <h3 class="text-xl font-bold tracking-tight m-0" style="font-family:'Space Grotesk',sans-serif;color:#FFFFFF;">{title}</h3>
+            <p class="text-lg leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">{detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <ol class="m-0 p-0 list-none hidden md:grid md:grid-cols-4">
+      {milestones.map(([title, detail], i) => (
+        <li
+          class:list={[
+            'reveal-item relative py-8',
+            i === 0 ? 'md:pr-8' : '',
+            i === milestones.length - 1 ? 'md:pl-8' : '',
+            i > 0 && i < milestones.length - 1 ? 'md:px-8' : '',
+            i > 0 ? 'md:border-l' : '',
+          ]}
+          style={`--i:${i + 1};border-color:rgba(255,255,255,0.16);`}
+        >
+          <h3 class="text-2xl font-bold mb-3 tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#FFFFFF;">{title}</h3>
+          <p class="text-base leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">{detail}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<!-- OPORTUNIDAD — GAPS -->
+<section id="oportunidad" class="relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-4 max-w-[22ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+      Lo que se perdía en cada proyecto
+    </h2>
+    <p class="reveal-item text-lg max-w-[48ch] leading-relaxed mb-10 md:mb-12" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.72);">
+      El mobiliario ya estaba. Faltaba el resto para una solución contract completa.
+    </p>
+    <div class="reveal-item grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5" style="--i:2">
+      {gaps.map((item) => (
+        <div class="flex flex-col gap-4 p-5 md:p-6" style="border:1px solid rgba(28,28,28,0.12);">
+          <div class="flex items-center justify-center w-14 h-14 md:w-16 md:h-16" style="background:#C2A582;" aria-hidden="true">
+            {item.icon === 'light' && (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18h6" />
+                <path d="M10 21h4" />
+                <path d="M12 3a6 6 0 0 0-3.5 10.8c.6.5 1 1.3 1 2.2V17h5v-.999c0-.9.4-1.7 1-2.2A6 6 0 0 0 12 3Z" />
+              </svg>
+            )}
+            {item.icon === 'fridge' && (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="1.5" />
+                <path d="M5 10h14" />
+                <path d="M9 6v2" />
+                <path d="M9 13v3" />
+              </svg>
+            )}
+            {item.icon === 'safe' && (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="1.5" />
+                <circle cx="12" cy="12" r="3.5" />
+                <circle cx="12" cy="12" r="1" fill="#1C1C1C" stroke="none" />
+                <path d="M18.5 8v.01" />
+              </svg>
+            )}
+            {item.icon === 'fan' && (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="2" />
+                <ellipse cx="12" cy="5.5" rx="3.2" ry="4.2" />
+                <ellipse cx="17.6" cy="15.2" rx="3.2" ry="4.2" transform="rotate(120 17.6 15.2)" />
+                <ellipse cx="6.4" cy="15.2" rx="3.2" ry="4.2" transform="rotate(-120 6.4 15.2)" />
+              </svg>
+            )}
+          </div>
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold mb-2 tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1C1C1C;">{item.title}</h3>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.6);">{item.detail}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- PREPARACIÓN -->
+<section id="preparacion" class="relative overflow-hidden" style="background:#C2A582;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24">
+    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
+      <div data-reveal>
+        <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-5 md:mb-6 max-w-[16ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+          Antes del viaje
+        </h2>
+        <p class="reveal-item text-lg max-w-[40ch] leading-relaxed mb-8 md:mb-10" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.72);">
+          No fuimos a China a explorar a ciegas: primero cerramos el análisis de negocio.
+        </p>
+        <dl class="reveal-item m-0 grid gap-0 border-t" style="--i:2;border-color:rgba(28,28,28,0.2);">
+          {prep.map(([label, value]) => (
+            <div class="grid sm:grid-cols-[140px_1fr] gap-1.5 sm:gap-6 py-5 border-b" style="border-color:rgba(28,28,28,0.2);">
+              <dt class="text-base md:text-sm font-semibold" style="font-family:'Satoshi',sans-serif;color:#1C1C1C;">{label}</dt>
+              <dd class="m-0 text-lg md:text-base leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.72);">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <div class="flex justify-start md:justify-center" data-reveal="side" data-reveal-from="right">
+        <img
+          src={img('Luis Chicharro-Feria-Canton.png')}
+          alt="Equipo de Unicornio Azul en feria en China evaluando el mercado contract"
+          class="w-full max-w-[360px] md:max-w-[480px] h-auto object-cover mx-auto"
+          loading="lazy"
+          style="aspect-ratio:4/5;object-position:center;"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CANTÓN -->
+<section id="canton" class="relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-4 max-w-[18ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+      Feria de Cantón y fábricas
+    </h2>
+    <p class="reveal-item text-lg max-w-[48ch] leading-relaxed mb-10 md:mb-12" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.72);">
+      Programamos el viaje con el cliente: feria del Cantón y fábricas relacionadas con su negocio para evaluar colaboración y compra.
+    </p>
+
+    <div class="reveal-item grid md:grid-cols-2 gap-4 md:gap-5 mb-10 md:mb-14" style="--i:2">
+      <img
+        src={img('Cliente-Utrilla-Feria-Canton (2).png')}
+        alt="Cliente Utrilla en stand de la Feria de Cantón"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        style="aspect-ratio:4/3;"
+      />
+      <img
+        src={img('utrilla-visitando-fabrica.png')}
+        alt="Utrilla revisando catálogos en visita a fábrica en China"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        style="aspect-ratio:4/3;"
+      />
+    </div>
+
+    <div class="reveal-item grid md:grid-cols-2 gap-10 md:gap-16 items-end border-t pt-8 md:pt-10" style="--i:3;border-color:rgba(28,28,28,0.16);">
+      <p class="m-0 text-lg md:text-xl leading-relaxed max-w-[36ch]" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.72);">
+        Encontramos más de 50 proveedores para suministrar todos los elementos que necesitaba la oferta contract.
+      </p>
+      <p class="m-0 font-bold tracking-tight leading-[0.95] md:text-right hidden md:block" style="font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(3rem,8vw,5.5rem);letter-spacing:-0.04em;">
+        +50
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- AMPLIACIÓN — MODULAR + STEEL -->
+<section id="ampliacion" class="relative overflow-hidden" style="background:#1C1C1C;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-4 max-w-[20ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#FFFFFF;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+      Casas modulares y steel frame
+    </h2>
+    <p class="reveal-item text-lg max-w-[48ch] leading-relaxed mb-10 md:mb-12" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.66);">
+      Aprovechando el viaje, el cliente también tenía interés en compra de casas modulares y steel frame. Visitamos fábricas y una feria que coincidía en tiempo y ubicaciones cercanas.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8 md:gap-10">
+      <div class="reveal-item" style="--i:2">
+        <img
+          src={img('fabrica-casas-modulares.png')}
+          alt="Visita a fábrica de casas modulares en China"
+          class="w-full object-cover mb-5"
+          loading="lazy"
+          style="aspect-ratio:16/10;"
+        />
+        <h3 class="text-xl md:text-2xl font-bold mb-2 tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#C2A582;">Casas modulares</h3>
+        <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.6);">
+          Evaluación in situ de proveedores y capacidad de suministro.
+        </p>
+      </div>
+      <div class="reveal-item" style="--i:3">
+        <img
+          src={img('fabrica-steel-frame.png')}
+          alt="Visita a fábrica de steel frame en China"
+          class="w-full object-cover mb-5"
+          loading="lazy"
+          style="aspect-ratio:16/10;"
+        />
+        <h3 class="text-xl md:text-2xl font-bold mb-2 tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#C2A582;">Steel frame</h3>
+        <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.6);">
+          Misma ruta: feria cercana y fábricas para valorar colaboración.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MUESTRAS -->
+<section id="muestras" class="relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24">
+    <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-16 items-center">
+      <div data-reveal>
+        <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-5 md:mb-6 max-w-[14ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+          Muestras al cliente final
+        </h2>
+        <p class="reveal-item text-lg max-w-[40ch] leading-relaxed m-0" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.72);">
+          Comenzamos la fase de compra de muestras y envío directo a sus clientes internacionales.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 md:gap-4 w-full min-w-0" data-reveal="side" data-reveal-from="right">
+        <img
+          src={img('fabrica-sofas-exterior.png')}
+          alt="Fábrica de sofás de exterior visitada con Utrilla"
+          class="w-full min-w-0 object-cover"
+          loading="lazy"
+          style="aspect-ratio:3/4;"
+        />
+        <img
+          src={img('fabrica-sofas-exterior (2).png')}
+          alt="Línea de producción de sofás de exterior en Asia"
+          class="w-full min-w-0 object-cover mt-6 md:mt-12"
+          loading="lazy"
+          style="aspect-ratio:3/4;"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEB + MARKETING -->
+<section id="web" class="relative overflow-hidden" style="background:#C2A582;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-10 md:mb-14 text-center text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+      De Asia a la web
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16">
+      <div class="reveal-item" style="--i:1">
+        <h3 class="m-0 mb-4 font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(2.25rem,5vw,3rem);letter-spacing:-0.03em;">utrillacontract.com</h3>
+        <p class="m-0 mb-4 text-lg leading-relaxed max-w-[40ch]" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.78);">
+          De regreso, Utrilla pidió ayuda para amplificar la oferta y buscar clientes internacionales. Generamos la web contract.
+        </p>
+        <p class="m-0 text-base md:text-sm font-semibold" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.5);">Desarrollo web · Oferta ampliada · Clientes internacionales</p>
+      </div>
+
+      <div class="reveal-item" style="--i:2">
+        <h3 class="m-0 mb-4 font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(2.25rem,5vw,3rem);letter-spacing:-0.03em;">Leads en &lt;1 mes</h3>
+        <p class="m-0 mb-4 text-lg leading-relaxed max-w-[40ch]" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.78);">
+          En menos de un mes ya generaba leads para presupuestos, sin inversión en publicidad. Arrancamos marketing, LinkedIn y posicionamiento web.
+        </p>
+        <p class="m-0 text-base md:text-sm font-semibold" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.5);">Sin ads · LinkedIn · SEO · Marketing</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section id="cierre" class="relative overflow-hidden" style="background:#C2A582;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[0.9] mb-8 md:mb-10 text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1C1C1C;font-size:clamp(2.8rem,12vw,8rem);letter-spacing:-0.04em;">
+      Utrilla
+    </h2>
+    <div class="reveal-item grid md:grid-cols-2 gap-8 md:gap-16 items-end border-t pt-8 md:pt-10" style="--i:1;border-color:rgba(28,28,28,0.2);">
+      <p class="text-lg md:text-xl leading-relaxed m-0 max-w-[36ch]" style="font-family:'Satoshi',sans-serif;color:rgba(28,28,28,0.72);">
+        De mobiliario a solución contract integral: equipamiento completo y web generando demanda.
+      </p>
+      <!-- CTA desktop -->
+      <div class="hidden md:flex flex-row justify-end items-start gap-4">
+        <a href="/empezar" class="animated-btn animated-btn--utrilla" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 48px 0 32px;font-size:15px;background-color:#1C1C1C;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(28,28,28,0.25);">
+          <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#C2A582;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+        <a href="https://www.utrillacontract.com/" target="_blank" rel="noopener" class="cta-slide cta-slide--utrilla" style="display:block;width:210px;height:52px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #1C1C1C;">
+          <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+            <span style="font-size:15px;font-weight:600;color:#1C1C1C;font-family:'Satoshi',sans-serif;">Ver web</span>
+          </div>
+          <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#1C1C1C;">
+            <span style="font-size:15px;font-weight:600;color:#C2A582;font-family:'Satoshi',sans-serif;">utrillacontract.com</span>
+          </div>
+        </a>
+      </div>
+      <!-- CTA mobile -->
+      <div class="md:hidden flex flex-col items-stretch gap-3">
+        <a href="/empezar" class="animated-btn animated-btn--utrilla" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#1C1C1C;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(28,28,28,0.25);">
+          <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#C2A582;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+        <a href="https://www.utrillacontract.com/" target="_blank" rel="noopener" class="cta-slide cta-slide--utrilla cta-slide--mobile" style="display:block;width:100%;height:60px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #1C1C1C;">
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+            <span style="font-size:17px;font-weight:600;color:#1C1C1C;font-family:'Satoshi',sans-serif;">Ver web</span>
+          </div>
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#1C1C1C;">
+            <span style="font-size:17px;font-weight:600;color:#C2A582;font-family:'Satoshi',sans-serif;">utrillacontract.com</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .animated-btn.animated-btn--utrilla:hover {
+    box-shadow: 0 0.625em 1em 0 rgba(0, 0, 0, 0.35) !important;
+  }
+  .animated-btn.animated-btn--utrilla:hover .arr-1 {
+    right: -25% !important;
+    stroke: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--utrilla:hover .arr-2 {
+    left: 16px !important;
+    stroke: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--utrilla:hover .text {
+    transform: translateX(14px) !important;
+    color: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--utrilla:hover .circle {
+    width: 400px !important;
+    height: 400px !important;
+    opacity: 1 !important;
+    background-color: #C2A582 !important;
+  }
+  .animated-btn.animated-btn--utrilla:active {
+    scale: 0.95 !important;
+    box-shadow: inset 0 0 0 3px #1C1C1C !important;
+  }
+  .cta-slide--utrilla:hover div { transform: translateY(-52px); }
+  .cta-slide--utrilla.cta-slide--mobile:hover div { transform: translateY(-60px); }
+  .cta-slide--utrilla:active { scale: 0.95; }
+
+  .ut-hero-collage {
+    aspect-ratio: 5 / 6;
+    grid-template-rows: 1fr 1fr;
+  }
+  .ut-no-scrollbar {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .ut-no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  /* Evita que los reveal laterales empujen el ancho del documento en móvil */
+  @media (max-width: 767px) {
+    html.js .ut-page [data-reveal="side"][data-reveal-from="right"],
+    html.js .ut-page [data-reveal="side"][data-reveal-from="left"] {
+      transform: translateY(12px);
+    }
+    html.js .ut-page [data-reveal="side"].is-on {
+      transform: none;
+    }
+  }
+  @media (min-width: 768px) {
+    .ut-hero-collage {
+      aspect-ratio: auto;
+      height: min(46vh, 400px);
+    }
+  }
+  @media (min-width: 1280px) {
+    .ut-hero-collage {
+      height: min(52vh, 460px);
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://unicornioazul.es/casos/utrilla/#article",
+        "headline": "Utrilla: de muebles a contract",
+        "name": "Utrilla — Caso de éxito",
+        "description": "Caso de éxito Utrilla: de fábrica de muebles a oferta contract integral. Proveedores en Asia, +50 suministros, Feria de Cantón y utrillacontract.com.",
+        "url": "https://unicornioazul.es/casos/utrilla/",
+        "inLanguage": "es",
+        "image": "https://unicornioazul.es/images/og-utrilla.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://unicornioazul.es/images/logo-marino.png"
+          }
+        },
+        "about": {
+          "@type": "Organization",
+          "name": "Utrilla",
+          "url": "https://www.utrillacontract.com/",
+          "description": "Solución contract integral: mobiliario, equipamiento y web."
+        },
+        "isPartOf": {
+          "@type": "CollectionPage",
+          "name": "Casos de éxito",
+          "url": "https://unicornioazul.es/casos"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://unicornioazul.es/casos/utrilla/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://unicornioazul.es/casos/utrilla/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://unicornioazul.es" },
+          { "@type": "ListItem", "position": 2, "name": "Casos de éxito", "item": "https://unicornioazul.es/casos" },
+          { "@type": "ListItem", "position": 3, "name": "Utrilla" }
+        ]
+      }
+    ]
+  }
+</script>
+
+</div>
+</BaseLayout>

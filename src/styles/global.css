@@ -110,7 +110,7 @@ html:not(.lenis) {
 
   *::-webkit-scrollbar {
     width: 4px;
-    height: 4px;
+    height: 0;
   }
 
   *::-webkit-scrollbar-track {
@@ -216,9 +216,9 @@ body.has-header main section:first-of-type {
    QUE HACEMOS — PILLAR CARDS
    ═══════════════════════════════════════════════ */
 
-/* Card: solo estructura */
+/* Card: clip scaled ornaments so they never leave the viewport */
 .pillar-card {
-  overflow: visible;
+  overflow: hidden;
 }
 
 /* Qué hacemos — clip overflow for side slides */
@@ -232,9 +232,19 @@ body.has-header main section:first-of-type {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Grow from the anchored side so hover doesn't spill off-screen */
+.pillar-card[data-side-reveal='left'] .pillar-shape {
+  transform-origin: left center;
+}
+.pillar-card[data-side-reveal='right'] .pillar-shape {
+  transform-origin: right center;
+}
+
 /* Contenido: tambien escala con el hover */
 .pillar-content {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Room for list + CTA under item 03 (CTA no longer a side column) */
+  max-height: none !important;
 }
 
 /* CTA: oculto por defecto, aparece solo en hover */
@@ -247,13 +257,59 @@ body.has-header main section:first-of-type {
 /* Hover effects — solo en dispositivos con hover real */
 @media (hover: hover) {
   .pillar-card:hover .pillar-shape {
-    transform: scale(1.1);
+    transform: scale(1.06);
   }
   .pillar-card:hover .pillar-content {
-    transform: translateY(-50%) scale(1.08) !important;
+    transform: translateY(-50%) scale(1.04) !important;
   }
   .pillar-card:hover .pillar-cta {
     opacity: 1;
+  }
+}
+
+/* Laptop / mid desktops: keep content + CTA inside the blue figure */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .pillar-content {
+    gap: 1rem !important;
+    left: calc(8% + 56px) !important;
+    right: 6vw !important;
+    max-height: none !important;
+  }
+
+  .pillar-content h3 {
+    font-size: clamp(1.85rem, 3.4vw, 2.65rem) !important;
+    line-height: 0.95 !important;
+  }
+
+  /* Services column: compact so title + 01–03 + CTA fit in the blue bar */
+  .pillar-content > div {
+    gap: 0.65rem !important;
+  }
+
+  .pillar-content > div .text-lg {
+    font-size: 0.95rem !important;
+  }
+
+  .pillar-content > div .text-base {
+    font-size: 0.8rem !important;
+  }
+
+  .pillar-content > div .text-2xl {
+    font-size: 1.15rem !important;
+  }
+
+  .pillar-card .pillar-cta {
+    font-size: 0.9rem !important;
+    margin-top: 0.2rem !important;
+  }
+}
+
+@media (hover: hover) and (min-width: 768px) and (max-width: 1279px) {
+  .pillar-card:hover .pillar-shape {
+    transform: scale(1.03);
+  }
+  .pillar-card:hover .pillar-content {
+    transform: translateY(-50%) scale(1.02) !important;
   }
 }
 

@@ -1,0 +1,487 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
+
+const milestones = [
+  ['Patente', 'Una idea protegida, todavía sin producto.'],
+  ['Industrialización', 'Fábrica, moldes y costes viables.'],
+  ['Mercado', 'Certificación, importación y Amazon.'],
+  ['Proyección', 'Presentación en el CES de Las Vegas.'],
+];
+
+const markets = ['USA', 'Alemania', 'Italia', 'Francia', 'UK', 'España'];
+
+const cables = [
+  ['USB-C', 'Android y dispositivos compatibles.'],
+  ['Lightning', 'iPhone y ecosistema Apple.'],
+];
+---
+
+<BaseLayout
+  title="Roll Order: de la patente a Amazon — Caso de éxito | Unicornio Azul"
+  description="Caso de éxito Roll Order: de un documento de patente a un producto industrializado, importado y vendiendo en Amazon. Moldes, certificación, listing y CES Las Vegas."
+  image="/images/og-roll-order.jpg"
+  imageAlt="Roll Order — caso de éxito: de la patente a Amazon | Unicornio Azul"
+  showHeader={true}
+>
+
+<!-- HERO -->
+<section class="relative md:min-h-[100svh] flex items-center overflow-hidden" style="background:#FFD000;">
+  <div class="w-full max-w-6xl mx-auto px-6 md:px-12 pt-10 md:pt-0 pb-8 md:pb-0">
+    <div class="flex flex-col md:grid md:grid-cols-2 md:gap-16 md:items-center gap-6">
+
+      <!-- Texto -->
+      <div data-reveal>
+        <h1 class="reveal-item font-bold tracking-tight leading-[0.95] mb-4 md:mb-5 text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1D1D1B;font-size:clamp(2.8rem,10vw,5.75rem);letter-spacing:-0.03em;">
+          Roll Order
+        </h1>
+        <p class="reveal-item text-lg md:text-xl max-w-[36ch] leading-relaxed mb-0 md:mb-10" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.72);">
+          De un documento de patente a un producto vendiendo en Amazon.
+        </p>
+        <!-- CTA — desktop -->
+        <div class="reveal-item hidden md:flex flex-row items-center gap-4" style="--i:2">
+          <a href="/empezar" class="animated-btn animated-btn--roll" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 48px 0 32px;font-size:15px;background-color:#1D1D1B;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#FFFFFF;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(29,29,27,0.25);">
+            <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Cuéntanos tu proyecto</span>
+            <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#FFD000;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+          </a>
+          <a href="https://roll-order.com/" target="_blank" rel="noopener" class="cta-slide" style="display:block;width:190px;height:52px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #1D1D1B;">
+            <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+              <span style="font-size:15px;font-weight:600;color:#1D1D1B;font-family:'Satoshi',sans-serif;">Ver producto</span>
+            </div>
+            <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#1D1D1B;">
+              <span style="font-size:15px;font-weight:600;color:#FFD000;font-family:'Satoshi',sans-serif;">roll-order.com</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Imagen -->
+      <div class="relative flex items-center justify-center md:justify-end" data-reveal="side" data-reveal-from="right">
+        <img src="/images/rollordernof-menu.png" alt="Cable enrollable Roll Order — producto industrializado vendido en Amazon" class="w-full max-w-[360px] md:max-w-[480px] h-auto object-contain drop-shadow-2xl" />
+      </div>
+
+      <!-- CTA — mobile (debajo de la ilustración) -->
+      <div class="md:hidden flex flex-col items-stretch gap-3">
+        <a href="/empezar" class="animated-btn animated-btn--roll" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#1D1D1B;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#FFFFFF;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(29,29,27,0.25);">
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#FFD000;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+        <a href="https://roll-order.com/" target="_blank" rel="noopener" class="cta-slide cta-slide--mobile" style="display:block;width:100%;height:60px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #1D1D1B;">
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+            <span style="font-size:17px;font-weight:600;color:#1D1D1B;font-family:'Satoshi',sans-serif;">Ver producto</span>
+          </div>
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#1D1D1B;">
+            <span style="font-size:17px;font-weight:600;color:#FFD000;font-family:'Satoshi',sans-serif;">roll-order.com</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUNTO DE PARTIDA -->
+<section id="partida" class="relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div data-reveal>
+        <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-8 md:mb-10 text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1D1D1B;font-size:clamp(2.5rem,4vw,3rem);letter-spacing:-0.03em;">
+          De patente al mercado
+        </h2>
+
+        <div class="reveal-item space-y-6 md:space-y-7 max-w-[44ch]" style="--i:1">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.45);">Reto</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.78);">
+              El cliente llegó con un documento de patente y una idea clara de cómo quería el producto. Tenía la idea protegida, pero no el producto, ni la fábrica, ni el canal de venta.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.45);">Qué hicimos</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.78);">
+              Desarrollamos todo el proceso: quién y dónde fabricar, moldes, costes, certificación, importación, decisiones de mercado, listing en Amazon, campañas y proyección internacional.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.45);">Resultado</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.78);">
+              Producto industrializado, importado y lanzado en Amazon. La patente dejó de ser un documento y se convirtió en un negocio en el mercado.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual: pipeline vertical (igual que /casos, paleta Roll) -->
+      <div class="relative flex justify-center lg:justify-end" aria-hidden="true">
+        <div class="roll-pl relative w-full max-w-[420px]" data-scroll-timeline>
+          <div
+            class="roll-pl-track"
+            style="position:absolute;left:16px;top:calc(1.45rem + 16px);bottom:calc(1.45rem + 16px);width:3px;background:rgba(201,160,0,0.2);transform:translateX(-50%);z-index:0;"
+          >
+            <div
+              class="roll-pl-fill"
+              data-timeline-fill
+              style="position:absolute;top:0;left:0;width:100%;height:100%;transform-origin:top;transform:scaleY(0);background:linear-gradient(to bottom,#C9A000,#DBB000,#E8C200,#F5CE00,#FFD000);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);"
+            ></div>
+          </div>
+          <ol class="flex flex-col gap-0 m-0 p-0 list-none relative" style="z-index:1;">
+            {[
+              { label: 'Patente', color: '#C9A000', filled: true },
+              { label: 'Producto', color: '#DBB000', filled: false },
+              { label: 'Fábrica', color: '#E8C200', filled: false },
+              { label: 'Importación', color: '#F5CE00', filled: false },
+              { label: 'Amazon', color: '#FFD000', filled: false },
+            ].map((step, i) => (
+              <li
+                class="roll-pl-step relative flex items-center gap-6 py-[1.45rem]"
+                data-timeline-item
+                data-paso={i + 1}
+                style={`--c:${step.color};`}
+              >
+                <span
+                  class="roll-pl-dot shrink-0 box-border"
+                  data-timeline-node
+                  data-paso={i + 1}
+                  data-color={step.color}
+                  style={`width:32px;height:32px;border-radius:50%;border:3px solid ${step.color};background:${step.filled ? step.color : '#FFFFFF'};transition:background 0.45s ease,border-color 0.45s ease;`}
+                ></span>
+                <span
+                  class="roll-pl-label font-bold tracking-tight"
+                  style={`font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);letter-spacing:-0.03em;line-height:1.1;color:${step.color};`}
+                >
+                  {step.label}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECORRIDO -->
+<section id="recorrido" class="relative overflow-hidden" style="background:#101010;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <div class="reveal-item flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8 pb-8 md:pb-10 md:border-b" style="--i:0;border-color:rgba(255,255,255,0.16);">
+      <img src="/images/roll-logo-01.svg" alt="Roll Order" class="w-full max-w-[180px] md:max-w-[230px] h-auto" />
+      <p class="text-lg md:text-xl max-w-[36ch] leading-relaxed md:text-right" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.66);">
+        El valor no estuvo en una única tarea, sino en conectar todo el recorrido.
+      </p>
+    </div>
+
+    <!-- Mobile: horizontal gallery -->
+    <div class="md:hidden overflow-hidden w-full mt-2 -mx-6">
+      <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory" style="scrollbar-width:none;-ms-overflow-style:none;padding-left:24px;padding-right:24px;scroll-padding-left:24px;scroll-padding-right:24px;">
+        {milestones.map(([title, detail]) => (
+          <div class="snap-start shrink-0 w-[78vw] max-w-[320px] flex flex-col gap-3 p-5 rounded-xl" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);">
+            <h3 class="text-xl font-bold tracking-tight m-0" style="font-family:'Space Grotesk',sans-serif;color:#FFFFFF;">{title}</h3>
+            <p class="text-lg leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">{detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Desktop: 4-col grid -->
+    <ol class="m-0 p-0 list-none hidden md:grid md:grid-cols-4">
+      {milestones.map(([title, detail], i) => (
+        <li
+          class:list={[
+            'reveal-item relative py-8',
+            i === 0 ? 'md:pr-8' : '',
+            i === milestones.length - 1 ? 'md:pl-8' : '',
+            i > 0 && i < milestones.length - 1 ? 'md:px-8' : '',
+            i > 0 ? 'md:border-l' : '',
+          ]}
+          style={`--i:${i + 1};border-color:rgba(255,255,255,0.16);`}
+        >
+          <h3 class="text-2xl font-bold mb-3 tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#FFFFFF;">{title}</h3>
+          <p class="text-base leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">{detail}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<!-- DECISIONES — DOSSIER -->
+<section id="decisiones" class="relative overflow-hidden" style="background:#FFD000;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24">
+    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
+      <div data-reveal>
+        <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-5 md:mb-6 max-w-[16ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1D1D1B;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+          Del coste a la certificación
+        </h2>
+        <p class="reveal-item text-lg max-w-[40ch] leading-relaxed mb-8 md:mb-10" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.72);">
+          No solo diseñamos el producto: cerramos la viabilidad económica y técnica antes de fabricar.
+        </p>
+
+        <dl class="reveal-item m-0 grid gap-0 border-t" style="--i:2;border-color:rgba(29,29,27,0.2);">
+          {[
+            ['Fábrica', 'Evaluamos quién y dónde se podía fabricar el producto.'],
+            ['Moldes', 'Coste por una fracción de la oferta que el cliente había encontrado por sus medios.'],
+            ['Fabricación', 'Análisis completo de costes de producción.'],
+            ['CE / ROHS', 'Certificación, transporte e importación incluidos.'],
+          ].map(([label, value]) => (
+            <div class="grid sm:grid-cols-[140px_1fr] gap-1.5 sm:gap-6 py-5 border-b" style="border-color:rgba(29,29,27,0.2);">
+              <dt class="text-base md:text-sm font-semibold" style="font-family:'Satoshi',sans-serif;color:#1D1D1B;">{label}</dt>
+              <dd class="m-0 text-lg md:text-base leading-relaxed" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.72);">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <div class="flex justify-start md:justify-center" data-reveal="side" data-reveal-from="right">
+        <img
+          src="/images/roll-02.png"
+          alt="Detalle del producto Roll Order tras industrialización y certificación CE"
+          class="w-full max-w-[320px] md:max-w-[400px] h-auto object-contain -translate-x-2 md:translate-x-0"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MERCADO — COLOR + CABLES -->
+<section id="mercado" class="relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-4 max-w-[20ch] text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1D1D1B;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+      Color y conectores, con datos de Amazon
+    </h2>
+    <p class="reveal-item text-lg max-w-[48ch] leading-relaxed mb-10 md:mb-12" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.72);">
+      Antes de fabricar, validamos qué pedía el mercado real, no la intuición.
+    </p>
+
+    <!-- 6 marketplaces Amazon -->
+    <div class="reveal-item mb-12 md:mb-16" style="--i:2">
+      <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-5 md:mb-6" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.45);">
+        Ventas analizadas en Amazon
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-4 md:gap-y-5 gap-x-4">
+        {markets.map((m) => (
+          <p class="m-0 font-bold tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1D1D1B;font-size:clamp(1.35rem,2.5vw,1.65rem);letter-spacing:-0.02em;">
+            {m}
+          </p>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 lg:items-stretch">
+      <!-- Color -->
+      <div class="reveal-item flex flex-col h-full" style="--i:3">
+        <h3 class="text-xl md:text-2xl font-bold mb-4 tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1D1D1B;">Color: blanco vs negro</h3>
+        <p class="text-lg md:text-base leading-relaxed mb-8" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.72);">
+          Analizamos ventas de cargadores para móviles en Amazon. Había una diferencia absoluta de facturación a favor del blanco frente al negro.
+        </p>
+        <div class="grid grid-cols-2 gap-6 md:gap-8 mt-auto">
+          <div>
+            <div class="w-10 h-10 mb-4 border" style="background:#FFFFFF;border-color:rgba(29,29,27,0.2);" aria-hidden="true"></div>
+            <p class="text-base md:text-sm font-semibold mb-1" style="font-family:'Satoshi',sans-serif;color:#1D1D1B;">Blanco</p>
+            <p class="text-base md:text-sm leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.6);">Mayor facturación en los seis mercados.</p>
+          </div>
+          <div>
+            <div class="w-10 h-10 mb-4" style="background:#1D1D1B;" aria-hidden="true"></div>
+            <p class="text-base md:text-sm font-semibold mb-1" style="font-family:'Satoshi',sans-serif;color:#1D1D1B;">Negro</p>
+            <p class="text-base md:text-sm leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.6);">Menos demanda relativa en la categoría.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cables -->
+      <div class="reveal-item flex flex-col h-full" style="--i:4">
+        <h3 class="text-xl md:text-2xl font-bold mb-4 tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1D1D1B;">Tipos de cable</h3>
+        <p class="text-lg md:text-base leading-relaxed mb-8" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.72);">
+          Analizamos qué conectores vendían más en los mismos seis mercados: cables individuales y cargadores, incluyendo USB-C, Lightning y Micro USB. El surtido del producto quedó en los dos que hoy comercializa Roll Order.
+        </p>
+        <ul class="m-0 p-0 list-none grid gap-0 border-t mt-auto" style="border-color:rgba(29,29,27,0.16);">
+          {cables.map(([label, detail]) => (
+            <li class="grid sm:grid-cols-[140px_1fr] gap-1.5 sm:gap-6 py-5 border-b" style="border-color:rgba(29,29,27,0.16);">
+              <span class="text-xl font-bold tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1D1D1B;">{label}</span>
+              <span class="text-base md:text-sm leading-relaxed self-center" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.6);">{detail}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANZAMIENTO — AMAZON + CES -->
+<section id="lanzamiento" class="relative overflow-hidden" style="background:#101010;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-10 md:mb-14 text-center text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#FFFFFF;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;">
+      De Amazon al CES
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16">
+      <div class="reveal-item" style="--i:1">
+        <h3 class="m-0 mb-4 font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#FFD000;font-size:clamp(2.25rem,5vw,3.25rem);letter-spacing:-0.03em;">Amazon</h3>
+        <p class="m-0 mb-4 text-lg leading-relaxed max-w-[40ch]" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.78);">
+          Gestionamos el listing del producto y las primeras campañas publicitarias para abrir el canal de venta.
+        </p>
+        <p class="m-0 text-base md:text-sm font-semibold" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.45);">Listing · Campañas · Canal operativo</p>
+      </div>
+
+      <div class="reveal-item" style="--i:2">
+        <h3 class="m-0 mb-4 font-bold tracking-tight leading-[1.05]" style="font-family:'Space Grotesk',sans-serif;color:#FFD000;font-size:clamp(2.25rem,5vw,3.25rem);letter-spacing:-0.03em;">CES Las Vegas</h3>
+        <p class="m-0 mb-4 text-lg leading-relaxed max-w-[40ch]" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.78);">
+          Invitados a presentar el producto en la zona de innovación. Asistimos con el cliente para apoyar la gestión comercial internacional.
+        </p>
+        <p class="m-0 text-base md:text-sm font-semibold" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.45);">Zona de innovación · Acompañamiento · Comercial internacional</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE — Marca primero -->
+<section id="producto-final" class="relative overflow-hidden" style="background:#FFD000;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[0.9] mb-8 md:mb-10 text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1D1D1B;font-size:clamp(2.8rem,12vw,8rem);letter-spacing:-0.04em;">
+      Roll Order
+    </h2>
+    <div class="reveal-item grid md:grid-cols-2 gap-8 md:gap-16 items-end border-t pt-8 md:pt-10" style="--i:1;border-color:rgba(29,29,27,0.2);">
+      <p class="text-lg md:text-xl leading-relaxed m-0 max-w-[36ch]" style="font-family:'Satoshi',sans-serif;color:rgba(29,29,27,0.72);">
+        De un documento de patente a un producto en el mercado, con Amazon y el CES.
+      </p>
+      <!-- CTA desktop -->
+      <div class="hidden md:flex flex-row justify-end items-start gap-4">
+        <a href="/empezar" class="animated-btn animated-btn--roll" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 48px 0 32px;font-size:15px;background-color:#1D1D1B;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#FFFFFF;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(29,29,27,0.25);">
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#FFD000;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+        <a href="https://roll-order.com/" target="_blank" rel="noopener" class="cta-slide" style="display:block;width:190px;height:52px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #1D1D1B;">
+          <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+            <span style="font-size:15px;font-weight:600;color:#1D1D1B;font-family:'Satoshi',sans-serif;">Ver producto</span>
+          </div>
+          <div style="height:52px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#1D1D1B;">
+            <span style="font-size:15px;font-weight:600;color:#FFD000;font-family:'Satoshi',sans-serif;">roll-order.com</span>
+          </div>
+        </a>
+      </div>
+      <!-- CTA mobile -->
+      <div class="md:hidden flex flex-col items-stretch gap-3">
+        <a href="/empezar" class="animated-btn animated-btn--roll" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:#1D1D1B;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#FFFFFF;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(29,29,27,0.25);">
+          <span class="text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);">Cuéntanos tu proyecto</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:#FFD000;border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);"></span>
+        </a>
+        <a href="https://roll-order.com/" target="_blank" rel="noopener" class="cta-slide cta-slide--mobile" style="display:block;width:100%;height:60px;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 2px #1D1D1B;">
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;">
+            <span style="font-size:17px;font-weight:600;color:#1D1D1B;font-family:'Satoshi',sans-serif;">Ver producto</span>
+          </div>
+          <div style="height:60px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(.16,1,.3,1);flex-shrink:0;background:#1D1D1B;">
+            <span style="font-size:17px;font-weight:600;color:#FFD000;font-family:'Satoshi',sans-serif;">roll-order.com</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .animated-btn.animated-btn--roll:hover {
+    box-shadow: 0 0.625em 1em 0 rgba(29, 29, 27, 0.35) !important;
+  }
+  .animated-btn.animated-btn--roll:hover .arr-1 {
+    right: -25% !important;
+    stroke: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--roll:hover .arr-2 {
+    left: 16px !important;
+    stroke: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--roll:hover .text {
+    transform: translateX(14px) !important;
+    color: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--roll:hover .circle {
+    width: 400px !important;
+    height: 400px !important;
+    opacity: 1 !important;
+    background-color: #FFD000 !important;
+  }
+  .animated-btn.animated-btn--roll:active {
+    scale: 0.95 !important;
+    box-shadow: inset 0 0 0 3px #1D1D1B !important;
+  }
+  .cta-slide:hover div { transform: translateY(-52px); }
+  .cta-slide.cta-slide--mobile:hover div { transform: translateY(-60px); }
+  .cta-slide:active { scale: 0.95; }
+
+  @media (max-width: 767px) {
+    .roll-pl-label {
+      font-size: 1.5rem !important;
+    }
+    .roll-pl-step {
+      gap: 1rem !important;
+      padding-top: 1.1rem !important;
+      padding-bottom: 1.1rem !important;
+    }
+  }
+</style>
+
+<ScrollTimelineScript />
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://unicornioazul.es/casos/roll-order/#article",
+        "headline": "Roll Order: de la patente a Amazon",
+        "name": "Roll Order — Caso de éxito",
+        "description": "Caso de éxito Roll Order: de un documento de patente a un producto industrializado, importado y vendiendo en Amazon. Moldes, certificación, listing y CES Las Vegas.",
+        "url": "https://unicornioazul.es/casos/roll-order/",
+        "inLanguage": "es",
+        "image": "https://unicornioazul.es/images/og-roll-order.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://unicornioazul.es/images/logo-marino.png"
+          }
+        },
+        "about": {
+          "@type": "Product",
+          "name": "Roll Order",
+          "url": "https://roll-order.com/",
+          "description": "Cable enrollable industrializado y lanzado en Amazon."
+        },
+        "isPartOf": {
+          "@type": "CollectionPage",
+          "name": "Casos de éxito",
+          "url": "https://unicornioazul.es/casos"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://unicornioazul.es/casos/roll-order/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://unicornioazul.es" },
+          { "@type": "ListItem", "position": 2, "name": "Casos de éxito", "item": "https://unicornioazul.es/casos" },
+          { "@type": "ListItem", "position": 3, "name": "Roll Order" }
+        ]
+      }
+    ]
+  }
+</script>
+
+</BaseLayout>

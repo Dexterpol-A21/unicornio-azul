@@ -22,6 +22,11 @@ const pathMap: Record<string, string> = {
   '/como-trabajamos#proceso': '/how-we-work#proceso',
   '/sobre-nosotros': '/about-us',
   '/casos': '/case-studies',
+  '/casos/roll-order': '/case-studies/roll-order',
+  '/casos/bicicleta-electrica': '/case-studies/electric-bike',
+  '/casos/utrilla': '/case-studies/utrilla',
+  '/casos/otras-historias': '/case-studies/other-stories',
+  '/casos/smartwatch-padel': '/case-studies/other-stories',
   '/contacto': '/contact',
   '/empezar': '/get-started',
   '/metodologia-sorie': '/sorie-methodology',
@@ -40,6 +45,11 @@ const reversePathMap: Record<string, string> = {
   '/how-we-work#proceso': '/como-trabajamos#proceso',
   '/about-us': '/sobre-nosotros',
   '/case-studies': '/casos',
+  '/case-studies/roll-order': '/casos/roll-order',
+  '/case-studies/electric-bike': '/casos/bicicleta-electrica',
+  '/case-studies/utrilla': '/casos/utrilla',
+  '/case-studies/other-stories': '/casos/otras-historias',
+  '/case-studies/padel-smartwatch': '/casos/otras-historias',
   '/contact': '/contacto',
   '/get-started': '/empezar',
   '/sorie-methodology': '/metodologia-sorie',
@@ -178,8 +188,64 @@ const langLabelDisplay = altLang === 'es' ? 'ES' : 'EN';
         </div>
       </div>
 
-      <!-- Casos -->
-      <a href={l(t('route.casos'))} class="nav-link px-5 py-3 rounded text-base font-semibold tracking-tight whitespace-nowrap">{t('nav.casos')}</a>
+      <!-- ▾ Casos — mega menu 4 opciones (mismo layout que Qué hacemos) -->
+      <div class="relative group/casos z-10">
+        <button class="nav-link-trigger px-5 py-3 rounded text-base font-semibold tracking-tight whitespace-nowrap">
+          {t('nav.casos')}
+        </button>
+        <span class="absolute left-0 top-full w-full h-4 z-20"></span>
+
+        <div class="mega-panel absolute top-full left-1/2 pt-4 z-30
+                    pointer-events-none opacity-0
+                    group-hover/casos:pointer-events-auto group-hover/casos:opacity-100
+                    transition-all duration-[400ms] ease-out">
+          <div class="mega-inner rounded-2xl p-5 border"
+               style="background: #ffffff; border-color: rgba(22,54,103,0.08); box-shadow: 0 20px 60px -12px rgba(22,54,103,0.15), 0 4px 16px -4px rgba(22,54,103,0.08);">
+            <div class="grid grid-cols-2 gap-3" style="width: clamp(640px, 68vw, 860px);">
+
+              <a href={l(t('route.caso_roll'))} class="mega-card group/card flex items-start gap-4 p-3 rounded-xl transition-all duration-300" style="--card-r: 255; --card-g: 208; --card-b: 0;">
+                <div class="mega-icon w-28 h-20 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center p-1.5" style="background: #F3F4F6;">
+                  <img src="/images/rollordernof-menu.png" alt="" class="no-hover-invert max-w-full max-h-full w-auto h-auto object-contain" />
+                </div>
+                <div class="flex flex-col gap-1 min-w-0">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #1D1D1B; font-family: 'Space Grotesk', sans-serif;">{t('nav.caso_roll')}</span>
+                  <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.caso_roll_desc')}</p>
+                </div>
+              </a>
+
+              <a href={l(t('route.caso_bici'))} class="mega-card group/card flex items-start gap-4 p-3 rounded-xl transition-all duration-300" style="--card-r: 0; --card-g: 221; --card-b: 0;">
+                <div class="mega-icon w-28 h-20 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center p-1.5" style="background: #F3F4F6;">
+                  <img src="/images/bicicleta-electrica-lime-2nof.png" alt="" class="no-hover-invert max-w-full max-h-full w-auto h-auto object-contain" />
+                </div>
+                <div class="flex flex-col gap-1 min-w-0">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #00DD00; font-family: 'Space Grotesk', sans-serif;">{t('nav.caso_bici')}</span>
+                  <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.caso_bici_desc')}</p>
+                </div>
+              </a>
+
+              <a href={l(t('route.caso_utrilla'))} class="mega-card group/card flex items-start gap-4 p-3 rounded-xl transition-all duration-300" style="--card-r: 194; --card-g: 165; --card-b: 130;">
+                <div class="mega-icon w-28 h-20 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center px-2 py-2" style="background: #F3F4F6;">
+                  <img src="/images/utrilla-logonof-menu.png" alt="" class="no-hover-invert max-w-full max-h-full w-auto h-auto object-contain" />
+                </div>
+                <div class="flex flex-col gap-1 min-w-0">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #8B7355; font-family: 'Space Grotesk', sans-serif;">{t('nav.caso_utrilla')}</span>
+                  <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.caso_utrilla_desc')}</p>
+                </div>
+              </a>
+
+              <a href={l(t('route.otras_historias'))} class="mega-card group/card flex items-start gap-4 p-3 rounded-xl transition-all duration-300" style="--card-r: 0; --card-g: 200; --card-b: 196;">
+                <div class="mega-icon w-28 h-20 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center p-1.5" style="background: #F3F4F6;">
+                  <img src="/images/smartwatch-padelnof-menu.png" alt="" class="no-hover-invert max-w-full max-h-full w-auto h-auto object-contain" />
+                </div>
+                <div class="flex flex-col gap-1 min-w-0">
+                  <span class="mega-title text-lg font-semibold tracking-tight leading-tight" style="--mc: #00C8C4; font-family: 'Space Grotesk', sans-serif;">{t('nav.otras_historias')}</span>
+                  <p class="mega-desc text-sm leading-snug" style="--mdc: #6B7280; font-family: 'Satoshi', sans-serif;">{t('nav.otras_historias_desc')}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- ▾ Sobre nosotros — dropdown con cards -->
       <div class="relative group/sn z-10">
@@ -335,6 +401,37 @@ const langLabelDisplay = altLang === 'es' ? 'ES' : 'EN';
   </div>
 </div>
 
+<!-- ▼ Casos — 2×2 grid 45vh (imagen + título, como Qué hacemos) -->
+<div id="mb-panel-casos" class="mb-dropdown md:hidden fixed left-0 right-0 bottom-0 z-50 pointer-events-none opacity-0 transition-all duration-300 ease-out"
+     style="height: 45dvh; padding: 0 12px 74px; padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px));">
+  <div class="h-full rounded-2xl overflow-hidden grid grid-cols-2 grid-rows-2 gap-[2px]" style="background: rgba(22,54,103,0.06); box-shadow: 0 -8px 40px -6px rgba(22,54,103,0.10);">
+    <a href={l(t('route.caso_roll'))} class="mb-quad flex flex-col items-center justify-center gap-2 p-2.5 text-center" style="background: #FFFBEA;">
+      <div class="w-[4.5rem] h-14 rounded-lg overflow-hidden flex items-center justify-center p-1.5" style="background: rgba(29,29,27,0.06);">
+        <img src="/images/rollordernof-menu.png" alt="" class="no-hover-invert max-w-full max-h-full w-auto h-auto object-contain" />
+      </div>
+      <span style="font-family: 'Space Grotesk', sans-serif; color: #1D1D1B;" class="text-[16px] font-semibold leading-tight">{t('nav.caso_roll')}</span>
+    </a>
+    <a href={l(t('route.caso_bici'))} class="mb-quad flex flex-col items-center justify-center gap-2 p-2.5 text-center" style="background: #EEFFEE;">
+      <div class="w-[4.5rem] h-14 rounded-lg overflow-hidden flex items-center justify-center p-1.5" style="background: rgba(0,221,0,0.08);">
+        <img src="/images/bicicleta-electrica-lime-2nof.png" alt="" class="no-hover-invert max-w-full max-h-full w-auto h-auto object-contain" />
+      </div>
+      <span style="font-family: 'Space Grotesk', sans-serif; color: #00DD00;" class="text-[16px] font-semibold leading-tight">{t('nav.caso_bici')}</span>
+    </a>
+    <a href={l(t('route.caso_utrilla'))} class="mb-quad flex flex-col items-center justify-center gap-2 p-2.5 text-center" style="background: #F7F3EE;">
+      <div class="w-[4.5rem] h-14 rounded-lg overflow-hidden flex items-center justify-center px-2 py-1.5" style="background: rgba(139,115,85,0.08);">
+        <img src="/images/utrilla-logonof-menu.png" alt="" class="no-hover-invert max-w-full max-h-full w-auto h-auto object-contain" />
+      </div>
+      <span style="font-family: 'Space Grotesk', sans-serif; color: #8B7355;" class="text-[16px] font-semibold leading-tight">{t('nav.caso_utrilla')}</span>
+    </a>
+    <a href={l(t('route.otras_historias'))} class="mb-quad flex flex-col items-center justify-center gap-2 p-2.5 text-center" style="background: #E8FFFE;">
+      <div class="w-[4.5rem] h-14 rounded-lg overflow-hidden flex items-center justify-center p-1.5" style="background: rgba(0,200,196,0.12);">
+        <img src="/images/smartwatch-padelnof-menu.png" alt="" class="no-hover-invert max-w-full max-h-full w-auto h-auto object-contain" />
+      </div>
+      <span style="font-family: 'Space Grotesk', sans-serif; color: #00C8C4;" class="text-[16px] font-semibold leading-tight">{t('nav.otras_historias')}</span>
+    </a>
+  </div>
+</div>
+
 <div
   id="bottom-nav"
   class="md:hidden fixed bottom-0 left-0 right-0 z-50"
@@ -372,11 +469,11 @@ const langLabelDisplay = altLang === 'es' ? 'ES' : 'EN';
       </div>
     </a>
 
-    <!-- Casos (sin dropdown) -->
-    <a href={l(t('route.casos'))} class="bottom-nav-item flex-1 flex flex-col items-center justify-center gap-[2px] h-full rounded-[10px] min-w-0" style="color: #163667;">
+    <!-- Casos — trigger -->
+    <button type="button" data-mb-trigger="casos" class="bottom-nav-item flex-1 flex flex-col items-center justify-center gap-[2px] h-full rounded-[10px] min-w-0" style="color: #163667;">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
       <span class="text-[10px] font-semibold tracking-tight leading-none" style="font-family: 'Satoshi', sans-serif;">{t('mobile.casos')}</span>
-    </a>
+    </button>
 
     <!-- Nosotros — trigger -->
     <button type="button" data-mb-trigger="ns" class="bottom-nav-item flex-1 flex flex-col items-center justify-center gap-[2px] h-full rounded-[10px] min-w-0" style="color: #163667;">
@@ -409,6 +506,7 @@ const langLabelDisplay = altLang === 'es' ? 'ES' : 'EN';
   }
   .group\/qh:hover .nav-link-trigger,
   .group\/ct:hover .nav-link-trigger,
+  .group\/casos:hover .nav-link-trigger,
   .group\/sn:hover .nav-link-trigger {
     background-color: #163667;
     color: #ffffff;
@@ -419,7 +517,8 @@ const langLabelDisplay = altLang === 'es' ? 'ES' : 'EN';
     transform-origin: top center;
     transition: opacity 0.35s ease, pointer-events 0s 0.35s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .group\/qh:hover .mega-panel {
+  .group\/qh:hover .mega-panel,
+  .group\/casos:hover .mega-panel {
     transform: translateX(-50%) scaleY(1);
     transition: opacity 0.25s ease, pointer-events 0s 0s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   }

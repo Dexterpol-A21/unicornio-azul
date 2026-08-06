@@ -1,0 +1,471 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const accent = '#00C8C4';
+const ink = '#0B1220';
+
+const vehicleScope = [
+  'Cars',
+  'Motorcycles',
+  'Quads',
+  'Boats',
+  'Construction machinery',
+];
+
+const scopeColors = ['#0B1220', '#0E6E6B', '#00A8A4', '#00C8C4', '#6FE3E1'];
+
+const vehicleMarkets = [
+  ['USA', 'Started with coast-to-coast auctions.'],
+  ['Asia', 'Japan, China, and Taiwan.'],
+  ['Europe', 'Germany and Belgium.'],
+];
+
+const musicLines = [
+  'Music for companies and campaign jingles',
+  'Music marketing and streaming distribution',
+  'Digital ambassadors and AI agent integration',
+];
+---
+
+<BaseLayout
+  title="Other stories: padel smartwatch and more — Case | Blue Unicorn"
+  description="Additional Blue Unicorn case stories: padel smartwatch, vehicle import since 1994, and music / digital marketing — beyond the main case studies."
+  image="/images/og-otras-historias.jpg"
+  imageAlt="Other stories: padel smartwatch, vehicles and music | Blue Unicorn"
+  showHeader={true}
+>
+
+<div class="otras-page overflow-x-clip">
+
+<section class="relative md:min-h-[100svh] flex items-center overflow-hidden" style={`background:${accent};`}>
+  <div class="w-full max-w-6xl mx-auto px-6 md:px-12 pt-10 md:pt-0 pb-8 md:pb-0">
+    <div class="flex flex-col md:grid md:grid-cols-2 md:gap-10 lg:gap-16 md:items-center gap-6">
+      <div data-reveal>
+        <h1 class="reveal-item font-bold tracking-tight leading-[0.95] mb-4 md:mb-5 text-balance" style={`--i:0;font-family:'Space Grotesk',sans-serif;color:${ink};font-size:clamp(2.8rem,10vw,5.75rem);letter-spacing:-0.03em;`}>
+          Other stories
+        </h1>
+        <p class="reveal-item text-lg md:text-xl max-w-[40ch] leading-relaxed mb-0 md:mb-10" style={`--i:1;font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.72);`}>
+          Padel smartwatch, vehicle import, and a music / digital marketing layer.
+        </p>
+        <!-- CTA — desktop -->
+        <div class="reveal-item hidden md:flex flex-row flex-wrap items-center gap-x-5 gap-y-3" style="--i:2">
+          <a href="/en/get-started" class="animated-btn animated-btn--otras" style={`position:relative;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 48px 0 32px;font-size:15px;background-color:${ink};border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(11,18,32,0.25);`}>
+            <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Tell us about your project</span>
+            <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="circle" style={`position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:${accent};border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);`}></span>
+          </a>
+          <nav class="flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Jump to each story">
+            {[
+              ['#padel-smartwatch', 'Smartwatch'],
+              ['#vehicles', 'Vehicles'],
+              ['#music', 'Music'],
+            ].map(([href, label]) => (
+              <a href={href} class="text-sm font-semibold no-underline" style={`font-family:'Satoshi',sans-serif;color:${ink};border-bottom:2px solid ${ink};padding-bottom:2px;`}>{label}</a>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      <div class="relative flex items-center justify-center md:justify-end" data-reveal="side" data-reveal-from="right">
+        <img
+          src="/images/smartwatch-padelnof.png"
+          alt="Padel smartwatch — score screen"
+          class="w-full max-w-[300px] md:max-w-[420px] h-auto object-contain mx-auto"
+        />
+      </div>
+
+      <!-- CTA — mobile -->
+      <div class="md:hidden flex flex-col items-stretch gap-4">
+        <a href="/en/get-started" class="animated-btn animated-btn--otras" style={`position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:${ink};border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(11,18,32,0.25);`}>
+          <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Tell us about your project</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style={`position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:${accent};border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);`}></span>
+        </a>
+        <nav class="flex flex-wrap gap-x-5 gap-y-3" aria-label="Jump to each story">
+          {[
+            ['#padel-smartwatch', 'Smartwatch'],
+            ['#vehicles', 'Vehicles'],
+            ['#music', 'Music'],
+          ].map(([href, label]) => (
+            <a href={href} class="text-base font-semibold no-underline" style={`font-family:'Satoshi',sans-serif;color:${ink};border-bottom:2px solid ${ink};padding-bottom:2px;`}>{label}</a>
+          ))}
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article id="padel-smartwatch" class="padel-caso relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
+
+      <div data-reveal>
+        <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-8 md:mb-10 text-balance" style={`--i:0;font-family:'Space Grotesk',sans-serif;color:${ink};font-size:clamp(2.5rem,4vw,3rem);letter-spacing:-0.03em;`}>
+          From prototype to the fair
+        </h2>
+
+        <div class="reveal-item space-y-6 md:space-y-7 max-w-[44ch]" style="--i:1">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.45);">Challenge</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.78);">
+              A prototype-development company asked us to help build a smartwatch for padel. For confidentiality reasons we cannot share much detail.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.45);">What we did</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.78);">
+              Analysis to cut manufacturing costs by leveraging market developments, supplier filtering, negotiating prototype industrialization, and optimizing logistics and import.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.45);">Result</p>
+            <p class="text-lg md:text-base leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.78);">
+              Product presented at the Barcelona padel fair. Currently in industrialization prototype testing.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <dl class="m-0 flex flex-col lg:h-full w-full max-w-[440px] mx-auto lg:mx-0 lg:ml-auto" aria-hidden="true" data-reveal>
+        {[
+          ['Project', 'Smartwatch'],
+          ['Work', 'Industrialization'],
+          ['Chain', 'Import'],
+          ['Status', 'In testing'],
+        ].map(([k, v], i) => (
+          <div
+            class="reveal-item flex-1 flex flex-col justify-center gap-2 py-5 md:py-6"
+            style={`--i:${i};border-top:${i === 0 ? '2px' : '0'} solid rgba(11,18,32,0.14);border-bottom:2px ${i === 3 ? 'solid' : 'dotted'} rgba(11,18,32,0.14);`}
+          >
+            <dt class="m-0 text-xs font-semibold tracking-[0.14em] uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.45);">{k}</dt>
+            <dd class="m-0 font-bold tracking-tight leading-none" style={`font-family:'Space Grotesk',sans-serif;color:${ink};font-size:clamp(1.75rem,4vw,2.5rem);letter-spacing:-0.03em;`}>{v}</dd>
+          </div>
+        ))}
+      </dl>
+
+    </div>
+  </div>
+</article>
+
+<section class="relative overflow-hidden" style={`background:${accent};`}>
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-14" data-reveal>
+    <div class="reveal-item grid md:grid-cols-2 gap-8 md:gap-12" style="--i:0">
+      <div>
+        <p class="m-0 mb-2 text-xs font-semibold tracking-[0.14em] uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.5);">Fair</p>
+        <p class="m-0 text-xl md:text-2xl font-bold tracking-tight leading-snug" style={`font-family:'Space Grotesk',sans-serif;color:${ink};letter-spacing:-0.02em;`}>
+          Presented at the Barcelona padel fair
+        </p>
+      </div>
+      <div>
+        <p class="m-0 mb-2 text-xs font-semibold tracking-[0.14em] uppercase" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.5);">Now</p>
+        <p class="m-0 text-xl md:text-2xl font-bold tracking-tight leading-snug" style={`font-family:'Space Grotesk',sans-serif;color:${ink};letter-spacing:-0.02em;`}>
+          Industrialization prototype testing phase
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vehicles" class="relative overflow-hidden" style="background:#FFFFFF;">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 pt-14 md:pt-24 pb-4 md:pb-5">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-12 md:mb-16">
+      <div data-reveal>
+        <h2 class="reveal-item font-bold tracking-tight leading-[1.05] mb-4 max-w-[18ch] text-balance" style={`--i:0;font-family:'Space Grotesk',sans-serif;color:${ink};font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;`}>
+          Vehicle import
+        </h2>
+        <p class="reveal-item text-lg max-w-[44ch] leading-relaxed mb-8 md:mb-10" style={`--i:1;font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.72);`}>
+          International buying and import: logistics, homologation, and adaptation to European regulations.
+        </p>
+        <div class="reveal-item space-y-6 max-w-[44ch]" style="--i:2">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.45);">Start</p>
+            <p class="text-lg leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.78);">
+              September 1994: purchased 2 vehicles in the USA, learning logistics, import, and the hardest part — homologation and adaptation in Spain.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.45);">Miami base</p>
+            <p class="text-lg leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.78);">
+              Since 2002, Miami operations base with verification, buying, consolidation, and logistics teams.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-1.5" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.45);">Homologation</p>
+            <p class="text-lg leading-relaxed m-0" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.78);">
+              End-to-end solutions: US–EU light conversion and adaptation to European rules to pass homologation and ITV.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative w-full max-w-[360px] md:max-w-[480px] mx-auto lg:ml-auto lg:mr-0" data-reveal="side" data-reveal-from="right">
+        <img
+          src="/images/vehiculos/1.png"
+          alt="Imported vehicle — example from the activity"
+          class="w-full h-auto object-contain"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start" data-reveal>
+      <div class="reveal-item" style="--i:0">
+        <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-4" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.45);">Markets</p>
+        <ul class="m-0 p-0 list-none border-t" style="border-color:rgba(11,18,32,0.14);">
+          {vehicleMarkets.map(([title, detail]) => (
+            <li class="py-4 border-b" style="border-color:rgba(11,18,32,0.14);">
+              <span class="block text-xl font-bold tracking-tight mb-1" style={`font-family:'Space Grotesk',sans-serif;color:${ink};`}>{title}</span>
+              <span class="text-lg md:text-base" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.65);">{detail}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="reveal-item" style="--i:1">
+        <p class="text-xs font-semibold tracking-[0.14em] uppercase mb-4" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.45);">Scope</p>
+
+        <div class="flex flex-col items-center sm:items-start sm:flex-row sm:items-center gap-6 md:gap-8">
+          <div class="relative shrink-0 w-[160px] h-[160px] md:w-[180px] md:h-[180px]" aria-hidden="true">
+            <svg viewBox="0 0 200 200" class="w-full h-full" style="transform:rotate(-90deg);">
+              <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(11,18,32,0.08)" stroke-width="18" />
+              {scopeColors.map((c, i) => (
+                <circle
+                  class="dial-arc"
+                  cx="100"
+                  cy="100"
+                  r="70"
+                  fill="none"
+                  stroke={c}
+                  stroke-width="18"
+                  stroke-dasharray="76 364"
+                  stroke-dashoffset={`${-88 * i}`}
+                  style={`--i:${i};`}
+                />
+              ))}
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="font-bold tracking-tight" style={`font-family:'Space Grotesk',sans-serif;color:${ink};font-size:2.25rem;letter-spacing:-0.03em;`}>5</span>
+            </div>
+          </div>
+
+          <ul class="m-0 p-0 list-none flex flex-col gap-2.5 w-full sm:w-auto">
+            {vehicleScope.map((label, i) => (
+              <li class="flex items-center gap-3 text-lg md:text-base font-semibold" style={`font-family:'Satoshi',sans-serif;color:${ink};`}>
+                <span class="shrink-0" style={`width:12px;height:12px;background:${scopeColors[i]};display:inline-block;`}></span>
+                {label}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p class="mt-6 text-lg md:text-base leading-relaxed m-0 max-w-[36ch]" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.65);">
+          Early on, monthly trips to the USA for auction buying; later expanded to Asia and the EU.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full overflow-hidden pb-14 md:pb-24">
+    <div class="vehicle-marquee flex w-max" aria-hidden="true">
+      {[0, 1].map(() => (
+        <div class="vehicle-marquee__set flex shrink-0">
+          {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+            <img
+              src={`/images/vehiculos/${n}.png`}
+              alt=""
+              class="vehicle-marquee__img shrink-0 object-cover"
+              loading="eager"
+              decoding="async"
+              draggable="false"
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section id="music" class="relative overflow-hidden" style={`background:${ink};`}>
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <div class="reveal-item flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16" style="--i:0">
+      <h2 class="font-bold tracking-tight leading-[1.05] m-0 max-w-[14ch] text-balance" style={`font-family:'Space Grotesk',sans-serif;color:#FFFFFF;font-size:clamp(2.5rem,4vw,3.25rem);letter-spacing:-0.03em;`}>
+        Music and digital layer
+      </h2>
+      <p class="text-lg max-w-[32ch] leading-relaxed m-0 md:text-right" style="font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.55);">
+        Beyond physical product: music for companies, music marketing, and digital ambassadors.
+      </p>
+    </div>
+    <div class="reveal-item grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10" style="--i:1">
+      {musicLines.map((line, i) => (
+        <div class="border-t pt-5" style="border-color:rgba(255,255,255,0.14);">
+          <p class="m-0 mb-3 text-sm font-semibold tabular-nums" style={`font-family:'Satoshi',sans-serif;color:${accent};`}>{String(i + 1).padStart(2, '0')}</p>
+          <p class="m-0 text-xl md:text-2xl font-bold tracking-tight leading-snug" style="font-family:'Space Grotesk',sans-serif;color:#FFFFFF;">{line}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section id="cierre" class="relative overflow-hidden" style={`background:${accent};`}>
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
+    <h2 class="reveal-item font-bold tracking-tight leading-[0.95] mb-8 md:mb-10 text-balance" style={`--i:0;font-family:'Space Grotesk',sans-serif;color:${ink};font-size:clamp(2.8rem,12vw,5rem);letter-spacing:-0.04em;`}>
+      Other stories
+    </h2>
+    <div class="reveal-item grid md:grid-cols-2 gap-8 md:gap-16 items-end border-t pt-8 md:pt-10" style={`--i:1;border-color:rgba(11,18,32,0.2);`}>
+      <p class="text-lg md:text-xl leading-relaxed m-0 max-w-[36ch]" style="font-family:'Satoshi',sans-serif;color:rgba(11,18,32,0.72);">
+        Does your project fit here or with a main case? Tell us.
+      </p>
+      <div class="hidden md:flex flex-row justify-end items-start">
+        <a href="/en/get-started" class="animated-btn animated-btn--otras" style={`position:relative;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 48px 0 32px;font-size:15px;background-color:${ink};border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(11,18,32,0.25);`}>
+          <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Tell us about your project</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:20px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style={`position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:${accent};border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);`}></span>
+        </a>
+      </div>
+      <div class="md:hidden flex flex-col items-stretch">
+        <a href="/en/get-started" class="animated-btn animated-btn--otras" style={`position:relative;display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 56px 0 40px;font-size:17px;background-color:${ink};border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1em 0 rgba(11,18,32,0.25);`}>
+          <span class="text" style="position:relative;z-index:2;color:#FFFFFF;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1),color 0.4s ease;">Tell us about your project</span>
+          <svg class="arr-1" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;right:26px;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="arr-2" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;z-index:2;left:-25%;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#FFFFFF" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="circle" style={`position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background-color:${accent};border-radius:50%;opacity:0;transition:all 0.8s cubic-bezier(0.23,1,0.32,1);`}></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<style is:global>
+  @keyframes vehicle-marquee {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+
+  .vehicle-marquee__img {
+    height: 10rem;
+    width: 13rem;
+    margin-right: 0.75rem;
+  }
+  @media (min-width: 768px) {
+    .vehicle-marquee__img {
+      height: 14rem;
+      width: 18rem;
+      margin-right: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .vehicle-marquee {
+      animation: vehicle-marquee 45s linear infinite;
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+    .vehicle-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    html.js [data-reveal] .dial-arc {
+      stroke-dasharray: 0 440;
+      transition: stroke-dasharray 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      transition-delay: calc(var(--i, 0) * 110ms + 150ms);
+    }
+    html.js [data-reveal].is-on .dial-arc {
+      stroke-dasharray: 76 364;
+    }
+  }
+
+  .animated-btn.animated-btn--otras:hover {
+    box-shadow: 0 0.625em 1em 0 rgba(11, 18, 32, 0.35) !important;
+  }
+  .animated-btn.animated-btn--otras:hover .arr-1 {
+    right: -25% !important;
+    stroke: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--otras:hover .arr-2 {
+    left: 16px !important;
+    stroke: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--otras:hover .text {
+    transform: translateX(14px) !important;
+    color: #FFFFFF !important;
+  }
+  .animated-btn.animated-btn--otras:hover .circle {
+    width: 400px !important;
+    height: 400px !important;
+    opacity: 1 !important;
+    background-color: #00C8C4 !important;
+  }
+  .animated-btn.animated-btn--otras:active {
+    scale: 0.95 !important;
+    box-shadow: inset 0 0 0 3px #0B1220 !important;
+  }
+
+  @media (max-width: 767px) {
+    html.js .otras-page [data-reveal="side"][data-reveal-from="right"],
+    html.js .otras-page [data-reveal="side"][data-reveal-from="left"] {
+      transform: translateY(12px);
+    }
+    html.js .otras-page [data-reveal="side"].is-on {
+      transform: none;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://unicornioazul.es/en/case-studies/other-stories/#page",
+        "name": "Other stories — Blue Unicorn",
+        "description": "Additional cases: padel smartwatch, vehicle import since 1994, and music / digital marketing.",
+        "url": "https://unicornioazul.es/en/case-studies/other-stories/",
+        "inLanguage": "en",
+        "image": "https://unicornioazul.es/images/og-otras-historias.jpg",
+        "isPartOf": {
+          "@type": "CollectionPage",
+          "name": "Case studies",
+          "url": "https://unicornioazul.es/en/case-studies"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Padel smartwatch",
+              "url": "https://unicornioazul.es/en/case-studies/other-stories/#padel-smartwatch"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Vehicle import",
+              "url": "https://unicornioazul.es/en/case-studies/other-stories/#vehicles"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Music and digital marketing",
+              "url": "https://unicornioazul.es/en/case-studies/other-stories/#music"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://unicornioazul.es/en/case-studies/other-stories/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://unicornioazul.es/en" },
+          { "@type": "ListItem", "position": 2, "name": "Case studies", "item": "https://unicornioazul.es/en/case-studies" },
+          { "@type": "ListItem", "position": 3, "name": "Other stories" }
+        ]
+      }
+    ]
+  }
+</script>
+
+</BaseLayout>
