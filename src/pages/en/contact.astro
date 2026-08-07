@@ -4,7 +4,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Contact — Blue Unicorn"
-  description="Find all ways to contact Blue Unicorn. Email, LinkedIn, Instagram, or tell us about your project step by step."
+  description="Find all ways to contact Blue Unicorn. Email, LinkedIn, or tell us about your project step by step."
   showHeader={true}
 >
 
@@ -21,23 +21,15 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       Let's <span style="color:transparent;-webkit-text-stroke:2px #00698D;">talk</span>
     </h1>
 
-    <!-- Email + Phone — side by side -->
-    <div class="reveal-item mt-10 md:mt-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-16" style="--i:1">
+    <!-- Email -->
+    <div class="reveal-item mt-10 md:mt-20" style="--i:1">
 
-      <a href="mailto:hola@unicornioazul.com"
+      <a href="mailto:contact@unicornioazul.es"
          class="group no-underline transition-colors duration-500"
          style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
-        <span class="hidden md:block text-[5vw] lg:text-[4.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D]">hola@unicornio</span>
-        <span class="hidden md:block text-[5vw] lg:text-[4.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D]">azul.com</span>
-        <span class="md:hidden block text-[6.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D] whitespace-nowrap">hola@unicornioazul.com</span>
-      </a>
-
-      <a href="tel:+34600000000"
-         class="group no-underline transition-colors duration-500"
-         style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
-        <span class="hidden md:block text-[5vw] lg:text-[4.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D]">+34 123</span>
-        <span class="hidden md:block text-[5vw] lg:text-[4.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D]">456 789</span>
-        <span class="md:hidden block text-[6.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D] whitespace-nowrap">+34 123 456 789</span>
+        <span class="hidden md:block text-[5vw] lg:text-[4.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D]">contact@unicornio</span>
+        <span class="hidden md:block text-[5vw] lg:text-[4.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D]">azul.es</span>
+        <span class="md:hidden block text-[6.5vw] font-bold leading-[0.95] tracking-tight transition-colors duration-500 group-hover:text-[#00698D] whitespace-nowrap">contact@unicornioazul.es</span>
       </a>
 
     </div>
@@ -77,19 +69,6 @@ import BaseLayout from '@layouts/BaseLayout.astro';
               </svg>
             </span>
             <span class="text-lg font-semibold tracking-tight transition-colors duration-300 group-hover:text-[#00698D]">LinkedIn</span>
-          </a>
-          <a
-            href="#"
-            class="group inline-flex items-center gap-3 no-underline transition-colors duration-300"
-            style="font-family:'Satoshi',sans-serif;color:#163667;"
-            aria-label="Instagram — Blue Unicorn"
-          >
-            <span class="inline-flex items-center justify-center w-11 h-11 rounded-sm transition-colors duration-300" style="background:rgba(22,54,103,0.06);">
-              <svg class="w-5 h-5 transition-colors duration-300 group-hover:text-[#00698D]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-              </svg>
-            </span>
-            <span class="text-lg font-semibold tracking-tight transition-colors duration-300 group-hover:text-[#00698D]">Instagram</span>
           </a>
         </div>
       </div>
@@ -142,10 +121,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             Real solutions for extraordinary ideas.
           </p>
           <div class="flex flex-col gap-1.5 mt-1">
-            <a href="mailto:hola@unicornioazul.com" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">hola@unicornioazul.com</a>
+            <a href="mailto:contact@unicornioazul.es" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.5);">contact@unicornioazul.es</a>
             <div class="flex items-center gap-4">
               <a href="https://www.linkedin.com/company/unicornio-azul-desarrollo-de-marcas/" target="_blank" rel="noopener noreferrer" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">LinkedIn</a>
-              <a href="#" class="no-underline hover:opacity-60 transition-opacity" style="color:rgba(255,255,255,0.45);font-size:13px;">Instagram</a>
             </div>
           </div>
         </div>
@@ -197,7 +175,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         "mainEntity": {
           "@type": "Organization",
           "name": "Blue Unicorn",
-          "email": "hola@unicornioazul.com",
+          "email": "contact@unicornioazul.es",
           "url": "https://unicornioazul.es/en"
         }
       },
