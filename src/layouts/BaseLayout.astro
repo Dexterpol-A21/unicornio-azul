@@ -2,6 +2,7 @@
 import SEO from '@components/global/SEO.astro';
 import Header from '@components/global/Header.astro';
 import CookieBanner from '@components/global/CookieBanner.astro';
+import GoogleTagManager from '@components/global/GoogleTagManager.astro';
 import SmoothScroll from '@components/global/SmoothScroll.astro';
 import RevealScript from '@components/ui/RevealScript.astro';
 import BloquesColorScript from '@components/ui/BloquesColorScript.astro';
@@ -26,14 +27,26 @@ const {
   noindex = false,
 } = Astro.props;
 const locale = getLangFromUrl(Astro.url);
+const GTM_ID = 'GTM-TJRCJ7T8';
 ---
 
 <!DOCTYPE html>
 <html lang={locale}>
 <head>
+  <GoogleTagManager />
   <SEO {title} {description} {image} {imageAlt} {noindex} lang={locale} url={Astro.url} />
 </head>
 <body class:list={[{ "has-header": showHeader }]}>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+      src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden"
+    ></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
   {showHeader && <Header lang={locale} />}
   <main class="overflow-x-clip">
     <slot />

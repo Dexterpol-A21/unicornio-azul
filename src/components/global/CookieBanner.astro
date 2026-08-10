@@ -197,8 +197,13 @@ const policyHref = isEs ? '/privacidad#cookies' : '/en/privacy#cookies';
     }
 
     function hideBanner() {
+      var active = document.activeElement;
+      if (active && banner.contains(active) && typeof active.blur === 'function') {
+        active.blur();
+      }
       banner.classList.remove('is-visible');
       banner.setAttribute('aria-hidden', 'true');
+      banner.inert = true;
       setTimeout(function () {
         banner.hidden = true;
       }, 320);
@@ -206,6 +211,7 @@ const policyHref = isEs ? '/privacidad#cookies' : '/en/privacy#cookies';
 
     function showBanner() {
       banner.hidden = false;
+      banner.inert = false;
       banner.setAttribute('aria-hidden', 'false');
       requestAnimationFrame(function () {
         banner.classList.add('is-visible');

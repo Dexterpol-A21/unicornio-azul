@@ -1,0 +1,49 @@
+---
+/**
+ * Google Tag Manager (GTM-TJRCJ7T8).
+ * Loads only after analytics cookie consent (ua_cookie_consent / ua:cookie-consent).
+ */
+const GTM_ID = 'GTM-TJRCJ7T8';
+---
+
+<!-- Google Tag Manager -->
+<script is:inline define:vars={{ GTM_ID }}>
+  (function () {
+    window.dataLayer = window.dataLayer || [];
+
+    function loadGTM() {
+      if (window.__UA_GTM_LOADED__) return;
+      window.__UA_GTM_LOADED__ = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', GTM_ID);
+    }
+
+    function hasAnalyticsConsent() {
+      try {
+        var raw = localStorage.getItem('ua_cookie_consent');
+        if (!raw) return false;
+        var consent = JSON.parse(raw);
+        return !!(consent && consent.analytics);
+      } catch (e) {
+        return false;
+      }
+    }
+
+    if (hasAnalyticsConsent()) {
+      loadGTM();
+    }
+
+    window.addEventListener('ua:cookie-consent', function (e) {
+      if (e.detail && e.detail.analytics) loadGTM();
+    });
+  })();
+</script>
+<!-- End Google Tag Manager -->
