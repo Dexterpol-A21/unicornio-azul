@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import CaseFAQ from '@/components/ui/CaseFAQ.astro';
+import { utrillaFaqs } from '@/data/case-faqs';
 
 const img = (file: string) => `/images/Utrilla%20(1)/${encodeURIComponent(file)}`;
 
@@ -41,10 +43,10 @@ const prep = [
 ---
 
 <BaseLayout
-  title="Utrilla: from furniture to contract — Case study | Blue Unicorn"
+  title="How to transform a manufacturer into a full Contract supplier | Utrilla case"
   description="Utrilla case study: from a furniture factory to a full contract offer. Suppliers in Asia, 50+ sources, Canton Fair, and utrillacontract.com."
   image="/images/og-utrilla.jpg"
-  imageAlt="Utrilla — case study: full contract solution | Blue Unicorn"
+  imageAlt="Utrilla — case study: full contract solution | Unicornio Azul"
   showHeader={true}
 >
 <div class="ut-page overflow-x-clip">
@@ -309,7 +311,7 @@ const prep = [
       <div class="flex justify-start md:justify-center" data-reveal="side" data-reveal-from="right">
         <img
           src={img('Luis Chicharro-Feria-Canton.png')}
-          alt="Blue Unicorn team at a fair in China evaluating the contract market"
+          alt="Unicornio Azul team at a fair in China evaluating the contract market"
           class="w-full max-w-[360px] md:max-w-[480px] h-auto object-cover mx-auto"
           loading="lazy"
           style="aspect-ratio:4/5;object-position:center;"
@@ -458,6 +460,19 @@ const prep = [
   </div>
 </section>
 
+
+<CaseFAQ
+  lang="en"
+  pageUrl="https://unicornioazul.es/en/case-studies/utrilla/"
+  items={[...utrillaFaqs.en]}
+  accent="#1C1C1C"
+  related={[
+    { href: '/en/what-we-do/digital-marketing', label: 'Digital marketing / B2B' },
+    { href: '/en/what-we-do/product-international-sourcing', label: 'Product & sourcing' },
+    { href: '/en/what-we-do/business-development', label: 'Business development' },
+  ]}
+/>
+
 <!-- CIERRE -->
 <section id="cierre" class="relative overflow-hidden" style="background:#C2A582;">
   <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
@@ -579,20 +594,27 @@ const prep = [
       {
         "@type": "Article",
         "@id": "https://unicornioazul.es/en/case-studies/utrilla/#article",
-        "headline": "Utrilla: from furniture to contract",
+        "headline": "How to transform a manufacturer into a full Contract supplier | Utrilla case",
         "name": "Utrilla — Case study",
         "description": "Utrilla case study: from a furniture factory to a full contract offer. Suppliers in Asia, 50+ sources, Canton Fair, and utrillacontract.com.",
         "url": "https://unicornioazul.es/en/case-studies/utrilla/",
         "inLanguage": "en",
         "image": "https://unicornioazul.es/images/og-utrilla.jpg",
         "author": {
-          "@type": "Organization",
-          "name": "Blue Unicorn",
-          "url": "https://unicornioazul.es/en"
+          "@type": "Person",
+          "name": "Luis Chicharro",
+          "jobTitle": "Founder",
+          "url": "https://unicornioazul.es/en/about-us",
+          "sameAs": ["https://www.linkedin.com/in/luis-chicharro/"],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Unicornio Azul",
+            "url": "https://unicornioazul.es/en"
+          }
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Blue Unicorn",
+          "name": "Unicornio Azul",
           "url": "https://unicornioazul.es",
           "logo": {
             "@type": "ImageObject",
@@ -614,6 +636,26 @@ const prep = [
           "@type": "WebPage",
           "@id": "https://unicornioazul.es/en/case-studies/utrilla/"
         }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://unicornioazul.es/en/about-us#luis-chicharro",
+        "name": "Luis Chicharro",
+        "jobTitle": "Founder",
+        "url": "https://unicornioazul.es/en/about-us",
+        "sameAs": ["https://www.linkedin.com/in/luis-chicharro/"],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es/en"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://unicornioazul.es/en#organization",
+        "name": "Unicornio Azul",
+        "url": "https://unicornioazul.es/en",
+        "founder": { "@id": "https://unicornioazul.es/en/about-us#luis-chicharro" }
       },
       {
         "@type": "BreadcrumbList",

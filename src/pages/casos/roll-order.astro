@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
+import CaseFAQ from '@/components/ui/CaseFAQ.astro';
+import { rollOrderFaqs } from '@/data/case-faqs';
 
 const milestones = [
   ['Patente', 'Una idea protegida, todavía sin producto.'],
@@ -18,7 +20,7 @@ const cables = [
 ---
 
 <BaseLayout
-  title="Roll Order: de la patente a Amazon — Caso de éxito | Unicornio Azul"
+  title="De una patente a un producto comercializable | Caso Roll Order"
   description="Caso de éxito Roll Order: de un documento de patente a un producto industrializado, importado y vendiendo en Amazon. Moldes, certificación, listing y CES Las Vegas."
   image="/images/og-roll-order.jpg"
   imageAlt="Roll Order — caso de éxito: de la patente a Amazon | Unicornio Azul"
@@ -337,6 +339,14 @@ const cables = [
   </div>
 </section>
 
+
+<CaseFAQ
+  lang="es"
+  pageUrl="https://unicornioazul.es/casos/roll-order/"
+  items={[...rollOrderFaqs.es]}
+  accent="#1D1D1B"
+/>
+
 <!-- CIERRE — Marca primero -->
 <section id="producto-final" class="relative overflow-hidden" style="background:#FFD000;">
   <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
@@ -436,16 +446,23 @@ const cables = [
       {
         "@type": "Article",
         "@id": "https://unicornioazul.es/casos/roll-order/#article",
-        "headline": "Roll Order: de la patente a Amazon",
+        "headline": "De una patente a un producto comercializable | Caso Roll Order",
         "name": "Roll Order — Caso de éxito",
         "description": "Caso de éxito Roll Order: de un documento de patente a un producto industrializado, importado y vendiendo en Amazon. Moldes, certificación, listing y CES Las Vegas.",
         "url": "https://unicornioazul.es/casos/roll-order/",
         "inLanguage": "es",
         "image": "https://unicornioazul.es/images/og-roll-order.jpg",
         "author": {
-          "@type": "Organization",
-          "name": "Unicornio Azul",
-          "url": "https://unicornioazul.es"
+          "@type": "Person",
+          "name": "Luis Chicharro",
+          "jobTitle": "Fundador",
+          "url": "https://unicornioazul.es/sobre-nosotros",
+          "sameAs": ["https://www.linkedin.com/in/luis-chicharro/"],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Unicornio Azul",
+            "url": "https://unicornioazul.es"
+          }
         },
         "publisher": {
           "@type": "Organization",
@@ -471,6 +488,26 @@ const cables = [
           "@type": "WebPage",
           "@id": "https://unicornioazul.es/casos/roll-order/"
         }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://unicornioazul.es/sobre-nosotros#luis-chicharro",
+        "name": "Luis Chicharro",
+        "jobTitle": "Fundador",
+        "url": "https://unicornioazul.es/sobre-nosotros",
+        "sameAs": ["https://www.linkedin.com/in/luis-chicharro/"],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://unicornioazul.es/#organization",
+        "name": "Unicornio Azul",
+        "url": "https://unicornioazul.es",
+        "founder": { "@id": "https://unicornioazul.es/sobre-nosotros#luis-chicharro" }
       },
       {
         "@type": "BreadcrumbList",

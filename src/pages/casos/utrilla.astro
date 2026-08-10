@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import CaseFAQ from '@/components/ui/CaseFAQ.astro';
+import { utrillaFaqs } from '@/data/case-faqs';
 
 const img = (file: string) => `/images/Utrilla%20(1)/${encodeURIComponent(file)}`;
 
@@ -41,7 +43,7 @@ const prep = [
 ---
 
 <BaseLayout
-  title="Utrilla: de muebles a contract — Caso de éxito | Unicornio Azul"
+  title="Cómo transformar un fabricante en proveedor Contract integral | Caso Utrilla"
   description="Caso de éxito Utrilla: de fábrica de muebles a oferta contract integral. Proveedores en Asia, +50 suministros, Feria de Cantón y utrillacontract.com."
   image="/images/og-utrilla.jpg"
   imageAlt="Utrilla — caso de éxito: solución contract integral | Unicornio Azul"
@@ -458,6 +460,19 @@ const prep = [
   </div>
 </section>
 
+
+<CaseFAQ
+  lang="es"
+  pageUrl="https://unicornioazul.es/casos/utrilla/"
+  items={[...utrillaFaqs.es]}
+  accent="#1C1C1C"
+  related={[
+    { href: '/que-hacemos/marketing-digital', label: 'Marketing digital / B2B' },
+    { href: '/que-hacemos/producto-compras-internacionales', label: 'Producto y compras (sourcing)' },
+    { href: '/que-hacemos/desarrollo-de-negocios', label: 'Desarrollo de negocios' },
+  ]}
+/>
+
 <!-- CIERRE -->
 <section id="cierre" class="relative overflow-hidden" style="background:#C2A582;">
   <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
@@ -579,16 +594,23 @@ const prep = [
       {
         "@type": "Article",
         "@id": "https://unicornioazul.es/casos/utrilla/#article",
-        "headline": "Utrilla: de muebles a contract",
+        "headline": "Cómo transformar un fabricante en proveedor Contract integral | Caso Utrilla",
         "name": "Utrilla — Caso de éxito",
         "description": "Caso de éxito Utrilla: de fábrica de muebles a oferta contract integral. Proveedores en Asia, +50 suministros, Feria de Cantón y utrillacontract.com.",
         "url": "https://unicornioazul.es/casos/utrilla/",
         "inLanguage": "es",
         "image": "https://unicornioazul.es/images/og-utrilla.jpg",
         "author": {
-          "@type": "Organization",
-          "name": "Unicornio Azul",
-          "url": "https://unicornioazul.es"
+          "@type": "Person",
+          "name": "Luis Chicharro",
+          "jobTitle": "Fundador",
+          "url": "https://unicornioazul.es/sobre-nosotros",
+          "sameAs": ["https://www.linkedin.com/in/luis-chicharro/"],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Unicornio Azul",
+            "url": "https://unicornioazul.es"
+          }
         },
         "publisher": {
           "@type": "Organization",
@@ -614,6 +636,26 @@ const prep = [
           "@type": "WebPage",
           "@id": "https://unicornioazul.es/casos/utrilla/"
         }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://unicornioazul.es/sobre-nosotros#luis-chicharro",
+        "name": "Luis Chicharro",
+        "jobTitle": "Fundador",
+        "url": "https://unicornioazul.es/sobre-nosotros",
+        "sameAs": ["https://www.linkedin.com/in/luis-chicharro/"],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://unicornioazul.es/#organization",
+        "name": "Unicornio Azul",
+        "url": "https://unicornioazul.es",
+        "founder": { "@id": "https://unicornioazul.es/sobre-nosotros#luis-chicharro" }
       },
       {
         "@type": "BreadcrumbList",

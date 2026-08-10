@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import CaseFAQ from '@/components/ui/CaseFAQ.astro';
+import { otrasHistoriasFaqs } from '@/data/case-faqs';
 
 const accent = '#00C8C4';
 const ink = '#0B1220';
@@ -28,7 +30,7 @@ const musicLines = [
 ---
 
 <BaseLayout
-  title="Otras historias: SmartWatch Pádel y más — Caso | Unicornio Azul"
+  title="SmartWatch Pádel, vehículos y música | Otras historias"
   description="Casos adicionales de Unicornio Azul: SmartWatch Pádel, importación de vehículos desde 1994 y música / marketing digital. Más allá de los casos principales."
   image="/images/og-otras-historias.jpg"
   imageAlt="Otras historias: SmartWatch Pádel, vehículos y música | Unicornio Azul"
@@ -312,6 +314,18 @@ const musicLines = [
     </div>
   </div>
 </section>
+
+<CaseFAQ
+  lang="es"
+  pageUrl="https://unicornioazul.es/casos/otras-historias/"
+  items={[...otrasHistoriasFaqs.es]}
+  accent={accent}
+  related={[
+    { href: '/casos/roll-order/', label: 'Roll Order' },
+    { href: '/casos/bicicleta-electrica/', label: 'Bicicleta eléctrica' },
+    { href: '/casos/utrilla/', label: 'Utrilla' },
+  ]}
+/>
 
 <!-- CIERRE -->
 <section id="cierre" class="relative overflow-hidden" style={`background:${accent};`}>

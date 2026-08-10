@@ -1,0 +1,142 @@
+---
+import type { FaqItem } from '../../data/case-faqs';
+
+interface Props {
+  items: FaqItem[];
+  lang?: 'es' | 'en';
+  pageUrl: string;
+  /** Soft accent for the + icon / hover */
+  accent?: string;
+  /** Optional related links under the FAQ (e.g. Utrilla → services) */
+  related?: { href: string; label: string }[];
+}
+
+const {
+  items,
+  lang = 'es',
+  pageUrl,
+  accent = '#163667',
+  related = [],
+} = Astro.props;
+
+const heading = lang === 'es' ? 'Preguntas frecuentes' : 'Frequently asked questions';
+const relatedLabel = lang === 'es' ? 'Relacionado' : 'Related';
+const accordionId = `faq-accordion-${pageUrl.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase()}`;
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${pageUrl.replace(/\/?$/, '/')}#faq`,
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<!-- FAQ discreta — HTML visible + FAQPage schema (GEO/SEO) -->
+<section class="case-faq" style={`background:#F2F5F8;--faq-accent:${accent};`} data-reveal aria-labelledby={`${accordionId}-heading`}>
+  <div class="max-w-3xl mx-auto px-6 md:px-12 py-12 md:py-20">
+    <p
+      id={`${accordionId}-heading`}
+      class="reveal-item text-[11px] tracking-[0.28em] uppercase font-semibold mb-6 md:mb-8 opacity-40"
+      style="--i:0;font-family:'Satoshi',sans-serif;color:#6B7280;"
+    >
+      {heading}
+    </p>
+
+    <div class="space-y-1" id={accordionId}>
+      {items.map((item, i) => (
+        <div class="reveal-item faq-item border-b" style={`--i:${Math.min(i + 1, 6)};border-color:rgba(22,54,103,0.08);`}>
+          <button
+            type="button"
+            class="faq-trigger flex items-center justify-between w-full py-5 cursor-pointer bg-transparent border-none"
+            aria-expanded="false"
+          >
+            <span class="text-base md:text-lg font-semibold pr-6 text-left" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+              {item.question}
+            </span>
+            <span class="faq-icon shrink-0 text-xl leading-none" style={`color:${accent};transition:transform 0.4s ease;`}>+</span>
+          </button>
+          <div class="faq-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+            <div>
+              <p class="pb-5 text-base md:text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#374151;">
+                {item.answer}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {related.length > 0 && (
+      <div class="reveal-item mt-10 pt-6" style={`--i:7;border-top:1px solid rgba(22,54,103,0.08);`}>
+        <p class="text-[11px] tracking-[0.28em] uppercase font-semibold mb-3 opacity-40" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
+          {relatedLabel}
+        </p>
+        <div class="flex flex-wrap gap-x-5 gap-y-2">
+          {related.map((link) => (
+            <a
+              href={link.href}
+              class="text-sm font-semibold no-underline hover:opacity-70 transition-opacity"
+              style={`font-family:'Space Grotesk',sans-serif;color:${accent};`}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .case-faq .faq-trigger:hover span:first-child {
+    color: var(--faq-accent, #163667);
+  }
+  .case-faq .faq-content > div {
+    overflow: hidden;
+  }
+</style>
+
+<script define:vars={{ accordionId }}>
+  const accordion = document.getElementById(accordionId);
+  if (accordion) {
+    const triggers = accordion.querySelectorAll('.faq-trigger');
+    triggers.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        if (!item) return;
+        const content = item.querySelector('.faq-content');
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        triggers.forEach((other) => {
+          if (other === btn) return;
+          other.setAttribute('aria-expanded', 'false');
+          const otherIcon = other.querySelector('.faq-icon');
+          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+          const otherItem = other.closest('.faq-item');
+          const otherContent = otherItem?.querySelector('.faq-content');
+          if (otherContent) otherContent.style.maxHeight = '0';
+        });
+
+        if (isOpen) {
+          btn.setAttribute('aria-expanded', 'false');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+          if (content) content.style.maxHeight = '0';
+        } else {
+          btn.setAttribute('aria-expanded', 'true');
+          if (icon) icon.style.transform = 'rotate(45deg)';
+          if (content) content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+</script>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

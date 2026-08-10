@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
+import CaseFAQ from '@/components/ui/CaseFAQ.astro';
+import { rollOrderFaqs } from '@/data/case-faqs';
 
 const milestones = [
   ['Patent', 'A protected idea — still without a product.'],
@@ -18,10 +20,10 @@ const cables = [
 ---
 
 <BaseLayout
-  title="Roll Order: from patent to Amazon — Case study | Blue Unicorn"
+  title="From patent to a marketable product | Roll Order case study"
   description="Roll Order case study: from a patent document to an industrialized product imported and selling on Amazon. Molds, certification, listing, and CES Las Vegas."
   image="/images/og-roll-order.jpg"
-  imageAlt="Roll Order — case study: from patent to Amazon | Blue Unicorn"
+  imageAlt="Roll Order — case study: from patent to Amazon | Unicornio Azul"
   showHeader={true}
 >
 
@@ -332,6 +334,14 @@ const cables = [
 </section>
 
 <!-- CLOSE -->
+
+<CaseFAQ
+  lang="en"
+  pageUrl="https://unicornioazul.es/en/case-studies/roll-order/"
+  items={[...rollOrderFaqs.en]}
+  accent="#1D1D1B"
+/>
+
 <section id="producto-final" class="relative overflow-hidden" style="background:#FFD000;">
   <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
     <h2 class="reveal-item font-bold tracking-tight leading-[0.9] mb-8 md:mb-10 text-balance" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#1D1D1B;font-size:clamp(2.8rem,12vw,8rem);letter-spacing:-0.04em;">
@@ -419,20 +429,27 @@ const cables = [
       {
         "@type": "Article",
         "@id": "https://unicornioazul.es/en/case-studies/roll-order/#article",
-        "headline": "Roll Order: from patent to Amazon",
+        "headline": "From patent to a marketable product | Roll Order case study",
         "name": "Roll Order — Case study",
         "description": "Roll Order case study: from a patent document to an industrialized product imported and selling on Amazon. Molds, certification, listing, and CES Las Vegas.",
         "url": "https://unicornioazul.es/en/case-studies/roll-order/",
         "inLanguage": "en",
         "image": "https://unicornioazul.es/images/og-roll-order.jpg",
         "author": {
-          "@type": "Organization",
-          "name": "Blue Unicorn",
-          "url": "https://unicornioazul.es/en"
+          "@type": "Person",
+          "name": "Luis Chicharro",
+          "jobTitle": "Founder",
+          "url": "https://unicornioazul.es/en/about-us",
+          "sameAs": ["https://www.linkedin.com/in/luis-chicharro/"],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Unicornio Azul",
+            "url": "https://unicornioazul.es/en"
+          }
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Blue Unicorn",
+          "name": "Unicornio Azul",
           "url": "https://unicornioazul.es",
           "logo": {
             "@type": "ImageObject",
@@ -454,6 +471,26 @@ const cables = [
           "@type": "WebPage",
           "@id": "https://unicornioazul.es/en/case-studies/roll-order/"
         }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://unicornioazul.es/en/about-us#luis-chicharro",
+        "name": "Luis Chicharro",
+        "jobTitle": "Founder",
+        "url": "https://unicornioazul.es/en/about-us",
+        "sameAs": ["https://www.linkedin.com/in/luis-chicharro/"],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es/en"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://unicornioazul.es/en#organization",
+        "name": "Unicornio Azul",
+        "url": "https://unicornioazul.es/en",
+        "founder": { "@id": "https://unicornioazul.es/en/about-us#luis-chicharro" }
       },
       {
         "@type": "BreadcrumbList",

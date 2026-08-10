@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import CaseFAQ from '@/components/ui/CaseFAQ.astro';
+import { otrasHistoriasFaqs } from '@/data/case-faqs';
 
 const accent = '#00C8C4';
 const ink = '#0B1220';
@@ -28,10 +30,10 @@ const musicLines = [
 ---
 
 <BaseLayout
-  title="Other stories: padel smartwatch and more — Case | Blue Unicorn"
-  description="Additional Blue Unicorn case stories: padel smartwatch, vehicle import since 1994, and music / digital marketing — beyond the main case studies."
+  title="Padel smartwatch, vehicles and music | Other stories"
+  description="Additional Unicornio Azul case stories: padel smartwatch, vehicle import since 1994, and music / digital marketing — beyond the main case studies."
   image="/images/og-otras-historias.jpg"
-  imageAlt="Other stories: padel smartwatch, vehicles and music | Blue Unicorn"
+  imageAlt="Other stories: padel smartwatch, vehicles and music | Unicornio Azul"
   showHeader={true}
 >
 
@@ -307,6 +309,18 @@ const musicLines = [
   </div>
 </section>
 
+<CaseFAQ
+  lang="en"
+  pageUrl="https://unicornioazul.es/en/case-studies/other-stories/"
+  items={[...otrasHistoriasFaqs.en]}
+  accent={accent}
+  related={[
+    { href: '/en/case-studies/roll-order/', label: 'Roll Order' },
+    { href: '/en/case-studies/electric-bike/', label: 'Electric bike' },
+    { href: '/en/case-studies/utrilla/', label: 'Utrilla' },
+  ]}
+/>
+
 <section id="cierre" class="relative overflow-hidden" style={`background:${accent};`}>
   <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
     <h2 class="reveal-item font-bold tracking-tight leading-[0.95] mb-8 md:mb-10 text-balance" style={`--i:0;font-family:'Space Grotesk',sans-serif;color:${ink};font-size:clamp(2.8rem,12vw,5rem);letter-spacing:-0.04em;`}>
@@ -421,7 +435,7 @@ const musicLines = [
       {
         "@type": "CollectionPage",
         "@id": "https://unicornioazul.es/en/case-studies/other-stories/#page",
-        "name": "Other stories — Blue Unicorn",
+        "name": "Other stories — Unicornio Azul",
         "description": "Additional cases: padel smartwatch, vehicle import since 1994, and music / digital marketing.",
         "url": "https://unicornioazul.es/en/case-studies/other-stories/",
         "inLanguage": "en",

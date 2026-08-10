@@ -121,7 +121,7 @@ export const ui = {
     'nav.otras_historias': 'Other stories',
     'nav.otras_historias_desc': 'Padel smartwatch, vehicles and music.',
     'nav.casos_todos': 'View all case studies',
-    'nav.unicornio_azul': 'Blue Unicorn',
+    'nav.unicornio_azul': 'Unicornio Azul',
     'nav.unicornio_azul_desc': 'Meet the team and the philosophy behind the project.',
     'nav.habla_con_nosotros': 'Get in touch',
     'nav.habla_con_nosotros_desc': 'Tell us about your project and let\'s get started.',
@@ -142,14 +142,14 @@ export const ui = {
     'cta.saber_mas': 'Learn more',
 
     // ─── Footer ──────────────────────────
-    'footer.logo_alt': 'Blue Unicorn',
+    'footer.logo_alt': 'Unicornio Azul',
     'footer.que_hacemos': 'What we do',
     'footer.como_trabajamos': 'How we work',
     'footer.empresa': 'Company',
-    'footer.derechos': 'Blue Unicorn. All rights reserved.',
+    'footer.derechos': 'Unicornio Azul. All rights reserved.',
 
     // ─── SEO / Meta ──────────────────────
-    'seo.site_name': 'Blue Unicorn',
+    'seo.site_name': 'Unicornio Azul',
     'seo.og_locale': 'en_US',
 
     // ─── Language switcher ───────────────

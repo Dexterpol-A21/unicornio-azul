@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import CaseFAQ from '@/components/ui/CaseFAQ.astro';
+import { electricBikeFaqs } from '@/data/case-faqs';
 
 const problems = [
   { title: 'Robo de asientos' },
@@ -25,7 +27,7 @@ const milestones = [
 ---
 
 <BaseLayout
-  title="Bicicleta eléctrica: sharing y aranceles — Caso | Unicornio Azul"
+  title="Desarrollo y fabricación de una bicicleta eléctrica en China | Caso real"
   description="Caso de éxito: bicicleta eléctrica para alquiler en ayuntamientos. Checklist de fallos, proveedores en Asia, rediseño y solución arancelaria del 73% al 10%."
   image="/images/og-bicicleta-electrica.jpg"
   imageAlt="Bicicleta eléctrica sharing urbano — caso de éxito | Unicornio Azul"
@@ -306,6 +308,14 @@ const milestones = [
   </div>
 </section>
 
+
+<CaseFAQ
+  lang="es"
+  pageUrl="https://unicornioazul.es/casos/bicicleta-electrica/"
+  items={[...electricBikeFaqs.es]}
+  accent="#0A1628"
+/>
+
 <!-- CIERRE -->
 <section id="cierre" class="relative overflow-hidden" style="background:#00DD00;">
   <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 md:py-24" data-reveal>
@@ -415,16 +425,23 @@ const milestones = [
       {
         "@type": "Article",
         "@id": "https://unicornioazul.es/casos/bicicleta-electrica/#article",
-        "headline": "Bicicleta eléctrica: sharing y aranceles",
+        "headline": "Desarrollo y fabricación de una bicicleta eléctrica en China | Caso real",
         "name": "Bicicleta eléctrica — Caso de éxito",
         "description": "Caso de éxito: bicicleta eléctrica para alquiler en ayuntamientos. Checklist de fallos, proveedores en Asia, rediseño y solución arancelaria del 73% al 10%.",
         "url": "https://unicornioazul.es/casos/bicicleta-electrica/",
         "inLanguage": "es",
         "image": "https://unicornioazul.es/images/og-bicicleta-electrica.jpg",
         "author": {
-          "@type": "Organization",
-          "name": "Unicornio Azul",
-          "url": "https://unicornioazul.es"
+          "@type": "Person",
+          "name": "Luis Chicharro",
+          "jobTitle": "Fundador",
+          "url": "https://unicornioazul.es/sobre-nosotros",
+          "sameAs": ["https://www.linkedin.com/in/luis-chicharro/"],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Unicornio Azul",
+            "url": "https://unicornioazul.es"
+          }
         },
         "publisher": {
           "@type": "Organization",
@@ -449,6 +466,26 @@ const milestones = [
           "@type": "WebPage",
           "@id": "https://unicornioazul.es/casos/bicicleta-electrica/"
         }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://unicornioazul.es/sobre-nosotros#luis-chicharro",
+        "name": "Luis Chicharro",
+        "jobTitle": "Fundador",
+        "url": "https://unicornioazul.es/sobre-nosotros",
+        "sameAs": ["https://www.linkedin.com/in/luis-chicharro/"],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Unicornio Azul",
+          "url": "https://unicornioazul.es"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://unicornioazul.es/#organization",
+        "name": "Unicornio Azul",
+        "url": "https://unicornioazul.es",
+        "founder": { "@id": "https://unicornioazul.es/sobre-nosotros#luis-chicharro" }
       },
       {
         "@type": "BreadcrumbList",
