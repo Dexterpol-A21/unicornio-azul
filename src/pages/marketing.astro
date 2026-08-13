@@ -1,0 +1,1442 @@
+---
+/**
+ * Estudio interno de arte — NO INDEXAR.
+ * Solo uso privado. No enlazar desde nav/footer.
+ */
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const VERSION = 'v310';
+---
+
+<BaseLayout
+  title="Estudio de arte (privado) | Unicornio Azul"
+  description="Herramienta interna. No indexar."
+  noindex={true}
+  showHeader={false}
+>
+  <div class="studio" data-version={VERSION}>
+    <header class="studio-bar">
+      <div class="studio-bar__left">
+        <span class="studio-pill">PRIVADO · noindex</span>
+        <h1 class="studio-title">Estudio de arte</h1>
+        <span class="studio-meta">{VERSION} · /marketing</span>
+      </div>
+      <nav class="studio-nav" aria-label="Secciones">
+        <a href="#banner">Banner LinkedIn</a>
+        <a href="#posts">Posts</a>
+        <a href="#tarjetas">Tarjetas</a>
+      </nav>
+    </header>
+
+    <p class="studio-note">
+      Preview a <code>scale(0.4)</code>. Al descargar se rasteriza a escala 1 con
+      <code>html-to-image</code>. Posts → JPG · Tarjetas → PNG · PDF frente/reverso con jsPDF.
+    </p>
+
+    <!-- ═══════════ BANNER LINKEDIN 1584×396 ═══════════ -->
+    <section id="banner" class="studio-section">
+      <div class="studio-section__head">
+        <h2>Banner LinkedIn</h2>
+        <p>1584 × 396 · portada de perfil / empresa</p>
+      </div>
+
+      <div class="arte-card">
+        <div class="arte-card__meta">
+          <span>banner-linkedin</span>
+          <button type="button" class="btn-dl" data-dl="banner-linkedin" data-fmt="jpeg" data-file={`${VERSION}-banner-linkedin.jpg`}>
+            Descargar JPG
+          </button>
+        </div>
+        <p class="banner-safe-note">
+          Canvas 1584×396. Foto de perfil (desktop) tapa ~568×264 px abajo-izquierda.
+          Copy e iconos van a la derecha, fuera de esa zona. La guía roja solo se ve en preview (no se exporta).
+        </p>
+        <div class="preview-shell banner-preview" style="width: calc(1584px * 0.4); height: calc(396px * 0.4)">
+          <div
+            id="banner-linkedin"
+            class="arte"
+            style="width:1584px;height:396px;transform:scale(0.4);transform-origin:top left"
+          >
+            <div class="banner-li">
+              <!-- Contenido a la derecha · izquierda libre para la foto de perfil -->
+              <div class="banner-li__main">
+                <div class="banner-li__content">
+                  <p class="banner-li__h">
+                    <span class="banner-li__line">SOLUCIONES <span>REALES</span> PARA</span>
+                    <span class="banner-li__line">IDEAS <span>EXTRAORDINARIAS</span></span>
+                  </p>
+                  <p class="banner-li__sub">
+                    <span class="banner-li__rule" aria-hidden="true"></span>
+                    DESARROLLO DE <span>MARCAS 360°</span>
+                  </p>
+                </div>
+
+                <ul class="banner-li__services">
+                  <li>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 18h6"/><path d="M10 21h4"/>
+                      <path d="M12 3a6 6 0 0 0-3.5 10.8c.5.4.9 1 .9 1.7V17h5.2v-1.5c0-.7.4-1.3.9-1.7A6 6 0 0 0 12 3Z"/>
+                    </svg>
+                    ESTRATEGIA
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+                      <path d="M12 3.5 19 7.5v9L12 20.5 5 16.5v-9L12 3.5Z"/>
+                      <path d="M12 3.5v17M5 7.5l7 4 7-4"/>
+                    </svg>
+                    CREATIVIDAD
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M13 2 4 14h7l-1 8 10-13h-7l1-7Z"/>
+                    </svg>
+                    EJECUCIÓN
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 19h16M7 16V11M12 16V8M17 16V5"/>
+                      <path d="m14.5 7.5 2.5-2.5 2 1.5"/>
+                    </svg>
+                    RESULTADOS
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Guía preview (fuera de #banner-linkedin → no se exporta) -->
+          <div class="li-safe-guide" aria-hidden="true">
+            <div class="li-safe-guide__zone"></div>
+            <div class="li-safe-guide__avatar"></div>
+            <span class="li-safe-guide__label">foto perfil</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ POSTS 1080×1350 ═══════════ -->
+    <section id="posts" class="studio-section">
+      <div class="studio-section__head">
+        <h2>Posts</h2>
+        <p>1080 × 1350 · Instagram / LinkedIn</p>
+      </div>
+
+      <div class="arte-card arte-card--quotes">
+        <div class="arte-card__meta">
+          <span>post-quote · 6 tonos</span>
+        </div>
+
+        <form class="quote-editor" id="quote-editor" autocomplete="off">
+          <label class="quote-editor__field">
+            <span>Frase</span>
+            <textarea name="quote" rows="3">El marketing no arregla un mal producto.</textarea>
+          </label>
+          <label class="quote-editor__field">
+            <span>Atribución</span>
+            <input type="text" name="attr" value="— Luis Chicharro · Unicornio Azul" />
+          </label>
+          <label class="quote-editor__field">
+            <span>Pie</span>
+            <input type="text" name="foot" value="unicornioazul.es" />
+          </label>
+        </form>
+
+        <div class="quote-tones" id="quote-tones">
+          <!-- White -->
+          <div class="quote-tone">
+            <div class="quote-tone__meta">
+              <span class="quote-tone__dot" style="background:#FFFFFF;box-shadow:inset 0 0 0 1px rgba(15,37,72,0.25)"></span>
+              <span>White</span>
+              <button type="button" class="btn-dl" data-dl="post-quote-white" data-fmt="jpeg" data-file={`${VERSION}-frase-white.jpg`}>JPG</button>
+            </div>
+            <div class="preview-shell quote-preview">
+              <div id="post-quote-white" class="arte">
+                <div class="post post--quote post--tone-white">
+                  <div class="post__top">
+                    <img src="/images/logo-marino.png" alt="" class="post__logo post__logo--on-light" />
+                  </div>
+                  <div class="post__body post__body--center">
+                    <svg class="post__quote-icon" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <h3 class="post__quote-text" data-quote-text>El marketing no arregla un mal producto.</h3>
+                    <svg class="post__quote-icon post__quote-icon--close" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <p class="post__quote-attr" data-quote-attr>— Luis Chicharro · Unicornio Azul</p>
+                  </div>
+                  <div class="post__foot"><span data-quote-foot>unicornioazul.es</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ice -->
+          <div class="quote-tone">
+            <div class="quote-tone__meta">
+              <span class="quote-tone__dot" style="background:#A8D8EA"></span>
+              <span>Ice</span>
+              <button type="button" class="btn-dl" data-dl="post-quote-ice" data-fmt="jpeg" data-file={`${VERSION}-frase-ice.jpg`}>JPG</button>
+            </div>
+            <div class="preview-shell quote-preview">
+              <div id="post-quote-ice" class="arte">
+                <div class="post post--quote post--tone-ice">
+                  <div class="post__top">
+                    <img src="/images/logo-marino.png" alt="" class="post__logo post__logo--on-light" />
+                  </div>
+                  <div class="post__body post__body--center">
+                    <svg class="post__quote-icon" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <h3 class="post__quote-text" data-quote-text>El marketing no arregla un mal producto.</h3>
+                    <svg class="post__quote-icon post__quote-icon--close" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <p class="post__quote-attr" data-quote-attr>— Luis Chicharro · Unicornio Azul</p>
+                  </div>
+                  <div class="post__foot"><span data-quote-foot>unicornioazul.es</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sky -->
+          <div class="quote-tone">
+            <div class="quote-tone__meta">
+              <span class="quote-tone__dot" style="background:#0088B3"></span>
+              <span>Sky</span>
+              <button type="button" class="btn-dl" data-dl="post-quote-sky" data-fmt="jpeg" data-file={`${VERSION}-frase-sky.jpg`}>JPG</button>
+            </div>
+            <div class="preview-shell quote-preview">
+              <div id="post-quote-sky" class="arte">
+                <div class="post post--quote post--tone-sky">
+                  <div class="post__top">
+                    <img src="/images/logo-marino.png" alt="" class="post__logo post__logo--on-light" />
+                  </div>
+                  <div class="post__body post__body--center">
+                    <svg class="post__quote-icon" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <h3 class="post__quote-text" data-quote-text>El marketing no arregla un mal producto.</h3>
+                    <svg class="post__quote-icon post__quote-icon--close" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <p class="post__quote-attr" data-quote-attr>— Luis Chicharro · Unicornio Azul</p>
+                  </div>
+                  <div class="post__foot"><span data-quote-foot>unicornioazul.es</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aqua -->
+          <div class="quote-tone">
+            <div class="quote-tone__meta">
+              <span class="quote-tone__dot" style="background:#00698D"></span>
+              <span>Aqua</span>
+              <button type="button" class="btn-dl" data-dl="post-quote-aqua" data-fmt="jpeg" data-file={`${VERSION}-frase-aqua.jpg`}>JPG</button>
+            </div>
+            <div class="preview-shell quote-preview">
+              <div id="post-quote-aqua" class="arte">
+                <div class="post post--quote post--tone-aqua">
+                  <div class="post__top">
+                    <img src="/images/logo-marino.png" alt="" class="post__logo post__logo--on-light" />
+                  </div>
+                  <div class="post__body post__body--center">
+                    <svg class="post__quote-icon" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <h3 class="post__quote-text" data-quote-text>El marketing no arregla un mal producto.</h3>
+                    <svg class="post__quote-icon post__quote-icon--close" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <p class="post__quote-attr" data-quote-attr>— Luis Chicharro · Unicornio Azul</p>
+                  </div>
+                  <div class="post__foot"><span data-quote-foot>unicornioazul.es</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navy -->
+          <div class="quote-tone">
+            <div class="quote-tone__meta">
+              <span class="quote-tone__dot" style="background:#163667"></span>
+              <span>Navy</span>
+              <button type="button" class="btn-dl" data-dl="post-quote-navy" data-fmt="jpeg" data-file={`${VERSION}-frase-navy.jpg`}>JPG</button>
+            </div>
+            <div class="preview-shell quote-preview">
+              <div id="post-quote-navy" class="arte">
+                <div class="post post--quote post--tone-navy">
+                  <div class="post__top">
+                    <img src="/images/logo-marino.png" alt="" class="post__logo post__logo--on-light" />
+                  </div>
+                  <div class="post__body post__body--center">
+                    <svg class="post__quote-icon" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <h3 class="post__quote-text" data-quote-text>El marketing no arregla un mal producto.</h3>
+                    <svg class="post__quote-icon post__quote-icon--close" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <p class="post__quote-attr" data-quote-attr>— Luis Chicharro · Unicornio Azul</p>
+                  </div>
+                  <div class="post__foot"><span data-quote-foot>unicornioazul.es</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Midnight -->
+          <div class="quote-tone">
+            <div class="quote-tone__meta">
+              <span class="quote-tone__dot" style="background:#0F2548"></span>
+              <span>Midnight</span>
+              <button type="button" class="btn-dl" data-dl="post-quote-midnight" data-fmt="jpeg" data-file={`${VERSION}-frase-midnight.jpg`}>JPG</button>
+            </div>
+            <div class="preview-shell quote-preview">
+              <div id="post-quote-midnight" class="arte">
+                <div class="post post--quote post--tone-midnight">
+                  <div class="post__top">
+                    <img src="/images/logo-marino.png" alt="" class="post__logo post__logo--on-light" />
+                  </div>
+                  <div class="post__body post__body--center">
+                    <svg class="post__quote-icon" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <h3 class="post__quote-text" data-quote-text>El marketing no arregla un mal producto.</h3>
+                    <svg class="post__quote-icon post__quote-icon--close" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V18.2C0 8.1 6.2.8 18.4 0v7.4C12.3 8.2 9.2 11.8 9.2 17.4H18V36H0Zm30 0V18.2C30 8.1 36.2.8 48.4 0v7.4C42.3 8.2 39.2 11.8 39.2 17.4H48V36H30Z"/></svg>
+                    <p class="post__quote-attr" data-quote-attr>— Luis Chicharro · Unicornio Azul</p>
+                  </div>
+                  <div class="post__foot"><span data-quote-foot>unicornioazul.es</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TARJETAS 1050×600 ═══════════ -->
+    <section id="tarjetas" class="studio-section">
+      <div class="studio-section__head">
+        <h2>Tarjetas de presentación</h2>
+        <p>1050 × 600 · PNG + PDF frente/reverso · QR → unicornioazul.es</p>
+      </div>
+
+      <div class="tarjeta-actions">
+        <button type="button" class="btn-dl" data-dl="tarjeta-frente" data-fmt="png" data-file={`${VERSION}-tarjeta-frente.png`}>
+          Descargar frente PNG
+        </button>
+        <button type="button" class="btn-dl" data-dl="tarjeta-reverso" data-fmt="png" data-file={`${VERSION}-tarjeta-reverso.png`}>
+          Descargar reverso PNG
+        </button>
+        <button type="button" class="btn-dl btn-dl--accent" id="btn-pdf-tarjetas">
+          Descargar PDF (frente + reverso)
+        </button>
+      </div>
+
+      <div class="arte-grid arte-grid--cards">
+        <div class="arte-card">
+          <div class="arte-card__meta"><span>tarjeta-frente</span></div>
+          <div class="preview-shell" style="width: calc(1050px * 0.4); height: calc(600px * 0.4)">
+            <div id="tarjeta-frente" class="arte" style="width:1050px;height:600px;transform:scale(0.4);transform-origin:top left">
+              <div class="card card--front">
+                <div class="card__glow" aria-hidden="true"></div>
+                <img src="/images/logo-aqua.png" alt="" class="card__logo" />
+                <div class="card__brand-block">
+                  <p class="card__brand">Unicornio Azul</p>
+                  <p class="card__tagline">Soluciones reales para ideas extraordinarias</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arte-card">
+          <div class="arte-card__meta"><span>tarjeta-reverso</span></div>
+          <div class="preview-shell" style="width: calc(1050px * 0.4); height: calc(600px * 0.4)">
+            <div id="tarjeta-reverso" class="arte" style="width:1050px;height:600px;transform:scale(0.4);transform-origin:top left">
+              <div class="card card--back">
+                <div class="card__info">
+                  <p class="card__name">Luis Chicharro</p>
+                  <p class="card__role">Fundador · Unicornio Azul</p>
+                  <div class="card__lines">
+                    <p>luis.chicharro@unicornioazul.es</p>
+                    <p>unicornioazul.es</p>
+                    <p>linkedin.com/in/luis-chicharro</p>
+                  </div>
+                </div>
+                <div class="card__qr-wrap">
+                  <canvas id="qr-tarjeta" width="200" height="200"></canvas>
+                  <p class="card__qr-label">Escanea</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style is:global>
+    /* Studio chrome — fuera del arte exportable */
+    .studio {
+      --studio-bg: #0b1220;
+      --studio-panel: #121a2b;
+      --studio-line: rgba(255, 255, 255, 0.08);
+      --studio-text: #e8eef7;
+      --studio-muted: rgba(232, 238, 247, 0.55);
+      --blue-navy: #163667;
+      --blue-midnight: #0f2548;
+      --blue-aqua: #00698d;
+      --blue-sky: #0088b3;
+      --blue-ice: #a8d8ea;
+      min-height: 100dvh;
+      background: var(--studio-bg);
+      color: var(--studio-text);
+      font-family: 'Satoshi', sans-serif;
+      padding: 0 0 4rem;
+    }
+
+    .studio-bar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: rgba(11, 18, 32, 0.92);
+      border-bottom: 1px solid var(--studio-line);
+      backdrop-filter: blur(10px);
+    }
+
+    .studio-bar__left {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.75rem 1rem;
+    }
+
+    .studio-pill {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #0b1220;
+      background: #f0b429;
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    .studio-title {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .studio-meta {
+      font-size: 0.8rem;
+      color: var(--studio-muted);
+    }
+
+    .studio-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+    }
+
+    .studio-nav a {
+      color: var(--studio-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .studio-nav a:hover {
+      color: var(--studio-text);
+    }
+
+    .studio-note {
+      margin: 1.25rem 1.25rem 0;
+      max-width: 70ch;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--studio-muted);
+    }
+
+    .studio-note code {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78em;
+      color: var(--blue-ice);
+    }
+
+    .studio-section {
+      padding: 2.5rem 1.25rem 0;
+      max-width: 100%;
+    }
+
+    .studio-section__head {
+      margin-bottom: 1.25rem;
+    }
+
+    .studio-section__head h2 {
+      margin: 0 0 0.25rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .studio-section__head p {
+      margin: 0;
+      color: var(--studio-muted);
+      font-size: 0.9rem;
+    }
+
+    .arte-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .arte-grid--cards {
+      margin-top: 1rem;
+    }
+
+    .arte-card {
+      background: var(--studio-panel);
+      border: 1px solid var(--studio-line);
+      border-radius: 10px;
+      padding: 0.85rem;
+      width: fit-content;
+    }
+
+    .arte-card__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--studio-muted);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .preview-shell {
+      overflow: hidden;
+      border-radius: 4px;
+      background: #000;
+    }
+
+    .arte {
+      will-change: transform;
+    }
+
+    .btn-dl {
+      appearance: none;
+      border: 1px solid rgba(168, 216, 234, 0.35);
+      background: rgba(0, 105, 141, 0.25);
+      color: var(--blue-ice);
+      font-family: 'Satoshi', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.4rem 0.7rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-dl:hover {
+      background: rgba(0, 136, 179, 0.4);
+      border-color: var(--blue-ice);
+    }
+
+    .btn-dl:disabled {
+      opacity: 0.5;
+      cursor: wait;
+    }
+
+    .btn-dl--accent {
+      background: #163667;
+      border-color: #0088b3;
+      color: #fff;
+    }
+
+    .tarjeta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    /* ── Banner LinkedIn ──
+       Canvas: 1584×396
+       Foto perfil (desktop): solapa ~568×264 px abajo-izquierda
+       Contenido crítico → derecha (fuera de esa zona)
+    */
+    .banner-safe-note {
+      margin: 0 0 0.75rem;
+      max-width: 72ch;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: var(--studio-muted);
+    }
+
+    .banner-preview {
+      position: relative;
+    }
+
+    .quote-editor {
+      display: grid;
+      gap: 0.75rem;
+      margin: 0 0 1.25rem;
+      width: 100%;
+      max-width: none;
+    }
+
+    .arte-card--quotes {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .quote-tones {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.85rem;
+      width: 100%;
+    }
+
+    .quote-tone {
+      min-width: 0;
+      width: 100%;
+    }
+
+    .quote-tone .preview-shell,
+    .quote-preview {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1080 / 1350;
+      position: relative;
+    }
+
+    .quote-tone .arte {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1350px;
+      transform-origin: top left;
+    }
+
+    .quote-tone__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--studio-muted);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .quote-tone__dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+
+    .quote-tone__meta .btn-dl {
+      margin-left: auto;
+      padding: 0.3rem 0.55rem;
+      font-size: 0.68rem;
+    }
+
+    .quote-editor__field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--studio-muted);
+    }
+
+    .quote-editor__field input,
+    .quote-editor__field textarea {
+      appearance: none;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid var(--studio-line);
+      border-radius: 8px;
+      background: #0b1220;
+      color: var(--studio-text);
+      font-family: 'Satoshi', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      padding: 0.65rem 0.75rem;
+      outline: none;
+      resize: vertical;
+    }
+
+    .quote-editor__field input:focus,
+    .quote-editor__field textarea:focus {
+      border-color: rgba(0, 136, 179, 0.7);
+      box-shadow: 0 0 0 3px rgba(0, 136, 179, 0.15);
+    }
+
+    .li-safe-guide {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* Zona a evitar: 568×264 a escala 0.4 del preview */
+    .li-safe-guide__zone {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: calc(568px * 0.4);
+      height: calc(264px * 0.4);
+      background: rgba(220, 38, 38, 0.12);
+      border: 1.5px dashed rgba(220, 38, 38, 0.65);
+      box-sizing: border-box;
+    }
+
+    /* Círculo aprox. de la foto (~300px Ø en canvas → 120px en preview) */
+    .li-safe-guide__avatar {
+      position: absolute;
+      left: calc(24px * 0.4);
+      bottom: calc(-40px * 0.4);
+      width: calc(300px * 0.4);
+      height: calc(300px * 0.4);
+      border-radius: 50%;
+      border: 2px solid rgba(220, 38, 38, 0.75);
+      background: rgba(220, 38, 38, 0.08);
+      box-sizing: border-box;
+    }
+
+    .li-safe-guide__label {
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #dc2626;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    .banner-li {
+      --li-accent: #0088B3;
+      --li-ink: #0F2548;
+      --li-muted: #4B5563;
+      /* Margen izquierdo ≥ zona foto (568px) + holgura */
+      --li-safe-left: 600px;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: #FFFFFF;
+      color: var(--li-ink);
+      font-family: 'Space Grotesk', sans-serif;
+      box-sizing: border-box;
+      padding: 36px 48px 36px var(--li-safe-left);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .banner-li__main {
+      width: 100%;
+      max-width: 920px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 40px;
+      margin-left: auto;
+    }
+
+    .banner-li__content {
+      position: relative;
+      z-index: 1;
+      text-align: right;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .banner-li__h {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      text-transform: uppercase;
+      color: var(--li-ink);
+    }
+
+    .banner-li__line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .banner-li__h .banner-li__line > span,
+    .banner-li__sub span:not(.banner-li__rule) {
+      color: var(--li-accent);
+    }
+
+    .banner-li__sub {
+      margin: 20px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      font-family: 'Satoshi', sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      line-height: 1.25;
+      text-transform: uppercase;
+      color: var(--li-muted);
+    }
+
+    .banner-li__rule {
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--li-accent);
+      flex-shrink: 0;
+    }
+
+    .banner-li__services {
+      position: relative;
+      z-index: 1;
+      list-style: none;
+      margin: 0;
+      padding: 4px 0 4px 34px;
+      border-left: 2px solid rgba(15, 37, 72, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+      font-family: 'Satoshi', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1A1A1A;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .banner-li__services li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0;
+      border: none;
+      justify-content: flex-start;
+    }
+
+    .banner-li__services li:first-child,
+    .banner-li__services li:last-child {
+      justify-content: flex-start;
+      border: none;
+    }
+
+    .banner-li__services svg {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      color: #163667;
+    }
+
+    /* ── Posts ── */
+    .post {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 72px 64px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Satoshi', sans-serif;
+    }
+
+    .post--navy {
+      background: linear-gradient(160deg, #163667 0%, #0f2548 100%);
+      color: #fff;
+    }
+
+    .post--midnight {
+      background: linear-gradient(160deg, #0f2548 0%, #0b1a33 100%);
+      color: #fff;
+    }
+
+    .post--ice {
+      background: linear-gradient(160deg, #e8f4f8 0%, #a8d8ea 100%);
+      color: #0f2548;
+    }
+
+    .post--aqua {
+      background: linear-gradient(160deg, #0088b3 0%, #00698d 55%, #163667 100%);
+      color: #fff;
+    }
+
+    .post--quote {
+      --quote-ink: #0F2548;
+      --quote-muted: rgba(15, 37, 72, 0.55);
+      --quote-accent: #0088B3;
+      --quote-bg: #A8D8EA;
+      background: var(--quote-bg);
+      color: var(--quote-ink);
+    }
+
+    .post--quote .post__logo--on-light,
+    .post--quote .post__logo--on-dark {
+      height: 128px;
+      padding: 16px 22px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .post--quote .post__quote-icon {
+      display: block;
+      width: 72px;
+      height: auto;
+      margin: 0 auto 8px;
+      color: var(--quote-accent);
+      opacity: 0.9;
+    }
+
+    .post--quote .post__quote-icon--close {
+      margin: 20px auto 0;
+      transform: rotate(180deg);
+    }
+
+    .post--quote .post__quote-text {
+      margin: 8px auto 0;
+      max-width: 10ch;
+      font-size: 96px;
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+      color: var(--quote-ink);
+    }
+
+    .post--quote .post__quote-attr {
+      margin-top: 28px;
+      font-size: 28px;
+      color: var(--quote-muted);
+    }
+
+    .post--quote .post__foot {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--quote-muted);
+    }
+
+    /* 6 tonos — blanco + arcoíris Unicornio Azul */
+    .post--tone-white {
+      --quote-bg: #FFFFFF;
+      --quote-ink: #0F2548;
+      --quote-muted: rgba(15, 37, 72, 0.55);
+      --quote-accent: #0088B3;
+    }
+
+    .post--tone-ice {
+      --quote-bg: #A8D8EA;
+      --quote-ink: #0F2548;
+      --quote-muted: rgba(15, 37, 72, 0.58);
+      --quote-accent: #00698D;
+    }
+
+    .post--tone-sky {
+      --quote-bg: #0088B3;
+      --quote-ink: #FFFFFF;
+      --quote-muted: rgba(255, 255, 255, 0.78);
+      --quote-accent: #A8D8EA;
+    }
+
+    .post--tone-aqua {
+      --quote-bg: #00698D;
+      --quote-ink: #FFFFFF;
+      --quote-muted: rgba(255, 255, 255, 0.78);
+      --quote-accent: #A8D8EA;
+    }
+
+    .post--tone-navy {
+      --quote-bg: #163667;
+      --quote-ink: #FFFFFF;
+      --quote-muted: rgba(255, 255, 255, 0.75);
+      --quote-accent: #A8D8EA;
+    }
+
+    .post--tone-midnight {
+      --quote-bg: #0F2548;
+      --quote-ink: #FFFFFF;
+      --quote-muted: rgba(255, 255, 255, 0.72);
+      --quote-accent: #0088B3;
+    }
+
+    .post--navy::after,
+    .post--midnight::after,
+    .post--aqua::after {
+      content: '';
+      position: absolute;
+      width: 640px;
+      height: 640px;
+      border-radius: 50%;
+      right: -220px;
+      bottom: -260px;
+      background: radial-gradient(circle, rgba(168, 216, 234, 0.22) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    .post__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .post__logo {
+      height: 56px;
+      width: auto;
+    }
+
+    .post__logo--dark {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 8px;
+      padding: 8px 12px;
+      height: 64px;
+    }
+
+    .post__tag {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #a8d8ea;
+      border: 1.5px solid rgba(168, 216, 234, 0.45);
+      padding: 10px 16px;
+      border-radius: 999px;
+    }
+
+    .post__tag--dark {
+      color: #163667;
+      border-color: rgba(22, 54, 103, 0.35);
+    }
+
+    .post__body {
+      position: relative;
+      z-index: 1;
+      max-width: 16ch;
+    }
+
+    .post__body--center {
+      max-width: none;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .post__h {
+      margin: 0 0 28px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 92px;
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 0.95;
+      color: #fff;
+    }
+
+    .post__h--dark {
+      color: #0f2548;
+    }
+
+    .post__p {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.35;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 22ch;
+    }
+
+    .post__p--dark {
+      color: rgba(15, 37, 72, 0.75);
+    }
+
+    .post__quote-mark {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 160px;
+      line-height: 0.6;
+      color: #163667;
+      opacity: 0.35;
+    }
+
+    .post__quote-text {
+      margin: 12px auto 28px;
+      max-width: 12ch;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 64px;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: #0f2548;
+    }
+
+    .post__quote-attr {
+      margin: 0;
+      font-size: 22px;
+      color: rgba(15, 37, 72, 0.55);
+    }
+
+    .post__foot {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 20px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .post__foot--dark {
+      color: rgba(15, 37, 72, 0.65);
+    }
+
+    .post__pill {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .post__pill--dark {
+      background: rgba(22, 54, 103, 0.12);
+      color: #163667;
+    }
+
+    /* ── Tarjetas ── */
+    .card {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Satoshi', sans-serif;
+    }
+
+    .card--front {
+      background: linear-gradient(135deg, #0f2548 0%, #163667 50%, #00698d 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 64px 72px;
+      gap: 36px;
+    }
+
+    .card__glow {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -100px;
+      top: -120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168, 216, 234, 0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .card__logo {
+      height: 72px;
+      width: auto;
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+
+    .card__brand-block {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card__brand {
+      margin: 0 0 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .card__tagline {
+      margin: 0;
+      font-size: 22px;
+      color: #a8d8ea;
+      max-width: 28ch;
+      line-height: 1.35;
+    }
+
+    .card--back {
+      background: #f2f5f8;
+      color: #0f2548;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 56px 64px;
+      gap: 40px;
+    }
+
+    .card__name {
+      margin: 0 0 6px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .card__role {
+      margin: 0 0 28px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #00698d;
+    }
+
+    .card__lines {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 18px;
+      color: rgba(15, 37, 72, 0.75);
+    }
+
+    .card__lines p {
+      margin: 0;
+    }
+
+    .card__qr-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .card__qr-wrap canvas {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .card__qr-label {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(15, 37, 72, 0.45);
+    }
+  </style>
+
+  <script>
+    import { toJpeg, toPng } from 'html-to-image';
+    import { jsPDF } from 'jspdf';
+    import QRCode from 'qrcode';
+
+    const QR_URL = 'https://unicornioazul.es';
+    const VERSION = document.querySelector('.studio')?.getAttribute('data-version') || 'v310';
+
+    async function waitFonts() {
+      if (document.fonts?.ready) await document.fonts.ready;
+    }
+
+    async function withExportScale(el: HTMLElement, run: () => Promise<string>) {
+      const prev = el.style.transform;
+      el.classList.add('is-exporting');
+      el.style.transform = 'scale(1)';
+      try {
+        await waitFonts();
+        // Un frame para que el layout asiente a escala 1
+        await new Promise((r) => requestAnimationFrame(() => r(undefined)));
+        return await run();
+      } finally {
+        el.style.transform = prev;
+        el.classList.remove('is-exporting');
+      }
+    }
+
+    function triggerDownload(dataUrl: string, filename: string) {
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = filename;
+      a.click();
+    }
+
+    async function descargarArte(id: string, fmt: 'jpeg' | 'png', filename: string) {
+      const el = document.getElementById(id);
+      if (!el) throw new Error(`No existe #${id}`);
+
+      const dataUrl = await withExportScale(el, async () => {
+        if (fmt === 'png') {
+          return toPng(el, {
+            cacheBust: true,
+            pixelRatio: 1,
+            width: el.offsetWidth,
+            height: el.offsetHeight,
+          });
+        }
+        return toJpeg(el, {
+          cacheBust: true,
+          quality: 0.95,
+          pixelRatio: 1,
+          width: el.offsetWidth,
+          height: el.offsetHeight,
+          backgroundColor: '#ffffff',
+        });
+      });
+
+      triggerDownload(dataUrl, filename);
+    }
+
+    async function descargarPdfTarjetas() {
+      const frente = document.getElementById('tarjeta-frente');
+      const reverso = document.getElementById('tarjeta-reverso');
+      if (!frente || !reverso) return;
+
+      const wMm = 89;
+      const hMm = 51;
+
+      const frenteUrl = await withExportScale(frente, () =>
+        toPng(frente, { cacheBust: true, pixelRatio: 2, width: frente.offsetWidth, height: frente.offsetHeight }),
+      );
+      const reversoUrl = await withExportScale(reverso, () =>
+        toPng(reverso, { cacheBust: true, pixelRatio: 2, width: reverso.offsetWidth, height: reverso.offsetHeight }),
+      );
+
+      const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: [wMm, hMm] });
+      pdf.addImage(frenteUrl, 'PNG', 0, 0, wMm, hMm);
+      pdf.addPage([wMm, hMm], 'landscape');
+      pdf.addImage(reversoUrl, 'PNG', 0, 0, wMm, hMm);
+      pdf.save(`${VERSION}-tarjetas.pdf`);
+    }
+
+    function initQuoteEditor() {
+      const form = document.getElementById('quote-editor') as HTMLFormElement | null;
+      if (!form) return;
+
+      const sync = () => {
+        const data = new FormData(form);
+        const quote = String(data.get('quote') ?? '');
+        const attr = String(data.get('attr') ?? '');
+        const foot = String(data.get('foot') ?? '');
+
+        document.querySelectorAll('[data-quote-text]').forEach((el) => {
+          el.textContent = quote;
+        });
+        document.querySelectorAll('[data-quote-attr]').forEach((el) => {
+          el.textContent = attr;
+        });
+        document.querySelectorAll('[data-quote-foot]').forEach((el) => {
+          el.textContent = foot;
+        });
+      };
+
+      form.addEventListener('input', sync);
+      form.addEventListener('submit', (e) => e.preventDefault());
+      sync();
+    }
+
+    function syncQuotePreviewScales() {
+      document.querySelectorAll<HTMLElement>('.quote-preview').forEach((shell) => {
+        const arte = shell.querySelector<HTMLElement>('.arte');
+        if (!arte || arte.classList.contains('is-exporting')) return;
+        const scale = shell.clientWidth / 1080;
+        arte.style.transform = `scale(${scale})`;
+      });
+    }
+
+    function initQuotePreviewScales() {
+      const shells = document.querySelectorAll('.quote-preview');
+      if (!shells.length) return;
+
+      syncQuotePreviewScales();
+      const ro = new ResizeObserver(() => syncQuotePreviewScales());
+      shells.forEach((shell) => ro.observe(shell));
+      window.addEventListener('resize', syncQuotePreviewScales);
+    }
+
+    async function initQr() {
+      const canvas = document.getElementById('qr-tarjeta') as HTMLCanvasElement | null;
+      if (!canvas) return;
+      await QRCode.toCanvas(canvas, QR_URL, {
+        width: 200,
+        margin: 1,
+        color: { dark: '#0F2548', light: '#FFFFFF' },
+        errorCorrectionLevel: 'M',
+      });
+    }
+
+    document.querySelectorAll<HTMLButtonElement>('.btn-dl[data-dl]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const id = btn.dataset.dl;
+        const fmt = (btn.dataset.fmt || 'jpeg') as 'jpeg' | 'png';
+        const file = btn.dataset.file;
+        if (!id || !file) return;
+        const label = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Generando…';
+        try {
+          await descargarArte(id, fmt, file);
+        } catch (err) {
+          console.error(err);
+          alert('No se pudo exportar. Revisa la consola.');
+        } finally {
+          btn.disabled = false;
+          btn.textContent = label;
+        }
+      });
+    });
+
+    const pdfBtn = document.getElementById('btn-pdf-tarjetas');
+    pdfBtn?.addEventListener('click', async () => {
+      const label = pdfBtn.textContent;
+      pdfBtn.setAttribute('disabled', 'true');
+      pdfBtn.textContent = 'Generando PDF…';
+      try {
+        await descargarPdfTarjetas();
+      } catch (err) {
+        console.error(err);
+        alert('No se pudo generar el PDF.');
+      } finally {
+        pdfBtn.removeAttribute('disabled');
+        pdfBtn.textContent = label;
+      }
+    });
+
+    initQuoteEditor();
+    initQuotePreviewScales();
+    initQr();
+
+    // API global por si quieres llamar desde consola: descargarArte('post-software')
+    (window as unknown as { descargarArte: typeof descargarArte }).descargarArte = async (
+      id: string,
+      fmt: 'jpeg' | 'png' = id.startsWith('tarjeta') ? 'png' : 'jpeg',
+    ) => {
+      const file =
+        id === 'post-software'
+          ? `${VERSION}-software-a-medida.jpg`
+          : id === 'banner-linkedin'
+            ? `${VERSION}-banner-linkedin.jpg`
+            : `${VERSION}-${id}.${fmt === 'png' ? 'png' : 'jpg'}`;
+      await descargarArte(id, fmt, file);
+    };
+  </script>
+</BaseLayout>

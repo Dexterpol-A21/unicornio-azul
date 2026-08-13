@@ -9,5 +9,6 @@ Disallow: /propuestas
 Disallow: /en/proposals
 Disallow: /gracias
 Disallow: /en/thank-you
+Disallow: /marketing
 
 Sitemap: https://unicornioazul.es/sitemap-index.xml

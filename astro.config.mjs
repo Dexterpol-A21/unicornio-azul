@@ -21,12 +21,17 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) =>
-        !page.includes('/og/') &&
-        !page.includes('/propuestas') &&
-        !page.includes('/proposals') &&
-        !page.includes('/gracias') &&
-        !page.includes('/thank-you'),
+      filter: (page) => {
+        const path = new URL(page).pathname.replace(/\/$/, '') || '/';
+        return (
+          !path.startsWith('/og/') &&
+          path !== '/propuestas' &&
+          path !== '/en/proposals' &&
+          path !== '/gracias' &&
+          path !== '/en/thank-you' &&
+          path !== '/marketing'
+        );
+      },
     }),
   ],
   vite: {
