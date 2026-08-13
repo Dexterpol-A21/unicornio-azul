@@ -24,13 +24,12 @@ const VERSION = 'v310';
       <nav class="studio-nav" aria-label="Secciones">
         <a href="#banner">Banner LinkedIn</a>
         <a href="#posts">Posts</a>
-        <a href="#tarjetas">Tarjetas</a>
       </nav>
     </header>
 
     <p class="studio-note">
-      Preview a <code>scale(0.4)</code>. Al descargar se rasteriza a escala 1 con
-      <code>html-to-image</code>. Posts → JPG · Tarjetas → PNG · PDF frente/reverso con jsPDF.
+      Preview a escala reducida. Al descargar se rasteriza a escala 1 con
+      <code>html-to-image</code>. Posts → JPG.
     </p>
 
     <!-- ═══════════ BANNER LINKEDIN 1584×396 ═══════════ -->
@@ -138,6 +137,14 @@ const VERSION = 'v310';
             <span>Pie</span>
             <input type="text" name="foot" value="unicornioazul.es" />
           </label>
+          <div class="quote-editor__field quote-editor__bg">
+            <span>Fondo (todas las variantes)</span>
+            <div class="quote-bg-row">
+              <input type="file" id="quote-bg-input" accept="image/*" />
+              <button type="button" class="btn-dl" id="quote-bg-clear">Quitar imagen</button>
+            </div>
+            <p class="quote-bg-hint">La imagen se aplica a las 6. Cada tono tiñe encima para mantener legibilidad.</p>
+          </div>
         </form>
 
         <div class="quote-tones" id="quote-tones">
@@ -293,67 +300,6 @@ const VERSION = 'v310';
         </div>
       </div>
     </section>
-
-    <!-- ═══════════ TARJETAS 1050×600 ═══════════ -->
-    <section id="tarjetas" class="studio-section">
-      <div class="studio-section__head">
-        <h2>Tarjetas de presentación</h2>
-        <p>1050 × 600 · PNG + PDF frente/reverso · QR → unicornioazul.es</p>
-      </div>
-
-      <div class="tarjeta-actions">
-        <button type="button" class="btn-dl" data-dl="tarjeta-frente" data-fmt="png" data-file={`${VERSION}-tarjeta-frente.png`}>
-          Descargar frente PNG
-        </button>
-        <button type="button" class="btn-dl" data-dl="tarjeta-reverso" data-fmt="png" data-file={`${VERSION}-tarjeta-reverso.png`}>
-          Descargar reverso PNG
-        </button>
-        <button type="button" class="btn-dl btn-dl--accent" id="btn-pdf-tarjetas">
-          Descargar PDF (frente + reverso)
-        </button>
-      </div>
-
-      <div class="arte-grid arte-grid--cards">
-        <div class="arte-card">
-          <div class="arte-card__meta"><span>tarjeta-frente</span></div>
-          <div class="preview-shell" style="width: calc(1050px * 0.4); height: calc(600px * 0.4)">
-            <div id="tarjeta-frente" class="arte" style="width:1050px;height:600px;transform:scale(0.4);transform-origin:top left">
-              <div class="card card--front">
-                <div class="card__glow" aria-hidden="true"></div>
-                <img src="/images/logo-aqua.png" alt="" class="card__logo" />
-                <div class="card__brand-block">
-                  <p class="card__brand">Unicornio Azul</p>
-                  <p class="card__tagline">Soluciones reales para ideas extraordinarias</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="arte-card">
-          <div class="arte-card__meta"><span>tarjeta-reverso</span></div>
-          <div class="preview-shell" style="width: calc(1050px * 0.4); height: calc(600px * 0.4)">
-            <div id="tarjeta-reverso" class="arte" style="width:1050px;height:600px;transform:scale(0.4);transform-origin:top left">
-              <div class="card card--back">
-                <div class="card__info">
-                  <p class="card__name">Luis Chicharro</p>
-                  <p class="card__role">Fundador · Unicornio Azul</p>
-                  <div class="card__lines">
-                    <p>luis.chicharro@unicornioazul.es</p>
-                    <p>unicornioazul.es</p>
-                    <p>linkedin.com/in/luis-chicharro</p>
-                  </div>
-                </div>
-                <div class="card__qr-wrap">
-                  <canvas id="qr-tarjeta" width="200" height="200"></canvas>
-                  <p class="card__qr-label">Escanea</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 
   <style is:global>
@@ -482,10 +428,6 @@ const VERSION = 'v310';
       gap: 1.5rem;
     }
 
-    .arte-grid--cards {
-      margin-top: 1rem;
-    }
-
     .arte-card {
       background: var(--studio-panel);
       border: 1px solid var(--studio-line);
@@ -543,12 +485,6 @@ const VERSION = 'v310';
       background: #163667;
       border-color: #0088b3;
       color: #fff;
-    }
-
-    .tarjeta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
     }
 
     /* ── Banner LinkedIn ──
@@ -668,6 +604,38 @@ const VERSION = 'v310';
     .quote-editor__field textarea:focus {
       border-color: rgba(0, 136, 179, 0.7);
       box-shadow: 0 0 0 3px rgba(0, 136, 179, 0.15);
+    }
+
+    .quote-editor__bg {
+      grid-column: 1 / -1;
+    }
+
+    .quote-bg-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .quote-bg-row input[type='file'] {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--studio-muted);
+      border: 1px solid var(--studio-line);
+      border-radius: 8px;
+      background: #0b1220;
+    }
+
+    .quote-bg-hint {
+      margin: 0.35rem 0 0;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--studio-muted);
+      opacity: 0.85;
     }
 
     .li-safe-guide {
@@ -883,8 +851,40 @@ const VERSION = 'v310';
       --quote-muted: rgba(15, 37, 72, 0.55);
       --quote-accent: #0088B3;
       --quote-bg: #A8D8EA;
+      --quote-wash: rgba(168, 216, 234, 0.62);
       background: var(--quote-bg);
       color: var(--quote-ink);
+    }
+
+    .post__photo {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      display: none;
+    }
+
+    .post--quote.has-photo .post__photo {
+      display: block;
+    }
+
+    .post--quote.has-photo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: var(--quote-wash);
+      pointer-events: none;
+    }
+
+    .post--quote.has-photo .post__top,
+    .post--quote.has-photo .post__body,
+    .post--quote.has-photo .post__foot {
+      position: relative;
+      z-index: 1;
     }
 
     .post--quote .post__logo--on-light,
@@ -933,6 +933,7 @@ const VERSION = 'v310';
     /* 6 tonos — blanco + arcoíris Unicornio Azul */
     .post--tone-white {
       --quote-bg: #FFFFFF;
+      --quote-wash: rgba(255, 255, 255, 0.55);
       --quote-ink: #0F2548;
       --quote-muted: rgba(15, 37, 72, 0.55);
       --quote-accent: #0088B3;
@@ -940,6 +941,7 @@ const VERSION = 'v310';
 
     .post--tone-ice {
       --quote-bg: #A8D8EA;
+      --quote-wash: rgba(168, 216, 234, 0.58);
       --quote-ink: #0F2548;
       --quote-muted: rgba(15, 37, 72, 0.58);
       --quote-accent: #00698D;
@@ -947,6 +949,7 @@ const VERSION = 'v310';
 
     .post--tone-sky {
       --quote-bg: #0088B3;
+      --quote-wash: rgba(0, 136, 179, 0.58);
       --quote-ink: #FFFFFF;
       --quote-muted: rgba(255, 255, 255, 0.78);
       --quote-accent: #A8D8EA;
@@ -954,6 +957,7 @@ const VERSION = 'v310';
 
     .post--tone-aqua {
       --quote-bg: #00698D;
+      --quote-wash: rgba(0, 105, 141, 0.6);
       --quote-ink: #FFFFFF;
       --quote-muted: rgba(255, 255, 255, 0.78);
       --quote-accent: #A8D8EA;
@@ -961,6 +965,7 @@ const VERSION = 'v310';
 
     .post--tone-navy {
       --quote-bg: #163667;
+      --quote-wash: rgba(22, 54, 103, 0.62);
       --quote-ink: #FFFFFF;
       --quote-muted: rgba(255, 255, 255, 0.75);
       --quote-accent: #A8D8EA;
@@ -968,6 +973,7 @@ const VERSION = 'v310';
 
     .post--tone-midnight {
       --quote-bg: #0F2548;
+      --quote-wash: rgba(15, 37, 72, 0.65);
       --quote-ink: #FFFFFF;
       --quote-muted: rgba(255, 255, 255, 0.72);
       --quote-accent: #0088B3;
@@ -1117,141 +1123,11 @@ const VERSION = 'v310';
       background: rgba(22, 54, 103, 0.12);
       color: #163667;
     }
-
-    /* ── Tarjetas ── */
-    .card {
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      position: relative;
-      overflow: hidden;
-      font-family: 'Satoshi', sans-serif;
-    }
-
-    .card--front {
-      background: linear-gradient(135deg, #0f2548 0%, #163667 50%, #00698d 100%);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 64px 72px;
-      gap: 36px;
-    }
-
-    .card__glow {
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      right: -100px;
-      top: -120px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(168, 216, 234, 0.3) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .card__logo {
-      height: 72px;
-      width: auto;
-      position: relative;
-      z-index: 1;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 10px;
-      padding: 10px 14px;
-    }
-
-    .card__brand-block {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card__brand {
-      margin: 0 0 10px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 48px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-
-    .card__tagline {
-      margin: 0;
-      font-size: 22px;
-      color: #a8d8ea;
-      max-width: 28ch;
-      line-height: 1.35;
-    }
-
-    .card--back {
-      background: #f2f5f8;
-      color: #0f2548;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 56px 64px;
-      gap: 40px;
-    }
-
-    .card__name {
-      margin: 0 0 6px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 36px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    .card__role {
-      margin: 0 0 28px;
-      font-size: 18px;
-      font-weight: 600;
-      color: #00698d;
-    }
-
-    .card__lines {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 18px;
-      color: rgba(15, 37, 72, 0.75);
-    }
-
-    .card__lines p {
-      margin: 0;
-    }
-
-    .card__qr-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-
-    .card__qr-wrap canvas {
-      width: 200px;
-      height: 200px;
-      background: #fff;
-      padding: 10px;
-      border-radius: 8px;
-      box-sizing: border-box;
-    }
-
-    .card__qr-label {
-      margin: 0;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(15, 37, 72, 0.45);
-    }
   </style>
 
   <script>
-    import { toJpeg, toPng } from 'html-to-image';
-    import { jsPDF } from 'jspdf';
-    import QRCode from 'qrcode';
+    import { toJpeg } from 'html-to-image';
 
-    const QR_URL = 'https://unicornioazul.es';
     const VERSION = document.querySelector('.studio')?.getAttribute('data-version') || 'v310';
 
     async function waitFonts() {
@@ -1264,7 +1140,6 @@ const VERSION = 'v310';
       el.style.transform = 'scale(1)';
       try {
         await waitFonts();
-        // Un frame para que el layout asiente a escala 1
         await new Promise((r) => requestAnimationFrame(() => r(undefined)));
         return await run();
       } finally {
@@ -1280,52 +1155,77 @@ const VERSION = 'v310';
       a.click();
     }
 
-    async function descargarArte(id: string, fmt: 'jpeg' | 'png', filename: string) {
+    async function descargarArte(id: string, filename: string) {
       const el = document.getElementById(id);
       if (!el) throw new Error(`No existe #${id}`);
 
-      const dataUrl = await withExportScale(el, async () => {
-        if (fmt === 'png') {
-          return toPng(el, {
-            cacheBust: true,
-            pixelRatio: 1,
-            width: el.offsetWidth,
-            height: el.offsetHeight,
-          });
-        }
-        return toJpeg(el, {
+      const dataUrl = await withExportScale(el, async () =>
+        toJpeg(el, {
           cacheBust: true,
           quality: 0.95,
           pixelRatio: 1,
           width: el.offsetWidth,
           height: el.offsetHeight,
           backgroundColor: '#ffffff',
-        });
-      });
+        }),
+      );
 
       triggerDownload(dataUrl, filename);
     }
 
-    async function descargarPdfTarjetas() {
-      const frente = document.getElementById('tarjeta-frente');
-      const reverso = document.getElementById('tarjeta-reverso');
-      if (!frente || !reverso) return;
+    function initQuoteBgUpload() {
+      const input = document.getElementById('quote-bg-input') as HTMLInputElement | null;
+      const clearBtn = document.getElementById('quote-bg-clear');
+      if (!input) return;
 
-      const wMm = 89;
-      const hMm = 51;
+      const posts = () => document.querySelectorAll<HTMLElement>('.post--quote');
 
-      const frenteUrl = await withExportScale(frente, () =>
-        toPng(frente, { cacheBust: true, pixelRatio: 2, width: frente.offsetWidth, height: frente.offsetHeight }),
-      );
-      const reversoUrl = await withExportScale(reverso, () =>
-        toPng(reverso, { cacheBust: true, pixelRatio: 2, width: reverso.offsetWidth, height: reverso.offsetHeight }),
-      );
+      const ensurePhotoLayer = (post: HTMLElement) => {
+        let layer = post.querySelector<HTMLElement>('.post__photo');
+        if (!layer) {
+          layer = document.createElement('div');
+          layer.className = 'post__photo';
+          layer.setAttribute('aria-hidden', 'true');
+          post.insertBefore(layer, post.firstChild);
+        }
+        return layer;
+      };
 
-      const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: [wMm, hMm] });
-      pdf.addImage(frenteUrl, 'PNG', 0, 0, wMm, hMm);
-      pdf.addPage([wMm, hMm], 'landscape');
-      pdf.addImage(reversoUrl, 'PNG', 0, 0, wMm, hMm);
-      pdf.save(`${VERSION}-tarjetas.pdf`);
+      const applyPhoto = (dataUrl: string | null) => {
+        posts().forEach((post) => {
+          const layer = ensurePhotoLayer(post);
+          if (dataUrl) {
+            layer.style.backgroundImage = `url("${dataUrl}")`;
+            post.classList.add('has-photo');
+          } else {
+            layer.style.backgroundImage = '';
+            post.classList.remove('has-photo');
+          }
+        });
+      };
+
+      input.addEventListener('change', () => {
+        const file = input.files?.[0];
+        if (!file) return;
+        if (!file.type.startsWith('image/')) {
+          alert('Sube un archivo de imagen (JPG, PNG, WebP…).');
+          input.value = '';
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = () => {
+          if (typeof reader.result === 'string') applyPhoto(reader.result);
+        };
+        reader.onerror = () => {
+          alert('No se pudo leer la imagen.');
+        };
+        reader.readAsDataURL(file);
+      });
+
+      clearBtn?.addEventListener('click', () => {
+        applyPhoto(null);
+        input.value = '';
+      });
     }
 
     function initQuoteEditor() {
@@ -1373,28 +1273,16 @@ const VERSION = 'v310';
       window.addEventListener('resize', syncQuotePreviewScales);
     }
 
-    async function initQr() {
-      const canvas = document.getElementById('qr-tarjeta') as HTMLCanvasElement | null;
-      if (!canvas) return;
-      await QRCode.toCanvas(canvas, QR_URL, {
-        width: 200,
-        margin: 1,
-        color: { dark: '#0F2548', light: '#FFFFFF' },
-        errorCorrectionLevel: 'M',
-      });
-    }
-
     document.querySelectorAll<HTMLButtonElement>('.btn-dl[data-dl]').forEach((btn) => {
       btn.addEventListener('click', async () => {
         const id = btn.dataset.dl;
-        const fmt = (btn.dataset.fmt || 'jpeg') as 'jpeg' | 'png';
         const file = btn.dataset.file;
         if (!id || !file) return;
         const label = btn.textContent;
         btn.disabled = true;
         btn.textContent = 'Generando…';
         try {
-          await descargarArte(id, fmt, file);
+          await descargarArte(id, file);
         } catch (err) {
           console.error(err);
           alert('No se pudo exportar. Revisa la consola.');
@@ -1405,38 +1293,16 @@ const VERSION = 'v310';
       });
     });
 
-    const pdfBtn = document.getElementById('btn-pdf-tarjetas');
-    pdfBtn?.addEventListener('click', async () => {
-      const label = pdfBtn.textContent;
-      pdfBtn.setAttribute('disabled', 'true');
-      pdfBtn.textContent = 'Generando PDF…';
-      try {
-        await descargarPdfTarjetas();
-      } catch (err) {
-        console.error(err);
-        alert('No se pudo generar el PDF.');
-      } finally {
-        pdfBtn.removeAttribute('disabled');
-        pdfBtn.textContent = label;
-      }
-    });
-
     initQuoteEditor();
+    initQuoteBgUpload();
     initQuotePreviewScales();
-    initQr();
 
-    // API global por si quieres llamar desde consola: descargarArte('post-software')
-    (window as unknown as { descargarArte: typeof descargarArte }).descargarArte = async (
-      id: string,
-      fmt: 'jpeg' | 'png' = id.startsWith('tarjeta') ? 'png' : 'jpeg',
-    ) => {
+    (window as unknown as { descargarArte: (id: string) => Promise<void> }).descargarArte = async (id: string) => {
       const file =
-        id === 'post-software'
-          ? `${VERSION}-software-a-medida.jpg`
-          : id === 'banner-linkedin'
-            ? `${VERSION}-banner-linkedin.jpg`
-            : `${VERSION}-${id}.${fmt === 'png' ? 'png' : 'jpg'}`;
-      await descargarArte(id, fmt, file);
+        id === 'banner-linkedin'
+          ? `${VERSION}-banner-linkedin.jpg`
+          : `${VERSION}-${id}.jpg`;
+      await descargarArte(id, file);
     };
   </script>
 </BaseLayout>
