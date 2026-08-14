@@ -2,6 +2,7 @@
 import SEO from '@components/global/SEO.astro';
 import Header from '@components/global/Header.astro';
 import CookieBanner from '@components/global/CookieBanner.astro';
+import FloatingSocial from '@components/global/FloatingSocial.astro';
 import GoogleTagManager from '@components/global/GoogleTagManager.astro';
 import SmoothScroll from '@components/global/SmoothScroll.astro';
 import RevealScript from '@components/ui/RevealScript.astro';
@@ -48,6 +49,7 @@ const GTM_ID = 'GTM-TJRCJ7T8';
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
   {showHeader && <Header lang={locale} />}
+  <FloatingSocial />
   <main class="overflow-x-clip">
     <slot />
   </main>
