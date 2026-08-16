@@ -424,39 +424,39 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     if (submitText) submitText.textContent = 'Sending…';
 
     try {
-      // Web3Forms — destination email is set in the Web3Forms dashboard (test: your Gmail; prod: Luis)
+      // Web3Forms — destination email is configured in the Web3Forms dashboard
+      const formData = new FormData();
+      formData.append('access_key', 'ad371c7f-e083-4cfc-af3c-9c6e7c255f50');
+      formData.append('subject', `New lead — Get started: ${objetivoLabel}`);
+      formData.append('from_name', 'Unicornio Azul Web');
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('phone', telefono || '—');
+      formData.append('goal', objetivoLabel);
+      formData.append('context', contexto || '—');
+      formData.append('language', 'EN');
+      formData.append('source', '/en/get-started');
+      formData.append(
+        'message',
+        [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Phone: ${telefono || '—'}`,
+          `Goal: ${objetivoLabel}`,
+          `Context: ${contexto || '—'}`,
+          `Language: EN`,
+          `Source: /en/get-started`,
+        ].join('\n'),
+      );
+      formData.append('botcheck', honey);
+
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
+        body: formData,
         signal: AbortSignal.timeout(15000),
-        body: JSON.stringify({
-          access_key: 'ad371c7f-e083-4cfc-af3c-9c6e7c255f50',
-          subject: `New lead — Get started: ${objetivoLabel}`,
-          from_name: 'Unicornio Azul Web',
-          name,
-          email,
-          phone: telefono || '—',
-          goal: objetivoLabel,
-          context: contexto || '—',
-          language: 'EN',
-          source: '/en/get-started',
-          message: [
-            `Name: ${name}`,
-            `Email: ${email}`,
-            `Phone: ${telefono || '—'}`,
-            `Goal: ${objetivoLabel}`,
-            `Context: ${contexto || '—'}`,
-            `Language: EN`,
-            `Source: /en/get-started`,
-          ].join('\n'),
-          botcheck: honey,
-        }),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || data.success === false || data.success === 'false') {
+      if (!res.ok || !data.success) {
         throw new Error(data.message || 'Could not send the form.');
       }
 
