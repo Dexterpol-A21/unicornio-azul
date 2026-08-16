@@ -424,7 +424,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     if (submitText) submitText.textContent = 'Enviando…';
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/luis.chicharro@unicornioazul.es', {
+      // Web3Forms — destination email is set in the Web3Forms dashboard (test: your Gmail; prod: Luis)
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -432,22 +433,30 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         },
         signal: AbortSignal.timeout(15000),
         body: JSON.stringify({
-          _subject: `Nuevo lead — Empezar: ${objetivoLabel}`,
-          _template: 'table',
-          _captcha: 'false',
-          _honey: honey,
-          _replyto: email,
-          nombre: name,
+          access_key: 'ad371c7f-e083-4cfc-af3c-9c6e7c255f50',
+          subject: `Nuevo lead — Empezar: ${objetivoLabel}`,
+          from_name: 'Unicornio Azul Web',
+          name,
           email,
           telefono: telefono || '—',
           objetivo: objetivoLabel,
           contexto: contexto || '—',
           idioma: 'ES',
           origen: '/empezar',
+          message: [
+            `Nombre: ${name}`,
+            `Email: ${email}`,
+            `Teléfono: ${telefono || '—'}`,
+            `Objetivo: ${objetivoLabel}`,
+            `Contexto: ${contexto || '—'}`,
+            `Idioma: ES`,
+            `Origen: /empezar`,
+          ].join('\n'),
+          botcheck: honey,
         }),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || data.success === 'false' || data.success === false) {
+      if (!res.ok || data.success === false || data.success === 'false') {
         throw new Error(data.message || 'No se pudo enviar el formulario.');
       }
 
