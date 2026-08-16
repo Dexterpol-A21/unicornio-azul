@@ -424,12 +424,14 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     if (submitText) submitText.textContent = 'Sending…';
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/luis.chicharro@unicornioazul.es', {
+      // TEMP TEST: FormSubmit destination = paulcl2005@gmail.com (revert to luis.chicharro@unicornioazul.es after activation/test)
+      const res = await fetch('https://formsubmit.co/ajax/paulcl2005@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
+        signal: AbortSignal.timeout(15000),
         body: JSON.stringify({
           _subject: `New lead — Get started: ${objetivoLabel}`,
           _template: 'table',
