@@ -422,3 +422,41 @@ body.has-header main section:first-of-type {
   scale: 0.95 !important;
   box-shadow: inset 0 0 0 3px #00698D !important;
 }
+
+/* Footer social — brand colors on hover (inline color would block Tailwind hover) */
+.footer-social-link {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-social-link:hover {
+  opacity: 1;
+}
+.footer-social-link--li:hover {
+  color: #0A66C2;
+}
+.footer-social-link--ig:hover {
+  color: #E4405F;
+}
+.footer-social-link--wa:hover {
+  color: #25D366;
+}
+
+/* Light surfaces (empezar / get-started fallbacks) */
+.footer-social-link--on-light {
+  color: #163667;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.footer-social-link--on-light.footer-social-link--ig:hover {
+  color: #E4405F;
+}
+.footer-social-link--on-light.footer-social-link--wa:hover {
+  color: #25D366;
+}
+.footer-social-link--on-light.footer-social-link--li:hover {
+  color: #0A66C2;
+}
+
