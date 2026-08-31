@@ -1,0 +1,416 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import type { Lang } from '../../i18n/ui';
+import BlogCard from './BlogCard.astro';
+import {
+  BLOG_CATEGORIES,
+  formatDate,
+  blogHubUrl,
+  buildBlogPostingJsonLd,
+  buildBreadcrumbJsonLd,
+} from '../../lib/blog';
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  lang: Lang;
+  related?: CollectionEntry<'blog'>[];
+}
+
+const { entry, lang, related = [] } = Astro.props;
+const d = entry.data;
+const { Content, headings } = await render(entry);
+
+const cat = BLOG_CATEGORIES[d.category];
+const date = formatDate(d.publishedAt, lang);
+const hubUrl = blogHubUrl(lang);
+const jsonLd = buildBlogPostingJsonLd(entry);
+const breadcrumbLd = buildBreadcrumbJsonLd(entry);
+
+const toc = headings.filter((h) => h.depth === 2);
+const meta = [date, d.readMinutes ? `${d.readMinutes} min` : null].filter(Boolean).join(' · ');
+const copy = {
+  es: {
+    author: 'Luis Chicharro',
+    by: 'Por',
+    back: 'Volver a Ideas & Experiencia',
+    categoryMore: 'Ver más sobre esta área',
+    tocTitle: 'En este artículo',
+    relatedTitle: 'Sigue leyendo',
+    ctaTitle: '¿Hablamos de tu proyecto?',
+    ctaBody:
+      'Si estás planteándote algo parecido, cuéntanoslo y lo analizamos desde la experiencia real, no desde la teoría.',
+    ctaButton: 'Cuéntanos tu proyecto',
+    ctaHref: '/empezar',
+  },
+  en: {
+    author: 'Luis Chicharro',
+    by: 'By',
+    back: 'Back to Ideas & Experience',
+    categoryMore: 'See more about this area',
+    tocTitle: 'On this page',
+    relatedTitle: 'Keep reading',
+    ctaTitle: 'Shall we talk about your project?',
+    ctaBody:
+      'If you are working on something similar, tell us about it and we will look at it from real experience, not theory.',
+    ctaButton: 'Tell us about your project',
+    ctaHref: '/en/get-started',
+  },
+}[lang];
+---
+
+<div class="ua-post-shell">
+
+  <div class="ua-post-grid">
+
+    <!-- Tabla de contenidos (columna izquierda, pegada al artículo) -->
+    {toc.length > 0 && (
+      <aside class="ua-toc-col">
+        <nav class="ua-toc" aria-label={copy.tocTitle}>
+          <p class="ua-toc-title">{copy.tocTitle}</p>
+          <ul>
+            {toc.map((h) => (
+              <li>
+                <a href={`#${h.slug}`} data-toc-link={h.slug}>{h.text}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+    )}
+
+    <!-- Contenido (centrado) -->
+    <article class="min-w-0">
+
+      <!-- Cabecera -->
+      <header data-reveal class="mb-10 md:mb-12">
+        <div class="reveal-item flex flex-wrap items-center gap-3 mb-5" style="--i:0">
+          <span class="inline-flex rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em]" style={`font-family:'Satoshi',sans-serif;color:#fff;background:${cat.color};`}>
+            {cat.label[lang]}
+          </span>
+          <span class="text-sm" style="font-family:'Satoshi',sans-serif;color:#9CA3AF;">{meta}</span>
+        </div>
+
+        <h1 class="reveal-item font-bold tracking-tight leading-[1.02] mb-5 text-balance" style="--i:1;font-family:'Space Grotesk',sans-serif;color:#1A1A1A;font-size:clamp(2.25rem,6vw,3.75rem);letter-spacing:-0.03em;">
+          {d.title}
+        </h1>
+
+        <p class="reveal-item text-lg md:text-xl leading-relaxed m-0" style="--i:2;font-family:'Satoshi',sans-serif;color:#374151;">
+          {d.description}
+        </p>
+      </header>
+
+      <!-- Imagen -->
+      <figure data-reveal class="m-0 mb-10 md:mb-14 overflow-hidden rounded-2xl" style="background:#EEF1F8;">
+        <img
+          src={d.heroImage}
+          alt={d.heroImageAlt}
+          loading="eager"
+          width="1200"
+          height="750"
+          class="reveal-item w-full h-auto object-cover"
+        />
+      </figure>
+
+      <!-- Cuerpo -->
+      <div class="ua-article">
+        <Content />
+      </div>
+
+      <p class="m-0 mt-8 text-sm" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
+        {copy.by} <strong style="color:#0F2548;font-weight:600;">{copy.author}</strong>
+      </p>
+
+      <!-- CTA -->
+      <div data-reveal class="mt-12 md:mt-16 rounded-2xl p-8 md:p-12" style="background:#0F2548;">
+        <h2 class="reveal-item m-0 mb-3 text-2xl md:text-3xl font-bold tracking-tight" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#FFFFFF;">
+          {copy.ctaTitle}
+        </h2>
+        <p class="reveal-item m-0 mb-7 max-w-[46ch] text-lg leading-relaxed" style="--i:1;font-family:'Satoshi',sans-serif;color:rgba(255,255,255,0.72);">
+          {copy.ctaBody}
+        </p>
+        <div class="reveal-item" style="--i:2">
+          <a href={copy.ctaHref} class="ua-cta-btn inline-flex items-center justify-center" style="height:52px;padding:0 48px 0 32px;font-size:15px;background-color:#ffffff;border-radius:4px;font-weight:600;font-family:'Satoshi',sans-serif;color:#0F2548;cursor:pointer;overflow:hidden;text-decoration:none;box-shadow:0 0.625em 1.2em 0 rgba(0,0,0,0.12);">
+            <span class="ua-cta-text" style="position:relative;z-index:2;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);line-height:1">{copy.ctaButton}</span>
+            <svg class="ua-cta-arr" style="position:absolute;top:50%;margin-top:-10px;width:20px;height:20px;right:20px;transition:right 0.8s cubic-bezier(0.23,1,0.32,1);" fill="none" stroke="#0F2548" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navegación -->
+      <nav data-reveal class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-6">
+        <a href={hubUrl} class="reveal-item text-sm font-semibold no-underline hover:opacity-70 transition-opacity" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#0F2548;">
+          ← {copy.back}
+        </a>
+        <a href={cat.href[lang]} class="reveal-item text-sm font-semibold no-underline hover:opacity-70 transition-opacity" style="--i:1;font-family:'Space Grotesk',sans-serif;color:#0F2548;">
+          {copy.categoryMore} →
+        </a>
+      </nav>
+
+    </article>
+
+    <!-- Artículos relacionados: misma rejilla, alineados con la TOC -->
+    {related.length > 0 && (
+      <div class="ua-related" data-reveal>
+        <div class="reveal-item mb-6">
+          <p class="text-[11px] tracking-[0.24em] uppercase font-semibold mb-3 opacity-40" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
+            Ideas &amp; Experiencia
+          </p>
+          <h2 class="m-0 text-2xl md:text-3xl font-bold tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+            {copy.relatedTitle}
+          </h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          {related.map((r, i) => (
+            <div class="reveal-item" style={`--i:${i + 1}`}>
+              <BlogCard entry={r} lang={lang} />
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+  </div>
+
+</div>
+
+<style is:global>
+  .ua-post-shell {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 3rem;
+    padding-top: calc(clamp(24px, 6vw, 56px) + env(safe-area-inset-top, 0px));
+  }
+  @media (min-width: 768px) {
+    .ua-post-shell {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      padding-bottom: 4rem;
+      padding-top: calc(160px + env(safe-area-inset-top));
+    }
+  }
+
+  /* ── Rejilla: TOC izquierda + artículo centrado + simetría ── */
+  .ua-post-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+  }
+  @media (min-width: 1280px) {
+    .ua-post-grid {
+      grid-template-columns: 14rem minmax(0, 44rem) 14rem;
+      justify-content: center;
+      column-gap: 2.5rem;
+    }
+    .ua-post-grid > article {
+      grid-column: 2;
+    }
+    .ua-related {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .ua-toc-col {
+    display: none;
+  }
+  @media (min-width: 1280px) {
+    .ua-toc-col {
+      display: block;
+      width: 14rem;
+      align-self: stretch;
+    }
+  }
+
+  /* ── TOC ─────────────────────────────── */
+  .ua-toc {
+    position: sticky;
+    top: 7rem;
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    scrollbar-width: thin;
+  }
+  .ua-toc-title {
+    margin: 0 0 0.9rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6B7280;
+  }
+  .ua-toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .ua-toc a {
+    display: block;
+    padding: 7px 0 7px 14px;
+    border-left: 2px solid rgba(15, 37, 72, 0.12);
+    font-family: 'Satoshi', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: #6B7280;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .ua-toc a:hover {
+    color: #0F2548;
+    border-left-color: #0F2548;
+  }
+  .ua-toc a.is-active {
+    color: #0F2548;
+    border-left-color: #0F2548;
+  }
+
+  /* ── Relacionados ────────────────────── */
+  .ua-related {
+    margin-top: 1.75rem;
+  }
+
+  /* ── Artículo ────────────────────────── */
+  .ua-article {
+    font-family: 'Satoshi', sans-serif;
+    color: #374151;
+    font-size: 1.125rem;
+    line-height: 1.85;
+  }
+  .ua-article p {
+    margin: 0 0 1.5em;
+  }
+  .ua-article h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #0F2548;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+    margin: 2.2em 0 0.7em;
+    scroll-margin-top: 9rem;
+  }
+  .ua-article h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #0F2548;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    font-size: 1.35rem;
+    margin: 1.8em 0 0.5em;
+    scroll-margin-top: 9rem;
+  }
+  .ua-article strong {
+    color: #1A1A1A;
+    font-weight: 600;
+  }
+  .ua-article a {
+    color: #0F2548;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .ua-article ul,
+  .ua-article ol {
+    margin: 0 0 1.5em;
+    padding-left: 1.4em;
+  }
+  .ua-article li {
+    margin: 0 0 0.45em;
+  }
+  .ua-article blockquote {
+    margin: 2em 0;
+    padding: 0.25em 0 0.25em 1.25em;
+    border-left: 3px solid #0F2548;
+    color: #0F2548;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+  .ua-article blockquote p {
+    margin: 0;
+  }
+
+  /* ── CTA button ──────────────────────── */
+  .ua-cta-btn {
+    position: relative;
+    transition: box-shadow 0.35s ease, background-color 0.35s ease;
+  }
+  .ua-cta-btn:hover {
+    box-shadow: 0 0.625em 1.4em 0 rgba(0, 0, 0, 0.22) !important;
+  }
+  .ua-cta-btn:hover .ua-cta-text {
+    transform: translateX(14px) !important;
+  }
+  .ua-cta-btn:hover .ua-cta-arr {
+    right: -25% !important;
+  }
+  .ua-cta-btn:active {
+    scale: 0.96;
+  }
+</style>
+
+<script>
+  // Scroll-spy: resalta la sección activa en la tabla de contenidos.
+  (function () {
+    const links = Array.from(document.querySelectorAll('[data-toc-link]'));
+    if (!links.length) return;
+
+    const targets = links
+      .map((l) => document.getElementById(l.getAttribute('data-toc-link') || ''))
+      .filter(Boolean) as HTMLElement[];
+
+    if (!targets.length) return;
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Línea de detección: por debajo del header fijo.
+    const OFFSET = 150;
+
+    function setActive(id: string) {
+      links.forEach((l) => {
+        const active = l.getAttribute('data-toc-link') === id;
+        l.classList.toggle('is-active', active);
+      });
+    }
+
+    function computeActive() {
+      let activeId = targets[0].id;
+      for (const t of targets) {
+        if (t.getBoundingClientRect().top <= OFFSET) {
+          activeId = t.id;
+        } else {
+          break;
+        }
+      }
+      // Al llegar al final, fuerza la última sección como activa.
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        activeId = targets[targets.length - 1].id;
+      }
+      setActive(activeId);
+    }
+
+    // Resalta la primera sección al cargar.
+    computeActive();
+
+    if (reduce) return;
+
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        computeActive();
+        ticking = false;
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener(
+      'pagehide',
+      () => window.removeEventListener('scroll', onScroll),
+      { once: true }
+    );
+  })();
+</script>
+
+<script type="application/ld+json" set:html={jsonLd} />
+<script type="application/ld+json" set:html={breadcrumbLd} />

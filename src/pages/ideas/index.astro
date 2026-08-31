@@ -1,0 +1,17 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import BlogIndex from '@/components/blog/BlogIndex.astro';
+import { getSortedBlogEntries } from '@/lib/blog';
+
+const entries = await getSortedBlogEntries('es');
+---
+
+<BaseLayout
+  title="Ideas & Experiencia | Unicornio Azul"
+  description="Artículos prácticos sobre desarrollo de marcas, producto, compras internacionales, marketing y escalado. Experiencia real, sin teoría vacía."
+  showHeader={true}
+>
+
+  <BlogIndex entries={entries} lang="es" />
+
+</BaseLayout>

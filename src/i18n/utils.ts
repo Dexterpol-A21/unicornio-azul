@@ -14,6 +14,7 @@ const ROUTE_MAP: Record<string, Record<Lang, string>> = {
   route_contacto:               { es: '/contacto',                             en: '/en/contact' },
   route_empezar:                { es: '/empezar',                              en: '/en/get-started' },
   route_casos:                  { es: '/casos',                                en: '/en/case-studies' },
+  route_ideas:                  { es: '/ideas',                                en: '/en/ideas' },
   route_caso_roll:              { es: '/casos/roll-order',                     en: '/en/case-studies/roll-order' },
   route_caso_bici:              { es: '/casos/bicicleta-electrica',            en: '/en/case-studies/electric-bike' },
   route_caso_utrilla:           { es: '/casos/utrilla',                        en: '/en/case-studies/utrilla' },

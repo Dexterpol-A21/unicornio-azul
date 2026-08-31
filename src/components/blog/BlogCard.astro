@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Lang } from '../../i18n/ui';
+import { BLOG_CATEGORIES, formatDate, blogPostUrl } from '../../lib/blog';
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  lang: Lang;
+}
+
+const { entry, lang } = Astro.props;
+const d = entry.data;
+const cat = BLOG_CATEGORIES[d.category];
+const href = blogPostUrl(lang, d.urlSlug);
+const date = formatDate(d.publishedAt, lang);
+const meta = [date, d.readMinutes ? `${d.readMinutes} min` : null].filter(Boolean).join(' · ');
+---
+
+<a href={href} class="blog-card group block no-underline">
+  <div class="blog-card-media overflow-hidden rounded-xl" style="background:#EEF1F8;">
+    <img
+      src={d.heroImage}
+      alt={d.heroImageAlt}
+      loading="lazy"
+      width="1200"
+      height="750"
+      class="w-full h-full object-cover"
+    />
+  </div>
+  <div class="flex flex-col items-start gap-2 pt-4">
+    <span class="inline-flex rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em]" style={`font-family:'Satoshi',sans-serif;color:#fff;background:${cat.color};`}>
+      {cat.label[lang]}
+    </span>
+    <h3 class="blog-card-title m-0 text-xl md:text-2xl font-bold tracking-tight leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+      {d.title}
+    </h3>
+    <p class="m-0 text-base leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
+      {d.description}
+    </p>
+    <p class="m-0 text-sm" style="font-family:'Satoshi',sans-serif;color:#9CA3AF;">
+      {meta}
+    </p>
+  </div>
+</a>
+
+<style>
+  .blog-card-media {
+    aspect-ratio: 16 / 10;
+  }
+  .blog-card-media img {
+    transform: scale(1.01);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .blog-card:hover .blog-card-media img {
+    transform: scale(1.045);
+  }
+  .blog-card-title {
+    transition: color 0.25s ease;
+  }
+  .blog-card:hover .blog-card-title {
+    color: #00698D;
+  }
+</style>

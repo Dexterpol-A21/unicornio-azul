@@ -1,0 +1,134 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Lang } from '../../i18n/ui';
+import { BLOG_CATEGORIES, formatDate, blogPostUrl } from '../../lib/blog';
+import BlogCard from './BlogCard.astro';
+
+interface Props {
+  entries: CollectionEntry<'blog'>[];
+  lang: Lang;
+}
+
+const { entries, lang } = Astro.props;
+
+const copy = {
+  es: {
+    kicker: 'Ideas & Experiencia',
+    title: 'Ideas y experiencia real',
+    intro:
+      'Artículos prácticos sobre desarrollo de marcas, producto, compras internacionales, marketing y escalado. Sin teoría vacía.',
+    featured: 'Destacado',
+    all: 'Todos los artículos',
+    empty: 'Pronto publicaremos el primer artículo.',
+  },
+  en: {
+    kicker: 'Ideas & Experience',
+    title: 'Ideas and real experience',
+    intro:
+      'Practical articles on brand development, product, international sourcing, marketing and scaling. No empty theory.',
+    featured: 'Featured',
+    all: 'All articles',
+    empty: 'We will publish the first article soon.',
+  },
+}[lang];
+
+const featured = entries.find((e) => e.data.featured) ?? entries[0];
+const rest = entries.filter((e) => e !== featured);
+const fcat = featured ? BLOG_CATEGORIES[featured.data.category] : null;
+const fhref = featured ? blogPostUrl(lang, featured.data.urlSlug) : '#';
+const fmeta = featured
+  ? [formatDate(featured.data.publishedAt, lang), featured.data.readMinutes ? `${featured.data.readMinutes} min` : null]
+      .filter(Boolean)
+      .join(' · ')
+  : '';
+---
+
+<section class="overflow-x-clip" style="background:#FFFFFF;" data-reveal>
+  <div class="max-w-5xl mx-auto px-6 md:px-12 pb-10 md:pb-16">
+    <p class="reveal-item text-[11px] tracking-[0.3em] uppercase font-semibold mb-4 opacity-40" style="--i:0;font-family:'Satoshi',sans-serif;color:#6B7280;">
+      {copy.kicker}
+    </p>
+    <h1 class="reveal-item font-bold tracking-tight leading-[0.95] mb-5 md:mb-6 text-balance" style="--i:1;font-family:'Space Grotesk',sans-serif;color:#1A1A1A;font-size:clamp(2.5rem,7vw,4.5rem);letter-spacing:-0.03em;">
+      {copy.title}
+    </h1>
+    <p class="reveal-item text-lg md:text-xl leading-relaxed max-w-[52ch] m-0" style="--i:2;font-family:'Satoshi',sans-serif;color:#374151;">
+      {copy.intro}
+    </p>
+  </div>
+</section>
+
+<section class="overflow-x-clip" style="background:#F2F5F8;" data-reveal>
+  <div class="max-w-5xl mx-auto px-6 md:px-12 py-12 md:py-20">
+
+    {featured ? (
+      <div class="reveal-item mb-12 md:mb-16" style="--i:0">
+        <p class="text-[11px] tracking-[0.24em] uppercase font-semibold mb-4 opacity-40" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
+          {copy.featured}
+        </p>
+        <a href={fhref} class="blog-featured group block no-underline rounded-2xl overflow-hidden border" style="background:#FFFFFF;border-color:rgba(22,54,103,0.08);box-shadow:0 20px 60px -24px rgba(22,54,103,0.20);">
+          <div class="grid md:grid-cols-2">
+            <div class="overflow-hidden">
+              <img
+                src={featured.data.heroImage}
+                alt={featured.data.heroImageAlt}
+                loading="eager"
+                width="1200"
+                height="750"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+              <span class="inline-flex self-start rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em]" style={`font-family:'Satoshi',sans-serif;color:#fff;background:${fcat?.color};`}>
+                {fcat?.label[lang]}
+              </span>
+              <h2 class="blog-featured-title m-0 text-2xl md:text-4xl font-bold tracking-tight leading-tight" style="font-family:'Space Grotesk',sans-serif;color:#1A1A1A;">
+                {featured.data.title}
+              </h2>
+              <p class="m-0 text-lg leading-relaxed" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
+                {featured.data.description}
+              </p>
+              <p class="m-0 text-sm" style="font-family:'Satoshi',sans-serif;color:#9CA3AF;">
+                {fmeta}
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    ) : null}
+
+    {rest.length > 0 ? (
+      <div>
+        <p class="reveal-item text-[11px] tracking-[0.24em] uppercase font-semibold mb-6 opacity-40" style="--i:1;font-family:'Satoshi',sans-serif;color:#6B7280;">
+          {copy.all}
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          {rest.map((entry, i) => (
+            <div class="reveal-item" style={`--i:${i + 2}`}>
+              <BlogCard entry={entry} lang={lang} />
+            </div>
+          ))}
+        </div>
+      </div>
+    ) : (
+      <p class="reveal-item text-lg" style="--i:1;font-family:'Satoshi',sans-serif;color:#6B7280;">
+        {copy.empty}
+      </p>
+    )}
+  </div>
+</section>
+
+<style>
+  .blog-featured img {
+    transform: scale(1.01);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .blog-featured:hover img {
+    transform: scale(1.03);
+  }
+  .blog-featured-title {
+    transition: color 0.25s ease;
+  }
+  .blog-featured:hover .blog-featured-title {
+    color: #00698D;
+  }
+</style>

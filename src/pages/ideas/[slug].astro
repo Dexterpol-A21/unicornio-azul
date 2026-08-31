@@ -1,0 +1,44 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import BlogPost from '@/components/blog/BlogPost.astro';
+import { getBlogEntries, blogPostUrl, BLOG_CATEGORIES } from '@/lib/blog';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getBlogEntries('es');
+  const sorted = entries.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+  return sorted.map((entry) => ({
+    params: { slug: entry.data.urlSlug },
+    props: {
+      entry,
+      related: sorted.filter((e) => e !== entry).slice(0, 3),
+    },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  related: CollectionEntry<'blog'>[];
+}
+
+const { entry, related } = Astro.props;
+const d = entry.data;
+const altUrl = blogPostUrl('en', d.urlSlug);
+const published = d.publishedAt.toISOString();
+---
+
+<BaseLayout
+  title={`${d.title} | Unicornio Azul`}
+  description={d.description}
+  image={d.heroImage}
+  imageAlt={d.heroImageAlt}
+  altUrl={altUrl}
+  showHeader={true}
+  type="article"
+  publishedTime={published}
+  section={BLOG_CATEGORIES[d.category].label.es}
+>
+
+  <BlogPost entry={entry} lang="es" related={related} />
+
+</BaseLayout>

@@ -88,24 +88,22 @@ import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
  <!-- ═══════════ CONTENIDO PRINCIPAL ═══════════ -->
  <div class="relative z-10 w-full max-w-[1100px] mx-auto flex flex-col items-center">
 
- <!-- Slogan -->
- <div class="stagger-inner space-y-1 md:space-y-2" style="--i: 0">
- <h1 class="leading-[0.98] tracking-tight max-w-full" style="color: #1A1A1A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2.3rem, 10.5vw, 5rem);">
- Soluciones reales
- </h1>
- <h1 class="leading-[0.98] tracking-tight max-w-full" style="color: #00698D; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2.3rem, 10.5vw, 5rem);">
- para ideas
- </h1>
- <h1 class="leading-[0.88] tracking-tighter max-w-full" style="color: #163667; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2.5rem, 12.5vw, 8rem);">
-  <SparklesText
-    client:visible
-    text="extraordinarias"
-    sparklesCount={12}
-    colors={{ first: '#0088B3', second: '#A8D8EA' }}
-    className="leading-[inherit] tracking-[inherit] font-[inherit] text-[length:inherit] text-inherit"
-  />
- </h1>
- </div>
+<!-- Slogan -->
+<div class="stagger-inner space-y-1 md:space-y-2" style="--i: 0">
+<h1 class="tracking-tight max-w-full" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700;">
+  <span class="block leading-[0.98] mb-1 md:mb-2" style="color: #1A1A1A; font-size: clamp(2.3rem, 10.5vw, 5rem);">Soluciones reales</span>
+  <span class="block leading-[0.98] mb-1 md:mb-2" style="color: #00698D; font-size: clamp(2.3rem, 10.5vw, 5rem);">para ideas</span>
+  <span class="block leading-[0.88] tracking-tighter" style="color: #163667; font-size: clamp(2.5rem, 12.5vw, 8rem);">
+    <SparklesText
+      client:visible
+      text="extraordinarias"
+      sparklesCount={12}
+      colors={{ first: '#0088B3', second: '#A8D8EA' }}
+      className="leading-[inherit] tracking-[inherit] font-[inherit] text-[length:inherit] text-inherit"
+    />
+  </span>
+</h1>
+</div>
 
  <!-- Descripcion -->
     <p class="stagger-inner mt-6 md:mt-10 text-base md:text-lg max-w-[55ch] leading-relaxed" style="color: #6B7280; font-family: 'Satoshi', sans-serif; font-weight: 400; --i: 1">

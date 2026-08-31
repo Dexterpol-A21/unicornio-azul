@@ -11,6 +11,10 @@ interface Props {
   lang: Lang;
   url: URL;
   noindex?: boolean;
+  altUrl?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  section?: string;
 }
 
 const {
@@ -21,6 +25,10 @@ const {
   lang,
   url,
   noindex = false,
+  altUrl,
+  type = 'website',
+  publishedTime,
+  section,
 } = Astro.props;
 
 const { t } = useTranslations(lang);
@@ -34,8 +42,8 @@ const canonicalPath = getRelativeLocaleUrl(lang, currentPath);
 
 const toAbs = (path: string) => new URL(path, siteOrigin).href;
 const canonicalHref = toAbs(canonicalPath);
-const alternateHref = toAbs(getAltLangUrl(url, altLocale));
-const xDefaultHref = lang === 'es' ? canonicalHref : toAbs(getAltLangUrl(url, 'es'));
+const alternateHref = altUrl ? toAbs(altUrl) : toAbs(getAltLangUrl(url, altLocale));
+const xDefaultHref = altUrl && lang === 'en' ? toAbs(altUrl) : (lang === 'es' ? canonicalHref : toAbs(getAltLangUrl(url, 'es')));
 const imageHref = toAbs(image);
 const resolvedImageAlt = imageAlt ?? title;
 ---
@@ -57,10 +65,17 @@ const resolvedImageAlt = imageAlt ?? title;
 <!-- Open Graph -->
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:type" content="website" />
+<meta property="og:type" content={type} />
 <meta property="og:site_name" content={siteName} />
 <meta property="og:locale" content={ogLocale} />
 <meta property="og:url" content={canonicalHref} />
+{type === 'article' && publishedTime && (
+  <>
+    <meta property="article:published_time" content={publishedTime} />
+    <meta property="article:modified_time" content={publishedTime} />
+    {section && <meta property="article:section" content={section} />}
+  </>
+)}
 
 <!-- Canonical -->
 <link rel="canonical" href={canonicalHref} />

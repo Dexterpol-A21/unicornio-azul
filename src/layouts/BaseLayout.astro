@@ -17,6 +17,10 @@ interface Props {
   imageAlt?: string;
   showHeader?: boolean;
   noindex?: boolean;
+  altUrl?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  section?: string;
 }
 
 const {
@@ -26,6 +30,10 @@ const {
   imageAlt,
   showHeader = false,
   noindex = false,
+  altUrl,
+  type = 'website',
+  publishedTime,
+  section,
 } = Astro.props;
 const locale = getLangFromUrl(Astro.url);
 const GTM_ID = 'GTM-TJRCJ7T8';
@@ -35,7 +43,7 @@ const GTM_ID = 'GTM-TJRCJ7T8';
 <html lang={locale}>
 <head>
   <GoogleTagManager />
-  <SEO {title} {description} {image} {imageAlt} {noindex} lang={locale} url={Astro.url} />
+  <SEO {title} {description} {image} {imageAlt} {noindex} {altUrl} {type} {publishedTime} {section} lang={locale} url={Astro.url} />
 </head>
 <body class:list={[{ "has-header": showHeader }]}>
   <!-- Google Tag Manager (noscript) -->
