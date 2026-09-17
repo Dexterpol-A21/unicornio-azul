@@ -3,25 +3,25 @@ title: "De la idea al mercado: qué hace falta para lanzar tu propio producto"
 description: "Cómo lanzar un producto al mercado paso a paso: validar la demanda, industrializar, certificar, importar y vender. Aprende del caso real de Roll Order."
 lang: es
 urlSlug: de-la-idea-al-mercado-lanzar-producto
-publishedAt: 2026-08-28
+publishedAt: 2026-09-01
 category: negocios
-heroImage: /images/og-roll-order.jpg
-heroImageAlt: "De la idea al mercado: lanzar un producto propio, del prototipo a Amazon"
+heroImage: /images/blog-idea-al-mercado.png
+heroImageAlt: "De la idea al mercado: de la patente a fabricar y lanzar el producto"
 readMinutes: 8
-tags: [lanzar un producto al mercado, lanzar producto propio, industrialización, modelo de negocio]
+tags: [como lanzar un producto al mercado, lanzar producto propio, industrialización, modelo de negocio]
 featured: false
 draft: false
 ---
 
 Tener una idea de producto no es tener un negocio. Entre ambas hay un recorrido que la mayoría no ve hasta que lo recorre: validar, industrializar, certificar, importar y vender.
 
-En Unicornio Azul lo hemos recorrido entero. El caso más claro es Roll Order: llegó como un documento de patente y salió al mercado como un producto vendiendo en Amazon, con presencia en el CES de Las Vegas. Este artículo cuenta qué hace falta de verdad para lanzar tu propio producto, sin atajos y sin humo.
+En Unicornio Azul lo hemos recorrido entero. El caso más claro es [Roll Order](/casos/roll-order): llegó como un documento de patente y salió al mercado como un producto vendiendo en Amazon, con presencia en el CES de Las Vegas. Este artículo cuenta qué hace falta de verdad para lanzar tu propio producto, sin atajos y sin humo.
 
 ## Por qué la mayoría de los productos no llegan al mercado
 
-El dato es demoledor: según Clayton Christensen, profesor de la Escuela de Negocios de Harvard, cada año se lanzan unos 30.000 nuevos productos y el 95% fracasa. Y la causa casi nunca es el producto en sí, sino el camino para sacarlo.
+En Harvard Business Review, Clayton Christensen, Scott Cook y Taddy Hall lo dejaron escrito: cada año se lanzan unos 30.000 productos de consumo nuevos y más del 90% fracasa, después de gastar mucho dinero en entender al cliente. El fallo rara vez es “no se pudo fabricar”. Es no haber conectado demanda, coste y canal.
 
-Un estudio de Shopify va más lejos: el 85% de los equipos reconoce que ventas, marketing y desarrollo van descoordinados, y el 95% de los lanzamientos no alcanza sus objetivos de ingresos. El fallo no es de fábrica. Es de proceso.
+En ese mismo artículo citan a Nielsen: de 3.463 lanzamientos de gran consumo en un año, solo 71 superaron 50 millones de dólares en ventas. El aspecto distinto no predice el éxito. Lo que cuenta es si el producto resuelve algo que la gente ya está intentando hacer.
 
 > Un producto sin recorrido es una idea con factura. El valor está en conectar todo el camino, no en una única tarea.
 
@@ -48,9 +48,7 @@ En Roll Order, el molde se consiguió por una fracción de la oferta que el clie
 
 ### Fase 3. Salida al mercado: canal, listing y proyección
 
-El producto terminado no se vende solo. Necesita canal. Para la mayoría de productos físicos hoy, ese canal es Amazon o un marketplace, pero también hay decisiones de marca, de precio y de posicionamiento.
-
-Según ATTN Agency, una cuenta atrás de solo 4 semanas antes del lanzamiento consigue un 34% más de conversión el primer día, y llegar a 8 semanas, un 89% más de interacción en redes. La prisa, otra vez, sale cara.
+El producto terminado no se vende solo. Necesita canal. Para la mayoría de productos físicos hoy, ese canal es Amazon o un marketplace, pero también hay decisiones de marca, de precio y de posicionamiento. En Amazon España la comisión de referido está, en la mayoría de categorías, entre el 8% y el 15% del precio de venta. Si no entra en el margen desde el listing, el lanzamiento nace cojo.
 
 En Roll Order, la salida incluyó el listing de Amazon, las primeras campañas y la proyección internacional: el producto se presentó en la zona de innovación del CES de Las Vegas, con el cliente, apoyando la gestión comercial.
 
@@ -73,6 +71,8 @@ Si tienes una idea de producto, no empieces por fabricar. Empieza por estas tres
 - ¿Se puede fabricar a un coste que deje margen?
 - ¿Por qué canal vas a vender y quién lo va a comprar?
 
-Cuando tengas respuestas con datos, no con opiniones, estarás listo para dar el siguiente paso. Hasta entonces, cada euro que inviertas es una apuesta a ciegas.
+Cuando tengas respuestas con datos, no con opiniones, estarás listo para dar el siguiente paso. Hasta entonces, cada euro que inviertas es una apuesta a ciegas. Ese trabajo es el [análisis de oportunidades y el modelo de negocio](/que-hacemos/desarrollo-de-negocios) antes de industrializar.
 
 Si quieres recorrer este camino con alguien que ya lo ha hecho entero, [cuéntanos tu proyecto](/empezar). Lo analizamos desde la viabilidad real, no desde la intuición.
+
+*Artículo informativo actualizado en septiembre de 2026. No constituye asesoramiento jurídico, fiscal, financiero ni una garantía de viabilidad. Las condiciones regulatorias y comerciales deben verificarse para cada operación.*

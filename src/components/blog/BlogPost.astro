@@ -6,6 +6,7 @@ import {
   BLOG_CATEGORIES,
   formatDate,
   blogHubUrl,
+  blogPostUrl,
   buildBlogPostingJsonLd,
   buildBreadcrumbJsonLd,
 } from '../../lib/blog';
@@ -137,12 +138,14 @@ const copy = {
       </div>
 
       <!-- Navegación -->
-      <nav data-reveal class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-6">
-        <a href={hubUrl} class="reveal-item text-sm font-semibold no-underline hover:opacity-70 transition-opacity" style="--i:0;font-family:'Space Grotesk',sans-serif;color:#0F2548;">
-          ← {copy.back}
+      <nav data-reveal class="ua-post-nav">
+        <a href={hubUrl} class="ua-post-nav-link ua-post-nav-back reveal-item" style="--i:0">
+          <svg class="ua-post-nav-arr" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <span>{copy.back}</span>
         </a>
-        <a href={cat.href[lang]} class="reveal-item text-sm font-semibold no-underline hover:opacity-70 transition-opacity" style="--i:1;font-family:'Space Grotesk',sans-serif;color:#0F2548;">
-          {copy.categoryMore} →
+        <a href={cat.href[lang]} class="ua-post-nav-link ua-post-nav-fwd reveal-item" style="--i:1">
+          <span>{copy.categoryMore}</span>
+          <svg class="ua-post-nav-arr" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </nav>
 
@@ -159,7 +162,23 @@ const copy = {
             {copy.relatedTitle}
           </h2>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        <div class="ua-related-gallery md:hidden">
+          <div class="ua-related-track">
+            {related.map((r) => {
+              const rcat = BLOG_CATEGORIES[r.data.category];
+              return (
+                <a href={blogPostUrl(lang, r.data.urlSlug)} class="ua-related-slide">
+                  <div class="ua-related-media">
+                    <img src={r.data.heroImage} alt={r.data.heroImageAlt} loading="lazy" width="800" height="600" />
+                  </div>
+                  <span class="ua-related-cat" style={`background:${rcat.color};`}>{rcat.label[lang]}</span>
+                  <h3 class="ua-related-title">{r.data.title}</h3>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+        <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {related.map((r, i) => (
             <div class="reveal-item" style={`--i:${i + 1}`}>
               <BlogCard entry={r} lang={lang} />
@@ -263,9 +282,162 @@ const copy = {
     border-left-color: #0F2548;
   }
 
+  /* ── Nav post ────────────────────────── */
+  .ua-post-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 1.5rem;
+  }
+  .ua-post-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #0F2548;
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+  .ua-post-nav-link:hover {
+    color: #00698D;
+  }
+  .ua-post-nav-arr {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .ua-post-nav-fwd:hover .ua-post-nav-arr,
+  .ua-post-nav-back:hover .ua-post-nav-arr {
+    transform: translateX(6px);
+  }
+  /* Móvil: ambas filas, flecha CTA pegada al texto */
+  .ua-post-nav-back,
+  .ua-post-nav-fwd {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .ua-post-nav-back .ua-post-nav-arr {
+    order: 2;
+  }
+  @media (min-width: 768px) {
+    .ua-post-nav {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .ua-post-nav-back,
+    .ua-post-nav-fwd {
+      width: auto;
+      min-height: 0;
+      justify-content: flex-start;
+    }
+    .ua-post-nav-back .ua-post-nav-arr {
+      order: 0;
+      transform: rotate(180deg);
+    }
+    .ua-post-nav-back:hover .ua-post-nav-arr {
+      transform: rotate(180deg) translateX(6px);
+    }
+    .ua-post-nav-link {
+      font-size: 0.875rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ua-post-nav-arr {
+      transition: none;
+    }
+    .ua-post-nav-fwd:hover .ua-post-nav-arr,
+    .ua-post-nav-back:hover .ua-post-nav-arr {
+      transform: none;
+    }
+    @media (min-width: 768px) {
+      .ua-post-nav-back .ua-post-nav-arr,
+      .ua-post-nav-back:hover .ua-post-nav-arr {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
   /* ── Relacionados ────────────────────── */
   .ua-related {
     margin-top: 1.75rem;
+  }
+  .ua-related-gallery {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    overflow: hidden;
+    max-width: 100vw;
+  }
+  .ua-related-track {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    scroll-padding-inline: 1.5rem;
+    scrollbar-width: none !important;
+  }
+  .ua-related-track::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none;
+  }
+  .ua-related-slide {
+    flex: 0 0 78vw;
+    max-width: 300px;
+    scroll-snap-align: start;
+    text-decoration: none;
+    color: inherit;
+  }
+  .ua-related-media {
+    overflow: hidden;
+    border-radius: 0.75rem;
+    aspect-ratio: 4 / 3;
+    background: #EEF1F8;
+    margin-bottom: 0.75rem;
+  }
+  .ua-related-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .ua-related-cat {
+    display: inline-flex;
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.45rem;
+  }
+  .ua-related-title {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #1A1A1A;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   /* ── Artículo ────────────────────────── */
@@ -328,6 +500,14 @@ const copy = {
   }
   .ua-article blockquote p {
     margin: 0;
+  }
+  .ua-article img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 2em 0;
+    border-radius: 1rem;
+    background: #0F2548;
   }
 
   /* ── CTA button ──────────────────────── */

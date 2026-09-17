@@ -58,6 +58,7 @@ export function formatDate(date: Date, lang: Lang): string {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
+    timeZone: 'UTC',
   }).format(date);
 }
 

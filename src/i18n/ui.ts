@@ -40,6 +40,8 @@ export const ui = {
     'nav.unicornio_azul_desc': 'Conoce al equipo y la filosofía detrás del proyecto.',
     'nav.habla_con_nosotros': 'Habla con nosotros',
     'nav.habla_con_nosotros_desc': 'Cuéntanos tu proyecto y empecemos a trabajar.',
+    'nav.ideas': 'Ideas',
+    'nav.ideas_desc': 'Artículos prácticos sobre negocios, producto y mercado.',
 
     // ─── Mobile nav ──────────────────────
     'mobile.que_hacemos': 'Qué hacemos',
@@ -81,6 +83,7 @@ export const ui = {
     'route.como_trabajamos': '/como-trabajamos',
     'route.metodologia_sorie': '/metodologia-sorie',
     'route.sobre_nosotros': '/sobre-nosotros',
+    'route.ideas': '/ideas',
     'route.contacto': '/contacto',
     'route.empezar': '/empezar',
     'route.casos': '/casos',
@@ -125,6 +128,8 @@ export const ui = {
     'nav.unicornio_azul_desc': 'Meet the team and the philosophy behind the project.',
     'nav.habla_con_nosotros': 'Get in touch',
     'nav.habla_con_nosotros_desc': 'Tell us about your project and let\'s get started.',
+    'nav.ideas': 'Ideas',
+    'nav.ideas_desc': 'Practical articles on business, product and market.',
 
     // ─── Mobile nav ──────────────────────
     'mobile.que_hacemos': 'What we do',
@@ -166,6 +171,7 @@ export const ui = {
     'route.como_trabajamos': '/how-we-work',
     'route.metodologia_sorie': '/sorie-methodology',
     'route.sobre_nosotros': '/about-us',
+    'route.ideas': '/ideas',
     'route.contacto': '/contact',
     'route.empezar': '/get-started',
     'route.casos': '/case-studies',

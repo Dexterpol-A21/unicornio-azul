@@ -3,10 +3,10 @@ title: "From idea to market: what it takes to launch your own product"
 description: "How to launch a product step by step: validate demand, industrialize, certify, import and sell. Learn from the real Roll Order case."
 lang: en
 urlSlug: de-la-idea-al-mercado-lanzar-producto
-publishedAt: 2026-08-28
+publishedAt: 2026-09-01
 category: negocios
-heroImage: /images/og-roll-order.jpg
-heroImageAlt: "From idea to market: launching your own product, from prototype to Amazon"
+heroImage: /images/blog-idea-al-mercado.png
+heroImageAlt: "From idea to market: from patent to manufacturing and launching the product"
 readMinutes: 8
 tags: [how to launch a product, launch your own product, industrialization, business model]
 featured: false
@@ -15,13 +15,13 @@ draft: false
 
 Having a product idea is not the same as having a business. Between the two there is a journey most people do not see until they walk it: validate, industrialize, certify, import and sell.
 
-At Unicornio Azul we have walked the whole journey. The clearest example is Roll Order: it arrived as a patent document and reached the market as a product selling on Amazon, with a presence at CES in Las Vegas. This article explains what it really takes to launch your own product, without shortcuts and without fluff.
+At Unicornio Azul we have walked the whole journey. The clearest example is [Roll Order](/en/case-studies/roll-order): it arrived as a patent document and reached the market as a product selling on Amazon, with a presence at CES in Las Vegas. This article explains what it really takes to launch your own product, without shortcuts and without fluff.
 
 ## Why most products never reach the market
 
-The number is brutal: according to Clayton Christensen, professor at Harvard Business School, around 30,000 new products are launched every year and 95% fail. And the cause is almost never the product itself, but the path to get it out.
+In Harvard Business Review, Clayton Christensen, Scott Cook and Taddy Hall put it plainly: about 30,000 new consumer products launch each year and more than 90% fail, after a great deal of money has already been spent trying to understand the customer. The failure is rarely “it could not be made”. It is failing to connect demand, cost and channel.
 
-A Shopify study goes further: 85% of teams admit that sales, marketing and development are out of sync, and 95% of launches miss their revenue goals. The failure is not in the factory. It is in the process.
+In the same article they cite Nielsen: of 3,463 packaged-goods launches in one year, only 71 sold more than $50 million. Looking different is a poor predictor of success. What counts is whether the product helps with a job people are already trying to do.
 
 > A product without a journey is an idea with an invoice. The value is in connecting the whole path, not in a single task.
 
@@ -48,9 +48,7 @@ In Roll Order, the mold was secured for a fraction of the quote the client had f
 
 ### Phase 3. Go-to-market: channel, listing and projection
 
-A finished product does not sell itself. It needs a channel. For most physical products today, that channel is Amazon or a marketplace, but there are also decisions about brand, price and positioning.
-
-According to ATTN Agency, a countdown of just 4 weeks before launch delivers 34% higher day-one conversion, and reaching 8 weeks drives 89% more social engagement. Rushing, again, is expensive.
+A finished product does not sell itself. It needs a channel. For most physical products today, that channel is Amazon or a marketplace, but there are also decisions about brand, price and positioning. On Amazon Spain, referral fees for most categories sit between 8% and 15% of the selling price. If that is not in the margin from the listing, the launch is already lame.
 
 In Roll Order, the launch included the Amazon listing, the first campaigns and international projection: the product was presented in the innovation zone at CES Las Vegas, alongside the client, supporting the commercial management.
 
@@ -73,6 +71,8 @@ If you have a product idea, do not start by manufacturing. Start with these thre
 - Can it be manufactured at a cost that leaves margin?
 - Through which channel will you sell, and who will buy it?
 
-When you have answers backed by data, not opinions, you will be ready for the next step. Until then, every euro you invest is a blind bet.
+When you have answers backed by data, not opinions, you will be ready for the next step. Until then, every euro you invest is a blind bet. That work is [opportunity analysis and the business model](/en/what-we-do/business-development) before industrialization.
 
 If you want to walk this path with someone who has already done the whole thing, [tell us about your project](/en/get-started). We will analyse it from real viability, not intuition.
+
+*Informational article updated in September 2026. It does not constitute legal, tax or financial advice, nor a guarantee of viability. Regulatory and commercial conditions must be verified for each operation.*
