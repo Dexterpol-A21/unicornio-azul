@@ -1,0 +1,4 @@
+# Agent discovery (RFC 8288). isitagentready checks GET / for agent-useful rel types.
+# describedby → existing /llms.txt (already in public/).
+/*
+  Link: </llms.txt>; rel="describedby"; type="text/plain"; title="Unicornio Azul for LLMs"
