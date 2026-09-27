@@ -37,4 +37,7 @@ Disallow: /gracias
 Disallow: /en/thank-you
 Disallow: /marketing
 
+# Cloudflare email obfuscation (not a real page)
+Disallow: /cdn-cgi/
+
 Sitemap: https://unicornioazul.es/sitemap-index.xml
