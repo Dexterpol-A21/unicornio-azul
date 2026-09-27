@@ -9,6 +9,7 @@
 
 - Sitios en Astro + Tailwind, desplegados en Cloudflare.
 - Sección de artículos (Ideas) creada y en funcionamiento.
+- Agent readiness (isitagentready.com) en Unicornio Azul: robots + sitemap + Link a `llms.txt` + Content Signals + markdown para agentes. DNS-AID/DNSSEC en `.es` bloqueado por GoDaddy.
 
 ---
 
@@ -124,3 +125,32 @@ Fechas de publicación (una por artículo, misma fecha en ES y EN): 28 ago valid
 - Galería a pantalla completa al hacer clic o toque en cualquier imagen de vehículos (la principal y las del carrusel).
 - Navegación con flechas, contador `1 / 10`, teclado (Esc, ←, →) y swipe en móvil.
 - Aplicado en español (`/casos/otras-historias/`) e inglés (`/en/case-studies/other-stories/`).
+
+---
+
+## Agent readiness — Unicornio Azul (20 sep 2026)
+
+Auditoría [isitagentready.com](https://isitagentready.com/) sobre `unicornioazul.es`. Nivel 1 / score bajo de partida: robots + sitemap ya estaban; el resto eran protocolos de agentes (varios no aplican: no hay API, OAuth ni MCP).
+
+### Hecho en código (repo + Cloudflare Pages)
+
+- **Link headers:** `public/_headers` anuncia `/llms.txt` con `rel="describedby"` (Discoverability).
+- **Content Signals:** `robots.txt` con `Content-Signal: search=yes, ai-input=yes, ai-train=no` (indexar y citar sí; entrenar modelos no).
+- **Markdown para agentes (plan Free):** el build genera `.md` desde el HTML y un middleware de Pages (`functions/_middleware.js`) responde `Content-Type: text/markdown` si llega `Accept: text/markdown`. Convierte el HTML ya renderizado (`<main>` + JSON-LD), así un CMS futuro (p. ej. Sanity) sigue funcionando. No es el conversor Pro de Cloudflare; para GEO y el check basta.
+
+### DNS-AID y DNSSEC — no se cierra con GoDaddy + `.es`
+
+El check pide registros HTTPS/SVCB en `_index._agents.unicornioazul.es` y zona firmada (DNSSEC). Cloudflare puede firmar la zona y genera un DS; ese DS hay que publicarlo **en el registrador** (GoDaddy), no en los DNS de Cloudflare.
+
+**Prueba en el panel de GoDaddy (misma cuenta):**
+
+- `utrillacontract.com` (`.com`, políticas ICANN): aparece la pestaña **Registros DS** y ya hay un DS (key tag 2371, algoritmo 13, digest type 2).
+- `unicornioazul.es` (`.es`, registro Red.es): las pestañas son Registros DNS, Reenvío, Servidores de nombres y Nombres de host. **No existe Registros DS.** GoDaddy no expone en el panel la delegación DNSSEC de `.es` cuando los nameservers son externos (Cloudflare). Red.es sí soporta DNSSEC; el cuello de botella es GoDaddy con ese ccTLD.
+
+**Conclusión:** mientras el `.es` esté en GoDaddy, **no se puede pegar el DS**. No es un retraso del panel. No hay que cambiar nameservers a GoDaddy (rompería el DNS de Cloudflare).
+
+**Decisión (20 sep):** desactivar DNSSEC en Cloudflare (DNS → Settings) para no dejar la zona a medio firmar sin DS en nic.es. El registro `_index._agents` se puede crear igual en Cloudflare DNS (HTTPS, priority 1, target `unicornioazul.es`, `alpn="h3,h2" port=443`); es opcional y de poco uso real hoy. DNSSEC completo solo si algún día se traspasa el `.es` a un registrador que publique DS (DonDominio, Nominalia, Dinahosting; Cloudflare Registrar si llegara a ofrecer `.es`).
+
+### Qué sí cuenta ahora
+
+`robots.txt` + sitemap + cabecera Link a `llms.txt` (+ Content Signals y markdown) es la configuración útil para buscadores y agentes. El 4/4 de Discoverability con DNSSEC en DNS-AID no es alcanzable en este registrador. No implementar catálogos API, OAuth, MCP ni WebMCP de mentira.
