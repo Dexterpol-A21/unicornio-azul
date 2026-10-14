@@ -1,0 +1,20 @@
+[
+  {
+    "id": "roll-order",
+    "name": "Roll Order",
+    "url": "https://unicornioazul.es/casos/roll-order",
+    "summary": "De la patente a Amazon: industrialización, listing y CES."
+  },
+  {
+    "id": "electric-bike",
+    "name": "Bicicleta eléctrica",
+    "url": "https://unicornioazul.es/casos/bicicleta-electrica",
+    "summary": "Sharing urbano, Asia y aranceles."
+  },
+  {
+    "id": "utrilla",
+    "name": "Utrilla",
+    "url": "https://unicornioazul.es/casos/utrilla",
+    "summary": "De muebles a contract integral: Asia, Cantón y web."
+  }
+]

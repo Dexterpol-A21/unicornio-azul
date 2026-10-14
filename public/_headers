@@ -1,4 +1,48 @@
-# Agent discovery (RFC 8288). isitagentready checks GET / for agent-useful rel types.
-# describedby → existing /llms.txt (already in public/).
+# Agent discovery (RFC 8288).
 /*
   Link: </llms.txt>; rel="describedby"; type="text/plain"; title="Unicornio Azul for LLMs"
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"
+  Access-Control-Allow-Origin: *
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
+  Access-Control-Allow-Origin: *
+
+/.well-known/ai-catalog.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+
+/.well-known/mcp/server-card.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+
+/.well-known/mcp.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+
+/.well-known/agent-skills/index.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+
+/auth.md
+  Content-Type: text/markdown; charset=utf-8
+
+/api/v1/health
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/api/v1/firm
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/api/v1/services
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/api/v1/cases
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/api/v1/openapi.json
+  Content-Type: application/vnd.oai.openapi+json
+  Access-Control-Allow-Origin: *

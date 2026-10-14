@@ -1,0 +1,40 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://unicornioazul.es/api/v1",
+      "service-desc": [
+        {
+          "href": "https://unicornioazul.es/api/v1/openapi.json",
+          "type": "application/vnd.oai.openapi+json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://unicornioazul.es/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://unicornioazul.es/api/v1/health",
+          "type": "application/json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://unicornioazul.es/mcp",
+      "service-desc": [
+        {
+          "href": "https://unicornioazul.es/.well-known/mcp/server-card.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://unicornioazul.es/llms.txt",
+          "type": "text/plain"
+        }
+      ]
+    }
+  ]
+}

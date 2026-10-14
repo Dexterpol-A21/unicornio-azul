@@ -1,0 +1,26 @@
+[
+  {
+    "id": "business-development",
+    "name": "Desarrollo de negocios",
+    "url": "https://unicornioazul.es/que-hacemos/desarrollo-de-negocios",
+    "summary": "Validar ideas, crear marca propia y estructurar el modelo de negocio."
+  },
+  {
+    "id": "product-sourcing",
+    "name": "Producto y compras internacionales",
+    "url": "https://unicornioazul.es/que-hacemos/producto-compras-internacionales",
+    "summary": "Sourcing, fabricación, importación y exportación."
+  },
+  {
+    "id": "digital-marketing",
+    "name": "Marketing digital",
+    "url": "https://unicornioazul.es/que-hacemos/marketing-digital",
+    "summary": "SEO, SEM, anuncios en Amazon y branding orientado a venta."
+  },
+  {
+    "id": "digital-channels",
+    "name": "Canales digitales y escalado",
+    "url": "https://unicornioazul.es/que-hacemos/canales-digitales-escalado",
+    "summary": "Amazon FBA, marketplaces, e-commerce B2B y fulfillment."
+  }
+]

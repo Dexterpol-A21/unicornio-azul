@@ -10,6 +10,7 @@
 - Sitios en Astro + Tailwind, desplegados en Cloudflare.
 - Sección de artículos (Ideas) creada y en funcionamiento.
 - Agent readiness (isitagentready.com) en Unicornio Azul: robots + sitemap + Link a `llms.txt` + Content Signals + markdown para agentes. DNS-AID/DNSSEC en `.es` bloqueado por GoDaddy.
+- Search Console, informe «No se ha encontrado (404)»: las URLs rotas que Google seguía rastreando ya redirigen con 301. Falta pulsar «Validar corrección» en Search Console.
 
 ---
 
@@ -153,4 +154,37 @@ El check pide registros HTTPS/SVCB en `_index._agents.unicornioazul.es` y zona f
 
 ### Qué sí cuenta ahora
 
-`robots.txt` + sitemap + cabecera Link a `llms.txt` (+ Content Signals y markdown) es la configuración útil para buscadores y agentes. El 4/4 de Discoverability con DNSSEC en DNS-AID no es alcanzable en este registrador. No implementar catálogos API, OAuth, MCP ni WebMCP de mentira.
+`robots.txt` + sitemap + cabecera Link a `llms.txt` (+ Content Signals y markdown) es la configuración útil para buscadores y agentes. El 4/4 de Discoverability con DNSSEC en DNS-AID no es alcanzable en este registrador. En octubre se añadió descubrimiento de API/MCP/skills real (sin OAuth inventado); ver `docs/REGISTRO-CAMBIOS-2026-10.md`.
+
+---
+
+## Search Console — 404 que Google seguía rastreando (26–27 sep 2026)
+
+Informe **No se ha encontrado (404)**. La validación que falló el 21 de septiembre es anterior al arreglo. Commit `7f345dd`, ya en `main` y en Cloudflare. Comprobado en vivo el 27 sep: esas URLs responden 301, ya no 404.
+
+### Redirigen a la página inglesa real
+
+- `/en/contacto/` → `/en/contact`
+- `/en/sobre-nosotros/` → `/en/about-us`
+- `/en/como-trabajamos` → `/en/how-we-work`
+- `/en/metodologia-sorie/` → `/en/sorie-methodology`
+- `/en/casos/` → `/en/case-studies`
+- `/en/que-hacemos/canales-digitales-escalado/` → `/en/what-we-do/digital-channels-scaling`
+- También el resto de slugs en español bajo `/en/` (servicios, casos, empezar, aviso legal, privacidad).
+- `www.unicornioazul.es/contact/` → `/en/contact`
+- `www.unicornioazul.es/feed/` → la home
+
+Dónde está: `astro.config.mjs` (301) y `public/_redirects` (301 de Cloudflare Pages, con y sin barra final). `/cdn-cgi/` queda en `Disallow` de `robots.txt`.
+
+### Siguen en 404 y no son páginas del sitio
+
+- `https://unicornioazul.es/cdn-cgi/l/email-protection` — protección de correos de Cloudflare. No se puede convertir en página. Bloqueada en `robots.txt`.
+- `https://www.unicornioazul.es/*` — URL basura del 19 de mayo (WordPress anterior). El asterisco forma parte de la dirección.
+
+### Los otros informes de Search Console no son fallos
+
+- **Página con redirección:** Google vio una URL que envía a otra (sin barra final, o `www`). Indexa el destino.
+- **Página alternativa con canónica adecuada:** copias en `www` cuya canónica es `https://unicornioazul.es/...`.
+- **Excluida por noindex (14 may 2026):** `/comments/feed/` y `/?s={search_term_string}`. Restos del WordPress que había en el dominio antes de este sitio. Hoy `/comments/feed/` responde 404.
+
+**Pendiente:** en Search Console, informe 404 → **Validar corrección**. Google tarda días en vaciar la lista aunque el arreglo ya esté publicado.

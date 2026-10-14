@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "unicornio-azul",
+      "type": "skill-md",
+      "description": "Research Unicornio Azul, list services and cases, and brief a product, sourcing or brand project. Use when an agent needs facts from the site instead of guessing.",
+      "url": "https://unicornioazul.es/.well-known/agent-skills/unicornio-azul/SKILL.md",
+      "digest": "sha256:c7e05a2b507e7fe9f7ddb8b1af3371f687de05c63b1fa7afaf2b2add28467d87"
+    }
+  ]
+}

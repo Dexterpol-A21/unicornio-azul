@@ -1,0 +1,53 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Unicornio Azul",
+    "identifier": "did:web:unicornioazul.es"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:unicornioazul.es:docs:llms",
+      "displayName": "Site index for LLMs",
+      "type": "text/plain",
+      "url": "https://unicornioazul.es/llms.txt",
+      "representativeQueries": [
+        "what does Unicornio Azul do",
+        "list Unicornio Azul services",
+        "how to contact Unicornio Azul"
+      ]
+    },
+    {
+      "identifier": "urn:air:unicornioazul.es:api:site",
+      "displayName": "Public site API",
+      "type": "application/vnd.oai.openapi+json",
+      "url": "https://unicornioazul.es/api/v1/openapi.json",
+      "representativeQueries": [
+        "Unicornio Azul case studies JSON",
+        "list service pillars as JSON",
+        "firm contact API"
+      ]
+    },
+    {
+      "identifier": "urn:air:unicornioazul.es:server:mcp",
+      "displayName": "Unicornio Azul MCP server",
+      "type": "application/json",
+      "url": "https://unicornioazul.es/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "MCP tools for Unicornio Azul",
+        "list cases via MCP",
+        "how to start a project with Unicornio Azul"
+      ]
+    },
+    {
+      "identifier": "urn:air:unicornioazul.es:skills:brief",
+      "displayName": "Brief a Unicornio Azul project",
+      "type": "text/markdown",
+      "url": "https://unicornioazul.es/.well-known/agent-skills/unicornio-azul/SKILL.md",
+      "representativeQueries": [
+        "how to brief Unicornio Azul",
+        "what information to send before sourcing in Asia",
+        "prepare a product idea for Unicornio Azul"
+      ]
+    }
+  ]
+}

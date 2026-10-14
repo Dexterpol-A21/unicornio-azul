@@ -1,0 +1,79 @@
+<script is:inline>
+(function () {
+  var tools = [
+    {
+      name: 'list_services',
+      description: 'List Unicornio Azul service pillars with URLs.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      execute: async function () {
+        return {
+          content: [
+            {
+              type: 'text',
+              text: JSON.stringify(
+                [
+                  { name: 'Desarrollo de negocios', url: '/que-hacemos/desarrollo-de-negocios' },
+                  { name: 'Producto y compras internacionales', url: '/que-hacemos/producto-compras-internacionales' },
+                  { name: 'Marketing digital', url: '/que-hacemos/marketing-digital' },
+                  { name: 'Canales digitales y escalado', url: '/que-hacemos/canales-digitales-escalado' },
+                ],
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      },
+    },
+    {
+      name: 'list_cases',
+      description: 'List public Unicornio Azul case studies with URLs.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      execute: async function () {
+        return {
+          content: [
+            {
+              type: 'text',
+              text: JSON.stringify(
+                [
+                  { name: 'Roll Order', url: '/casos/roll-order' },
+                  { name: 'Bicicleta eléctrica', url: '/casos/bicicleta-electrica' },
+                  { name: 'Utrilla', url: '/casos/utrilla' },
+                ],
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      },
+    },
+    {
+      name: 'start_inquiry',
+      description: 'Open the project intake form so a human can brief Unicornio Azul.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      execute: async function () {
+        window.location.assign('/empezar');
+        return { content: [{ type: 'text', text: 'Opening /empezar' }] };
+      },
+    },
+  ];
+
+  async function register(ctx) {
+    if (!ctx) return;
+    var ac = new AbortController();
+    if (typeof ctx.registerTool === 'function') {
+      for (var i = 0; i < tools.length; i++) {
+        await ctx.registerTool(tools[i], { signal: ac.signal });
+      }
+      return;
+    }
+    if (typeof ctx.provideContext === 'function') {
+      ctx.provideContext({ tools: tools });
+    }
+  }
+
+  var ctx = (document && document.modelContext) || (navigator && navigator.modelContext);
+  if (ctx) register(ctx).catch(function () {});
+})();
+</script>

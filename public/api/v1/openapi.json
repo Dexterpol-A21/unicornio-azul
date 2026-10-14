@@ -1,0 +1,35 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Unicornio Azul public site API",
+    "version": "1.0.0",
+    "description": "Read-only JSON about the firm, services and case studies. No authentication. Project intake is the human form at /empezar, not this API."
+  },
+  "servers": [{ "url": "https://unicornioazul.es" }],
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "summary": "Health",
+        "responses": { "200": { "description": "Service is up" } }
+      }
+    },
+    "/api/v1/firm": {
+      "get": {
+        "summary": "Firm profile",
+        "responses": { "200": { "description": "Organization contact and description" } }
+      }
+    },
+    "/api/v1/services": {
+      "get": {
+        "summary": "Service pillars",
+        "responses": { "200": { "description": "List of services" } }
+      }
+    },
+    "/api/v1/cases": {
+      "get": {
+        "summary": "Case studies",
+        "responses": { "200": { "description": "List of public cases" } }
+      }
+    }
+  }
+}
