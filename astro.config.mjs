@@ -63,6 +63,11 @@ export default defineConfig({
         '@': path.resolve(root, 'src'),
       },
     },
+    server: {
+      proxy: {
+        '/api/lead': 'http://127.0.0.1:8788',
+      },
+    },
   },
   devToolbar: { enabled: false },
   compressHTML: true,

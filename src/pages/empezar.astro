@@ -380,7 +380,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     if (input) { input.style.borderColor = 'rgba(22,54,103,0.2)'; }
   }
 
-  // Submit → FormSubmit (email to Luis)
+  // Submit → /api/lead (aviso a Luis + confirmación al lead)
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = nombreInput.value.trim();
@@ -425,40 +425,25 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     if (submitText) submitText.textContent = 'Enviando…';
 
     try {
-      // Web3Forms — destination email is configured in the Web3Forms dashboard
-      const formData = new FormData();
-      formData.append('access_key', 'ad371c7f-e083-4cfc-af3c-9c6e7c255f50');
-      formData.append('subject', `Nuevo lead — Empezar: ${objetivoLabel}`);
-      formData.append('from_name', 'Unicornio Azul Web');
-      formData.append('name', name);
-      formData.append('email', email);
-      formData.append('telefono', telefono || '—');
-      formData.append('objetivo', objetivoLabel);
-      formData.append('contexto', contexto || '—');
-      formData.append('idioma', 'ES');
-      formData.append('origen', '/empezar');
-      formData.append(
-        'message',
-        [
-          `Nombre: ${name}`,
-          `Email: ${email}`,
-          `Teléfono: ${telefono || '—'}`,
-          `Objetivo: ${objetivoLabel}`,
-          `Contexto: ${contexto || '—'}`,
-          `Idioma: ES`,
-          `Origen: /empezar`,
-        ].join('\n'),
-      );
-      formData.append('botcheck', honey);
-
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/lead', {
         method: 'POST',
-        body: formData,
-        signal: AbortSignal.timeout(15000),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: telefono,
+          goal: objetivoVal,
+          context: contexto,
+          lang: 'es',
+          source: '/empezar',
+          privacy: true,
+          honey,
+        }),
+        signal: AbortSignal.timeout(20000),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.success) {
-        throw new Error(data.message || 'No se pudo enviar el formulario.');
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'No se pudo enviar el formulario.');
       }
 
       const successName = document.getElementById('success-name');

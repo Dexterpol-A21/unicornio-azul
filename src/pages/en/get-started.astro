@@ -380,7 +380,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     if (input) { input.style.borderColor = 'rgba(22,54,103,0.2)'; }
   }
 
-  // Submit → FormSubmit (email to Luis)
+  // Submit → /api/lead (owner alert + confirmation to the lead)
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = nombreInput.value.trim();
@@ -425,40 +425,25 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     if (submitText) submitText.textContent = 'Sending…';
 
     try {
-      // Web3Forms — destination email is configured in the Web3Forms dashboard
-      const formData = new FormData();
-      formData.append('access_key', 'ad371c7f-e083-4cfc-af3c-9c6e7c255f50');
-      formData.append('subject', `New lead — Get started: ${objetivoLabel}`);
-      formData.append('from_name', 'Unicornio Azul Web');
-      formData.append('name', name);
-      formData.append('email', email);
-      formData.append('phone', telefono || '—');
-      formData.append('goal', objetivoLabel);
-      formData.append('context', contexto || '—');
-      formData.append('language', 'EN');
-      formData.append('source', '/en/get-started');
-      formData.append(
-        'message',
-        [
-          `Name: ${name}`,
-          `Email: ${email}`,
-          `Phone: ${telefono || '—'}`,
-          `Goal: ${objetivoLabel}`,
-          `Context: ${contexto || '—'}`,
-          `Language: EN`,
-          `Source: /en/get-started`,
-        ].join('\n'),
-      );
-      formData.append('botcheck', honey);
-
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/lead', {
         method: 'POST',
-        body: formData,
-        signal: AbortSignal.timeout(15000),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: telefono,
+          goal: objetivoVal,
+          context: contexto,
+          lang: 'en',
+          source: '/en/get-started',
+          privacy: true,
+          honey,
+        }),
+        signal: AbortSignal.timeout(20000),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.success) {
-        throw new Error(data.message || 'Could not send the form.');
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Could not send the form.');
       }
 
       const successName = document.getElementById('success-name');

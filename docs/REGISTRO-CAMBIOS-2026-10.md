@@ -4,6 +4,21 @@
 
 ---
 
+## Formulario Empezar — Resend (19 oct 2026)
+
+`/empezar` y `/en/get-started` dejan Web3Forms. `functions/api/lead.js` manda dos correos con Resend.
+
+### Hecho
+
+- **Aviso del lead:** `luis.chicharro@unicornioazul.es`. Responder ese correo escribe a quien envió el formulario.
+- **Confirmación:** al email de quien lo rellena, en su idioma. Dice «Te escribiremos en menos de 48 horas». Lleva el icono del sitio.
+- **Remitente:** `Unicornio Azul <notificaciones@unicornioazul.es>`.
+- **Dominio:** `unicornioazul.es` verificado en Resend, región `eu-west-1`, sin seguimiento de aperturas ni clics.
+- **Clave:** `RESEND_API_KEY` en Cloudflare y, en local, en `.dev.vars`. No va en el repositorio.
+- **Privacidad:** el texto nombra a Resend como encargado del envío.
+
+---
+
 ## Agent discovery — API, MCP, skills (14 oct 2026)
 
 Auditoría isitagentready: bloque **API, Auth, MCP & Skill Discovery 0/8**. Se publica lo que el sitio puede cumplir de verdad. **No** hay OAuth/OIDC: no hay login ni API protegida; no se inventan `authorization_endpoint` ni `jwks_uri`.

@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:lead": "node scripts/lead-dev.mjs",
     "build": "node scripts/generate-agent-skills-index.mjs && astro build && node scripts/generate-agent-markdown.mjs",
     "preview": "astro preview"
   },
