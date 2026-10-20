@@ -1,0 +1,680 @@
+---
+import type { Lang } from '../../i18n/ui';
+import CaseFAQ from '../ui/CaseFAQ.astro';
+import Footer from '../global/Footer.astro';
+import type { FaqItem } from '../../data/case-faqs';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const copy = {
+  es: {
+    crumbHome: 'Inicio',
+    crumbParent: 'Desarrollo de negocios',
+    crumbHere: 'Creación de negocios',
+    homeHref: '/',
+    parentHref: '/que-hacemos/desarrollo-de-negocios/',
+    h1: 'Creación de negocios desde cero',
+    lede: 'Te ayudamos a emprender desde cero y a montar un negocio con demanda, costes, marca y canal. Validamos la idea en España, desde Madrid, antes de invertir en sociedad, stock o un logo.',
+    cta: 'Cuéntanos la idea',
+    ctaHref: '/empezar',
+    bridgeProblem: 'Un logo y una sociedad',
+    bridgeSolution: 'Todavía no es un negocio',
+    quote: 'Nunca enamorarte de una idea antes de validar el mercado.',
+    quoteBy: 'Principio de Unicornio Azul',
+    whatTitle: 'Qué es crear un negocio',
+    what: [
+      'Crear un negocio no es registrar una sociedad ni encargar una identidad. Es dejar escrito a quién le vendes, a qué precio, con qué producto y por qué canal, y comprobar que esas cuatro cosas caben en la misma cuenta.',
+      'En Unicornio Azul ese trabajo va antes del gasto grande. Si la demanda no existe o el margen no aguanta el canal, el siguiente paso no es fabricar: es ajustar o parar. Montar la empresa puede esperar. El modelo de negocio, no.',
+    ],
+    whoTitle: 'Para quién es',
+    who: [
+      { t: 'Tienes una idea y todavía no has gastado en serio', d: 'Quieres saber si merece la pena antes de moldes, stock o una web. El entregable es una decisión: seguir, cambiar el alcance o dejarlo.' },
+      { t: 'La empresa ya existe y quieres una línea nueva', d: 'No partes de cero en lo legal. Sí partes de cero en el producto, la marca o el canal. El trabajo es el mismo: oportunidad, números y promesa.' },
+    ],
+    incTitle: 'Qué incluye la creación del negocio',
+    incLead: 'Cuatro bloques, en este orden. Saltarse uno es lo que luego se paga en stock que no se mueve.',
+    blocks: [
+      { id: 'oportunidad', n: '01', t: 'Oportunidad', d: 'Mercado, alternativas y números de la categoría. Si no puedes nombrar a quién le quitas la venta, todavía no hay negocio.' },
+      { id: 'validacion', n: '02', t: 'Validación', d: 'Validar la idea de negocio con demanda comprobable: búsquedas, conversaciones, preventa o datos de canal. El gusto de la sala no cuenta como prueba.' },
+      { id: 'modelo', n: '03', t: 'Modelo de negocio', d: 'Precio, coste puesto en destino, margen y quién cobra primero. En producto físico el dinero duerme en fábrica, flete y stock antes del primer cobro.' },
+      { id: 'marca', n: '04', t: 'Marca', d: 'Crear una marca propia empieza por un nombre que se puede registrar, la promesa y cómo se ve en el pack o en la ficha. Un logo sin eso es decoración.' },
+    ],
+    howTitle: 'Cómo se decide si seguir',
+    how: [
+      'No hay un presupuesto único. Una idea de servicio y un producto que hay que fabricar fuera no cuestan lo mismo, ni piden el mismo plazo.',
+      'El primer paso es una conversación: qué quieres vender, a quién, qué has gastado ya y qué daría por cerrado el proyecto. Si tiene sentido, acotamos el alcance. Si no, te lo decimos antes de abrir un trabajo.',
+    ],
+    steps: ['Conversación', 'Alcance', 'Seguir o parar'],
+    caseAlt: 'Cargador Roll Order, el producto que salió a la venta',
+    howLinks: [
+      { href: '/ideas/como-validar-una-idea-de-negocio-antes-de-invertir/', label: 'Cómo validar una idea antes de invertir' },
+      { href: '/ideas/plan-de-negocio-producto-fisico/', label: 'Qué debe incluir un plan de producto físico' },
+      { href: '/metodologia-sorie/', label: 'Metodología SORIE™' },
+    ],
+    caseTitle: 'Un negocio que ya salió al mercado',
+    caseBody: 'Roll Order llegó como patente. El trabajo no fue “hacer una marca”: fue validar color y conectores con ventas reales de Amazon en seis países, industrializar el molde y salir a vender. Así se ve lanzar un producto cuando hay un negocio detrás.',
+    caseHref: '/casos/roll-order/',
+    caseLink: 'Ver el caso Roll Order',
+    moreHref: '/que-hacemos/desarrollo-de-negocios/',
+    moreLink: 'Ver el servicio completo de desarrollo de negocios',
+    findTitle: 'Si esto es lo que buscas',
+    find: [
+      { href: '/creacion-de-negocios/montar-un-negocio/', label: 'Montar un negocio' },
+      { href: '/creacion-de-negocios/en-espana/', label: 'Crear una empresa en España' },
+      { href: '/creacion-de-negocios/marca-propia/', label: 'Crear una marca propia' },
+      { href: '/creacion-de-negocios/validar-una-idea/', label: 'Validar una idea de negocio' },
+      { href: '/creacion-de-negocios/madrid/', label: 'Crear una empresa en Madrid' },
+      { href: '/creacion-de-negocios/barcelona/', label: 'Crear una empresa en Barcelona' },
+      { href: '/creacion-de-negocios/valencia/', label: 'Crear una empresa en Valencia' },
+    ],
+    closeTitle: 'Si la idea aguanta, se construye. Si no, se para a tiempo.',
+    closeBody: 'Cuéntanos en qué punto está. Respondemos con el siguiente paso, no con un dossier.',
+    note: 'Página informativa. No es asesoramiento jurídico, fiscal ni una garantía de que el proyecto sea viable.',
+    faqUrl: 'https://unicornioazul.es/creacion-de-negocios/',
+  },
+  en: {
+    crumbHome: 'Home',
+    crumbParent: 'Business development',
+    crumbHere: 'Business creation',
+    homeHref: '/en/',
+    parentHref: '/en/what-we-do/business-development/',
+    h1: 'Business creation from scratch',
+    lede: 'We help you start from scratch and set up a business with demand, costs, a brand and a channel. We validate the idea in Spain, from Madrid, before you spend on a company, stock or a logo.',
+    cta: 'Tell us the idea',
+    ctaHref: '/en/get-started',
+    bridgeProblem: 'A logo and a company',
+    bridgeSolution: 'That is not a business yet',
+    quote: 'Never fall in love with an idea before you validate the market.',
+    quoteBy: 'A principle at Unicornio Azul',
+    whatTitle: 'What creating a business means',
+    what: [
+      'Creating a business is not incorporating a company or commissioning an identity. It is writing down who you sell to, at what price, with what product and through which channel, and checking that those four things fit in the same account.',
+      'At Unicornio Azul that work comes before the large spend. If demand is not there, or the margin cannot carry the channel, the next step is not to manufacture. It is to adjust or stop. Incorporating can wait. The business model cannot.',
+    ],
+    whoTitle: 'Who it is for',
+    who: [
+      { t: 'You have an idea and have not spent seriously yet', d: 'You want to know if it is worth it before moulds, stock or a website. The deliverable is a decision: continue, narrow the scope, or leave it.' },
+      { t: 'The company already exists and you want a new line', d: 'You are not starting from zero legally. You are starting from zero on the product, the brand or the channel. The work is the same: opportunity, numbers and promise.' },
+    ],
+    incTitle: 'What business creation includes',
+    incLead: 'Four blocks, in this order. Skipping one is what you later pay for in stock that does not move.',
+    blocks: [
+      { id: 'oportunidad', n: '01', t: 'Opportunity', d: 'Market, alternatives and category numbers. If you cannot name whose sale you are taking, there is no business yet.' },
+      { id: 'validacion', n: '02', t: 'Validation', d: 'Validate the business idea with demand you can check: searches, conversations, a presale or channel data. What the room likes is not evidence.' },
+      { id: 'modelo', n: '03', t: 'Business model', d: 'Price, landed cost, margin and who gets paid first. With a physical product the money sleeps in the factory, freight and stock before the first payment.' },
+      { id: 'marca', n: '04', t: 'Brand', d: 'Creating your own brand starts with a name you can register, a promise, and how it looks on the pack or the listing. A logo without that is decoration.' },
+    ],
+    howTitle: 'How we decide whether to continue',
+    how: [
+      'There is no single fee. A service idea and a product that has to be manufactured abroad do not cost the same, and they do not take the same time.',
+      'The first step is a conversation: what you want to sell, to whom, what you have already spent and what would count as the project being closed. If it makes sense, we scope it. If it does not, we say so before opening a job.',
+    ],
+    steps: ['Conversation', 'Scope', 'Continue or stop'],
+    caseAlt: 'Roll Order charger, the product that went on sale',
+    howLinks: [
+      { href: '/en/ideas/como-validar-una-idea-de-negocio-antes-de-invertir/', label: 'How to validate an idea before you invest' },
+      { href: '/en/ideas/plan-de-negocio-producto-fisico/', label: 'What a physical-product plan must include' },
+      { href: '/en/sorie-methodology/', label: 'SORIE™ methodology' },
+    ],
+    caseTitle: 'A business that already reached the market',
+    caseBody: 'Roll Order arrived as a patent. The work was not “make a brand”. It was validating colour and connectors against real Amazon sales in six countries, industrialising the mould and going out to sell. That is what launching a product looks like when a business sits behind the idea.',
+    caseHref: '/en/case-studies/roll-order/',
+    caseLink: 'See the Roll Order case',
+    moreHref: '/en/what-we-do/business-development/',
+    moreLink: 'See the full business development service',
+    findTitle: 'If this is what you are looking for',
+    find: [
+      { href: '/en/business-creation/start-a-business/', label: 'Start a business' },
+      { href: '/en/business-creation/in-spain/', label: 'Create a company in Spain' },
+      { href: '/en/business-creation/own-brand/', label: 'Create your own brand' },
+      { href: '/en/business-creation/validate-an-idea/', label: 'Validate a business idea' },
+      { href: '/en/business-creation/madrid/', label: 'Create a company in Madrid' },
+      { href: '/en/business-creation/barcelona/', label: 'Create a company in Barcelona' },
+      { href: '/en/business-creation/valencia/', label: 'Create a company in Valencia' },
+    ],
+    closeTitle: 'If the idea holds, we build it. If it does not, we stop in time.',
+    closeBody: 'Tell us where it stands. We answer with the next step, not a dossier.',
+    note: 'Informational page. It is not legal or tax advice, and it is not a guarantee that the project is viable.',
+    faqUrl: 'https://unicornioazul.es/en/business-creation/',
+  },
+}[lang];
+
+const faqs: FaqItem[] = lang === 'es'
+  ? [
+      {
+        question: '¿Qué es la creación de negocios?',
+        answer: 'Es el trabajo de convertir una idea en un proyecto con demanda, costes, marca y canal. Registrar una sociedad o encargar un logo no crea el negocio: deja el trámite o la imagen, no el modelo.',
+      },
+      {
+        question: '¿Ayudáis a crear una empresa desde cero en España?',
+        answer: 'Sí. Crear una empresa desde cero, aquí, es validar la idea y montar el negocio: a quién vendes, a qué precio y por qué canal. Constituir la sociedad puede esperar. Trabajamos desde Madrid con proyectos en España.',
+      },
+      {
+        question: '¿Se puede crear un negocio antes de invertir en stock?',
+        answer: 'Sí. El primer paso es comprobar si alguien lo busca y si el precio aguanta el coste. Fabricar antes de eso es la forma más cara de descubrir que nadie lo quería.',
+      },
+      {
+        question: '¿En qué se diferencia de montar una empresa?',
+        answer: 'Montar una empresa es el trámite legal. Crear el negocio es decidir a quién vendes, a qué precio y por qué canal. Una sociedad sin ese modelo es una carpeta.',
+      },
+      {
+        question: '¿La marca entra en la creación del negocio?',
+        answer: 'Sí, cuando ya hay una promesa que se puede cumplir. Naming, registro y cómo se ve en el pack o en la ficha forman parte del mismo trabajo. Un logo suelto, no.',
+      },
+      {
+        question: '¿Cuánto cuesta crear un negocio con Unicornio Azul?',
+        answer: 'No hay una tarifa única. Depende de si es un servicio, una marca o un producto que hay que fabricar e importar. El primer paso es acotar el alcance, no vender un paquete cerrado.',
+      },
+    ]
+  : [
+      {
+        question: 'What is business creation?',
+        answer: 'It is the work of turning an idea into a project with demand, costs, a brand and a channel. Incorporating a company or commissioning a logo does not create the business. It leaves the paperwork or the image, not the model.',
+      },
+      {
+        question: 'Do you help create a business from scratch in Spain?',
+        answer: 'Yes. Creating a business from scratch, here, means validating the idea and setting up the business: who you sell to, at what price and through which channel. Incorporating can wait. We work from Madrid on projects in Spain.',
+      },
+      {
+        question: 'Can you create a business before investing in stock?',
+        answer: 'Yes. The first step is to check whether anyone is looking for it and whether the price can carry the cost. Manufacturing before that is the most expensive way to learn that nobody wanted it.',
+      },
+      {
+        question: 'How is this different from setting up a company?',
+        answer: 'Setting up a company is the legal step. Creating the business is deciding who you sell to, at what price and through which channel. A company without that model is a folder.',
+      },
+      {
+        question: 'Does the brand belong in business creation?',
+        answer: 'Yes, once there is a promise you can keep. Naming, filing and how it looks on the pack or the listing are part of the same work. A standalone logo is not.',
+      },
+      {
+        question: 'How much does it cost to create a business with Unicornio Azul?',
+        answer: 'There is no single fee. It depends on whether this is a service, a brand, or a product that has to be manufactured and imported. The first step is to scope the work, not to sell a closed package.',
+      },
+    ];
+
+const tones = ['#0F2548', '#163667', '#0B4F7A', '#00698D'];
+---
+<section class="cn-shell">
+  <aside class="cn-offer">
+    <div class="cn-offer-inner">
+    <nav class="cn-crumb" aria-label="Breadcrumb">
+      <a href={copy.homeHref}>{copy.crumbHome}</a>
+      <span aria-hidden="true">/</span>
+      <a href={copy.parentHref}>{copy.crumbParent}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{copy.crumbHere}</span>
+    </nav>
+    <h1>{copy.h1}</h1>
+    <p class="cn-lede">{copy.lede}</p>
+    <a href={copy.ctaHref} class="animated-btn cn-btn">
+      <span class="text">{copy.cta}</span>
+      <svg class="arr-1" fill="none" stroke="#0F2548" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg class="arr-2" fill="none" stroke="#0F2548" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <span class="circle"></span>
+    </a>
+    <p class="cn-offer-note">{copy.note}</p>
+    </div>
+  </aside>
+
+  <div class="cn-story">
+    <section id="que-es" class="cn-block">
+      <h2>{copy.whatTitle}</h2>
+      <p class="cn-statement">{copy.what[0]}</p>
+      <p>{copy.what[1]}</p>
+    </section>
+
+    <section id="que-incluye" class="cn-block cn-block--list">
+      <h2>{copy.incTitle}</h2>
+      <p>{copy.incLead}</p>
+      <div class="cn-bloques" data-bloque-rail>
+        {copy.blocks.map((block, i) => (
+          <div id={block.id} class="cn-bloque" data-bloque-item style={`--c:${tones[i]};`}>
+            <div class="shrink-0">
+              <span class="bloque-num">{block.n}</span>
+            </div>
+            <div>
+              <h3 class="bloque-title">{block.t}</h3>
+              <p>{block.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="para-quien" class="cn-block">
+      <h2>{copy.whoTitle}</h2>
+      <div class="cn-who-grid">
+        {copy.who.map((item, i) => (
+          <div class="cn-who">
+            <span class="cn-who-icon" aria-hidden="true">
+              {i === 0 ? (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3 11c.4.5.7 1.1.8 1.8h4.4c.1-.7.4-1.3.8-1.8A6 6 0 0 0 12 3z"/></svg>
+              ) : (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V8l8-4 8 4v12"/><path d="M9 20v-6h6v6"/></svg>
+              )}
+            </span>
+            <h3>{item.t}</h3>
+            <p>{item.d}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="como" class="cn-block">
+      <h2>{copy.howTitle}</h2>
+      <p>{copy.how[0]}</p>
+      <div class="cn-cycle">
+        {copy.steps.map((step, i) => (
+          <span style={`--i:${i}`}>{step}</span>
+        ))}
+      </div>
+      <p>{copy.how[1]}</p>
+      <p class="cn-quote">“{copy.quote}”</p>
+      <ul class="cn-links">
+        {copy.howLinks.map((link) => (
+          <li>
+            <a href={link.href}>
+              {link.label}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="caso" class="cn-block">
+      <h2>{copy.caseTitle}</h2>
+      <figure class="cn-stage">
+        <img src="/images/roll-02.png" alt={copy.caseAlt} width="640" height="640" />
+      </figure>
+      <p>{copy.caseBody}</p>
+      <ul class="cn-links">
+        <li>
+          <a href={copy.caseHref}>
+            {copy.caseLink}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href={copy.moreHref}>
+            {copy.moreLink}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cn-block">
+      <h2>{copy.findTitle}</h2>
+      <ul class="cn-links">
+        {copy.find.map((link) => (
+          <li>
+            <a href={link.href}>
+              {link.label}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <CaseFAQ items={faqs} lang={lang} pageUrl={copy.faqUrl} accent="#0F2548" />
+
+    <section class="cn-end">
+      <h2>{copy.closeTitle}</h2>
+      <p>{copy.closeBody}</p>
+      <a href={copy.ctaHref} class="animated-btn cn-btn cn-btn--ink">
+        <span class="text">{copy.cta}</span>
+        <svg class="arr-1" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg class="arr-2" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span class="circle"></span>
+      </a>
+    </section>
+  </div>
+</section>
+
+<Footer lang={lang} />
+
+<style>
+  .cn-shell {
+    display: grid;
+    background: #ffffff;
+  }
+  .cn-offer {
+    background: #0f2548;
+    color: #ffffff;
+    padding: 1.5rem 1.5rem 2.5rem;
+  }
+  .cn-crumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    margin: 0 0 1.75rem;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.62);
+  }
+  .cn-crumb a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .cn-crumb a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .cn-offer h1 {
+    margin: 0;
+    max-width: 11ch;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.75rem, 4.6vw, 4.25rem);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .cn-lede {
+    margin: 1.5rem 0 0;
+    max-width: 34ch;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: rgba(255, 255, 255, 0.72);
+  }
+  .cn-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    margin-top: 1.75rem;
+    padding: 0 48px 0 22px;
+    background: #ffffff;
+    border-radius: 4px;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f2548;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  .cn-btn .text { position: relative; z-index: 2; }
+  .cn-btn .arr-1,
+  .cn-btn .arr-2 {
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    z-index: 2;
+  }
+  .cn-btn .arr-1 { right: 16px; }
+  .cn-btn .arr-2 { left: -25%; }
+  .cn-btn .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #00698d;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  .cn-btn--ink {
+    background: #0f2548;
+    color: #ffffff;
+  }
+  .cn-btn--ink .circle { background: #0088b3; }
+  .cn-offer-note {
+    margin: 1.5rem 0 0;
+    max-width: 36ch;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .cn-story { background: #ffffff; }
+  .cn-block {
+    padding: 2.5rem 1.5rem;
+    border-bottom: 1px solid rgba(15, 37, 72, 0.1);
+  }
+  .cn-block--last { border-bottom: 0; }
+  .cn-block h2 {
+    margin: 0 0 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: #1a1a1a;
+    text-wrap: balance;
+  }
+  .cn-block h3 {
+    margin: 0 0 0.35rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    color: #1a1a1a;
+  }
+  .cn-block p,
+  .cn-who p {
+    margin: 0 0 1rem;
+    max-width: 62ch;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: #374151;
+  }
+  .cn-statement {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.625;
+    letter-spacing: 0;
+    color: #374151;
+  }
+  .cn-block--list { background: #f2f5f8; }
+  .cn-bloques {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .cn-bloque {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    border: 1px solid rgba(15, 37, 72, 0.06);
+  }
+  .cn-bloque .bloque-num {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.75rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+  .cn-bloque h3 { margin-bottom: 0.375rem; }
+  .cn-bloque p { margin: 0; max-width: none; }
+  .cn-who-grid {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .cn-who {
+    margin: 0;
+    padding: 1.15rem;
+    border-radius: 0.75rem;
+    background: #f2f5f8;
+  }
+  .cn-who-icon {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 0.85rem;
+    border-radius: 0.55rem;
+    background: #0f2548;
+    color: #ffffff;
+  }
+  .cn-who-icon svg { width: 1.25rem; height: 1.25rem; }
+  .cn-who p:last-child { margin-bottom: 0; }
+  .cn-cycle {
+    position: relative;
+    height: 3.4rem;
+    margin: 0.15rem 0 1rem;
+    overflow: hidden;
+  }
+  .cn-cycle span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #0f2548;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: cn-cycle 9s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    animation-delay: calc(var(--i) * 3s);
+  }
+  .cn-stage {
+    margin: 0 0 1.15rem;
+    display: grid;
+    place-items: center;
+    min-height: 240px;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: radial-gradient(circle at 50% 42%, #ffffff 0%, #e4edf3 72%);
+  }
+  .cn-stage img {
+    width: min(260px, 72%);
+    height: auto;
+    animation: cn-float 6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+  @keyframes cn-cycle {
+    0% { opacity: 0; transform: translateY(12px); }
+    8% { opacity: 1; transform: translateY(0); }
+    28% { opacity: 1; transform: translateY(0); }
+    36% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
+  @keyframes cn-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cn-cycle { height: auto; display: flex; flex-direction: column; gap: 0.15rem; }
+    .cn-cycle span { position: static; opacity: 1; transform: none; animation: none; }
+    .cn-stage img { animation: none; }
+  }
+  .cn-quote {
+    margin: 0.25rem 0 0;
+    padding: 0.1rem 0 0.1rem 0.9rem;
+    border-left: 3px solid #00698d;
+    max-width: 28ch;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    color: #0f2548;
+  }
+  .cn-links {
+    margin: 1.15rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .cn-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 600;
+    color: #0f2548;
+    text-decoration: none;
+  }
+  .cn-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .cn-links svg { width: 1rem; height: 1rem; flex: none; }
+  @media (min-width: 720px) {
+    .cn-who-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .cn-story :global(.case-faq) {
+    background: #f2f5f8;
+  }
+  .cn-story :global(.case-faq > div) {
+    max-width: none;
+    margin: 0;
+    padding: 2.5rem 1.5rem 1.25rem;
+  }
+  .cn-end {
+    background: #f2f5f8;
+    padding: 0.5rem 1.5rem 3rem;
+  }
+  .cn-end h2 {
+    margin: 0;
+    max-width: 16ch;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: #1a1a1a;
+    text-wrap: balance;
+  }
+  .cn-end p {
+    margin: 1rem 0 0;
+    max-width: 42ch;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: #374151;
+  }
+  @media (min-width: 768px) {
+    :global(body.has-header) :global(main) .cn-shell {
+      padding-top: 0;
+    }
+  }
+  @media (min-width: 960px) {
+    .cn-shell {
+      grid-template-columns: minmax(300px, 36%) minmax(0, 1fr);
+      align-items: stretch;
+    }
+    .cn-offer { padding: 0; }
+    .cn-offer-inner {
+      position: sticky;
+      top: 6.5rem;
+      padding: 8rem 2.5rem 3rem;
+    }
+    .cn-story { min-width: 0; }
+    .cn-block { padding: 3.5rem 3.5rem 3.5rem 3rem; }
+    .cn-block:first-child { padding-top: 8rem; }
+    .cn-block h2 { font-size: 2.25rem; }
+    .cn-bloque {
+      flex-direction: row;
+      gap: 2.5rem;
+      padding: 2rem;
+    }
+    .cn-bloque .bloque-num { font-size: 6rem; }
+    .cn-bloque h3 { font-size: 1.5rem; }
+    .cn-story :global(.case-faq > div) {
+      padding: 3rem 3.5rem 3rem 3rem;
+    }
+    .cn-end { display: none; }
+  }
+</style>

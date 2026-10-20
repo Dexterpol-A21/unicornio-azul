@@ -1,0 +1,44 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import CreacionNegocios from '@/components/landings/CreacionNegocios.astro';
+
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Creación de negocios desde cero',
+  serviceType: 'Creación de negocios',
+  url: 'https://unicornioazul.es/creacion-de-negocios/',
+  provider: {
+    '@type': 'Organization',
+    name: 'Unicornio Azul',
+    url: 'https://unicornioazul.es',
+  },
+  areaServed: 'ES',
+  description:
+    'Crear una empresa desde cero en España: validar la idea y montar un negocio con modelo, marca y canal. Desde Madrid, antes de invertir en stock o sociedad.',
+  inLanguage: 'es',
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://unicornioazul.es/' },
+    { '@type': 'ListItem', position: 2, name: 'Desarrollo de negocios', item: 'https://unicornioazul.es/que-hacemos/desarrollo-de-negocios/' },
+    { '@type': 'ListItem', position: 3, name: 'Creación de negocios', item: 'https://unicornioazul.es/creacion-de-negocios/' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Crear una empresa desde cero | Unicornio Azul"
+  description="Crear una empresa desde cero en España: validamos la idea y te ayudamos a montar un negocio con modelo, marca y canal. Desde Madrid, antes de invertir."
+  image="/images/og-desarrollo-negocios.jpg"
+  imageAlt="Creación de negocios desde cero, de la idea a un proyecto que se puede vender."
+  showHeader={true}
+  altUrl="/en/business-creation/"
+>
+  <CreacionNegocios lang="es" />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+</BaseLayout>

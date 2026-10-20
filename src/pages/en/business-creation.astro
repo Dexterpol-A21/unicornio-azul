@@ -1,0 +1,44 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import CreacionNegocios from '@/components/landings/CreacionNegocios.astro';
+
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Business creation from scratch',
+  serviceType: 'Business creation',
+  url: 'https://unicornioazul.es/en/business-creation/',
+  provider: {
+    '@type': 'Organization',
+    name: 'Unicornio Azul',
+    url: 'https://unicornioazul.es',
+  },
+  areaServed: 'ES',
+  description:
+    'Create a business from scratch in Spain: validate the idea and set up a business with a model, a brand and a channel. Based in Madrid, before you invest in stock or a company.',
+  inLanguage: 'en',
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://unicornioazul.es/en/' },
+    { '@type': 'ListItem', position: 2, name: 'Business development', item: 'https://unicornioazul.es/en/what-we-do/business-development/' },
+    { '@type': 'ListItem', position: 3, name: 'Business creation', item: 'https://unicornioazul.es/en/business-creation/' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Create a business from scratch in Spain | Unicornio Azul"
+  description="Create a business from scratch in Spain. We validate the idea and help you set up a business with a model, a brand and a channel. Based in Madrid, before you invest."
+  image="/images/og-desarrollo-negocios.jpg"
+  imageAlt="Business creation from scratch, from an idea to a project that can be sold."
+  showHeader={true}
+  altUrl="/creacion-de-negocios/"
+>
+  <CreacionNegocios lang="en" />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+</BaseLayout>

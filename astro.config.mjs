@@ -45,8 +45,6 @@ export default defineConfig({
         const path = new URL(page).pathname.replace(/\/$/, '') || '/';
         return (
           !path.startsWith('/og/') &&
-          !path.startsWith('/ideas') &&
-          !path.startsWith('/en/ideas') &&
           path !== '/propuestas' &&
           path !== '/en/proposals' &&
           path !== '/gracias' &&

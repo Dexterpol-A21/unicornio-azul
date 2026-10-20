@@ -1,0 +1,180 @@
+---
+import type { Lang } from '../../i18n/ui';
+import type { Tema } from '../../data/creacion-temas';
+import { creacionTemas, hrefTema, parentTema } from '../../data/creacion-temas';
+import CaseFAQ from '../ui/CaseFAQ.astro';
+import Footer from '../global/Footer.astro';
+
+interface Props {
+  lang: Lang;
+  tema: Tema;
+}
+
+const { lang, tema } = Astro.props;
+const parent = parentTema(lang);
+const ctaHref = lang === 'es' ? '/empezar/' : '/en/get-started/';
+const cta = lang === 'es' ? 'Cuéntanos la idea' : 'Tell us the idea';
+const homeHref = lang === 'es' ? '/' : '/en/';
+const homeLabel = lang === 'es' ? 'Inicio' : 'Home';
+const othersLabel = lang === 'es' ? 'También en este servicio' : 'Also in this service';
+const note = lang === 'es'
+  ? 'Página informativa. No es asesoramiento jurídico, fiscal ni una garantía de que el proyecto sea viable.'
+  : 'Informational page. It is not legal or tax advice, and it is not a guarantee that the project is viable.';
+const others = creacionTemas
+  .map((par) => par[lang])
+  .filter((item) => item.slug !== tema.slug);
+---
+
+<article class="tema">
+  <nav class="tema-crumb" aria-label="Breadcrumb">
+    <a href={homeHref}>{homeLabel}</a>
+    <span aria-hidden="true">/</span>
+    <a href={parent.href}>{parent.label}</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{tema.h1}</span>
+  </nav>
+  <h1>{tema.h1}</h1>
+  <p class="tema-lede">{tema.lede}</p>
+  <a href={ctaHref} class="animated-btn tema-btn">
+    <span class="text">{cta}</span>
+    <svg class="arr-1" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <svg class="arr-2" fill="none" stroke="#ffffff" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <span class="circle"></span>
+  </a>
+  {tema.sections.map((section) => (
+    <section>
+      <h2>{section.title}</h2>
+      <p>{section.body}</p>
+    </section>
+  ))}
+  <p class="tema-note">{note}</p>
+  <h2>{othersLabel}</h2>
+  <ul>
+    <li><a href={parent.href}>{parent.label}</a></li>
+    {others.map((item) => (
+      <li><a href={hrefTema(lang, item.slug)}>{item.h1}</a></li>
+    ))}
+  </ul>
+</article>
+
+<CaseFAQ
+  items={tema.faqs}
+  lang={lang}
+  pageUrl={lang === 'es' ? `https://unicornioazul.es/creacion-de-negocios/${tema.slug}/` : `https://unicornioazul.es/en/business-creation/${tema.slug}/`}
+  accent="#0F2548"
+/>
+
+<Footer lang={lang} />
+
+<style>
+  .tema {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 3rem;
+  }
+  .tema-crumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 1.5rem;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  .tema-crumb a { color: #0f2548; font-weight: 600; text-decoration: none; }
+  .tema-crumb a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .tema h1 {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: #1a1a1a;
+    text-wrap: balance;
+  }
+  .tema-lede {
+    margin: 1.25rem 0 0;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: #374151;
+  }
+  .tema-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    margin-top: 1.5rem;
+    padding: 0 48px 0 22px;
+    background: #0f2548;
+    border-radius: 4px;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  .tema-btn .text { position: relative; z-index: 2; }
+  .tema-btn .arr-1,
+  .tema-btn .arr-2 {
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    z-index: 2;
+  }
+  .tema-btn .arr-1 { right: 16px; }
+  .tema-btn .arr-2 { left: -25%; }
+  .tema-btn .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #0088b3;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  .tema section { margin-top: 2.25rem; }
+  .tema h2 {
+    margin: 0 0 0.6rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    letter-spacing: -0.025em;
+    color: #1a1a1a;
+  }
+  .tema section p,
+  .tema-note {
+    margin: 0;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: #374151;
+  }
+  .tema-note {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+  .tema ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.45rem;
+  }
+  .tema ul a {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 600;
+    color: #0f2548;
+  }
+  @media (min-width: 768px) {
+    .tema { padding: 7.5rem 1.5rem 4rem; }
+  }
+</style>

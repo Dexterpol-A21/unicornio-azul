@@ -1,0 +1,49 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import TemaServicio from '@/components/landings/TemaServicio.astro';
+import { creacionTemas, hrefTema } from '../../data/creacion-temas';
+
+export function getStaticPaths() {
+  return creacionTemas.map((par) => ({
+    params: { tema: par.es.slug },
+    props: { tema: par.es, alt: hrefTema('en', par.en.slug) },
+  }));
+}
+
+const { tema, alt } = Astro.props;
+
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: tema.h1,
+  serviceType: 'Creación de negocios',
+  url: `https://unicornioazul.es/creacion-de-negocios/${tema.slug}/`,
+  provider: { '@type': 'Organization', name: 'Unicornio Azul', url: 'https://unicornioazul.es' },
+  areaServed: 'ES',
+  description: tema.description,
+  inLanguage: 'es',
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://unicornioazul.es/' },
+    { '@type': 'ListItem', position: 2, name: 'Creación de negocios', item: 'https://unicornioazul.es/creacion-de-negocios/' },
+    { '@type': 'ListItem', position: 3, name: tema.h1, item: `https://unicornioazul.es/creacion-de-negocios/${tema.slug}/` },
+  ],
+};
+---
+
+<BaseLayout
+  title={tema.title}
+  description={tema.description}
+  image="/images/og-desarrollo-negocios.jpg"
+  imageAlt={tema.h1}
+  showHeader={true}
+  altUrl={alt}
+>
+  <TemaServicio lang="es" tema={tema} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+</BaseLayout>
