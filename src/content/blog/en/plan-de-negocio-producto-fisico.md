@@ -87,7 +87,7 @@ The full journey, from idea to listing, is in [what it takes to launch your own 
 
 ## How we use it
 
-At Unicornio Azul the plan is not written to file a PDF. It is written to decide whether we industrialise, with which factory and at what margin. It is [business opportunity analysis](/en/what-we-do/business-development) run through real costs.
+At Unicornio Azul the plan is not written to file a PDF. It is written to decide whether we industrialise, with which factory and at what margin. It is [business opportunity analysis](/en/what-we-do/business-development) run through real costs, before you [start a business](/en/business-creation/start-a-business/).
 
 If you are building one for your product, [tell us](/en/get-started). We will look at it the way we would if we had to order from the factory next week.
 

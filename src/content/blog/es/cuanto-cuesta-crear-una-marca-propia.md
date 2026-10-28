@@ -71,7 +71,7 @@ El orden correcto es el de siempre: mercado, números, luego identidad. La [defi
 
 ## Cómo lo vemos en Unicornio Azul
 
-Crear una marca propia no es elegir un color. Es decidir qué prometes, a quién, a qué precio y con qué producto puedes cumplirlo. El presupuesto serio sale de ese modelo, no de un catálogo de logos.
+[Crear una marca propia](/creacion-de-negocios/marca-propia/) no es elegir un color. Es decidir qué prometes, a quién, a qué precio y con qué producto puedes cumplirlo. El presupuesto serio sale de ese modelo, no de un catálogo de logos.
 
 Si estás calculando cuánto te va a costar de verdad, [cuéntanos tu proyecto](/empezar). Te devolvemos un mapa de costes con las tres cajas, no una cifra de humo.
 

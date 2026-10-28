@@ -66,13 +66,12 @@ function parseLead(body) {
 
   const name = clean(body.name, 120);
   const email = clean(body.email, 160).toLowerCase();
-  const phone = clean(body.phone, 40);
+  const phone = parsePhone(body.phone);
   const context = cleanBlock(body.context, 4000);
   const lang = body.lang === 'en' ? 'en' : 'es';
   const goal = GOALS[body.goal] ? body.goal : '';
 
   if (!name || !EMAIL_RE.test(email)) return null;
-  if (phone && !/^[+\d\s().-]{6,40}$/.test(phone)) return null;
 
   return { name, email, phone, context, lang, goal };
 }
@@ -97,7 +96,7 @@ function ownerMessage(lead, to, from) {
   return {
     from,
     to: [to],
-    reply_to: lead.email,
+    reply_to: [lead.email],
     subject: `Nuevo lead — ${goal}`,
     text: lines.join('\n'),
     html: layout({
@@ -148,7 +147,7 @@ function confirmationMessage(lead, from, confirmTo) {
   return {
     from,
     to: [EMAIL_RE.test(confirmTo || '') ? confirmTo : lead.email],
-    reply_to: OWNER_EMAIL,
+    reply_to: [OWNER_EMAIL],
     subject: en ? 'We received your message — Unicornio Azul' : 'Hemos recibido tu mensaje — Unicornio Azul',
     text,
     html: layout({
@@ -210,6 +209,16 @@ async function sendEmail(apiKey, payload) {
     throw err;
   }
   return data;
+}
+
+function parsePhone(value) {
+  const raw = clean(value, 40);
+  if (!raw) return '';
+  if (/^[+\d\s().-]{6,40}$/.test(raw)) return raw;
+  const digits = raw.replace(/\D/g, '');
+  if (digits.length < 6 || digits.length > 15) return '';
+  const kept = raw.replace(/[^\d+\s().-]/g, ' ').replace(/[ \t]+/g, ' ').trim();
+  return (kept || digits).slice(0, 40);
 }
 
 function clean(value, max) {

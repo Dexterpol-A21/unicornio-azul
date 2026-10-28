@@ -35,7 +35,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Montar un negocio | Unicornio Azul',
       description: 'Montar un negocio con poco dinero, online o desde casa. Vemos si es rentable antes de invertir en stock, web o una sociedad.',
       h1: 'Montar un negocio',
-      lede: 'Montar un negocio es decidir si la idea se puede vender. Con poco dinero, online o desde casa, el primer trabajo es el mismo: demanda, precio y margen.',
+      lede: 'Montar un negocio es decidir <a href="/ideas/como-validar-una-idea-de-negocio-antes-de-invertir/">si la idea se puede vender</a>. Con poco dinero, online o desde casa, el primer trabajo es el mismo: demanda, precio y margen.',
       sections: [
         {
           title: 'Con poco dinero',
@@ -74,7 +74,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Start a business | Unicornio Azul',
       description: 'Start a business with little money, online or from home. We check whether it is profitable before stock, a website or a company.',
       h1: 'Start a business',
-      lede: 'Starting a business is deciding whether the idea can be sold. With little money, online or from home, the first job is the same: demand, price and margin.',
+      lede: 'Starting a business is deciding <a href="/en/ideas/como-validar-una-idea-de-negocio-antes-de-invertir/">whether the idea can be sold</a>. With little money, online or from home, the first job is the same: demand, price and margin.',
       sections: [
         {
           title: 'With little money',
@@ -116,7 +116,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Crear una empresa en España | Unicornio Azul',
       description: 'Crear una empresa en España desde Madrid: la idea, el modelo y la marca antes del trámite de la sociedad. No es una gestoría.',
       h1: 'Crear una empresa en España',
-      lede: 'Trabajamos desde Madrid con quien quiere crear una empresa en España. El trabajo es el negocio: a quién vendes, a qué precio y por qué canal. La escritura puede esperar.',
+      lede: 'Trabajamos <a href="/creacion-de-negocios/madrid/">desde Madrid</a> con quien quiere crear una empresa en España. El trabajo es el negocio: a quién vendes, a qué precio y por qué canal. La escritura puede esperar.',
       sections: [
         {
           title: 'El negocio, no el trámite',
@@ -151,7 +151,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Create a company in Spain | Unicornio Azul',
       description: 'Create a company in Spain from Madrid: the idea, the model and the brand before the paperwork. This is not a law firm.',
       h1: 'Create a company in Spain',
-      lede: 'We work from Madrid with people who want to create a company in Spain. The work is the business: who you sell to, at what price and through which channel. The deed can wait.',
+      lede: 'We work <a href="/en/business-creation/madrid/">from Madrid</a> with people who want to create a company in Spain. The work is the business: who you sell to, at what price and through which channel. The deed can wait.',
       sections: [
         {
           title: 'The business, not the filing',
@@ -189,11 +189,11 @@ export const creacionTemas: TemaPar[] = [
       title: 'Crear una marca propia | Unicornio Azul',
       description: 'Crear una marca propia de ropa, cosmética, suplementos o café: primero el negocio, el nombre que se puede registrar y el margen. No es un logo suelto.',
       h1: 'Crear una marca propia',
-      lede: 'Crear una marca propia es parte de crear el negocio. Ropa, cosmética, suplementos o café cambian el producto. No cambian la pregunta: quién lo compra, a qué precio y con qué margen.',
+      lede: 'Crear una marca propia es parte de <a href="/creacion-de-negocios/">crear el negocio</a>. Ropa, cosmética, suplementos o café cambian el producto. No cambian la pregunta: quién lo compra, a qué precio y con qué margen.',
       sections: [
         {
           title: 'Antes del logo',
-          body: 'Una marca propia sin demanda es un nombre. El orden es oportunidad, validación, modelo y después el nombre que se puede registrar y cómo se ve en el pack o en la ficha.',
+          body: 'Una marca propia sin demanda es un nombre. El orden es oportunidad, validación, modelo y después el <a href="/ideas/como-crear-una-marca-desde-cero/">nombre que se puede registrar</a> y cómo se ve en el pack o en la ficha.',
         },
         {
           title: 'Ropa, cosmética, suplementos, café',
@@ -224,11 +224,11 @@ export const creacionTemas: TemaPar[] = [
       title: 'Create your own brand | Unicornio Azul',
       description: 'Create your own brand in clothing, cosmetics, supplements or coffee: the business, a name you can register and the margin. Not a logo on its own.',
       h1: 'Create your own brand',
-      lede: 'Creating your own brand is part of creating the business. Clothing, cosmetics, supplements or coffee change the product. They do not change the question: who buys it, at what price and with what margin.',
+      lede: 'Creating your own brand is part of <a href="/en/business-creation/">creating the business</a>. Clothing, cosmetics, supplements or coffee change the product. They do not change the question: who buys it, at what price and with what margin.',
       sections: [
         {
           title: 'Before the logo',
-          body: 'An own brand without demand is a name. The order is opportunity, validation, model, and then a name you can register and how it looks on the pack or the listing.',
+          body: 'An own brand without demand is a name. The order is opportunity, validation, model, and then a <a href="/en/ideas/como-crear-una-marca-desde-cero/">name you can register</a> and how it looks on the pack or the listing.',
         },
         {
           title: 'Clothing, cosmetics, supplements, coffee',
@@ -262,7 +262,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Validar una idea de negocio | Unicornio Azul',
       description: 'Validar una idea de negocio con búsquedas, conversaciones o una preventa, antes de invertir. El gusto de la sala no cuenta como prueba.',
       h1: 'Validar una idea de negocio',
-      lede: 'Validar una idea de negocio es conseguir una prueba de que alguien la quiere, y de que el precio aguanta. Sin eso, montar la empresa es adelantar el gasto.',
+      lede: 'Validar una idea de negocio es conseguir <a href="/ideas/como-validar-una-idea-de-negocio-antes-de-invertir/">una prueba de que alguien la quiere</a>, y de que el precio aguanta. Sin eso, <a href="/creacion-de-negocios/montar-un-negocio/">montar la empresa</a> es adelantar el gasto.',
       sections: [
         {
           title: 'Qué cuenta como prueba',
@@ -297,7 +297,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Validate a business idea | Unicornio Azul',
       description: 'Validate a business idea with searches, conversations or a presale, before you invest. What the room likes is not evidence.',
       h1: 'Validate a business idea',
-      lede: 'Validating a business idea means getting evidence that someone wants it, and that the price holds. Without that, setting up the company only brings the spend forward.',
+      lede: 'Validating a business idea means getting <a href="/en/ideas/como-validar-una-idea-de-negocio-antes-de-invertir/">evidence that someone wants it</a>, and that the price holds. Without that, <a href="/en/business-creation/start-a-business/">setting up the company</a> only brings the spend forward.',
       sections: [
         {
           title: 'What counts as evidence',
@@ -335,7 +335,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Crear una empresa en Madrid | Unicornio Azul',
       description: 'Crear una empresa en Madrid o montar un negocio en Madrid: validamos la idea, el modelo y la marca. Estamos en Madrid. No somos una gestoría.',
       h1: 'Crear una empresa en Madrid',
-      lede: 'Unicornio Azul está en Madrid. Crear una empresa en Madrid, para nosotros, es dejar el negocio escrito antes del trámite: a quién vendes, a qué precio y por qué canal.',
+      lede: 'Unicornio Azul está en Madrid. Crear una empresa en Madrid, para nosotros, es dejar <a href="/creacion-de-negocios/">el negocio escrito</a> antes del trámite: a quién vendes, a qué precio y por qué canal.',
       sections: [
         {
           title: 'Montar un negocio en Madrid',
@@ -370,7 +370,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Create a company in Madrid | Unicornio Azul',
       description: 'Create a company in Madrid or start a business in Madrid: we validate the idea, the model and the brand. We are based in Madrid. We are not a law firm.',
       h1: 'Create a company in Madrid',
-      lede: 'Unicornio Azul is in Madrid. Creating a company in Madrid, for us, means writing the business down before the filing: who you sell to, at what price and through which channel.',
+      lede: 'Unicornio Azul is in Madrid. Creating a company in Madrid, for us, means <a href="/en/business-creation/">writing the business down</a> before the filing: who you sell to, at what price and through which channel.',
       sections: [
         {
           title: 'Starting a business in Madrid',
@@ -408,7 +408,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Crear una empresa en Barcelona | Unicornio Azul',
       description: 'Crear una empresa en Barcelona: el negocio, la idea y el margen, trabajado desde Madrid. Barcelona Activa es el programa del Ayuntamiento, no este servicio.',
       h1: 'Crear una empresa en Barcelona',
-      lede: 'No tenemos oficina en Barcelona. Trabajamos desde Madrid con quien quiere crear una empresa en Barcelona y todavía no ha cerrado a quién vende y a qué precio.',
+      lede: 'No tenemos oficina en Barcelona. Trabajamos <a href="/creacion-de-negocios/madrid/">desde Madrid</a> con quien quiere crear una empresa en Barcelona y todavía no ha cerrado a quién vende y a qué precio.',
       sections: [
         {
           title: 'El trámite local no es el negocio',
@@ -439,7 +439,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Create a company in Barcelona | Unicornio Azul',
       description: 'Create a company in Barcelona: the business, the idea and the margin, done from Madrid. Barcelona Activa is the city programme, not this service.',
       h1: 'Create a company in Barcelona',
-      lede: 'We do not have an office in Barcelona. We work from Madrid with people who want to create a company in Barcelona and have not yet closed who they sell to and at what price.',
+      lede: 'We do not have an office in Barcelona. We work <a href="/en/business-creation/madrid/">from Madrid</a> with people who want to create a company in Barcelona and have not yet closed who they sell to and at what price.',
       sections: [
         {
           title: 'The local filing is not the business',
@@ -473,7 +473,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Crear una empresa en Valencia | Unicornio Azul',
       description: 'Crear una empresa en Valencia desde Madrid: validar la idea y el modelo antes del trámite. No tenemos oficina en Valencia ni hacemos de gestoría.',
       h1: 'Crear una empresa en Valencia',
-      lede: 'Crear una empresa en Valencia, en este servicio, es el mismo trabajo que en el resto de España: demanda, precio, marca y canal. La base está en Madrid. No hay oficina en Valencia.',
+      lede: 'Crear una empresa en Valencia, en este servicio, es el mismo trabajo que en el resto de España: demanda, precio, <a href="/creacion-de-negocios/marca-propia/">marca</a> y canal. La base está <a href="/creacion-de-negocios/madrid/">en Madrid</a>. No hay oficina en Valencia.',
       sections: [
         {
           title: 'Qué busca quien escribe esta frase',
@@ -504,7 +504,7 @@ export const creacionTemas: TemaPar[] = [
       title: 'Create a company in Valencia | Unicornio Azul',
       description: 'Create a company in Valencia from Madrid: validate the idea and the model before the filing. We have no Valencia office and we are not a law firm.',
       h1: 'Create a company in Valencia',
-      lede: 'Creating a company in Valencia, in this service, is the same work as in the rest of Spain: demand, price, brand and channel. The base is in Madrid. There is no office in Valencia.',
+      lede: 'Creating a company in Valencia, in this service, is the same work as in the rest of Spain: demand, price, <a href="/en/business-creation/own-brand/">brand</a> and channel. The base is <a href="/en/business-creation/madrid/">in Madrid</a>. There is no office in Valencia.',
       sections: [
         {
           title: 'What this search is usually for',

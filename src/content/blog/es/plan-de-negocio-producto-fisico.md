@@ -87,7 +87,7 @@ El recorrido completo, de la idea al listing, lo contamos en [qué hace falta pa
 
 ## Cómo lo usamos
 
-En Unicornio Azul el plan no se escribe para guardar un PDF. Se escribe para decidir si industrializamos, con qué fábrica y con qué margen. Es el [análisis de oportunidades de negocio](/que-hacemos/desarrollo-de-negocios) pasado por costes reales.
+En Unicornio Azul el plan no se escribe para guardar un PDF. Se escribe para decidir si industrializamos, con qué fábrica y con qué margen. Es el [análisis de oportunidades de negocio](/que-hacemos/desarrollo-de-negocios) pasado por costes reales, antes de [montar un negocio](/creacion-de-negocios/montar-un-negocio/).
 
 Si estás armando el de tu producto, [cuéntanoslo](/empezar). Lo miramos como lo miraríamos si tuviéramos que pedirlo a fábrica la semana que viene.
 

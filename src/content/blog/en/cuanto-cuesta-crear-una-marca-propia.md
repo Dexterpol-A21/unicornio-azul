@@ -71,7 +71,7 @@ The order is the same as always: market, numbers, then identity. [Defining the b
 
 ## How we see it at Unicornio Azul
 
-Creating your own brand is not picking a colour. It is deciding what you promise, to whom, at what price, and with what product you can deliver it. A serious budget comes from that model, not from a logo catalogue.
+[Creating your own brand](/en/business-creation/own-brand/) is not picking a colour. It is deciding what you promise, to whom, at what price, and with what product you can deliver it. A serious budget comes from that model, not from a logo catalogue.
 
 If you are working out what this will really cost, [tell us about your project](/en/get-started). We will give you a cost map with the three boxes, not a fluff figure.
 

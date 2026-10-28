@@ -71,7 +71,7 @@ Si tienes una idea de producto, no empieces por fabricar. Empieza por estas tres
 - ¿Se puede fabricar a un coste que deje margen?
 - ¿Por qué canal vas a vender y quién lo va a comprar?
 
-Cuando tengas respuestas con datos, no con opiniones, estarás listo para dar el siguiente paso. Hasta entonces, cada euro que inviertas es una apuesta a ciegas. Ese trabajo es el [análisis de oportunidades y el modelo de negocio](/que-hacemos/desarrollo-de-negocios) antes de industrializar.
+Cuando tengas respuestas con datos, no con opiniones, estarás listo para dar el siguiente paso. Hasta entonces, cada euro que inviertas es una apuesta a ciegas. Ese trabajo es el [análisis de oportunidades y el modelo de negocio](/que-hacemos/desarrollo-de-negocios), el mismo de la [creación de negocios desde cero](/creacion-de-negocios/), antes de industrializar.
 
 Si quieres recorrer este camino con alguien que ya lo ha hecho entero, [cuéntanos tu proyecto](/empezar). Lo analizamos desde la viabilidad real, no desde la intuición.
 

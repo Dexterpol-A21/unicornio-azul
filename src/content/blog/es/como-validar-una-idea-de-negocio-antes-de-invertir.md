@@ -101,6 +101,6 @@ El coste de validar es tiempo y un poco de incomodidad. El coste de no validar e
 
 En proyectos como Roll Order o la bicicleta eléctrica, el valor no estuvo en ejecutar rápido, sino en validar antes de fabricar: qué pedía el mercado, a qué coste, con qué certificaciones y con qué margen. Esa es la diferencia entre invertir con datos e invertir con fe. Es el mismo criterio con el que trabajamos la [validación de ideas y mercados](/que-hacemos/desarrollo-de-negocios).
 
-Si tienes una idea y quieres saber si merece la pena antes de invertir, [cuéntanos tu proyecto](/empezar) y la analizamos desde la demanda real, no desde la intuición.
+Si tienes una idea y quieres saber si merece la pena antes de invertir, [cuéntanos tu proyecto](/empezar) y la analizamos desde la demanda real, no desde la intuición. Ese trabajo es [validar una idea de negocio](/creacion-de-negocios/validar-una-idea/) antes de gastar.
 
 *Artículo informativo actualizado en septiembre de 2026. No constituye asesoramiento jurídico, fiscal, financiero ni una garantía de viabilidad. Las condiciones regulatorias y comerciales deben verificarse para cada operación.*

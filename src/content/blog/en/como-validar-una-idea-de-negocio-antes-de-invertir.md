@@ -101,6 +101,6 @@ The cost of validating is time and a little discomfort. The cost of not validati
 
 In projects like Roll Order or the electric bike, the value was not in executing fast, but in validating before manufacturing: what the market asked for, at what cost, with what certifications and with what margin. That is the difference between investing with data and investing on faith. It is the same approach we use for [validating ideas and markets](/en/what-we-do/business-development).
 
-If you have an idea and want to know whether it is worth pursuing before you invest, [tell us about your project](/en/get-started) and we will look at it from real demand, not intuition.
+If you have an idea and want to know whether it is worth pursuing before you invest, [tell us about your project](/en/get-started) and we will look at it from real demand, not intuition. That work is [validating a business idea](/en/business-creation/validate-an-idea/) before you spend.
 
 *Informational article updated in September 2026. It does not constitute legal, tax or financial advice, nor a guarantee of viability. Regulatory and commercial conditions must be verified for each operation.*

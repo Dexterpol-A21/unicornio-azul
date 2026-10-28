@@ -82,7 +82,7 @@ Arreglar una marca mal plantada cuesta más que plantarla bien. Sobre todo si ya
 
 ## Por dónde empezar hoy
 
-Si estás creando una marca propia ahora, no abras un concurso de logos. Escribe en una página:
+Si estás [creando una marca propia](/creacion-de-negocios/marca-propia/) ahora, no abras un concurso de logos. Escribe en una página:
 
 1. La promesa en una frase.
 2. El cliente en una frase.

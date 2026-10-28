@@ -82,7 +82,7 @@ Fixing a badly planted brand costs more than planting it well. Especially if you
 
 ## Where to start today
 
-If you are creating your own brand now, do not open a logo contest. Write on one page:
+If you are [creating your own brand](/en/business-creation/own-brand/) now, do not open a logo contest. Write on one page:
 
 1. The promise in one sentence.
 2. The customer in one sentence.

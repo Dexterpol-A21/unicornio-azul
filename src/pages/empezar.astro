@@ -424,6 +424,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     }
     if (submitText) submitText.textContent = 'Enviando…';
 
+    let data = {};
     try {
       const res = await fetch('/api/lead', {
         method: 'POST',
@@ -441,7 +442,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         }),
         signal: AbortSignal.timeout(20000),
       });
-      const data = await res.json().catch(() => ({}));
+      data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) {
         throw new Error(data.error || 'No se pudo enviar el formulario.');
       }
@@ -462,7 +463,12 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         if (success) { success.classList.remove('hidden'); success.style.opacity = '1'; success.style.transform = 'translateY(0)'; }
       }, 500);
     } catch (err) {
-      alert('No hemos podido enviar el mensaje. Inténtalo de nuevo o escríbenos a luis.chicharro@unicornioazul.es');
+      const notices = {
+        invalid: 'Revisa el email. Con eso basta para enviar el mensaje.',
+        unavailable: 'El envío no está configurado en el servidor. Escríbenos a luis.chicharro@unicornioazul.es',
+        send: 'El correo no ha salido. Inténtalo en un momento o escríbenos a luis.chicharro@unicornioazul.es',
+      };
+      alert(notices[data.error] || 'No hemos podido enviar el mensaje. Inténtalo de nuevo o escríbenos a luis.chicharro@unicornioazul.es');
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.style.cursor = 'pointer';

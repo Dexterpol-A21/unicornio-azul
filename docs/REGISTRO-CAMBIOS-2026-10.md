@@ -4,6 +4,26 @@
 
 ---
 
+## Creación de negocios — landing y páginas de búsqueda (20 oct 2026)
+
+Servicio de creación de negocios, solo este. Publicado en `main` (`6402ff9`). Lista de keywords en `docs/KEYWORDS-CREACION.md`.
+
+### Hecho
+
+- **Landing:** `/creacion-de-negocios/` y `/en/business-creation/`. En el texto: emprender desde cero, montar un negocio, modelo de negocio, crear una marca propia, lanzar un producto.
+- **Páginas del mismo servicio:** montar un negocio, crear una empresa en España, marca propia, validar una idea. Cada una en español e inglés.
+- **Ciudades:** solo Madrid, Barcelona y Valencia. Son las únicas donde Google sugiere «crear empresa en {ciudad}». Barcelona y Valencia dicen que el trabajo se hace desde Madrid.
+- **Enlaces:** desde desarrollo de negocios, el pie y el menú de idioma.
+- **Ideas:** el hub y los artículos vuelven a indexarse y entran en el sitemap. Siguen fuera propuestas, marketing, gracias y og.
+
+### No hecho (a propósito)
+
+- Más ciudades. En Soria, Teruel, Lugo, Logroño y el resto probado no hay búsqueda.
+- Página nueva de «modelo de negocio». Es la keyword con más interés (61 en Trends, España, último año) y todavía no tiene URL.
+- «negocio rentable» y «negocio online»: en Trends salen a 0.
+
+---
+
 ## Formulario Empezar — Resend (19 oct 2026)
 
 `/empezar` y `/en/get-started` dejan Web3Forms. `functions/api/lead.js` manda dos correos con Resend.

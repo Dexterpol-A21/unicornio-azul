@@ -71,7 +71,7 @@ If you have a product idea, do not start by manufacturing. Start with these thre
 - Can it be manufactured at a cost that leaves margin?
 - Through which channel will you sell, and who will buy it?
 
-When you have answers backed by data, not opinions, you will be ready for the next step. Until then, every euro you invest is a blind bet. That work is [opportunity analysis and the business model](/en/what-we-do/business-development) before industrialization.
+When you have answers backed by data, not opinions, you will be ready for the next step. Until then, every euro you invest is a blind bet. That work is [opportunity analysis and the business model](/en/what-we-do/business-development), the same as [business creation from scratch](/en/business-creation/), before industrialization.
 
 If you want to walk this path with someone who has already done the whole thing, [tell us about your project](/en/get-started). We will analyse it from real viability, not intuition.
 
