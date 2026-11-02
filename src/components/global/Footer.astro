@@ -22,7 +22,7 @@ function l(path: string): string {
       <div class="flex flex-col gap-4">
         <a href={l('/')} style="text-decoration:none;">
           <div class="inline-block rounded p-3" style="background: rgba(255,255,255,0.95);">
-            <img src="/images/logo-marino.png" alt={t('footer.logo_alt')} class="h-10 md:h-11 w-auto" />
+            <img src="/images/opt/logo-marino-384.webp" width="384" height="384" decoding="async" alt={t('footer.logo_alt')} class="h-10 md:h-11 w-auto" />
           </div>
         </a>
         <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">
@@ -39,7 +39,7 @@ function l(path: string): string {
       </div>
 
       <div class="flex flex-col gap-3">
-        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">{t('footer.que_hacemos')}</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.78);text-transform:uppercase;">{t('footer.que_hacemos')}</span>
         <a href={l('/que-hacemos/desarrollo-de-negocios')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
           {lang === 'es' ? 'Desarrollo de negocios' : 'Business Development'}
         </a>
@@ -58,7 +58,7 @@ function l(path: string): string {
       </div>
 
       <div class="flex flex-col gap-3">
-        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">{t('footer.como_trabajamos')}</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.78);text-transform:uppercase;">{t('footer.como_trabajamos')}</span>
         <a href={l('/como-trabajamos#proceso')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
           {lang === 'es' ? 'Proceso 5 pasos' : '5-Step Process'}
         </a>
@@ -71,7 +71,7 @@ function l(path: string): string {
       </div>
 
       <div class="flex flex-col gap-3">
-        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">{t('footer.empresa')}</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.78);text-transform:uppercase;">{t('footer.empresa')}</span>
         <a href={l('/sobre-nosotros')} class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">
           {lang === 'es' ? 'Sobre nosotros' : 'About Us'}
         </a>
@@ -86,14 +86,14 @@ function l(path: string): string {
     </div>
 
     <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
-      <span class="text-xs" style="color:rgba(255,255,255,0.3);">
+      <span class="text-xs" style="color:rgba(255,255,255,0.78);">
         {lang === 'es' ? '© 2026 Unicornio Azul. Todos los derechos reservados.' : '© 2026 Unicornio Azul. All rights reserved.'}
       </span>
-      <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
-        <a href={lang === 'es' ? '/aviso-legal' : '/en/legal-notice'} class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">
+      <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.78);">
+        <a href={lang === 'es' ? '/aviso-legal' : '/en/legal-notice'} class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.78);">
           {lang === 'es' ? 'Aviso legal' : 'Legal notice'}
         </a>
-        <a href={lang === 'es' ? '/privacidad' : '/en/privacy'} class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">
+        <a href={lang === 'es' ? '/privacidad' : '/en/privacy'} class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.78);">
           {lang === 'es' ? 'Privacidad y cookies' : 'Privacy & cookies'}
         </a>
       </div>

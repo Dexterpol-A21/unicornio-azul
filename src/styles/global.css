@@ -147,6 +147,17 @@ html:not(.lenis) {
   animation-delay: calc(var(--i) * 120ms + 200ms);
 }
 
+/* Above-the-fold headline: visible on first paint (LCP). */
+.stagger-inner.stagger-immediate {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-inner {
+    animation: none;
+  }
+}
+
 .accent-line {
   animation: line-extend 1s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: 900ms;
@@ -425,7 +436,7 @@ body.has-header main section:first-of-type {
 
 /* Footer social — brand colors on hover (inline color would block Tailwind hover) */
 .footer-social-link {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 13px;
   text-decoration: none;
   transition: color 0.3s ease;

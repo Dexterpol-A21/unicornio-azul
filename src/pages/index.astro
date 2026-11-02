@@ -89,7 +89,7 @@ import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
  <div class="relative z-10 w-full max-w-[1100px] mx-auto flex flex-col items-center">
 
 <!-- Slogan -->
-<div class="stagger-inner space-y-1 md:space-y-2" style="--i: 0">
+<div class="stagger-inner stagger-immediate space-y-1 md:space-y-2" style="--i: 0">
 <h1 class="tracking-tight max-w-full" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700;">
   <span class="block leading-[0.98] mb-1 md:mb-2" style="color: #1A1A1A; font-size: clamp(2.3rem, 10.5vw, 5rem);">Soluciones reales</span>
   <span class="block leading-[0.98] mb-1 md:mb-2" style="color: #00698D; font-size: clamp(2.3rem, 10.5vw, 5rem);">para ideas</span>
@@ -282,8 +282,8 @@ import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
   Solo filosofía. Sin pasos (SORIE / proceso viven en sus páginas).
  ═══════════════════════════════════════════════════ -->
  <section id="oportunidad" class="relative overflow-hidden" style="background: #F5F1EC;">
-  <div class="relative z-10 mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center" data-opp-flow>
-   <span class="opp-eyebrow text-[11px] tracking-[0.35em] uppercase font-semibold" style="color: #6B7280; font-family: 'Satoshi', sans-serif;">
+  <div class="relative z-10 mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center is-on" data-opp-flow>
+   <span class="opp-eyebrow text-[11px] tracking-[0.35em] uppercase font-semibold" style="color: #4B5563; font-family: 'Satoshi', sans-serif;">
     Opportunity
    </span>
    <h2
@@ -300,7 +300,7 @@ import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
     <span class="opp-arrow" aria-hidden="true" style="--i:1; color: rgba(15,37,72,0.25); font-weight: 400;">→</span>
     <span class="opp-step" style="--i:2; color: #00698D;">Validar</span>
     <span class="opp-arrow" aria-hidden="true" style="--i:3; color: rgba(15,37,72,0.25); font-weight: 400;">→</span>
-    <span class="opp-step" style="--i:4; color: #0088B3;">Construir</span>
+    <span class="opp-step" style="--i:4; color: #0A5470;">Construir</span>
    </p>
    <!-- Ritmo de azules — gesto visual, sin pasos -->
    <div class="mt-10 md:mt-12 flex justify-center gap-1.5" aria-hidden="true">
@@ -906,7 +906,7 @@ import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
         <div class="flex flex-col gap-4">
           <a href="/" style="text-decoration:none;">
             <div class="inline-block rounded p-3" style="background: rgba(255,255,255,0.95);">
-              <img src="/images/logo-marino.png" alt="Unicornio Azul" class="h-10 md:h-11 w-auto" />
+              <img src="/images/opt/logo-marino-192.webp" srcset="/images/opt/logo-marino-96.webp 96w, /images/opt/logo-marino-192.webp 192w, /images/opt/logo-marino-384.webp 384w" sizes="44px" width="192" height="192" decoding="async" alt="Unicornio Azul" class="h-10 md:h-11 w-auto" />
             </div>
           </a>
           <p class="text-sm leading-relaxed max-w-[28ch]" style="color:rgba(255,255,255,0.55);">
@@ -924,7 +924,7 @@ import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
 
         <!-- Columna 2: Servicios -->
         <div class="flex flex-col gap-3">
-          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Qué hacemos</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.78);text-transform:uppercase;">Qué hacemos</span>
           <a href="/que-hacemos/desarrollo-de-negocios" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Desarrollo de negocios</a>
           <a href="/creacion-de-negocios/" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Creación de negocios</a>
           <a href="/que-hacemos/producto-compras-internacionales" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Producto y compras</a>
@@ -934,7 +934,7 @@ import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
 
         <!-- Columna 3: Cómo trabajamos + Casos -->
         <div class="flex flex-col gap-3">
-          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Cómo trabajamos</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.78);text-transform:uppercase;">Cómo trabajamos</span>
           <a href="/como-trabajamos#proceso" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Proceso 5 pasos</a>
           <a href="/metodologia-sorie" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Metodología SORIE™</a>
           <a href="/casos" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Casos</a>
@@ -942,7 +942,7 @@ import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
 
         <!-- Columna 4: Empresa -->
         <div class="flex flex-col gap-3">
-          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Empresa</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:rgba(255,255,255,0.78);text-transform:uppercase;">Empresa</span>
           <a href="/sobre-nosotros" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Sobre nosotros</a>
           <a href="/ideas/" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Ideas</a>
           <a href="/contacto" class="text-sm no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.7);">Contacto</a>
@@ -952,10 +952,10 @@ import ScrollTimelineScript from '@/components/ui/ScrollTimelineScript.astro';
 
       <!-- Borde superior sutil + copyright -->
       <div class="mt-8 md:mt-18 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,0.08);">
-        <span class="text-xs" style="color:rgba(255,255,255,0.3);">© 2026 Unicornio Azul. Todos los derechos reservados.</span>
-        <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.3);">
-          <a href="/aviso-legal" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Aviso legal</a>
-          <a href="/privacidad" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.3);">Privacidad y cookies</a>
+        <span class="text-xs" style="color:rgba(255,255,255,0.78);">© 2026 Unicornio Azul. Todos los derechos reservados.</span>
+        <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,0.78);">
+          <a href="/aviso-legal" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.78);">Aviso legal</a>
+          <a href="/privacidad" class="no-underline hover:opacity-70 transition-opacity" style="color:rgba(255,255,255,0.78);">Privacidad y cookies</a>
         </div>
       </div>
     </div>

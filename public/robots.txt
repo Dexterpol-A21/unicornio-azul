@@ -41,4 +41,4 @@ Disallow: /marketing
 Disallow: /cdn-cgi/
 
 Sitemap: https://unicornioazul.es/sitemap-index.xml
-Agentmap: https://unicornioazul.es/.well-known/ai-catalog.json
+# Agent catalog: https://unicornioazul.es/.well-known/ai-catalog.json
