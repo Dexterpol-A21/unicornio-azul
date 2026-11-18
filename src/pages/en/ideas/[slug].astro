@@ -1,30 +1,18 @@
 ---
+export const prerender = false;
+
 import BaseLayout from '@layouts/BaseLayout.astro';
 import BlogPost from '@/components/blog/BlogPost.astro';
-import { getBlogEntries, blogPostUrl, BLOG_CATEGORIES } from '@/lib/blog';
-import type { CollectionEntry } from 'astro:content';
+import { getSortedBlogEntries, blogPostUrl, BLOG_CATEGORIES, missingArticle } from '@/lib/blog';
 
-export async function getStaticPaths() {
-  const entries = await getBlogEntries('en');
-  const sorted = entries.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
-  return sorted.map((entry) => ({
-    params: { slug: entry.data.urlSlug },
-    props: {
-      entry,
-      related: sorted.filter((e) => e !== entry).slice(0, 3),
-    },
-  }));
-}
+const { slug } = Astro.params;
+const entries = await getSortedBlogEntries('en');
+const entry = entries.find((item) => item.data.urlSlug === slug);
+if (!entry) return missingArticle(Astro.request);
 
-interface Props {
-  entry: CollectionEntry<'blog'>;
-  related: CollectionEntry<'blog'>[];
-}
-
-const { entry, related } = Astro.props;
+const related = entries.filter((item) => item !== entry).slice(0, 3);
 const d = entry.data;
-const altUrl = blogPostUrl('es', d.urlSlug);
-const published = d.publishedAt.toISOString();
+Astro.response.headers.set('Cache-Control', 'no-store');
 ---
 
 <BaseLayout
@@ -32,10 +20,10 @@ const published = d.publishedAt.toISOString();
   description={d.description}
   image={d.heroImage}
   imageAlt={d.heroImageAlt}
-  altUrl={altUrl}
+  altUrl={blogPostUrl('es', d.urlSlug)}
   showHeader={true}
   type="article"
-  publishedTime={published}
+  publishedTime={d.publishedAt.toISOString()}
   section={BLOG_CATEGORIES[d.category].label.en}
 >
 

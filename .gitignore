@@ -23,3 +23,9 @@ npm-debug.log*
 
 # Astro
 .astro/
+
+# Cloudflare
+.wrangler/
+
+# Keyword Planner seeds (local working notes)
+docs/SEMILLAS-KEYWORD-PLANNER.md

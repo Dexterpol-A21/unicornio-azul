@@ -1,11 +1,10 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import type { Lang } from '../../i18n/ui';
-import { BLOG_CATEGORIES, formatDate, blogPostUrl } from '../../lib/blog';
+import { BLOG_CATEGORIES, formatDate, blogPostUrl, type BlogEntry } from '../../lib/blog';
 import BlogCard from './BlogCard.astro';
 
 interface Props {
-  entries: CollectionEntry<'blog'>[];
+  entries: BlogEntry[];
   lang: Lang;
 }
 

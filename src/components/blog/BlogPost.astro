@@ -1,5 +1,4 @@
 ---
-import { render, type CollectionEntry } from 'astro:content';
 import type { Lang } from '../../i18n/ui';
 import BlogCard from './BlogCard.astro';
 import {
@@ -9,17 +8,18 @@ import {
   blogPostUrl,
   buildBlogPostingJsonLd,
   buildBreadcrumbJsonLd,
+  type BlogEntry,
 } from '../../lib/blog';
 
 interface Props {
-  entry: CollectionEntry<'blog'>;
+  entry: BlogEntry;
   lang: Lang;
-  related?: CollectionEntry<'blog'>[];
+  related?: BlogEntry[];
 }
 
 const { entry, lang, related = [] } = Astro.props;
 const d = entry.data;
-const { Content, headings } = await render(entry);
+const headings = entry.headings;
 
 const cat = BLOG_CATEGORIES[d.category];
 const date = formatDate(d.publishedAt, lang);
@@ -113,9 +113,7 @@ const copy = {
       </figure>
 
       <!-- Cuerpo -->
-      <div class="ua-article">
-        <Content />
-      </div>
+      <div class="ua-article" set:html={entry.html} />
 
       <p class="m-0 mt-8 text-sm" style="font-family:'Satoshi',sans-serif;color:#6B7280;">
         {copy.by} <strong style="color:#0F2548;font-weight:600;">{copy.author}</strong>

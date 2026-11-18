@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import cloudflare from '@astrojs/cloudflare';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -9,6 +10,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   site: 'https://unicornioazul.es',
+  adapter: cloudflare({ imageService: 'passthrough' }),
   redirects: {
     '/cookies': { status: 301, destination: '/privacidad' },
     '/en/cookies': { status: 301, destination: '/en/privacy' },
