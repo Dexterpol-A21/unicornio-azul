@@ -76,7 +76,7 @@ export const BLOG_CATEGORIES: Record<
       es: '/que-hacemos/marketing-digital',
       en: '/en/what-we-do/digital-marketing',
     },
-    color: '#00698D',
+    color: '#0B4F7A',
   },
   escalado: {
     label: { es: 'Escalado', en: 'Scale' },
@@ -84,7 +84,7 @@ export const BLOG_CATEGORIES: Record<
       es: '/que-hacemos/canales-digitales-escalado',
       en: '/en/what-we-do/digital-channels-scaling',
     },
-    color: '#0088B3',
+    color: '#00698D',
   },
 };
 
